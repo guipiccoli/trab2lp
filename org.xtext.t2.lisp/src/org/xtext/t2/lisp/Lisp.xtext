@@ -1,0 +1,33 @@
+grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
+
+generate lisp "http://www.xtext.org/t2/lisp/Lisp"
+
+Model:
+	decimal+=Decimal* |
+	inteiros+=Inteiros* |
+	begin=Begin |
+	define=Define;
+	
+
+
+Begin: 
+	'begin' name=ID;
+
+Define:
+	'define' name=ID '(' expression=Expression ')';
+
+Expression:
+	'(' operacoes=Operacoes ' ' inteiros=Inteiros ' ' inteiros=Inteiros ')'
+;
+
+Operacoes:
+	'+'| '-' |'*'|'/'|'square';
+
+
+Inteiros:
+	value=INT;
+
+Decimal:
+	value=INT '.' value=INT;
+
+

@@ -1,0 +1,25 @@
+grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
+
+generate lisp "http://www.xtext.org/t2/lisp/Lisp"
+
+Model:
+	INT
+	begin=Begin
+	define=Define;
+	
+
+
+Begin: 
+	'begin' name=ID;
+
+Define:
+	'define' name=ID '(' expression=Expression ')';
+
+Expression:
+	 Inteiros
+;
+
+Inteiros:
+	INT;
+
+

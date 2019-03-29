@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.xtext.org/t2/lisp/Lisp"
+			class = "org.xtext.t2.lisp.lisp.LispPackage"
+			genModel = "model/generated/Lisp.genmodel" />
+	</extension>
+</plugin>
