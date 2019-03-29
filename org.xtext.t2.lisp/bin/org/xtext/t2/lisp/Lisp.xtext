@@ -3,9 +3,9 @@ grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
 generate lisp "http://www.xtext.org/t2/lisp/Lisp"
 
 Model:
-	decimal+=Decimal* |
-	inteiros+=Inteiros* |
+	numeros+=Numeros*|
 	begin=Begin |
+	expression=Expression|
 	define=Define;
 	
 
@@ -14,18 +14,25 @@ Begin:
 	'begin' name=ID;
 
 Define:
-	'define' name=ID '(' expression=Expression ')';
+	'define' name=ID command=Command;
 
-Expression:
-	'(' operacoes=Operacoes ' ' inteiros=Inteiros ' ' inteiros=Inteiros ')'
+Command:
+	'0'
 ;
 
+Expression:
+	'(' operacoes=Operacoes (primeiro=Numeros)* ')'
+;
+
+Numeros:
+	Inteiros | Decimal;
+
 Operacoes:
-	'+'| '-' |'*'|'/'|'square';
+	value = '+'| '-' | '*'| '/'|'square';
 
 
 Inteiros:
-	value=INT;
+	value = INT;
 
 Decimal:
 	value=INT '.' value=INT;

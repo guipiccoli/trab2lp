@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLispParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin'", "'define'", "'('", "')'", "' '", "'+'", "'-'", "'*'", "'/'", "'square'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin'", "'define'", "'0'", "'('", "')'", "'+'", "'-'", "'*'", "'/'", "'square'", "'.'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -119,15 +119,15 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalLisp.g:71:1: ruleModel returns [EObject current=null] : ( ( (lv_decimal_0_0= ruleDecimal ) )* | ( (lv_inteiros_1_0= ruleInteiros ) )* | ( (lv_begin_2_0= ruleBegin ) ) | ( (lv_define_3_0= ruleDefine ) ) ) ;
+    // InternalLisp.g:71:1: ruleModel returns [EObject current=null] : ( ( (lv_numeros_0_0= ruleNumeros ) )* | ( (lv_begin_1_0= ruleBegin ) ) | ( (lv_expression_2_0= ruleExpression ) ) | ( (lv_define_3_0= ruleDefine ) ) ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_decimal_0_0 = null;
+        EObject lv_numeros_0_0 = null;
 
-        EObject lv_inteiros_1_0 = null;
+        EObject lv_begin_1_0 = null;
 
-        EObject lv_begin_2_0 = null;
+        EObject lv_expression_2_0 = null;
 
         EObject lv_define_3_0 = null;
 
@@ -136,57 +136,45 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLisp.g:77:2: ( ( ( (lv_decimal_0_0= ruleDecimal ) )* | ( (lv_inteiros_1_0= ruleInteiros ) )* | ( (lv_begin_2_0= ruleBegin ) ) | ( (lv_define_3_0= ruleDefine ) ) ) )
-            // InternalLisp.g:78:2: ( ( (lv_decimal_0_0= ruleDecimal ) )* | ( (lv_inteiros_1_0= ruleInteiros ) )* | ( (lv_begin_2_0= ruleBegin ) ) | ( (lv_define_3_0= ruleDefine ) ) )
+            // InternalLisp.g:77:2: ( ( ( (lv_numeros_0_0= ruleNumeros ) )* | ( (lv_begin_1_0= ruleBegin ) ) | ( (lv_expression_2_0= ruleExpression ) ) | ( (lv_define_3_0= ruleDefine ) ) ) )
+            // InternalLisp.g:78:2: ( ( (lv_numeros_0_0= ruleNumeros ) )* | ( (lv_begin_1_0= ruleBegin ) ) | ( (lv_expression_2_0= ruleExpression ) ) | ( (lv_define_3_0= ruleDefine ) ) )
             {
-            // InternalLisp.g:78:2: ( ( (lv_decimal_0_0= ruleDecimal ) )* | ( (lv_inteiros_1_0= ruleInteiros ) )* | ( (lv_begin_2_0= ruleBegin ) ) | ( (lv_define_3_0= ruleDefine ) ) )
-            int alt3=4;
+            // InternalLisp.g:78:2: ( ( (lv_numeros_0_0= ruleNumeros ) )* | ( (lv_begin_1_0= ruleBegin ) ) | ( (lv_expression_2_0= ruleExpression ) ) | ( (lv_define_3_0= ruleDefine ) ) )
+            int alt2=4;
             switch ( input.LA(1) ) {
+            case EOF:
             case RULE_INT:
                 {
-                int LA3_1 = input.LA(2);
-
-                if ( (LA3_1==21) ) {
-                    alt3=1;
-                }
-                else if ( (LA3_1==EOF||LA3_1==RULE_INT) ) {
-                    alt3=2;
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 3, 1, input);
-
-                    throw nvae;
-                }
-                }
-                break;
-            case EOF:
-                {
-                alt3=1;
+                alt2=1;
                 }
                 break;
             case 11:
                 {
-                alt3=3;
+                alt2=2;
+                }
+                break;
+            case 14:
+                {
+                alt2=3;
                 }
                 break;
             case 12:
                 {
-                alt3=4;
+                alt2=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt2) {
                 case 1 :
-                    // InternalLisp.g:79:3: ( (lv_decimal_0_0= ruleDecimal ) )*
+                    // InternalLisp.g:79:3: ( (lv_numeros_0_0= ruleNumeros ) )*
                     {
-                    // InternalLisp.g:79:3: ( (lv_decimal_0_0= ruleDecimal ) )*
+                    // InternalLisp.g:79:3: ( (lv_numeros_0_0= ruleNumeros ) )*
                     loop1:
                     do {
                         int alt1=2;
@@ -199,16 +187,16 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalLisp.g:80:4: (lv_decimal_0_0= ruleDecimal )
+                    	    // InternalLisp.g:80:4: (lv_numeros_0_0= ruleNumeros )
                     	    {
-                    	    // InternalLisp.g:80:4: (lv_decimal_0_0= ruleDecimal )
-                    	    // InternalLisp.g:81:5: lv_decimal_0_0= ruleDecimal
+                    	    // InternalLisp.g:80:4: (lv_numeros_0_0= ruleNumeros )
+                    	    // InternalLisp.g:81:5: lv_numeros_0_0= ruleNumeros
                     	    {
 
-                    	    					newCompositeNode(grammarAccess.getModelAccess().getDecimalDecimalParserRuleCall_0_0());
+                    	    					newCompositeNode(grammarAccess.getModelAccess().getNumerosNumerosParserRuleCall_0_0());
                     	    				
                     	    pushFollow(FOLLOW_3);
-                    	    lv_decimal_0_0=ruleDecimal();
+                    	    lv_numeros_0_0=ruleNumeros();
 
                     	    state._fsp--;
 
@@ -218,9 +206,9 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
                     	    					}
                     	    					add(
                     	    						current,
-                    	    						"decimal",
-                    	    						lv_decimal_0_0,
-                    	    						"org.xtext.t2.lisp.Lisp.Decimal");
+                    	    						"numeros",
+                    	    						lv_numeros_0_0,
+                    	    						"org.xtext.t2.lisp.Lisp.Numeros");
                     	    					afterParserOrEnumRuleCall();
                     	    				
 
@@ -239,74 +227,19 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:99:3: ( (lv_inteiros_1_0= ruleInteiros ) )*
+                    // InternalLisp.g:99:3: ( (lv_begin_1_0= ruleBegin ) )
                     {
-                    // InternalLisp.g:99:3: ( (lv_inteiros_1_0= ruleInteiros ) )*
-                    loop2:
-                    do {
-                        int alt2=2;
-                        int LA2_0 = input.LA(1);
-
-                        if ( (LA2_0==RULE_INT) ) {
-                            alt2=1;
-                        }
-
-
-                        switch (alt2) {
-                    	case 1 :
-                    	    // InternalLisp.g:100:4: (lv_inteiros_1_0= ruleInteiros )
-                    	    {
-                    	    // InternalLisp.g:100:4: (lv_inteiros_1_0= ruleInteiros )
-                    	    // InternalLisp.g:101:5: lv_inteiros_1_0= ruleInteiros
-                    	    {
-
-                    	    					newCompositeNode(grammarAccess.getModelAccess().getInteirosInteirosParserRuleCall_1_0());
-                    	    				
-                    	    pushFollow(FOLLOW_3);
-                    	    lv_inteiros_1_0=ruleInteiros();
-
-                    	    state._fsp--;
-
-
-                    	    					if (current==null) {
-                    	    						current = createModelElementForParent(grammarAccess.getModelRule());
-                    	    					}
-                    	    					add(
-                    	    						current,
-                    	    						"inteiros",
-                    	    						lv_inteiros_1_0,
-                    	    						"org.xtext.t2.lisp.Lisp.Inteiros");
-                    	    					afterParserOrEnumRuleCall();
-                    	    				
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop2;
-                        }
-                    } while (true);
-
-
-                    }
-                    break;
-                case 3 :
-                    // InternalLisp.g:119:3: ( (lv_begin_2_0= ruleBegin ) )
+                    // InternalLisp.g:99:3: ( (lv_begin_1_0= ruleBegin ) )
+                    // InternalLisp.g:100:4: (lv_begin_1_0= ruleBegin )
                     {
-                    // InternalLisp.g:119:3: ( (lv_begin_2_0= ruleBegin ) )
-                    // InternalLisp.g:120:4: (lv_begin_2_0= ruleBegin )
-                    {
-                    // InternalLisp.g:120:4: (lv_begin_2_0= ruleBegin )
-                    // InternalLisp.g:121:5: lv_begin_2_0= ruleBegin
+                    // InternalLisp.g:100:4: (lv_begin_1_0= ruleBegin )
+                    // InternalLisp.g:101:5: lv_begin_1_0= ruleBegin
                     {
 
-                    					newCompositeNode(grammarAccess.getModelAccess().getBeginBeginParserRuleCall_2_0());
+                    					newCompositeNode(grammarAccess.getModelAccess().getBeginBeginParserRuleCall_1_0());
                     				
                     pushFollow(FOLLOW_2);
-                    lv_begin_2_0=ruleBegin();
+                    lv_begin_1_0=ruleBegin();
 
                     state._fsp--;
 
@@ -317,8 +250,45 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
                     					set(
                     						current,
                     						"begin",
-                    						lv_begin_2_0,
+                    						lv_begin_1_0,
                     						"org.xtext.t2.lisp.Lisp.Begin");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalLisp.g:119:3: ( (lv_expression_2_0= ruleExpression ) )
+                    {
+                    // InternalLisp.g:119:3: ( (lv_expression_2_0= ruleExpression ) )
+                    // InternalLisp.g:120:4: (lv_expression_2_0= ruleExpression )
+                    {
+                    // InternalLisp.g:120:4: (lv_expression_2_0= ruleExpression )
+                    // InternalLisp.g:121:5: lv_expression_2_0= ruleExpression
+                    {
+
+                    					newCompositeNode(grammarAccess.getModelAccess().getExpressionExpressionParserRuleCall_2_0());
+                    				
+                    pushFollow(FOLLOW_2);
+                    lv_expression_2_0=ruleExpression();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getModelRule());
+                    					}
+                    					set(
+                    						current,
+                    						"expression",
+                    						lv_expression_2_0,
+                    						"org.xtext.t2.lisp.Lisp.Expression");
                     					afterParserOrEnumRuleCall();
                     				
 
@@ -532,26 +502,24 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefine"
-    // InternalLisp.g:210:1: ruleDefine returns [EObject current=null] : (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
+    // InternalLisp.g:210:1: ruleDefine returns [EObject current=null] : (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) ( (lv_command_2_0= ruleCommand ) ) ) ;
     public final EObject ruleDefine() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        EObject lv_expression_3_0 = null;
+        AntlrDatatypeRuleToken lv_command_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLisp.g:216:2: ( (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' ) )
-            // InternalLisp.g:217:2: (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalLisp.g:216:2: ( (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) ( (lv_command_2_0= ruleCommand ) ) ) )
+            // InternalLisp.g:217:2: (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) ( (lv_command_2_0= ruleCommand ) ) )
             {
-            // InternalLisp.g:217:2: (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' )
-            // InternalLisp.g:218:3: otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')'
+            // InternalLisp.g:217:2: (otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) ( (lv_command_2_0= ruleCommand ) ) )
+            // InternalLisp.g:218:3: otherlv_0= 'define' ( (lv_name_1_0= RULE_ID ) ) ( (lv_command_2_0= ruleCommand ) )
             {
             otherlv_0=(Token)match(input,12,FOLLOW_4); 
 
@@ -583,21 +551,17 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FOLLOW_5); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getDefineAccess().getLeftParenthesisKeyword_2());
-            		
-            // InternalLisp.g:244:3: ( (lv_expression_3_0= ruleExpression ) )
-            // InternalLisp.g:245:4: (lv_expression_3_0= ruleExpression )
+            // InternalLisp.g:240:3: ( (lv_command_2_0= ruleCommand ) )
+            // InternalLisp.g:241:4: (lv_command_2_0= ruleCommand )
             {
-            // InternalLisp.g:245:4: (lv_expression_3_0= ruleExpression )
-            // InternalLisp.g:246:5: lv_expression_3_0= ruleExpression
+            // InternalLisp.g:241:4: (lv_command_2_0= ruleCommand )
+            // InternalLisp.g:242:5: lv_command_2_0= ruleCommand
             {
 
-            					newCompositeNode(grammarAccess.getDefineAccess().getExpressionExpressionParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getDefineAccess().getCommandCommandParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_6);
-            lv_expression_3_0=ruleExpression();
+            pushFollow(FOLLOW_2);
+            lv_command_2_0=ruleCommand();
 
             state._fsp--;
 
@@ -607,9 +571,9 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
             					}
             					set(
             						current,
-            						"expression",
-            						lv_expression_3_0,
-            						"org.xtext.t2.lisp.Lisp.Expression");
+            						"command",
+            						lv_command_2_0,
+            						"org.xtext.t2.lisp.Lisp.Command");
             					afterParserOrEnumRuleCall();
             				
 
@@ -618,10 +582,6 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,14,FOLLOW_2); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getDefineAccess().getRightParenthesisKeyword_4());
-            		
 
             }
 
@@ -644,8 +604,82 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleDefine"
 
 
+    // $ANTLR start "entryRuleCommand"
+    // InternalLisp.g:263:1: entryRuleCommand returns [String current=null] : iv_ruleCommand= ruleCommand EOF ;
+    public final String entryRuleCommand() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleCommand = null;
+
+
+        try {
+            // InternalLisp.g:263:47: (iv_ruleCommand= ruleCommand EOF )
+            // InternalLisp.g:264:2: iv_ruleCommand= ruleCommand EOF
+            {
+             newCompositeNode(grammarAccess.getCommandRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleCommand=ruleCommand();
+
+            state._fsp--;
+
+             current =iv_ruleCommand.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCommand"
+
+
+    // $ANTLR start "ruleCommand"
+    // InternalLisp.g:270:1: ruleCommand returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '0' ;
+    public final AntlrDatatypeRuleToken ruleCommand() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalLisp.g:276:2: (kw= '0' )
+            // InternalLisp.g:277:2: kw= '0'
+            {
+            kw=(Token)match(input,13,FOLLOW_2); 
+
+            		current.merge(kw);
+            		newLeafNode(kw, grammarAccess.getCommandAccess().getDigitZeroKeyword());
+            	
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCommand"
+
+
     // $ANTLR start "entryRuleExpression"
-    // InternalLisp.g:271:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalLisp.g:285:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -653,8 +687,8 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLisp.g:271:51: (iv_ruleExpression= ruleExpression EOF )
-            // InternalLisp.g:272:2: iv_ruleExpression= ruleExpression EOF
+            // InternalLisp.g:285:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalLisp.g:286:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -681,45 +715,41 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalLisp.g:278:1: ruleExpression returns [EObject current=null] : (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) otherlv_2= ' ' ( (lv_inteiros_3_0= ruleInteiros ) ) otherlv_4= ' ' ( (lv_inteiros_5_0= ruleInteiros ) ) otherlv_6= ')' ) ;
+    // InternalLisp.g:292:1: ruleExpression returns [EObject current=null] : (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) ( (lv_primeiro_2_0= ruleNumeros ) )* otherlv_3= ')' ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        AntlrDatatypeRuleToken lv_operacoes_1_0 = null;
+        Token otherlv_3=null;
+        EObject lv_operacoes_1_0 = null;
 
-        EObject lv_inteiros_3_0 = null;
-
-        EObject lv_inteiros_5_0 = null;
+        EObject lv_primeiro_2_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLisp.g:284:2: ( (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) otherlv_2= ' ' ( (lv_inteiros_3_0= ruleInteiros ) ) otherlv_4= ' ' ( (lv_inteiros_5_0= ruleInteiros ) ) otherlv_6= ')' ) )
-            // InternalLisp.g:285:2: (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) otherlv_2= ' ' ( (lv_inteiros_3_0= ruleInteiros ) ) otherlv_4= ' ' ( (lv_inteiros_5_0= ruleInteiros ) ) otherlv_6= ')' )
+            // InternalLisp.g:298:2: ( (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) ( (lv_primeiro_2_0= ruleNumeros ) )* otherlv_3= ')' ) )
+            // InternalLisp.g:299:2: (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) ( (lv_primeiro_2_0= ruleNumeros ) )* otherlv_3= ')' )
             {
-            // InternalLisp.g:285:2: (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) otherlv_2= ' ' ( (lv_inteiros_3_0= ruleInteiros ) ) otherlv_4= ' ' ( (lv_inteiros_5_0= ruleInteiros ) ) otherlv_6= ')' )
-            // InternalLisp.g:286:3: otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) otherlv_2= ' ' ( (lv_inteiros_3_0= ruleInteiros ) ) otherlv_4= ' ' ( (lv_inteiros_5_0= ruleInteiros ) ) otherlv_6= ')'
+            // InternalLisp.g:299:2: (otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) ( (lv_primeiro_2_0= ruleNumeros ) )* otherlv_3= ')' )
+            // InternalLisp.g:300:3: otherlv_0= '(' ( (lv_operacoes_1_0= ruleOperacoes ) ) ( (lv_primeiro_2_0= ruleNumeros ) )* otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_7); 
+            otherlv_0=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_0, grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalLisp.g:290:3: ( (lv_operacoes_1_0= ruleOperacoes ) )
-            // InternalLisp.g:291:4: (lv_operacoes_1_0= ruleOperacoes )
+            // InternalLisp.g:304:3: ( (lv_operacoes_1_0= ruleOperacoes ) )
+            // InternalLisp.g:305:4: (lv_operacoes_1_0= ruleOperacoes )
             {
-            // InternalLisp.g:291:4: (lv_operacoes_1_0= ruleOperacoes )
-            // InternalLisp.g:292:5: lv_operacoes_1_0= ruleOperacoes
+            // InternalLisp.g:305:4: (lv_operacoes_1_0= ruleOperacoes )
+            // InternalLisp.g:306:5: lv_operacoes_1_0= ruleOperacoes
             {
 
             					newCompositeNode(grammarAccess.getExpressionAccess().getOperacoesOperacoesParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_7);
             lv_operacoes_1_0=ruleOperacoes();
 
             state._fsp--;
@@ -741,79 +771,58 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_9); 
+            // InternalLisp.g:323:3: ( (lv_primeiro_2_0= ruleNumeros ) )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
 
-            			newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getSpaceKeyword_2());
-            		
-            // InternalLisp.g:313:3: ( (lv_inteiros_3_0= ruleInteiros ) )
-            // InternalLisp.g:314:4: (lv_inteiros_3_0= ruleInteiros )
-            {
-            // InternalLisp.g:314:4: (lv_inteiros_3_0= ruleInteiros )
-            // InternalLisp.g:315:5: lv_inteiros_3_0= ruleInteiros
-            {
-
-            					newCompositeNode(grammarAccess.getExpressionAccess().getInteirosInteirosParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_8);
-            lv_inteiros_3_0=ruleInteiros();
-
-            state._fsp--;
+                if ( (LA3_0==RULE_INT) ) {
+                    alt3=1;
+                }
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getExpressionRule());
-            					}
-            					set(
-            						current,
-            						"inteiros",
-            						lv_inteiros_3_0,
-            						"org.xtext.t2.lisp.Lisp.Inteiros");
-            					afterParserOrEnumRuleCall();
-            				
+                switch (alt3) {
+            	case 1 :
+            	    // InternalLisp.g:324:4: (lv_primeiro_2_0= ruleNumeros )
+            	    {
+            	    // InternalLisp.g:324:4: (lv_primeiro_2_0= ruleNumeros )
+            	    // InternalLisp.g:325:5: lv_primeiro_2_0= ruleNumeros
+            	    {
 
-            }
+            	    					newCompositeNode(grammarAccess.getExpressionAccess().getPrimeiroNumerosParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_7);
+            	    lv_primeiro_2_0=ruleNumeros();
 
-
-            }
-
-            otherlv_4=(Token)match(input,15,FOLLOW_10); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getExpressionAccess().getSpaceKeyword_4());
-            		
-            // InternalLisp.g:336:3: ( (lv_inteiros_5_0= ruleInteiros ) )
-            // InternalLisp.g:337:4: (lv_inteiros_5_0= ruleInteiros )
-            {
-            // InternalLisp.g:337:4: (lv_inteiros_5_0= ruleInteiros )
-            // InternalLisp.g:338:5: lv_inteiros_5_0= ruleInteiros
-            {
-
-            					newCompositeNode(grammarAccess.getExpressionAccess().getInteirosInteirosParserRuleCall_5_0());
-            				
-            pushFollow(FOLLOW_6);
-            lv_inteiros_5_0=ruleInteiros();
-
-            state._fsp--;
+            	    state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getExpressionRule());
-            					}
-            					set(
-            						current,
-            						"inteiros",
-            						lv_inteiros_5_0,
-            						"org.xtext.t2.lisp.Lisp.Inteiros");
-            					afterParserOrEnumRuleCall();
-            				
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getExpressionRule());
+            	    					}
+            	    					set(
+            	    						current,
+            	    						"primeiro",
+            	    						lv_primeiro_2_0,
+            	    						"org.xtext.t2.lisp.Lisp.Numeros");
+            	    					afterParserOrEnumRuleCall();
+            	    				
 
-            }
+            	    }
 
 
-            }
+            	    }
+            	    break;
 
-            otherlv_6=(Token)match(input,14,FOLLOW_2); 
+            	default :
+            	    break loop3;
+                }
+            } while (true);
 
-            			newLeafNode(otherlv_6, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_6());
+            otherlv_3=(Token)match(input,15,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_3());
             		
 
             }
@@ -837,17 +846,155 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleExpression"
 
 
-    // $ANTLR start "entryRuleOperacoes"
-    // InternalLisp.g:363:1: entryRuleOperacoes returns [String current=null] : iv_ruleOperacoes= ruleOperacoes EOF ;
-    public final String entryRuleOperacoes() throws RecognitionException {
-        String current = null;
+    // $ANTLR start "entryRuleNumeros"
+    // InternalLisp.g:350:1: entryRuleNumeros returns [EObject current=null] : iv_ruleNumeros= ruleNumeros EOF ;
+    public final EObject entryRuleNumeros() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleOperacoes = null;
+        EObject iv_ruleNumeros = null;
 
 
         try {
-            // InternalLisp.g:363:49: (iv_ruleOperacoes= ruleOperacoes EOF )
-            // InternalLisp.g:364:2: iv_ruleOperacoes= ruleOperacoes EOF
+            // InternalLisp.g:350:48: (iv_ruleNumeros= ruleNumeros EOF )
+            // InternalLisp.g:351:2: iv_ruleNumeros= ruleNumeros EOF
+            {
+             newCompositeNode(grammarAccess.getNumerosRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleNumeros=ruleNumeros();
+
+            state._fsp--;
+
+             current =iv_ruleNumeros; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNumeros"
+
+
+    // $ANTLR start "ruleNumeros"
+    // InternalLisp.g:357:1: ruleNumeros returns [EObject current=null] : (this_Inteiros_0= ruleInteiros | this_Decimal_1= ruleDecimal ) ;
+    public final EObject ruleNumeros() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_Inteiros_0 = null;
+
+        EObject this_Decimal_1 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalLisp.g:363:2: ( (this_Inteiros_0= ruleInteiros | this_Decimal_1= ruleDecimal ) )
+            // InternalLisp.g:364:2: (this_Inteiros_0= ruleInteiros | this_Decimal_1= ruleDecimal )
+            {
+            // InternalLisp.g:364:2: (this_Inteiros_0= ruleInteiros | this_Decimal_1= ruleDecimal )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==RULE_INT) ) {
+                int LA4_1 = input.LA(2);
+
+                if ( (LA4_1==EOF||LA4_1==RULE_INT||LA4_1==15) ) {
+                    alt4=1;
+                }
+                else if ( (LA4_1==21) ) {
+                    alt4=2;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 4, 1, input);
+
+                    throw nvae;
+                }
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 4, 0, input);
+
+                throw nvae;
+            }
+            switch (alt4) {
+                case 1 :
+                    // InternalLisp.g:365:3: this_Inteiros_0= ruleInteiros
+                    {
+
+                    			newCompositeNode(grammarAccess.getNumerosAccess().getInteirosParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Inteiros_0=ruleInteiros();
+
+                    state._fsp--;
+
+
+                    			current = this_Inteiros_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalLisp.g:374:3: this_Decimal_1= ruleDecimal
+                    {
+
+                    			newCompositeNode(grammarAccess.getNumerosAccess().getDecimalParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Decimal_1=ruleDecimal();
+
+                    state._fsp--;
+
+
+                    			current = this_Decimal_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNumeros"
+
+
+    // $ANTLR start "entryRuleOperacoes"
+    // InternalLisp.g:386:1: entryRuleOperacoes returns [EObject current=null] : iv_ruleOperacoes= ruleOperacoes EOF ;
+    public final EObject entryRuleOperacoes() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleOperacoes = null;
+
+
+        try {
+            // InternalLisp.g:386:50: (iv_ruleOperacoes= ruleOperacoes EOF )
+            // InternalLisp.g:387:2: iv_ruleOperacoes= ruleOperacoes EOF
             {
              newCompositeNode(grammarAccess.getOperacoesRule()); 
             pushFollow(FOLLOW_1);
@@ -855,7 +1002,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleOperacoes.getText(); 
+             current =iv_ruleOperacoes; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -874,106 +1021,123 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperacoes"
-    // InternalLisp.g:370:1: ruleOperacoes returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= 'square' ) ;
-    public final AntlrDatatypeRuleToken ruleOperacoes() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalLisp.g:393:1: ruleOperacoes returns [EObject current=null] : ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' ) ;
+    public final EObject ruleOperacoes() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
+        Token lv_value_0_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
 
 
         	enterRule();
 
         try {
-            // InternalLisp.g:376:2: ( (kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= 'square' ) )
-            // InternalLisp.g:377:2: (kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= 'square' )
+            // InternalLisp.g:399:2: ( ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' ) )
+            // InternalLisp.g:400:2: ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' )
             {
-            // InternalLisp.g:377:2: (kw= '+' | kw= '-' | kw= '*' | kw= '/' | kw= 'square' )
-            int alt4=5;
+            // InternalLisp.g:400:2: ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' )
+            int alt5=5;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt4=1;
+                alt5=1;
                 }
                 break;
             case 17:
                 {
-                alt4=2;
+                alt5=2;
                 }
                 break;
             case 18:
                 {
-                alt4=3;
+                alt5=3;
                 }
                 break;
             case 19:
                 {
-                alt4=4;
+                alt5=4;
                 }
                 break;
             case 20:
                 {
-                alt4=5;
+                alt5=5;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
-                    // InternalLisp.g:378:3: kw= '+'
+                    // InternalLisp.g:401:3: ( (lv_value_0_0= '+' ) )
                     {
-                    kw=(Token)match(input,16,FOLLOW_2); 
+                    // InternalLisp.g:401:3: ( (lv_value_0_0= '+' ) )
+                    // InternalLisp.g:402:4: (lv_value_0_0= '+' )
+                    {
+                    // InternalLisp.g:402:4: (lv_value_0_0= '+' )
+                    // InternalLisp.g:403:5: lv_value_0_0= '+'
+                    {
+                    lv_value_0_0=(Token)match(input,16,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getOperacoesAccess().getPlusSignKeyword_0());
-                    		
+                    					newLeafNode(lv_value_0_0, grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getOperacoesRule());
+                    					}
+                    					setWithLastConsumed(current, "value", lv_value_0_0, "+");
+                    				
+
+                    }
+
+
+                    }
+
 
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:384:3: kw= '-'
+                    // InternalLisp.g:416:3: otherlv_1= '-'
                     {
-                    kw=(Token)match(input,17,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,17,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getOperacoesAccess().getHyphenMinusKeyword_1());
+                    			newLeafNode(otherlv_1, grammarAccess.getOperacoesAccess().getHyphenMinusKeyword_1());
                     		
 
                     }
                     break;
                 case 3 :
-                    // InternalLisp.g:390:3: kw= '*'
+                    // InternalLisp.g:421:3: otherlv_2= '*'
                     {
-                    kw=(Token)match(input,18,FOLLOW_2); 
+                    otherlv_2=(Token)match(input,18,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getOperacoesAccess().getAsteriskKeyword_2());
+                    			newLeafNode(otherlv_2, grammarAccess.getOperacoesAccess().getAsteriskKeyword_2());
                     		
 
                     }
                     break;
                 case 4 :
-                    // InternalLisp.g:396:3: kw= '/'
+                    // InternalLisp.g:426:3: otherlv_3= '/'
                     {
-                    kw=(Token)match(input,19,FOLLOW_2); 
+                    otherlv_3=(Token)match(input,19,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getOperacoesAccess().getSolidusKeyword_3());
+                    			newLeafNode(otherlv_3, grammarAccess.getOperacoesAccess().getSolidusKeyword_3());
                     		
 
                     }
                     break;
                 case 5 :
-                    // InternalLisp.g:402:3: kw= 'square'
+                    // InternalLisp.g:431:3: otherlv_4= 'square'
                     {
-                    kw=(Token)match(input,20,FOLLOW_2); 
+                    otherlv_4=(Token)match(input,20,FOLLOW_2); 
 
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getOperacoesAccess().getSquareKeyword_4());
+                    			newLeafNode(otherlv_4, grammarAccess.getOperacoesAccess().getSquareKeyword_4());
                     		
 
                     }
@@ -1001,7 +1165,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInteiros"
-    // InternalLisp.g:411:1: entryRuleInteiros returns [EObject current=null] : iv_ruleInteiros= ruleInteiros EOF ;
+    // InternalLisp.g:439:1: entryRuleInteiros returns [EObject current=null] : iv_ruleInteiros= ruleInteiros EOF ;
     public final EObject entryRuleInteiros() throws RecognitionException {
         EObject current = null;
 
@@ -1009,8 +1173,8 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLisp.g:411:49: (iv_ruleInteiros= ruleInteiros EOF )
-            // InternalLisp.g:412:2: iv_ruleInteiros= ruleInteiros EOF
+            // InternalLisp.g:439:49: (iv_ruleInteiros= ruleInteiros EOF )
+            // InternalLisp.g:440:2: iv_ruleInteiros= ruleInteiros EOF
             {
              newCompositeNode(grammarAccess.getInteirosRule()); 
             pushFollow(FOLLOW_1);
@@ -1037,7 +1201,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInteiros"
-    // InternalLisp.g:418:1: ruleInteiros returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // InternalLisp.g:446:1: ruleInteiros returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleInteiros() throws RecognitionException {
         EObject current = null;
 
@@ -1047,14 +1211,14 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLisp.g:424:2: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // InternalLisp.g:425:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalLisp.g:452:2: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // InternalLisp.g:453:2: ( (lv_value_0_0= RULE_INT ) )
             {
-            // InternalLisp.g:425:2: ( (lv_value_0_0= RULE_INT ) )
-            // InternalLisp.g:426:3: (lv_value_0_0= RULE_INT )
+            // InternalLisp.g:453:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalLisp.g:454:3: (lv_value_0_0= RULE_INT )
             {
-            // InternalLisp.g:426:3: (lv_value_0_0= RULE_INT )
-            // InternalLisp.g:427:4: lv_value_0_0= RULE_INT
+            // InternalLisp.g:454:3: (lv_value_0_0= RULE_INT )
+            // InternalLisp.g:455:4: lv_value_0_0= RULE_INT
             {
             lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -1096,7 +1260,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDecimal"
-    // InternalLisp.g:446:1: entryRuleDecimal returns [EObject current=null] : iv_ruleDecimal= ruleDecimal EOF ;
+    // InternalLisp.g:474:1: entryRuleDecimal returns [EObject current=null] : iv_ruleDecimal= ruleDecimal EOF ;
     public final EObject entryRuleDecimal() throws RecognitionException {
         EObject current = null;
 
@@ -1104,8 +1268,8 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalLisp.g:446:48: (iv_ruleDecimal= ruleDecimal EOF )
-            // InternalLisp.g:447:2: iv_ruleDecimal= ruleDecimal EOF
+            // InternalLisp.g:474:48: (iv_ruleDecimal= ruleDecimal EOF )
+            // InternalLisp.g:475:2: iv_ruleDecimal= ruleDecimal EOF
             {
              newCompositeNode(grammarAccess.getDecimalRule()); 
             pushFollow(FOLLOW_1);
@@ -1132,7 +1296,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDecimal"
-    // InternalLisp.g:453:1: ruleDecimal returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) ) ;
+    // InternalLisp.g:481:1: ruleDecimal returns [EObject current=null] : ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) ) ;
     public final EObject ruleDecimal() throws RecognitionException {
         EObject current = null;
 
@@ -1144,19 +1308,19 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLisp.g:459:2: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) ) )
-            // InternalLisp.g:460:2: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) )
+            // InternalLisp.g:487:2: ( ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) ) )
+            // InternalLisp.g:488:2: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) )
             {
-            // InternalLisp.g:460:2: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) )
-            // InternalLisp.g:461:3: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) )
+            // InternalLisp.g:488:2: ( ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) ) )
+            // InternalLisp.g:489:3: ( (lv_value_0_0= RULE_INT ) ) otherlv_1= '.' ( (lv_value_2_0= RULE_INT ) )
             {
-            // InternalLisp.g:461:3: ( (lv_value_0_0= RULE_INT ) )
-            // InternalLisp.g:462:4: (lv_value_0_0= RULE_INT )
+            // InternalLisp.g:489:3: ( (lv_value_0_0= RULE_INT ) )
+            // InternalLisp.g:490:4: (lv_value_0_0= RULE_INT )
             {
-            // InternalLisp.g:462:4: (lv_value_0_0= RULE_INT )
-            // InternalLisp.g:463:5: lv_value_0_0= RULE_INT
+            // InternalLisp.g:490:4: (lv_value_0_0= RULE_INT )
+            // InternalLisp.g:491:5: lv_value_0_0= RULE_INT
             {
-            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_11); 
+            lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_8); 
 
             					newLeafNode(lv_value_0_0, grammarAccess.getDecimalAccess().getValueINTTerminalRuleCall_0_0());
             				
@@ -1176,15 +1340,15 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,21,FOLLOW_12); 
+            otherlv_1=(Token)match(input,21,FOLLOW_9); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDecimalAccess().getFullStopKeyword_1());
             		
-            // InternalLisp.g:483:3: ( (lv_value_2_0= RULE_INT ) )
-            // InternalLisp.g:484:4: (lv_value_2_0= RULE_INT )
+            // InternalLisp.g:511:3: ( (lv_value_2_0= RULE_INT ) )
+            // InternalLisp.g:512:4: (lv_value_2_0= RULE_INT )
             {
-            // InternalLisp.g:484:4: (lv_value_2_0= RULE_INT )
-            // InternalLisp.g:485:5: lv_value_2_0= RULE_INT
+            // InternalLisp.g:512:4: (lv_value_2_0= RULE_INT )
+            // InternalLisp.g:513:5: lv_value_2_0= RULE_INT
             {
             lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -1237,12 +1401,9 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000022L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000001F0000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000004020L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00000000001F0000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
 
 }
