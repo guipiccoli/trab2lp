@@ -3,14 +3,13 @@
  */
 package org.xtext.t2.lisp;
 
-import org.xtext.t2.lisp.LispStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
 @SuppressWarnings("all")
-public class LispStandaloneSetup extends LispStandaloneSetupGenerated {
+public class LispStandaloneSetup /* implements LispStandaloneSetupGenerated  */{
   public static void doSetup() {
-    new LispStandaloneSetup().createInjectorAndDoEMFRegistration();
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method createInjectorAndDoEMFRegistration() is undefined for the type LispStandaloneSetup");
   }
 }

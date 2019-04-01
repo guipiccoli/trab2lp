@@ -7,29 +7,94 @@
   <genPackages prefix="Lisp" basePackage="org.xtext.t2.lisp" disposableProviderFactory="true"
       fileExtensions="mydsl" ecorePackage="Lisp.ecore#/">
     <genClasses ecoreClass="Lisp.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Model/numeros"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Model/begin"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Model/expression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Model/define"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Model/form"/>
     </genClasses>
-    <genClasses ecoreClass="Lisp.ecore#//Begin">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Begin/name"/>
+    <genClasses ecoreClass="Lisp.ecore#//Form">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Form/definition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Form/expression2"/>
     </genClasses>
-    <genClasses ecoreClass="Lisp.ecore#//Define">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Define/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Define/command"/>
+    <genClasses ecoreClass="Lisp.ecore#//Definition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Definition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Definition/definition"/>
     </genClasses>
     <genClasses ecoreClass="Lisp.ecore#//Expression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Expression/operacoes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Expression/primeiro"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Expression/constant"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Expression/variable4"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Expression/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Expression/formals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Expression/body1"/>
     </genClasses>
-    <genClasses ecoreClass="Lisp.ecore#//Numeros">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Numeros/value"/>
+    <genClasses ecoreClass="Lisp.ecore#//Set">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Set/variable3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Set/expression10"/>
     </genClasses>
-    <genClasses ecoreClass="Lisp.ecore#//Operacoes">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Operacoes/value"/>
+    <genClasses ecoreClass="Lisp.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//If/expression5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//If/expression6"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//If/expression7"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//If/expression3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//If/expression4"/>
     </genClasses>
-    <genClasses ecoreClass="Lisp.ecore#//Inteiros"/>
-    <genClasses ecoreClass="Lisp.ecore#//Decimal"/>
+    <genClasses ecoreClass="Lisp.ecore#//Constant">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Constant/number"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Formals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Formals/variable5"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Formals/variable6"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//VariableDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//VariableDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//VariableDefinition/define"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Define">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Define/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Define/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Define/variable1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Define/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Variable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Variable/identifier"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Body">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Body/definition1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Body/expression1"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//SyntaxDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//SyntaxDefinition/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//SyntaxDefinition/keyword"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//SyntaxDefinition/transformerExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Keyword">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Keyword/identifier1"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//SyntaxBinding">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//SyntaxBinding/keyword1"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//SyntaxBinding/transformerExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Identifier">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Identifier/initial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Identifier/subsequent"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Initial">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Initial/letter"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Subsequent">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Subsequent/initial"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Subsequent/digit"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Letter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Letter/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Digit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Digit/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Decimal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Decimal/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Decimal/value1"/>
+    </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Number">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Number/digit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Number/decimal"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

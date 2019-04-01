@@ -4,14 +4,19 @@
 package org.xtext.t2.lisp.lisp.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.t2.lisp.lisp.Body;
 import org.xtext.t2.lisp.lisp.Define;
+import org.xtext.t2.lisp.lisp.Expression;
 import org.xtext.t2.lisp.lisp.LispPackage;
+import org.xtext.t2.lisp.lisp.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,8 +26,10 @@ import org.xtext.t2.lisp.lisp.LispPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getCommand <em>Command</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getVariable1 <em>Variable1</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,44 +37,44 @@ import org.xtext.t2.lisp.lisp.LispPackage;
 public class DefineImpl extends MinimalEObjectImpl.Container implements Define
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getVariable() <em>Variable</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getVariable()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected Variable variable;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected Expression expression;
 
   /**
-   * The default value of the '{@link #getCommand() <em>Command</em>}' attribute.
+   * The cached value of the '{@link #getVariable1() <em>Variable1</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCommand()
+   * @see #getVariable1()
    * @generated
    * @ordered
    */
-  protected static final String COMMAND_EDEFAULT = null;
+  protected Variable variable1;
 
   /**
-   * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute.
+   * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCommand()
+   * @see #getBody()
    * @generated
    * @ordered
    */
-  protected String command = COMMAND_EDEFAULT;
+  protected Body body;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,9 +103,9 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
    * @generated
    */
   @Override
-  public String getName()
+  public Variable getVariable()
   {
-    return name;
+    return variable;
   }
 
   /**
@@ -106,13 +113,16 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setName(String newName)
+  public NotificationChain basicSetVariable(Variable newVariable, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
+    Variable oldVariable = variable;
+    variable = newVariable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__NAME, oldName, name));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__VARIABLE, oldVariable, newVariable);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -121,9 +131,20 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
    * @generated
    */
   @Override
-  public String getCommand()
+  public void setVariable(Variable newVariable)
   {
-    return command;
+    if (newVariable != variable)
+    {
+      NotificationChain msgs = null;
+      if (variable != null)
+        msgs = ((InternalEObject)variable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__VARIABLE, null, msgs);
+      if (newVariable != null)
+        msgs = ((InternalEObject)newVariable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__VARIABLE, null, msgs);
+      msgs = basicSetVariable(newVariable, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__VARIABLE, newVariable, newVariable));
   }
 
   /**
@@ -132,12 +153,170 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
    * @generated
    */
   @Override
-  public void setCommand(String newCommand)
+  public Expression getExpression()
   {
-    String oldCommand = command;
-    command = newCommand;
+    return expression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  {
+    Expression oldExpression = expression;
+    expression = newExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__COMMAND, oldCommand, command));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setExpression(Expression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__EXPRESSION, newExpression, newExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Variable getVariable1()
+  {
+    return variable1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetVariable1(Variable newVariable1, NotificationChain msgs)
+  {
+    Variable oldVariable1 = variable1;
+    variable1 = newVariable1;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__VARIABLE1, oldVariable1, newVariable1);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setVariable1(Variable newVariable1)
+  {
+    if (newVariable1 != variable1)
+    {
+      NotificationChain msgs = null;
+      if (variable1 != null)
+        msgs = ((InternalEObject)variable1).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__VARIABLE1, null, msgs);
+      if (newVariable1 != null)
+        msgs = ((InternalEObject)newVariable1).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__VARIABLE1, null, msgs);
+      msgs = basicSetVariable1(newVariable1, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__VARIABLE1, newVariable1, newVariable1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Body getBody()
+  {
+    return body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBody(Body newBody, NotificationChain msgs)
+  {
+    Body oldBody = body;
+    body = newBody;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__BODY, oldBody, newBody);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setBody(Body newBody)
+  {
+    if (newBody != body)
+    {
+      NotificationChain msgs = null;
+      if (body != null)
+        msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__BODY, null, msgs);
+      if (newBody != null)
+        msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.DEFINE__BODY, null, msgs);
+      msgs = basicSetBody(newBody, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__BODY, newBody, newBody));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case LispPackage.DEFINE__VARIABLE:
+        return basicSetVariable(null, msgs);
+      case LispPackage.DEFINE__EXPRESSION:
+        return basicSetExpression(null, msgs);
+      case LispPackage.DEFINE__VARIABLE1:
+        return basicSetVariable1(null, msgs);
+      case LispPackage.DEFINE__BODY:
+        return basicSetBody(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -150,10 +329,14 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        return getName();
-      case LispPackage.DEFINE__COMMAND:
-        return getCommand();
+      case LispPackage.DEFINE__VARIABLE:
+        return getVariable();
+      case LispPackage.DEFINE__EXPRESSION:
+        return getExpression();
+      case LispPackage.DEFINE__VARIABLE1:
+        return getVariable1();
+      case LispPackage.DEFINE__BODY:
+        return getBody();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +351,17 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        setName((String)newValue);
+      case LispPackage.DEFINE__VARIABLE:
+        setVariable((Variable)newValue);
         return;
-      case LispPackage.DEFINE__COMMAND:
-        setCommand((String)newValue);
+      case LispPackage.DEFINE__EXPRESSION:
+        setExpression((Expression)newValue);
+        return;
+      case LispPackage.DEFINE__VARIABLE1:
+        setVariable1((Variable)newValue);
+        return;
+      case LispPackage.DEFINE__BODY:
+        setBody((Body)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +377,17 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        setName(NAME_EDEFAULT);
+      case LispPackage.DEFINE__VARIABLE:
+        setVariable((Variable)null);
         return;
-      case LispPackage.DEFINE__COMMAND:
-        setCommand(COMMAND_EDEFAULT);
+      case LispPackage.DEFINE__EXPRESSION:
+        setExpression((Expression)null);
+        return;
+      case LispPackage.DEFINE__VARIABLE1:
+        setVariable1((Variable)null);
+        return;
+      case LispPackage.DEFINE__BODY:
+        setBody((Body)null);
         return;
     }
     super.eUnset(featureID);
@@ -208,31 +403,16 @@ public class DefineImpl extends MinimalEObjectImpl.Container implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case LispPackage.DEFINE__COMMAND:
-        return COMMAND_EDEFAULT == null ? command != null : !COMMAND_EDEFAULT.equals(command);
+      case LispPackage.DEFINE__VARIABLE:
+        return variable != null;
+      case LispPackage.DEFINE__EXPRESSION:
+        return expression != null;
+      case LispPackage.DEFINE__VARIABLE1:
+        return variable1 != null;
+      case LispPackage.DEFINE__BODY:
+        return body != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", command: ");
-    result.append(command);
-    result.append(')');
-    return result.toString();
   }
 
 } //DefineImpl

@@ -3,12 +3,8 @@
  */
 package org.xtext.t2.lisp.ide;
 
-import com.google.inject.Guice;
 import com.google.inject.Injector;
-import org.eclipse.xtext.util.Modules2;
-import org.xtext.t2.lisp.LispRuntimeModule;
 import org.xtext.t2.lisp.LispStandaloneSetup;
-import org.xtext.t2.lisp.ide.LispIdeModule;
 
 /**
  * Initialization support for running Xtext languages as language servers.
@@ -17,8 +13,8 @@ import org.xtext.t2.lisp.ide.LispIdeModule;
 public class LispIdeSetup extends LispStandaloneSetup {
   @Override
   public Injector createInjector() {
-    LispRuntimeModule _lispRuntimeModule = new LispRuntimeModule();
-    LispIdeModule _lispIdeModule = new LispIdeModule();
-    return Guice.createInjector(Modules2.mixin(_lispRuntimeModule, _lispIdeModule));
+    throw new Error("Unresolved compilation problems:"
+      + "\nType mismatch: cannot convert from LispRuntimeModule to Module"
+      + "\nType mismatch: cannot convert from LispIdeModule to Module");
   }
 }

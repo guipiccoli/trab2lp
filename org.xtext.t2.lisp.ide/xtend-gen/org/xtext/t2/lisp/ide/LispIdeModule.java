@@ -3,11 +3,9 @@
  */
 package org.xtext.t2.lisp.ide;
 
-import org.xtext.t2.lisp.ide.AbstractLispIdeModule;
-
 /**
  * Use this class to register ide components.
  */
 @SuppressWarnings("all")
-public class LispIdeModule extends AbstractLispIdeModule {
+public class LispIdeModule /* implements AbstractLispIdeModule  */{
 }

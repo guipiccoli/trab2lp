@@ -3,8 +3,6 @@
  */
 package org.xtext.t2.lisp.lisp;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,10 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.Model#getNumeros <em>Numeros</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.Model#getBegin <em>Begin</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.Model#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.Model#getDefine <em>Define</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.Model#getForm <em>Form</em>}</li>
  * </ul>
  *
  * @see org.xtext.t2.lisp.lisp.LispPackage#getModel()
@@ -29,81 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Numeros</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.t2.lisp.lisp.Numeros}.
+   * Returns the value of the '<em><b>Form</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Numeros</em>' containment reference list.
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getModel_Numeros()
+   * @return the value of the '<em>Form</em>' containment reference.
+   * @see #setForm(Form)
+   * @see org.xtext.t2.lisp.lisp.LispPackage#getModel_Form()
    * @model containment="true"
    * @generated
    */
-  EList<Numeros> getNumeros();
+  Form getForm();
 
   /**
-   * Returns the value of the '<em><b>Begin</b></em>' containment reference.
+   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Model#getForm <em>Form</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Begin</em>' containment reference.
-   * @see #setBegin(Begin)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getModel_Begin()
-   * @model containment="true"
+   * @param value the new value of the '<em>Form</em>' containment reference.
+   * @see #getForm()
    * @generated
    */
-  Begin getBegin();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Model#getBegin <em>Begin</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Begin</em>' containment reference.
-   * @see #getBegin()
-   * @generated
-   */
-  void setBegin(Begin value);
-
-  /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(Expression)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getModel_Expression()
-   * @model containment="true"
-   * @generated
-   */
-  Expression getExpression();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Model#getExpression <em>Expression</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
-   * @generated
-   */
-  void setExpression(Expression value);
-
-  /**
-   * Returns the value of the '<em><b>Define</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Define</em>' containment reference.
-   * @see #setDefine(Define)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getModel_Define()
-   * @model containment="true"
-   * @generated
-   */
-  Define getDefine();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Model#getDefine <em>Define</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Define</em>' containment reference.
-   * @see #getDefine()
-   * @generated
-   */
-  void setDefine(Define value);
+  void setForm(Form value);
 
 } // Model

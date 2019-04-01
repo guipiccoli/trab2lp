@@ -3,17 +3,12 @@
  */
 package org.xtext.t2.lisp.ui;
 
-import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
-import org.xtext.t2.lisp.ui.AbstractLispUiModule;
 
 /**
  * Use this class to register components to be used within the Eclipse IDE.
  */
 @FinalFieldsConstructor
 @SuppressWarnings("all")
-public class LispUiModule extends AbstractLispUiModule {
-  public LispUiModule(final AbstractUIPlugin plugin) {
-    super(plugin);
-  }
+public class LispUiModule /* implements AbstractLispUiModule  */{
 }

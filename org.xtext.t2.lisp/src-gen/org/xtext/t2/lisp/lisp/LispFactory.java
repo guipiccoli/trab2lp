@@ -33,22 +33,22 @@ public interface LispFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Begin</em>'.
+   * Returns a new object of class '<em>Form</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Begin</em>'.
+   * @return a new object of class '<em>Form</em>'.
    * @generated
    */
-  Begin createBegin();
+  Form createForm();
 
   /**
-   * Returns a new object of class '<em>Define</em>'.
+   * Returns a new object of class '<em>Definition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Define</em>'.
+   * @return a new object of class '<em>Definition</em>'.
    * @generated
    */
-  Define createDefine();
+  Definition createDefinition();
 
   /**
    * Returns a new object of class '<em>Expression</em>'.
@@ -60,31 +60,148 @@ public interface LispFactory extends EFactory
   Expression createExpression();
 
   /**
-   * Returns a new object of class '<em>Numeros</em>'.
+   * Returns a new object of class '<em>Set</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Numeros</em>'.
+   * @return a new object of class '<em>Set</em>'.
    * @generated
    */
-  Numeros createNumeros();
+  Set createSet();
 
   /**
-   * Returns a new object of class '<em>Operacoes</em>'.
+   * Returns a new object of class '<em>If</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operacoes</em>'.
+   * @return a new object of class '<em>If</em>'.
    * @generated
    */
-  Operacoes createOperacoes();
+  If createIf();
 
   /**
-   * Returns a new object of class '<em>Inteiros</em>'.
+   * Returns a new object of class '<em>Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Inteiros</em>'.
+   * @return a new object of class '<em>Constant</em>'.
    * @generated
    */
-  Inteiros createInteiros();
+  Constant createConstant();
+
+  /**
+   * Returns a new object of class '<em>Formals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Formals</em>'.
+   * @generated
+   */
+  Formals createFormals();
+
+  /**
+   * Returns a new object of class '<em>Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable Definition</em>'.
+   * @generated
+   */
+  VariableDefinition createVariableDefinition();
+
+  /**
+   * Returns a new object of class '<em>Define</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Define</em>'.
+   * @generated
+   */
+  Define createDefine();
+
+  /**
+   * Returns a new object of class '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variable</em>'.
+   * @generated
+   */
+  Variable createVariable();
+
+  /**
+   * Returns a new object of class '<em>Body</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Body</em>'.
+   * @generated
+   */
+  Body createBody();
+
+  /**
+   * Returns a new object of class '<em>Syntax Definition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Syntax Definition</em>'.
+   * @generated
+   */
+  SyntaxDefinition createSyntaxDefinition();
+
+  /**
+   * Returns a new object of class '<em>Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Keyword</em>'.
+   * @generated
+   */
+  Keyword createKeyword();
+
+  /**
+   * Returns a new object of class '<em>Syntax Binding</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Syntax Binding</em>'.
+   * @generated
+   */
+  SyntaxBinding createSyntaxBinding();
+
+  /**
+   * Returns a new object of class '<em>Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Identifier</em>'.
+   * @generated
+   */
+  Identifier createIdentifier();
+
+  /**
+   * Returns a new object of class '<em>Initial</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Initial</em>'.
+   * @generated
+   */
+  Initial createInitial();
+
+  /**
+   * Returns a new object of class '<em>Subsequent</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subsequent</em>'.
+   * @generated
+   */
+  Subsequent createSubsequent();
+
+  /**
+   * Returns a new object of class '<em>Letter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Letter</em>'.
+   * @generated
+   */
+  Letter createLetter();
+
+  /**
+   * Returns a new object of class '<em>Digit</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Digit</em>'.
+   * @generated
+   */
+  Digit createDigit();
 
   /**
    * Returns a new object of class '<em>Decimal</em>'.
@@ -94,6 +211,15 @@ public interface LispFactory extends EFactory
    * @generated
    */
   Decimal createDecimal();
+
+  /**
+   * Returns a new object of class '<em>Number</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number</em>'.
+   * @generated
+   */
+  Number createNumber();
 
   /**
    * Returns the package supported by this factory.

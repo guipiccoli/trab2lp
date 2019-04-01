@@ -14,14 +14,27 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.t2.lisp.lisp.Begin;
+import org.xtext.t2.lisp.lisp.Body;
+import org.xtext.t2.lisp.lisp.Constant;
 import org.xtext.t2.lisp.lisp.Decimal;
 import org.xtext.t2.lisp.lisp.Define;
+import org.xtext.t2.lisp.lisp.Definition;
+import org.xtext.t2.lisp.lisp.Digit;
 import org.xtext.t2.lisp.lisp.Expression;
-import org.xtext.t2.lisp.lisp.Inteiros;
+import org.xtext.t2.lisp.lisp.Form;
+import org.xtext.t2.lisp.lisp.Formals;
+import org.xtext.t2.lisp.lisp.Identifier;
+import org.xtext.t2.lisp.lisp.If;
+import org.xtext.t2.lisp.lisp.Initial;
+import org.xtext.t2.lisp.lisp.Keyword;
+import org.xtext.t2.lisp.lisp.Letter;
 import org.xtext.t2.lisp.lisp.LispPackage;
 import org.xtext.t2.lisp.lisp.Model;
-import org.xtext.t2.lisp.lisp.Operacoes;
+import org.xtext.t2.lisp.lisp.Subsequent;
+import org.xtext.t2.lisp.lisp.SyntaxBinding;
+import org.xtext.t2.lisp.lisp.SyntaxDefinition;
+import org.xtext.t2.lisp.lisp.Variable;
+import org.xtext.t2.lisp.lisp.VariableDefinition;
 import org.xtext.t2.lisp.services.LispGrammarAccess;
 
 @SuppressWarnings("all")
@@ -38,8 +51,11 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == LispPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case LispPackage.BEGIN:
-				sequence_Begin(context, (Begin) semanticObject); 
+			case LispPackage.BODY:
+				sequence_Body(context, (Body) semanticObject); 
+				return; 
+			case LispPackage.CONSTANT:
+				sequence_Constant(context, (Constant) semanticObject); 
 				return; 
 			case LispPackage.DECIMAL:
 				sequence_Decimal(context, (Decimal) semanticObject); 
@@ -47,17 +63,59 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LispPackage.DEFINE:
 				sequence_Define(context, (Define) semanticObject); 
 				return; 
+			case LispPackage.DEFINITION:
+				sequence_Definition(context, (Definition) semanticObject); 
+				return; 
+			case LispPackage.DIGIT:
+				sequence_Digit(context, (Digit) semanticObject); 
+				return; 
 			case LispPackage.EXPRESSION:
 				sequence_Expression(context, (Expression) semanticObject); 
 				return; 
-			case LispPackage.INTEIROS:
-				sequence_Inteiros(context, (Inteiros) semanticObject); 
+			case LispPackage.FORM:
+				sequence_Form(context, (Form) semanticObject); 
+				return; 
+			case LispPackage.FORMALS:
+				sequence_Formals(context, (Formals) semanticObject); 
+				return; 
+			case LispPackage.IDENTIFIER:
+				sequence_Identifier(context, (Identifier) semanticObject); 
+				return; 
+			case LispPackage.IF:
+				sequence_If(context, (If) semanticObject); 
+				return; 
+			case LispPackage.INITIAL:
+				sequence_Initial(context, (Initial) semanticObject); 
+				return; 
+			case LispPackage.KEYWORD:
+				sequence_Keyword(context, (Keyword) semanticObject); 
+				return; 
+			case LispPackage.LETTER:
+				sequence_Letter(context, (Letter) semanticObject); 
 				return; 
 			case LispPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case LispPackage.OPERACOES:
-				sequence_Operacoes(context, (Operacoes) semanticObject); 
+			case LispPackage.NUMBER:
+				sequence_Number(context, (org.xtext.t2.lisp.lisp.Number) semanticObject); 
+				return; 
+			case LispPackage.SET:
+				sequence_Set(context, (org.xtext.t2.lisp.lisp.Set) semanticObject); 
+				return; 
+			case LispPackage.SUBSEQUENT:
+				sequence_Subsequent(context, (Subsequent) semanticObject); 
+				return; 
+			case LispPackage.SYNTAX_BINDING:
+				sequence_SyntaxBinding(context, (SyntaxBinding) semanticObject); 
+				return; 
+			case LispPackage.SYNTAX_DEFINITION:
+				sequence_SyntaxDefinition(context, (SyntaxDefinition) semanticObject); 
+				return; 
+			case LispPackage.VARIABLE:
+				sequence_Variable(context, (Variable) semanticObject); 
+				return; 
+			case LispPackage.VARIABLE_DEFINITION:
+				sequence_VariableDefinition(context, (VariableDefinition) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -66,32 +124,46 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Begin returns Begin
+	 *     Body returns Body
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (definition1=Definition* expression1=Expression+)
 	 */
-	protected void sequence_Begin(ISerializationContext context, Begin semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.BEGIN__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.BEGIN__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBeginAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+	protected void sequence_Body(ISerializationContext context, Body semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Numeros returns Decimal
+	 *     Constant returns Constant
+	 *
+	 * Constraint:
+	 *     number+=Number
+	 */
+	protected void sequence_Constant(ISerializationContext context, Constant semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Decimal returns Decimal
 	 *
 	 * Constraint:
-	 *     (value=INT value=INT)
+	 *     (value=INT value1=INT)
 	 */
 	protected void sequence_Decimal(ISerializationContext context, Decimal semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.DECIMAL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.DECIMAL__VALUE));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.DECIMAL__VALUE1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.DECIMAL__VALUE1));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDecimalAccess().getValueINTTerminalRuleCall_0_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getDecimalAccess().getValue1INTTerminalRuleCall_2_0(), semanticObject.getValue1());
+		feeder.finish();
 	}
 	
 	
@@ -100,18 +172,48 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Define returns Define
 	 *
 	 * Constraint:
-	 *     (name=ID command=Command)
+	 *     ((variable=Variable expression=Expression) | (variable=Variable variable1=Variable* body=Body) | (variable=Variable variable1=Variable* body=Body))
 	 */
 	protected void sequence_Define(ISerializationContext context, Define semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Definition returns Definition
+	 *
+	 * Constraint:
+	 *     (name=ID definition=Definition)
+	 */
+	protected void sequence_Definition(ISerializationContext context, Definition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.DEFINE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.DEFINE__NAME));
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.DEFINE__COMMAND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.DEFINE__COMMAND));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.DEFINITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.DEFINITION__NAME));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.DEFINITION__DEFINITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.DEFINITION__DEFINITION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDefineAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getDefineAccess().getCommandCommandParserRuleCall_2_0(), semanticObject.getCommand());
+		feeder.accept(grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDefinitionAccess().getDefinitionDefinitionParserRuleCall_2_0(), semanticObject.getDefinition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Digit returns Digit
+	 *
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_Digit(ISerializationContext context, Digit semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.DIGIT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.DIGIT__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDigitAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -121,7 +223,7 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     (operacoes=Operacoes primeiro=Numeros*)
+	 *     (constant=Constant | variable4=Variable | (name=ID formals=Formals body1=Body))
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -130,19 +232,102 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Numeros returns Inteiros
-	 *     Inteiros returns Inteiros
+	 *     Form returns Form
 	 *
 	 * Constraint:
-	 *     value=INT
+	 *     (definition=Definition | expression2=Expression)
 	 */
-	protected void sequence_Inteiros(ISerializationContext context, Inteiros semanticObject) {
+	protected void sequence_Form(ISerializationContext context, Form semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Formals returns Formals
+	 *
+	 * Constraint:
+	 *     (variable5=Variable | variable5=Variable+ | (variable5=Variable variable6=Variable))
+	 */
+	protected void sequence_Formals(ISerializationContext context, Formals semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Identifier returns Identifier
+	 *
+	 * Constraint:
+	 *     (initial=Initial subsequent=Subsequent*)
+	 */
+	protected void sequence_Identifier(ISerializationContext context, Identifier semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     If returns If
+	 *
+	 * Constraint:
+	 *     ((expression5=Expression expression6=Expression expression7=Expression) | (expression3=Expression expression4=Expression))
+	 */
+	protected void sequence_If(ISerializationContext context, If semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Initial returns Initial
+	 *
+	 * Constraint:
+	 *     letter=Letter
+	 */
+	protected void sequence_Initial(ISerializationContext context, Initial semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.NUMEROS__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.NUMEROS__VALUE));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.INITIAL__LETTER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.INITIAL__LETTER));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInteirosAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getInitialAccess().getLetterLetterParserRuleCall_0(), semanticObject.getLetter());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Keyword returns Keyword
+	 *
+	 * Constraint:
+	 *     identifier1=Identifier
+	 */
+	protected void sequence_Keyword(ISerializationContext context, Keyword semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.KEYWORD__IDENTIFIER1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.KEYWORD__IDENTIFIER1));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getKeywordAccess().getIdentifier1IdentifierParserRuleCall_0(), semanticObject.getIdentifier1());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Letter returns Letter
+	 *
+	 * Constraint:
+	 *     value=ID
+	 */
+	protected void sequence_Letter(ISerializationContext context, Letter semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.LETTER__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.LETTER__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLetterAccess().getValueIDTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -152,7 +337,7 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (numeros+=Numeros+ | begin=Begin | expression=Expression | define=Define)
+	 *     form=Form+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -161,18 +346,129 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Operacoes returns Operacoes
+	 *     Number returns Number
 	 *
 	 * Constraint:
-	 *     value='+'
+	 *     (digit=Digit | decimal=Decimal)
 	 */
-	protected void sequence_Operacoes(ISerializationContext context, Operacoes semanticObject) {
+	protected void sequence_Number(ISerializationContext context, org.xtext.t2.lisp.lisp.Number semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Set returns Set
+	 *
+	 * Constraint:
+	 *     (variable3=Variable expression10=Expression)
+	 */
+	protected void sequence_Set(ISerializationContext context, org.xtext.t2.lisp.lisp.Set semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.OPERACOES__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.OPERACOES__VALUE));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.SET__VARIABLE3) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.SET__VARIABLE3));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.SET__EXPRESSION10) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.SET__EXPRESSION10));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getSetAccess().getVariable3VariableParserRuleCall_0_0(), semanticObject.getVariable3());
+		feeder.accept(grammarAccess.getSetAccess().getExpression10ExpressionParserRuleCall_1_0(), semanticObject.getExpression10());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Subsequent returns Subsequent
+	 *
+	 * Constraint:
+	 *     (initial=Initial | digit=Digit)
+	 */
+	protected void sequence_Subsequent(ISerializationContext context, Subsequent semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SyntaxBinding returns SyntaxBinding
+	 *
+	 * Constraint:
+	 *     (keyword1=Keyword transformerExpression=Expression)
+	 */
+	protected void sequence_SyntaxBinding(ISerializationContext context, SyntaxBinding semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.SYNTAX_BINDING__KEYWORD1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.SYNTAX_BINDING__KEYWORD1));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.SYNTAX_BINDING__TRANSFORMER_EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.SYNTAX_BINDING__TRANSFORMER_EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSyntaxBindingAccess().getKeyword1KeywordParserRuleCall_0_0(), semanticObject.getKeyword1());
+		feeder.accept(grammarAccess.getSyntaxBindingAccess().getTransformerExpressionExpressionParserRuleCall_1_0(), semanticObject.getTransformerExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SyntaxDefinition returns SyntaxDefinition
+	 *
+	 * Constraint:
+	 *     (name=ID keyword=Keyword transformerExpression=Expression)
+	 */
+	protected void sequence_SyntaxDefinition(ISerializationContext context, SyntaxDefinition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.SYNTAX_DEFINITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.SYNTAX_DEFINITION__NAME));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.SYNTAX_DEFINITION__KEYWORD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.SYNTAX_DEFINITION__KEYWORD));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.SYNTAX_DEFINITION__TRANSFORMER_EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.SYNTAX_DEFINITION__TRANSFORMER_EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSyntaxDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSyntaxDefinitionAccess().getKeywordKeywordParserRuleCall_2_0(), semanticObject.getKeyword());
+		feeder.accept(grammarAccess.getSyntaxDefinitionAccess().getTransformerExpressionExpressionParserRuleCall_3_0(), semanticObject.getTransformerExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     VariableDefinition returns VariableDefinition
+	 *
+	 * Constraint:
+	 *     (name=ID define=Define)
+	 */
+	protected void sequence_VariableDefinition(ISerializationContext context, VariableDefinition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.VARIABLE_DEFINITION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.VARIABLE_DEFINITION__NAME));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.VARIABLE_DEFINITION__DEFINE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.VARIABLE_DEFINITION__DEFINE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableDefinitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableDefinitionAccess().getDefineDefineParserRuleCall_2_0(), semanticObject.getDefine());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Variable returns Variable
+	 *
+	 * Constraint:
+	 *     identifier=Identifier
+	 */
+	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.VARIABLE__IDENTIFIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.VARIABLE__IDENTIFIER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableAccess().getIdentifierIdentifierParserRuleCall_0(), semanticObject.getIdentifier());
 		feeder.finish();
 	}
 	

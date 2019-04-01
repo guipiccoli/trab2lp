@@ -8,7 +8,28 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.xtext.t2.lisp.lisp.*;
+import org.xtext.t2.lisp.lisp.Body;
+import org.xtext.t2.lisp.lisp.Constant;
+import org.xtext.t2.lisp.lisp.Decimal;
+import org.xtext.t2.lisp.lisp.Define;
+import org.xtext.t2.lisp.lisp.Definition;
+import org.xtext.t2.lisp.lisp.Digit;
+import org.xtext.t2.lisp.lisp.Expression;
+import org.xtext.t2.lisp.lisp.Form;
+import org.xtext.t2.lisp.lisp.Formals;
+import org.xtext.t2.lisp.lisp.Identifier;
+import org.xtext.t2.lisp.lisp.If;
+import org.xtext.t2.lisp.lisp.Initial;
+import org.xtext.t2.lisp.lisp.Keyword;
+import org.xtext.t2.lisp.lisp.Letter;
+import org.xtext.t2.lisp.lisp.LispPackage;
+import org.xtext.t2.lisp.lisp.Model;
+import org.xtext.t2.lisp.lisp.Set;
+import org.xtext.t2.lisp.lisp.Subsequent;
+import org.xtext.t2.lisp.lisp.SyntaxBinding;
+import org.xtext.t2.lisp.lisp.SyntaxDefinition;
+import org.xtext.t2.lisp.lisp.Variable;
+import org.xtext.t2.lisp.lisp.VariableDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,17 +101,17 @@ public class LispSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LispPackage.BEGIN:
+      case LispPackage.FORM:
       {
-        Begin begin = (Begin)theEObject;
-        T result = caseBegin(begin);
+        Form form = (Form)theEObject;
+        T result = caseForm(form);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LispPackage.DEFINE:
+      case LispPackage.DEFINITION:
       {
-        Define define = (Define)theEObject;
-        T result = caseDefine(define);
+        Definition definition = (Definition)theEObject;
+        T result = caseDefinition(definition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -101,25 +122,115 @@ public class LispSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LispPackage.NUMEROS:
+      case LispPackage.SET:
       {
-        Numeros numeros = (Numeros)theEObject;
-        T result = caseNumeros(numeros);
+        Set set = (Set)theEObject;
+        T result = caseSet(set);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LispPackage.OPERACOES:
+      case LispPackage.IF:
       {
-        Operacoes operacoes = (Operacoes)theEObject;
-        T result = caseOperacoes(operacoes);
+        If if_ = (If)theEObject;
+        T result = caseIf(if_);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case LispPackage.INTEIROS:
+      case LispPackage.CONSTANT:
       {
-        Inteiros inteiros = (Inteiros)theEObject;
-        T result = caseInteiros(inteiros);
-        if (result == null) result = caseNumeros(inteiros);
+        Constant constant = (Constant)theEObject;
+        T result = caseConstant(constant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.FORMALS:
+      {
+        Formals formals = (Formals)theEObject;
+        T result = caseFormals(formals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.VARIABLE_DEFINITION:
+      {
+        VariableDefinition variableDefinition = (VariableDefinition)theEObject;
+        T result = caseVariableDefinition(variableDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.DEFINE:
+      {
+        Define define = (Define)theEObject;
+        T result = caseDefine(define);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.VARIABLE:
+      {
+        Variable variable = (Variable)theEObject;
+        T result = caseVariable(variable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.BODY:
+      {
+        Body body = (Body)theEObject;
+        T result = caseBody(body);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.SYNTAX_DEFINITION:
+      {
+        SyntaxDefinition syntaxDefinition = (SyntaxDefinition)theEObject;
+        T result = caseSyntaxDefinition(syntaxDefinition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.KEYWORD:
+      {
+        Keyword keyword = (Keyword)theEObject;
+        T result = caseKeyword(keyword);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.SYNTAX_BINDING:
+      {
+        SyntaxBinding syntaxBinding = (SyntaxBinding)theEObject;
+        T result = caseSyntaxBinding(syntaxBinding);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.IDENTIFIER:
+      {
+        Identifier identifier = (Identifier)theEObject;
+        T result = caseIdentifier(identifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.INITIAL:
+      {
+        Initial initial = (Initial)theEObject;
+        T result = caseInitial(initial);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.SUBSEQUENT:
+      {
+        Subsequent subsequent = (Subsequent)theEObject;
+        T result = caseSubsequent(subsequent);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.LETTER:
+      {
+        Letter letter = (Letter)theEObject;
+        T result = caseLetter(letter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.DIGIT:
+      {
+        Digit digit = (Digit)theEObject;
+        T result = caseDigit(digit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -127,7 +238,13 @@ public class LispSwitch<T> extends Switch<T>
       {
         Decimal decimal = (Decimal)theEObject;
         T result = caseDecimal(decimal);
-        if (result == null) result = caseNumeros(decimal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.NUMBER:
+      {
+        org.xtext.t2.lisp.lisp.Number number = (org.xtext.t2.lisp.lisp.Number)theEObject;
+        T result = caseNumber(number);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -152,33 +269,33 @@ public class LispSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Begin</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Form</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Begin</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Form</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBegin(Begin object)
+  public T caseForm(Form object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Define</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Definition</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Define</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Definition</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDefine(Define object)
+  public T caseDefinition(Definition object)
   {
     return null;
   }
@@ -200,49 +317,257 @@ public class LispSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Numeros</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Set</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Numeros</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Set</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNumeros(Numeros object)
+  public T caseSet(Set object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Operacoes</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>If</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Operacoes</em>'.
+   * @return the result of interpreting the object as an instance of '<em>If</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseOperacoes(Operacoes object)
+  public T caseIf(If object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Inteiros</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Constant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Inteiros</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Constant</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInteiros(Inteiros object)
+  public T caseConstant(Constant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Formals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Formals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFormals(Formals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariableDefinition(VariableDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Define</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Define</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefine(Define object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseVariable(Variable object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Body</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Body</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBody(Body object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Syntax Definition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Syntax Definition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSyntaxDefinition(SyntaxDefinition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Keyword</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Keyword</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseKeyword(Keyword object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Syntax Binding</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Syntax Binding</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSyntaxBinding(SyntaxBinding object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Identifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIdentifier(Identifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Initial</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Initial</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInitial(Initial object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subsequent</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subsequent</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubsequent(Subsequent object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Letter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Letter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLetter(Letter object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Digit</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Digit</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDigit(Digit object)
   {
     return null;
   }
@@ -259,6 +584,22 @@ public class LispSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDecimal(Decimal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumber(org.xtext.t2.lisp.lisp.Number object)
   {
     return null;
   }

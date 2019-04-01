@@ -1,0 +1,146 @@
+grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
+
+generate lisp "http://www.xtext.org/t2/lisp/Lisp"
+
+
+
+
+
+/*Model:
+	numeros+=Numeros*|
+	begin=Begin |
+	expression=Expression|
+	define=Define;
+	
+
+
+Begin: 
+	'begin' name=ID;
+
+Define:
+	'define' name=ID command=Command;
+
+Command:
+	'0'
+;
+
+Expression:
+	'(' operacoes=Operacoes (primeiro=Numeros)* ')'
+;
+
+Numeros:
+	Inteiros | Decimal;
+
+Operacoes:
+	value = '+'| '-' | '*'| '/'|'square';
+
+
+Inteiros:
+	value = INT;
+
+Decimal:
+	value=INT '.' value=INT;
+*/
+
+Model:
+	form=Form*
+;
+Form:
+	definition=Definition | expression2=Expression
+;
+Definition:
+	variableDefinition=VariableDefinition |
+	syntaxDefinition=SyntaxDefinition|
+	'begin' name=ID definition=Definition|
+	'let-syntax' name=ID syntaxBinding=SyntaxBinding* definition0=Definition*|
+	'letrec-syntax' name=ID  syntaxBinding=SyntaxBinding* definition1=Definition*
+	//derivedDefinition=DerivedDefinition
+;
+
+
+Expression:
+	constant=Constant|
+	variable4=Variable|
+	'lambda'name=ID  formals=Formals body1=Body|
+	'if'name=ID if=If |
+	'set!'name=ID set=Set|
+	//application=Application|
+	'let-syntax'name=ID  syntaxBinding2=SyntaxBinding* expression8=Expression+|
+	'letrec-syntax'name=ID syntaxBinding2=SyntaxBinding* expression8=Expression+
+	//derivedExpression=Expression
+;
+Set:
+	variable3=Variable expression10=Expression
+;
+If:
+	expression5=Expression expression6=Expression expression7=Expression|
+	expression3=Expression expression4=Expression
+;
+Constant:
+	//boolean=Boolean|
+	number+=Number
+;
+
+/*Boolean:
+	'true'|'false'
+;
+*/
+Formals:
+	variable5=Variable|
+	variable5=Variable*|
+	variable5=Variable'.'variable6=Variable
+;
+/*Application:
+	expression6=Expression expression15=Expression
+;*/
+VariableDefinition:
+	'define'name=ID define=Define  
+;
+
+Define:
+	variable=Variable expression=Expression |
+	variable=Variable variable1=Variable* body=Body|
+	variable=Variable variable1=Variable* '.' body=Body
+;
+Variable:
+	identifier=Identifier
+;
+Body:
+	definition1=Definition* expression1=Expression+
+;
+SyntaxDefinition:
+	'define-syntax'name=ID keyword=Keyword transformerExpression=Expression
+;
+Keyword:
+	identifier1=Identifier
+;
+SyntaxBinding:
+	keyword1=Keyword transformerExpression=Expression
+;
+Identifier:
+	initial=Initial subsequent=Subsequent*|
+	'+'|'-'|'...'
+;
+Initial:
+	letter=Letter 
+	//'!'|'$'|'%'|'&'|'*'|'/'|':'|'<'|'='|'>'|'?'|'~'|'_'|'^'
+;
+Subsequent:
+	initial=Initial|
+	digit=Digit|
+	'.'|'+'|'-'
+;
+Letter:
+	value=ID
+;
+Digit:
+	value=INT
+;
+Decimal:
+	value=INT '.'value1=INT
+;
+Number:
+	digit=Digit | decimal=Decimal
+;
+
+

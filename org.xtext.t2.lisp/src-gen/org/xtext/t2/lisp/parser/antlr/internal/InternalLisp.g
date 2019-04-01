@@ -77,40 +77,56 @@ ruleModel returns [EObject current=null]
 }:
 	(
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getModelAccess().getNumerosNumerosParserRuleCall_0_0());
+			{
+				newCompositeNode(grammarAccess.getModelAccess().getFormFormParserRuleCall_0());
+			}
+			lv_form_0_0=ruleForm
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getModelRule());
 				}
-				lv_numeros_0_0=ruleNumeros
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
-					}
-					add(
-						$current,
-						"numeros",
-						lv_numeros_0_0,
-						"org.xtext.t2.lisp.Lisp.Numeros");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		    |
+				set(
+					$current,
+					"form",
+					lv_form_0_0,
+					"org.xtext.t2.lisp.Lisp.Form");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)*
+;
+
+// Entry rule entryRuleForm
+entryRuleForm returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFormRule()); }
+	iv_ruleForm=ruleForm
+	{ $current=$iv_ruleForm.current; }
+	EOF;
+
+// Rule Form
+ruleForm returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getBeginBeginParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getFormAccess().getDefinitionDefinitionParserRuleCall_0_0());
 				}
-				lv_begin_1_0=ruleBegin
+				lv_definition_0_0=ruleDefinition
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getFormRule());
 					}
 					set(
 						$current,
-						"begin",
-						lv_begin_1_0,
-						"org.xtext.t2.lisp.Lisp.Begin");
+						"definition",
+						lv_definition_0_0,
+						"org.xtext.t2.lisp.Lisp.Definition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -119,38 +135,18 @@ ruleModel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getModelAccess().getExpressionExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getFormAccess().getExpression2ExpressionParserRuleCall_1_0());
 				}
-				lv_expression_2_0=ruleExpression
+				lv_expression2_1_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+						$current = createModelElementForParent(grammarAccess.getFormRule());
 					}
 					set(
 						$current,
-						"expression",
-						lv_expression_2_0,
+						"expression2",
+						lv_expression2_1_0,
 						"org.xtext.t2.lisp.Lisp.Expression");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		    |
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getModelAccess().getDefineDefineParserRuleCall_3_0());
-				}
-				lv_define_3_0=ruleDefine
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
-					}
-					set(
-						$current,
-						"define",
-						lv_define_3_0,
-						"org.xtext.t2.lisp.Lisp.Define");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -158,15 +154,15 @@ ruleModel returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleBegin
-entryRuleBegin returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBeginRule()); }
-	iv_ruleBegin=ruleBegin
-	{ $current=$iv_ruleBegin.current; }
+// Entry rule entryRuleDefinition
+entryRuleDefinition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDefinitionRule()); }
+	iv_ruleDefinition=ruleDefinition
+	{ $current=$iv_ruleDefinition.current; }
 	EOF;
 
-// Rule Begin
-ruleBegin returns [EObject current=null]
+// Rule Definition
+ruleDefinition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -176,17 +172,17 @@ ruleBegin returns [EObject current=null]
 	(
 		otherlv_0='begin'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getBeginAccess().getBeginKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getDefinitionAccess().getBeginKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getBeginAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getDefinitionAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBeginRule());
+						$current = createModelElement(grammarAccess.getDefinitionRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -194,6 +190,285 @@ ruleBegin returns [EObject current=null]
 						lv_name_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDefinitionAccess().getDefinitionDefinitionParserRuleCall_2_0());
+				}
+				lv_definition_2_0=ruleDefinition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDefinitionRule());
+					}
+					set(
+						$current,
+						"definition",
+						lv_definition_2_0,
+						"org.xtext.t2.lisp.Lisp.Definition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleExpression
+entryRuleExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getExpressionRule()); }
+	iv_ruleExpression=ruleExpression
+	{ $current=$iv_ruleExpression.current; }
+	EOF;
+
+// Rule Expression
+ruleExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getConstantConstantParserRuleCall_0_0());
+				}
+				lv_constant_0_0=ruleConstant
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getExpressionRule());
+					}
+					set(
+						$current,
+						"constant",
+						lv_constant_0_0,
+						"org.xtext.t2.lisp.Lisp.Constant");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getExpressionAccess().getVariable4VariableParserRuleCall_1_0());
+				}
+				lv_variable4_1_0=ruleVariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getExpressionRule());
+					}
+					set(
+						$current,
+						"variable4",
+						lv_variable4_1_0,
+						"org.xtext.t2.lisp.Lisp.Variable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			otherlv_2='lambda'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getExpressionAccess().getLambdaKeyword_2_0());
+			}
+			(
+				(
+					lv_name_3_0=RULE_ID
+					{
+						newLeafNode(lv_name_3_0, grammarAccess.getExpressionAccess().getNameIDTerminalRuleCall_2_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getExpressionRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"name",
+							lv_name_3_0,
+							"org.eclipse.xtext.common.Terminals.ID");
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getExpressionAccess().getFormalsFormalsParserRuleCall_2_2_0());
+					}
+					lv_formals_4_0=ruleFormals
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getExpressionRule());
+						}
+						set(
+							$current,
+							"formals",
+							lv_formals_4_0,
+							"org.xtext.t2.lisp.Lisp.Formals");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getExpressionAccess().getBody1BodyParserRuleCall_2_3_0());
+					}
+					lv_body1_5_0=ruleBody
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getExpressionRule());
+						}
+						set(
+							$current,
+							"body1",
+							lv_body1_5_0,
+							"org.xtext.t2.lisp.Lisp.Body");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleConstant
+entryRuleConstant returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConstantRule()); }
+	iv_ruleConstant=ruleConstant
+	{ $current=$iv_ruleConstant.current; }
+	EOF;
+
+// Rule Constant
+ruleConstant returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getConstantAccess().getNumberNumberParserRuleCall_0());
+			}
+			lv_number_0_0=ruleNumber
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getConstantRule());
+				}
+				add(
+					$current,
+					"number",
+					lv_number_0_0,
+					"org.xtext.t2.lisp.Lisp.Number");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleFormals
+entryRuleFormals returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFormalsRule()); }
+	iv_ruleFormals=ruleFormals
+	{ $current=$iv_ruleFormals.current; }
+	EOF;
+
+// Rule Formals
+ruleFormals returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFormalsAccess().getVariable5VariableParserRuleCall_0_0());
+				}
+				lv_variable5_0_0=ruleVariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFormalsRule());
+					}
+					set(
+						$current,
+						"variable5",
+						lv_variable5_0_0,
+						"org.xtext.t2.lisp.Lisp.Variable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFormalsAccess().getVariable5VariableParserRuleCall_1_0());
+				}
+				lv_variable5_1_0=ruleVariable
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFormalsRule());
+					}
+					set(
+						$current,
+						"variable5",
+						lv_variable5_1_0,
+						"org.xtext.t2.lisp.Lisp.Variable");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		    |
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFormalsAccess().getVariable5VariableParserRuleCall_2_0_0());
+					}
+					lv_variable5_2_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFormalsRule());
+						}
+						set(
+							$current,
+							"variable5",
+							lv_variable5_2_0,
+							"org.xtext.t2.lisp.Lisp.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3='.'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getFormalsAccess().getFullStopKeyword_2_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getFormalsAccess().getVariable6VariableParserRuleCall_2_2_0());
+					}
+					lv_variable6_4_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFormalsRule());
+						}
+						set(
+							$current,
+							"variable6",
+							lv_variable6_4_0,
+							"org.xtext.t2.lisp.Lisp.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
 	)
@@ -215,81 +490,182 @@ ruleDefine returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='define'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getDefineAccess().getDefineKeyword_0());
-		}
 		(
 			(
-				lv_name_1_0=RULE_ID
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getDefineAccess().getNameIDTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefineRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getVariableVariableParserRuleCall_0_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
+					lv_variable_0_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"variable",
+							lv_variable_0_0,
+							"org.xtext.t2.lisp.Lisp.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getExpressionExpressionParserRuleCall_0_1_0());
+					}
+					lv_expression_1_0=ruleExpression
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"expression",
+							lv_expression_1_0,
+							"org.xtext.t2.lisp.Lisp.Expression");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
+		    |
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getDefineAccess().getCommandCommandParserRuleCall_2_0());
-				}
-				lv_command_2_0=ruleCommand
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getDefineRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getVariableVariableParserRuleCall_1_0_0());
 					}
-					set(
-						$current,
-						"command",
-						lv_command_2_0,
-						"org.xtext.t2.lisp.Lisp.Command");
-					afterParserOrEnumRuleCall();
-				}
+					lv_variable_2_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"variable",
+							lv_variable_2_0,
+							"org.xtext.t2.lisp.Lisp.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getVariable1VariableParserRuleCall_1_1_0());
+					}
+					lv_variable1_3_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"variable1",
+							lv_variable1_3_0,
+							"org.xtext.t2.lisp.Lisp.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getBodyBodyParserRuleCall_1_2_0());
+					}
+					lv_body_4_0=ruleBody
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"body",
+							lv_body_4_0,
+							"org.xtext.t2.lisp.Lisp.Body");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getVariableVariableParserRuleCall_2_0_0());
+					}
+					lv_variable_5_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"variable",
+							lv_variable_5_0,
+							"org.xtext.t2.lisp.Lisp.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getVariable1VariableParserRuleCall_2_1_0());
+					}
+					lv_variable1_6_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"variable1",
+							lv_variable1_6_0,
+							"org.xtext.t2.lisp.Lisp.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_7='.'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getDefineAccess().getFullStopKeyword_2_2());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getDefineAccess().getBodyBodyParserRuleCall_2_3_0());
+					}
+					lv_body_8_0=ruleBody
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getDefineRule());
+						}
+						set(
+							$current,
+							"body",
+							lv_body_8_0,
+							"org.xtext.t2.lisp.Lisp.Body");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
 	)
 ;
 
-// Entry rule entryRuleCommand
-entryRuleCommand returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getCommandRule()); }
-	iv_ruleCommand=ruleCommand
-	{ $current=$iv_ruleCommand.current.getText(); }
+// Entry rule entryRuleVariable
+entryRuleVariable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getVariableRule()); }
+	iv_ruleVariable=ruleVariable
+	{ $current=$iv_ruleVariable.current; }
 	EOF;
 
-// Rule Command
-ruleCommand returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='0'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getCommandAccess().getDigitZeroKeyword());
-	}
-;
-
-// Entry rule entryRuleExpression
-entryRuleExpression returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getExpressionRule()); }
-	iv_ruleExpression=ruleExpression
-	{ $current=$iv_ruleExpression.current; }
-	EOF;
-
-// Rule Expression
-ruleExpression returns [EObject current=null]
+// Rule Variable
+ruleVariable returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -297,64 +673,92 @@ ruleExpression returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='('
-		{
-			newLeafNode(otherlv_0, grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_0());
-		}
 		(
-			(
-				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getOperacoesOperacoesParserRuleCall_1_0());
+			{
+				newCompositeNode(grammarAccess.getVariableAccess().getIdentifierIdentifierParserRuleCall_0());
+			}
+			lv_identifier_0_0=ruleIdentifier
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getVariableRule());
 				}
-				lv_operacoes_1_0=ruleOperacoes
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getExpressionRule());
-					}
-					set(
-						$current,
-						"operacoes",
-						lv_operacoes_1_0,
-						"org.xtext.t2.lisp.Lisp.Operacoes");
-					afterParserOrEnumRuleCall();
-				}
-			)
+				set(
+					$current,
+					"identifier",
+					lv_identifier_0_0,
+					"org.xtext.t2.lisp.Lisp.Identifier");
+				afterParserOrEnumRuleCall();
+			}
 		)
+	)
+;
+
+// Entry rule entryRuleBody
+entryRuleBody returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBodyRule()); }
+	iv_ruleBody=ruleBody
+	{ $current=$iv_ruleBody.current; }
+	EOF;
+
+// Rule Body
+ruleBody returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getExpressionAccess().getPrimeiroNumerosParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getBodyAccess().getDefinition1DefinitionParserRuleCall_0_0());
 				}
-				lv_primeiro_2_0=ruleNumeros
+				lv_definition1_0_0=ruleDefinition
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getExpressionRule());
+						$current = createModelElementForParent(grammarAccess.getBodyRule());
 					}
 					set(
 						$current,
-						"primeiro",
-						lv_primeiro_2_0,
-						"org.xtext.t2.lisp.Lisp.Numeros");
+						"definition1",
+						lv_definition1_0_0,
+						"org.xtext.t2.lisp.Lisp.Definition");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_3());
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBodyAccess().getExpression1ExpressionParserRuleCall_1_0());
+				}
+				lv_expression1_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBodyRule());
+					}
+					set(
+						$current,
+						"expression1",
+						lv_expression1_1_0,
+						"org.xtext.t2.lisp.Lisp.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)+
 	)
 ;
 
-// Entry rule entryRuleNumeros
-entryRuleNumeros returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getNumerosRule()); }
-	iv_ruleNumeros=ruleNumeros
-	{ $current=$iv_ruleNumeros.current; }
+// Entry rule entryRuleKeyword
+entryRuleKeyword returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getKeywordRule()); }
+	iv_ruleKeyword=ruleKeyword
+	{ $current=$iv_ruleKeyword.current; }
 	EOF;
 
-// Rule Numeros
-ruleNumeros returns [EObject current=null]
+// Rule Keyword
+ruleKeyword returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -362,35 +766,35 @@ ruleNumeros returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getNumerosAccess().getInteirosParserRuleCall_0());
-		}
-		this_Inteiros_0=ruleInteiros
-		{
-			$current = $this_Inteiros_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getNumerosAccess().getDecimalParserRuleCall_1());
-		}
-		this_Decimal_1=ruleDecimal
-		{
-			$current = $this_Decimal_1.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			{
+				newCompositeNode(grammarAccess.getKeywordAccess().getIdentifier1IdentifierParserRuleCall_0());
+			}
+			lv_identifier1_0_0=ruleIdentifier
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getKeywordRule());
+				}
+				set(
+					$current,
+					"identifier1",
+					lv_identifier1_0_0,
+					"org.xtext.t2.lisp.Lisp.Identifier");
+				afterParserOrEnumRuleCall();
+			}
+		)
 	)
 ;
 
-// Entry rule entryRuleOperacoes
-entryRuleOperacoes returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getOperacoesRule()); }
-	iv_ruleOperacoes=ruleOperacoes
-	{ $current=$iv_ruleOperacoes.current; }
+// Entry rule entryRuleIdentifier
+entryRuleIdentifier returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIdentifierRule()); }
+	iv_ruleIdentifier=ruleIdentifier
+	{ $current=$iv_ruleIdentifier.current; }
 	EOF;
 
-// Rule Operacoes
-ruleOperacoes returns [EObject current=null]
+// Rule Identifier
+ruleIdentifier returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -400,50 +804,215 @@ ruleOperacoes returns [EObject current=null]
 	(
 		(
 			(
-				lv_value_0_0='+'
-				{
-					newLeafNode(lv_value_0_0, grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperacoesRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getIdentifierAccess().getInitialInitialParserRuleCall_0_0_0());
 					}
-					setWithLastConsumed($current, "value", lv_value_0_0, "+");
-				}
+					lv_initial_0_0=ruleInitial
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIdentifierRule());
+						}
+						set(
+							$current,
+							"initial",
+							lv_initial_0_0,
+							"org.xtext.t2.lisp.Lisp.Initial");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getIdentifierAccess().getSubsequentSubsequentParserRuleCall_0_1_0());
+					}
+					lv_subsequent_1_0=ruleSubsequent
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getIdentifierRule());
+						}
+						set(
+							$current,
+							"subsequent",
+							lv_subsequent_1_0,
+							"org.xtext.t2.lisp.Lisp.Subsequent");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
 		)
 		    |
-		otherlv_1='-'
+		otherlv_2='+'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getOperacoesAccess().getHyphenMinusKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getIdentifierAccess().getPlusSignKeyword_1());
 		}
 		    |
-		otherlv_2='*'
+		otherlv_3='-'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getOperacoesAccess().getAsteriskKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getIdentifierAccess().getHyphenMinusKeyword_2());
 		}
 		    |
-		otherlv_3='/'
+		otherlv_4='...'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getOperacoesAccess().getSolidusKeyword_3());
-		}
-		    |
-		otherlv_4='square'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getOperacoesAccess().getSquareKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getIdentifierAccess().getFullStopFullStopFullStopKeyword_3());
 		}
 	)
 ;
 
-// Entry rule entryRuleInteiros
-entryRuleInteiros returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getInteirosRule()); }
-	iv_ruleInteiros=ruleInteiros
-	{ $current=$iv_ruleInteiros.current; }
+// Entry rule entryRuleInitial
+entryRuleInitial returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getInitialRule()); }
+	iv_ruleInitial=ruleInitial
+	{ $current=$iv_ruleInitial.current; }
 	EOF;
 
-// Rule Inteiros
-ruleInteiros returns [EObject current=null]
+// Rule Initial
+ruleInitial returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getInitialAccess().getLetterLetterParserRuleCall_0());
+			}
+			lv_letter_0_0=ruleLetter
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getInitialRule());
+				}
+				set(
+					$current,
+					"letter",
+					lv_letter_0_0,
+					"org.xtext.t2.lisp.Lisp.Letter");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleSubsequent
+entryRuleSubsequent returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSubsequentRule()); }
+	iv_ruleSubsequent=ruleSubsequent
+	{ $current=$iv_ruleSubsequent.current; }
+	EOF;
+
+// Rule Subsequent
+ruleSubsequent returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSubsequentAccess().getInitialInitialParserRuleCall_0_0());
+				}
+				lv_initial_0_0=ruleInitial
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSubsequentRule());
+					}
+					set(
+						$current,
+						"initial",
+						lv_initial_0_0,
+						"org.xtext.t2.lisp.Lisp.Initial");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSubsequentAccess().getDigitDigitParserRuleCall_1_0());
+				}
+				lv_digit_1_0=ruleDigit
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSubsequentRule());
+					}
+					set(
+						$current,
+						"digit",
+						lv_digit_1_0,
+						"org.xtext.t2.lisp.Lisp.Digit");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		otherlv_2='.'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSubsequentAccess().getFullStopKeyword_2());
+		}
+		    |
+		otherlv_3='+'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSubsequentAccess().getPlusSignKeyword_3());
+		}
+		    |
+		otherlv_4='-'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getSubsequentAccess().getHyphenMinusKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleLetter
+entryRuleLetter returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLetterRule()); }
+	iv_ruleLetter=ruleLetter
+	{ $current=$iv_ruleLetter.current; }
+	EOF;
+
+// Rule Letter
+ruleLetter returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_value_0_0=RULE_ID
+			{
+				newLeafNode(lv_value_0_0, grammarAccess.getLetterAccess().getValueIDTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getLetterRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"value",
+					lv_value_0_0,
+					"org.eclipse.xtext.common.Terminals.ID");
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleDigit
+entryRuleDigit returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDigitRule()); }
+	iv_ruleDigit=ruleDigit
+	{ $current=$iv_ruleDigit.current; }
+	EOF;
+
+// Rule Digit
+ruleDigit returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -454,11 +1023,11 @@ ruleInteiros returns [EObject current=null]
 		(
 			lv_value_0_0=RULE_INT
 			{
-				newLeafNode(lv_value_0_0, grammarAccess.getInteirosAccess().getValueINTTerminalRuleCall_0());
+				newLeafNode(lv_value_0_0, grammarAccess.getDigitAccess().getValueINTTerminalRuleCall_0());
 			}
 			{
 				if ($current==null) {
-					$current = createModelElement(grammarAccess.getInteirosRule());
+					$current = createModelElement(grammarAccess.getDigitRule());
 				}
 				setWithLastConsumed(
 					$current,
@@ -510,9 +1079,9 @@ ruleDecimal returns [EObject current=null]
 		}
 		(
 			(
-				lv_value_2_0=RULE_INT
+				lv_value1_2_0=RULE_INT
 				{
-					newLeafNode(lv_value_2_0, grammarAccess.getDecimalAccess().getValueINTTerminalRuleCall_2_0());
+					newLeafNode(lv_value1_2_0, grammarAccess.getDecimalAccess().getValue1INTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -520,9 +1089,67 @@ ruleDecimal returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"value",
-						lv_value_2_0,
+						"value1",
+						lv_value1_2_0,
 						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleNumber
+entryRuleNumber returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNumberRule()); }
+	iv_ruleNumber=ruleNumber
+	{ $current=$iv_ruleNumber.current; }
+	EOF;
+
+// Rule Number
+ruleNumber returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNumberAccess().getDigitDigitParserRuleCall_0_0());
+				}
+				lv_digit_0_0=ruleDigit
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNumberRule());
+					}
+					set(
+						$current,
+						"digit",
+						lv_digit_0_0,
+						"org.xtext.t2.lisp.Lisp.Digit");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		    |
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNumberAccess().getDecimalDecimalParserRuleCall_1_0());
+				}
+				lv_decimal_1_0=ruleDecimal
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNumberRule());
+					}
+					set(
+						$current,
+						"decimal",
+						lv_decimal_1_0,
+						"org.xtext.t2.lisp.Lisp.Decimal");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

@@ -68,40 +68,13 @@ public interface LispPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Numeros</b></em>' containment reference list.
+   * The feature id for the '<em><b>Form</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__NUMEROS = 0;
-
-  /**
-   * The feature id for the '<em><b>Begin</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__BEGIN = 1;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__EXPRESSION = 2;
-
-  /**
-   * The feature id for the '<em><b>Define</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__DEFINE = 3;
+  int MODEL__FORM = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -110,17 +83,54 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 4;
+  int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.BeginImpl <em>Begin</em>}' class.
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.FormImpl <em>Form</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.t2.lisp.lisp.impl.BeginImpl
-   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getBegin()
+   * @see org.xtext.t2.lisp.lisp.impl.FormImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getForm()
    * @generated
    */
-  int BEGIN = 1;
+  int FORM = 1;
+
+  /**
+   * The feature id for the '<em><b>Definition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__DEFINITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM__EXPRESSION2 = 1;
+
+  /**
+   * The number of structural features of the '<em>Form</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.DefinitionImpl <em>Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.DefinitionImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDefinition()
+   * @generated
+   */
+  int DEFINITION = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -129,53 +139,25 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BEGIN__NAME = 0;
+  int DEFINITION__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Begin</em>' class.
+   * The feature id for the '<em><b>Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BEGIN_FEATURE_COUNT = 1;
+  int DEFINITION__DEFINITION = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.DefineImpl <em>Define</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.t2.lisp.lisp.impl.DefineImpl
-   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDefine()
-   * @generated
-   */
-  int DEFINE = 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The number of structural features of the '<em>Definition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINE__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Command</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEFINE__COMMAND = 1;
-
-  /**
-   * The number of structural features of the '<em>Define</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEFINE_FEATURE_COUNT = 2;
+  int DEFINITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -188,22 +170,49 @@ public interface LispPackage extends EPackage
   int EXPRESSION = 3;
 
   /**
-   * The feature id for the '<em><b>Operacoes</b></em>' containment reference.
+   * The feature id for the '<em><b>Constant</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__OPERACOES = 0;
+  int EXPRESSION__CONSTANT = 0;
 
   /**
-   * The feature id for the '<em><b>Primeiro</b></em>' containment reference.
+   * The feature id for the '<em><b>Variable4</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION__PRIMEIRO = 1;
+  int EXPRESSION__VARIABLE4 = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__NAME = 2;
+
+  /**
+   * The feature id for the '<em><b>Formals</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__FORMALS = 3;
+
+  /**
+   * The feature id for the '<em><b>Body1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION__BODY1 = 4;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -212,17 +221,553 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 2;
+  int EXPRESSION_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.NumerosImpl <em>Numeros</em>}' class.
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.SetImpl <em>Set</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.t2.lisp.lisp.impl.NumerosImpl
-   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getNumeros()
+   * @see org.xtext.t2.lisp.lisp.impl.SetImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSet()
    * @generated
    */
-  int NUMEROS = 4;
+  int SET = 4;
+
+  /**
+   * The feature id for the '<em><b>Variable3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET__VARIABLE3 = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression10</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET__EXPRESSION10 = 1;
+
+  /**
+   * The number of structural features of the '<em>Set</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SET_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.IfImpl <em>If</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.IfImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getIf()
+   * @generated
+   */
+  int IF = 5;
+
+  /**
+   * The feature id for the '<em><b>Expression5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__EXPRESSION5 = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__EXPRESSION6 = 1;
+
+  /**
+   * The feature id for the '<em><b>Expression7</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__EXPRESSION7 = 2;
+
+  /**
+   * The feature id for the '<em><b>Expression3</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__EXPRESSION3 = 3;
+
+  /**
+   * The feature id for the '<em><b>Expression4</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF__EXPRESSION4 = 4;
+
+  /**
+   * The number of structural features of the '<em>If</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IF_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.ConstantImpl <em>Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.ConstantImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getConstant()
+   * @generated
+   */
+  int CONSTANT = 6;
+
+  /**
+   * The feature id for the '<em><b>Number</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__NUMBER = 0;
+
+  /**
+   * The number of structural features of the '<em>Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.FormalsImpl <em>Formals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.FormalsImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getFormals()
+   * @generated
+   */
+  int FORMALS = 7;
+
+  /**
+   * The feature id for the '<em><b>Variable5</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORMALS__VARIABLE5 = 0;
+
+  /**
+   * The feature id for the '<em><b>Variable6</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORMALS__VARIABLE6 = 1;
+
+  /**
+   * The number of structural features of the '<em>Formals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FORMALS_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.VariableDefinitionImpl <em>Variable Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.VariableDefinitionImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getVariableDefinition()
+   * @generated
+   */
+  int VARIABLE_DEFINITION = 8;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DEFINITION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Define</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DEFINITION__DEFINE = 1;
+
+  /**
+   * The number of structural features of the '<em>Variable Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_DEFINITION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.DefineImpl <em>Define</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.DefineImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDefine()
+   * @generated
+   */
+  int DEFINE = 9;
+
+  /**
+   * The feature id for the '<em><b>Variable</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__VARIABLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__EXPRESSION = 1;
+
+  /**
+   * The feature id for the '<em><b>Variable1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__VARIABLE1 = 2;
+
+  /**
+   * The feature id for the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE__BODY = 3;
+
+  /**
+   * The number of structural features of the '<em>Define</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFINE_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.VariableImpl <em>Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.VariableImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getVariable()
+   * @generated
+   */
+  int VARIABLE = 10;
+
+  /**
+   * The feature id for the '<em><b>Identifier</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__IDENTIFIER = 0;
+
+  /**
+   * The number of structural features of the '<em>Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.BodyImpl <em>Body</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.BodyImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getBody()
+   * @generated
+   */
+  int BODY = 11;
+
+  /**
+   * The feature id for the '<em><b>Definition1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__DEFINITION1 = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY__EXPRESSION1 = 1;
+
+  /**
+   * The number of structural features of the '<em>Body</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BODY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.SyntaxDefinitionImpl <em>Syntax Definition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.SyntaxDefinitionImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSyntaxDefinition()
+   * @generated
+   */
+  int SYNTAX_DEFINITION = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYNTAX_DEFINITION__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Keyword</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYNTAX_DEFINITION__KEYWORD = 1;
+
+  /**
+   * The feature id for the '<em><b>Transformer Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYNTAX_DEFINITION__TRANSFORMER_EXPRESSION = 2;
+
+  /**
+   * The number of structural features of the '<em>Syntax Definition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYNTAX_DEFINITION_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.KeywordImpl <em>Keyword</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.KeywordImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getKeyword()
+   * @generated
+   */
+  int KEYWORD = 13;
+
+  /**
+   * The feature id for the '<em><b>Identifier1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYWORD__IDENTIFIER1 = 0;
+
+  /**
+   * The number of structural features of the '<em>Keyword</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int KEYWORD_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.SyntaxBindingImpl <em>Syntax Binding</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.SyntaxBindingImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSyntaxBinding()
+   * @generated
+   */
+  int SYNTAX_BINDING = 14;
+
+  /**
+   * The feature id for the '<em><b>Keyword1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYNTAX_BINDING__KEYWORD1 = 0;
+
+  /**
+   * The feature id for the '<em><b>Transformer Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYNTAX_BINDING__TRANSFORMER_EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>Syntax Binding</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SYNTAX_BINDING_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.IdentifierImpl <em>Identifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.IdentifierImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getIdentifier()
+   * @generated
+   */
+  int IDENTIFIER = 15;
+
+  /**
+   * The feature id for the '<em><b>Initial</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFIER__INITIAL = 0;
+
+  /**
+   * The feature id for the '<em><b>Subsequent</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFIER__SUBSEQUENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Identifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IDENTIFIER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.InitialImpl <em>Initial</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.InitialImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getInitial()
+   * @generated
+   */
+  int INITIAL = 16;
+
+  /**
+   * The feature id for the '<em><b>Letter</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL__LETTER = 0;
+
+  /**
+   * The number of structural features of the '<em>Initial</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INITIAL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.SubsequentImpl <em>Subsequent</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.SubsequentImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSubsequent()
+   * @generated
+   */
+  int SUBSEQUENT = 17;
+
+  /**
+   * The feature id for the '<em><b>Initial</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSEQUENT__INITIAL = 0;
+
+  /**
+   * The feature id for the '<em><b>Digit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSEQUENT__DIGIT = 1;
+
+  /**
+   * The number of structural features of the '<em>Subsequent</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUBSEQUENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.LetterImpl <em>Letter</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.LetterImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getLetter()
+   * @generated
+   */
+  int LETTER = 18;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -231,26 +776,26 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NUMEROS__VALUE = 0;
+  int LETTER__VALUE = 0;
 
   /**
-   * The number of structural features of the '<em>Numeros</em>' class.
+   * The number of structural features of the '<em>Letter</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NUMEROS_FEATURE_COUNT = 1;
+  int LETTER_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.OperacoesImpl <em>Operacoes</em>}' class.
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.DigitImpl <em>Digit</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.t2.lisp.lisp.impl.OperacoesImpl
-   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getOperacoes()
+   * @see org.xtext.t2.lisp.lisp.impl.DigitImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDigit()
    * @generated
    */
-  int OPERACOES = 5;
+  int DIGIT = 19;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -259,44 +804,16 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERACOES__VALUE = 0;
+  int DIGIT__VALUE = 0;
 
   /**
-   * The number of structural features of the '<em>Operacoes</em>' class.
+   * The number of structural features of the '<em>Digit</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERACOES_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.InteirosImpl <em>Inteiros</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.t2.lisp.lisp.impl.InteirosImpl
-   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getInteiros()
-   * @generated
-   */
-  int INTEIROS = 6;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTEIROS__VALUE = NUMEROS__VALUE;
-
-  /**
-   * The number of structural features of the '<em>Inteiros</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTEIROS_FEATURE_COUNT = NUMEROS_FEATURE_COUNT + 0;
+  int DIGIT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.DecimalImpl <em>Decimal</em>}' class.
@@ -306,7 +823,7 @@ public interface LispPackage extends EPackage
    * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDecimal()
    * @generated
    */
-  int DECIMAL = 7;
+  int DECIMAL = 20;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -315,7 +832,16 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECIMAL__VALUE = NUMEROS__VALUE;
+  int DECIMAL__VALUE = 0;
+
+  /**
+   * The feature id for the '<em><b>Value1</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DECIMAL__VALUE1 = 1;
 
   /**
    * The number of structural features of the '<em>Decimal</em>' class.
@@ -324,7 +850,44 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DECIMAL_FEATURE_COUNT = NUMEROS_FEATURE_COUNT + 0;
+  int DECIMAL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.NumberImpl <em>Number</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.NumberImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getNumber()
+   * @generated
+   */
+  int NUMBER = 21;
+
+  /**
+   * The feature id for the '<em><b>Digit</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER__DIGIT = 0;
+
+  /**
+   * The feature id for the '<em><b>Decimal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER__DECIMAL = 1;
+
+  /**
+   * The number of structural features of the '<em>Number</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_FEATURE_COUNT = 2;
 
 
   /**
@@ -338,101 +901,79 @@ public interface LispPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.t2.lisp.lisp.Model#getNumeros <em>Numeros</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Model#getForm <em>Form</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Numeros</em>'.
-   * @see org.xtext.t2.lisp.lisp.Model#getNumeros()
+   * @return the meta object for the containment reference '<em>Form</em>'.
+   * @see org.xtext.t2.lisp.lisp.Model#getForm()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Numeros();
+  EReference getModel_Form();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Model#getBegin <em>Begin</em>}'.
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Form <em>Form</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Begin</em>'.
-   * @see org.xtext.t2.lisp.lisp.Model#getBegin()
-   * @see #getModel()
+   * @return the meta object for class '<em>Form</em>'.
+   * @see org.xtext.t2.lisp.lisp.Form
    * @generated
    */
-  EReference getModel_Begin();
+  EClass getForm();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Model#getExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Form#getDefinition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see org.xtext.t2.lisp.lisp.Model#getExpression()
-   * @see #getModel()
+   * @return the meta object for the containment reference '<em>Definition</em>'.
+   * @see org.xtext.t2.lisp.lisp.Form#getDefinition()
+   * @see #getForm()
    * @generated
    */
-  EReference getModel_Expression();
+  EReference getForm_Definition();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Model#getDefine <em>Define</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Form#getExpression2 <em>Expression2</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Define</em>'.
-   * @see org.xtext.t2.lisp.lisp.Model#getDefine()
-   * @see #getModel()
+   * @return the meta object for the containment reference '<em>Expression2</em>'.
+   * @see org.xtext.t2.lisp.lisp.Form#getExpression2()
+   * @see #getForm()
    * @generated
    */
-  EReference getModel_Define();
+  EReference getForm_Expression2();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Begin <em>Begin</em>}'.
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Definition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Begin</em>'.
-   * @see org.xtext.t2.lisp.lisp.Begin
+   * @return the meta object for class '<em>Definition</em>'.
+   * @see org.xtext.t2.lisp.lisp.Definition
    * @generated
    */
-  EClass getBegin();
+  EClass getDefinition();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Begin#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Definition#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.t2.lisp.lisp.Begin#getName()
-   * @see #getBegin()
+   * @see org.xtext.t2.lisp.lisp.Definition#getName()
+   * @see #getDefinition()
    * @generated
    */
-  EAttribute getBegin_Name();
+  EAttribute getDefinition_Name();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Define <em>Define</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Definition#getDefinition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Define</em>'.
-   * @see org.xtext.t2.lisp.lisp.Define
+   * @return the meta object for the containment reference '<em>Definition</em>'.
+   * @see org.xtext.t2.lisp.lisp.Definition#getDefinition()
+   * @see #getDefinition()
    * @generated
    */
-  EClass getDefine();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Define#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.t2.lisp.lisp.Define#getName()
-   * @see #getDefine()
-   * @generated
-   */
-  EAttribute getDefine_Name();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Define#getCommand <em>Command</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Command</em>'.
-   * @see org.xtext.t2.lisp.lisp.Define#getCommand()
-   * @see #getDefine()
-   * @generated
-   */
-  EAttribute getDefine_Command();
+  EReference getDefinition_Definition();
 
   /**
    * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Expression <em>Expression</em>}'.
@@ -445,78 +986,571 @@ public interface LispPackage extends EPackage
   EClass getExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getOperacoes <em>Operacoes</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getConstant <em>Constant</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Operacoes</em>'.
-   * @see org.xtext.t2.lisp.lisp.Expression#getOperacoes()
+   * @return the meta object for the containment reference '<em>Constant</em>'.
+   * @see org.xtext.t2.lisp.lisp.Expression#getConstant()
    * @see #getExpression()
    * @generated
    */
-  EReference getExpression_Operacoes();
+  EReference getExpression_Constant();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getPrimeiro <em>Primeiro</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getVariable4 <em>Variable4</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Primeiro</em>'.
-   * @see org.xtext.t2.lisp.lisp.Expression#getPrimeiro()
+   * @return the meta object for the containment reference '<em>Variable4</em>'.
+   * @see org.xtext.t2.lisp.lisp.Expression#getVariable4()
    * @see #getExpression()
    * @generated
    */
-  EReference getExpression_Primeiro();
+  EReference getExpression_Variable4();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Numeros <em>Numeros</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Expression#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Numeros</em>'.
-   * @see org.xtext.t2.lisp.lisp.Numeros
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.t2.lisp.lisp.Expression#getName()
+   * @see #getExpression()
    * @generated
    */
-  EClass getNumeros();
+  EAttribute getExpression_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Numeros#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getFormals <em>Formals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Formals</em>'.
+   * @see org.xtext.t2.lisp.lisp.Expression#getFormals()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Formals();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getBody1 <em>Body1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body1</em>'.
+   * @see org.xtext.t2.lisp.lisp.Expression#getBody1()
+   * @see #getExpression()
+   * @generated
+   */
+  EReference getExpression_Body1();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Set <em>Set</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Set</em>'.
+   * @see org.xtext.t2.lisp.lisp.Set
+   * @generated
+   */
+  EClass getSet();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Set#getVariable3 <em>Variable3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable3</em>'.
+   * @see org.xtext.t2.lisp.lisp.Set#getVariable3()
+   * @see #getSet()
+   * @generated
+   */
+  EReference getSet_Variable3();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Set#getExpression10 <em>Expression10</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression10</em>'.
+   * @see org.xtext.t2.lisp.lisp.Set#getExpression10()
+   * @see #getSet()
+   * @generated
+   */
+  EReference getSet_Expression10();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.If <em>If</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>If</em>'.
+   * @see org.xtext.t2.lisp.lisp.If
+   * @generated
+   */
+  EClass getIf();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.If#getExpression5 <em>Expression5</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression5</em>'.
+   * @see org.xtext.t2.lisp.lisp.If#getExpression5()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_Expression5();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.If#getExpression6 <em>Expression6</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression6</em>'.
+   * @see org.xtext.t2.lisp.lisp.If#getExpression6()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_Expression6();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.If#getExpression7 <em>Expression7</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression7</em>'.
+   * @see org.xtext.t2.lisp.lisp.If#getExpression7()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_Expression7();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.If#getExpression3 <em>Expression3</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression3</em>'.
+   * @see org.xtext.t2.lisp.lisp.If#getExpression3()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_Expression3();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.If#getExpression4 <em>Expression4</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression4</em>'.
+   * @see org.xtext.t2.lisp.lisp.If#getExpression4()
+   * @see #getIf()
+   * @generated
+   */
+  EReference getIf_Expression4();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Constant <em>Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Constant</em>'.
+   * @see org.xtext.t2.lisp.lisp.Constant
+   * @generated
+   */
+  EClass getConstant();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.t2.lisp.lisp.Constant#getNumber <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Number</em>'.
+   * @see org.xtext.t2.lisp.lisp.Constant#getNumber()
+   * @see #getConstant()
+   * @generated
+   */
+  EReference getConstant_Number();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Formals <em>Formals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Formals</em>'.
+   * @see org.xtext.t2.lisp.lisp.Formals
+   * @generated
+   */
+  EClass getFormals();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Formals#getVariable5 <em>Variable5</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable5</em>'.
+   * @see org.xtext.t2.lisp.lisp.Formals#getVariable5()
+   * @see #getFormals()
+   * @generated
+   */
+  EReference getFormals_Variable5();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Formals#getVariable6 <em>Variable6</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable6</em>'.
+   * @see org.xtext.t2.lisp.lisp.Formals#getVariable6()
+   * @see #getFormals()
+   * @generated
+   */
+  EReference getFormals_Variable6();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.VariableDefinition <em>Variable Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable Definition</em>'.
+   * @see org.xtext.t2.lisp.lisp.VariableDefinition
+   * @generated
+   */
+  EClass getVariableDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.VariableDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.t2.lisp.lisp.VariableDefinition#getName()
+   * @see #getVariableDefinition()
+   * @generated
+   */
+  EAttribute getVariableDefinition_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.VariableDefinition#getDefine <em>Define</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Define</em>'.
+   * @see org.xtext.t2.lisp.lisp.VariableDefinition#getDefine()
+   * @see #getVariableDefinition()
+   * @generated
+   */
+  EReference getVariableDefinition_Define();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Define <em>Define</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Define</em>'.
+   * @see org.xtext.t2.lisp.lisp.Define
+   * @generated
+   */
+  EClass getDefine();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Define#getVariable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable</em>'.
+   * @see org.xtext.t2.lisp.lisp.Define#getVariable()
+   * @see #getDefine()
+   * @generated
+   */
+  EReference getDefine_Variable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Define#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.xtext.t2.lisp.lisp.Define#getExpression()
+   * @see #getDefine()
+   * @generated
+   */
+  EReference getDefine_Expression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Define#getVariable1 <em>Variable1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable1</em>'.
+   * @see org.xtext.t2.lisp.lisp.Define#getVariable1()
+   * @see #getDefine()
+   * @generated
+   */
+  EReference getDefine_Variable1();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Define#getBody <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Body</em>'.
+   * @see org.xtext.t2.lisp.lisp.Define#getBody()
+   * @see #getDefine()
+   * @generated
+   */
+  EReference getDefine_Body();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variable</em>'.
+   * @see org.xtext.t2.lisp.lisp.Variable
+   * @generated
+   */
+  EClass getVariable();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Variable#getIdentifier <em>Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Identifier</em>'.
+   * @see org.xtext.t2.lisp.lisp.Variable#getIdentifier()
+   * @see #getVariable()
+   * @generated
+   */
+  EReference getVariable_Identifier();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Body <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Body</em>'.
+   * @see org.xtext.t2.lisp.lisp.Body
+   * @generated
+   */
+  EClass getBody();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Body#getDefinition1 <em>Definition1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Definition1</em>'.
+   * @see org.xtext.t2.lisp.lisp.Body#getDefinition1()
+   * @see #getBody()
+   * @generated
+   */
+  EReference getBody_Definition1();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Body#getExpression1 <em>Expression1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression1</em>'.
+   * @see org.xtext.t2.lisp.lisp.Body#getExpression1()
+   * @see #getBody()
+   * @generated
+   */
+  EReference getBody_Expression1();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.SyntaxDefinition <em>Syntax Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Syntax Definition</em>'.
+   * @see org.xtext.t2.lisp.lisp.SyntaxDefinition
+   * @generated
+   */
+  EClass getSyntaxDefinition();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.SyntaxDefinition#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.t2.lisp.lisp.SyntaxDefinition#getName()
+   * @see #getSyntaxDefinition()
+   * @generated
+   */
+  EAttribute getSyntaxDefinition_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.SyntaxDefinition#getKeyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword</em>'.
+   * @see org.xtext.t2.lisp.lisp.SyntaxDefinition#getKeyword()
+   * @see #getSyntaxDefinition()
+   * @generated
+   */
+  EReference getSyntaxDefinition_Keyword();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.SyntaxDefinition#getTransformerExpression <em>Transformer Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Transformer Expression</em>'.
+   * @see org.xtext.t2.lisp.lisp.SyntaxDefinition#getTransformerExpression()
+   * @see #getSyntaxDefinition()
+   * @generated
+   */
+  EReference getSyntaxDefinition_TransformerExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Keyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Keyword</em>'.
+   * @see org.xtext.t2.lisp.lisp.Keyword
+   * @generated
+   */
+  EClass getKeyword();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Keyword#getIdentifier1 <em>Identifier1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Identifier1</em>'.
+   * @see org.xtext.t2.lisp.lisp.Keyword#getIdentifier1()
+   * @see #getKeyword()
+   * @generated
+   */
+  EReference getKeyword_Identifier1();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.SyntaxBinding <em>Syntax Binding</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Syntax Binding</em>'.
+   * @see org.xtext.t2.lisp.lisp.SyntaxBinding
+   * @generated
+   */
+  EClass getSyntaxBinding();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.SyntaxBinding#getKeyword1 <em>Keyword1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Keyword1</em>'.
+   * @see org.xtext.t2.lisp.lisp.SyntaxBinding#getKeyword1()
+   * @see #getSyntaxBinding()
+   * @generated
+   */
+  EReference getSyntaxBinding_Keyword1();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.SyntaxBinding#getTransformerExpression <em>Transformer Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Transformer Expression</em>'.
+   * @see org.xtext.t2.lisp.lisp.SyntaxBinding#getTransformerExpression()
+   * @see #getSyntaxBinding()
+   * @generated
+   */
+  EReference getSyntaxBinding_TransformerExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Identifier <em>Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Identifier</em>'.
+   * @see org.xtext.t2.lisp.lisp.Identifier
+   * @generated
+   */
+  EClass getIdentifier();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Identifier#getInitial <em>Initial</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Initial</em>'.
+   * @see org.xtext.t2.lisp.lisp.Identifier#getInitial()
+   * @see #getIdentifier()
+   * @generated
+   */
+  EReference getIdentifier_Initial();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Identifier#getSubsequent <em>Subsequent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Subsequent</em>'.
+   * @see org.xtext.t2.lisp.lisp.Identifier#getSubsequent()
+   * @see #getIdentifier()
+   * @generated
+   */
+  EReference getIdentifier_Subsequent();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Initial <em>Initial</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Initial</em>'.
+   * @see org.xtext.t2.lisp.lisp.Initial
+   * @generated
+   */
+  EClass getInitial();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Initial#getLetter <em>Letter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Letter</em>'.
+   * @see org.xtext.t2.lisp.lisp.Initial#getLetter()
+   * @see #getInitial()
+   * @generated
+   */
+  EReference getInitial_Letter();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Subsequent <em>Subsequent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Subsequent</em>'.
+   * @see org.xtext.t2.lisp.lisp.Subsequent
+   * @generated
+   */
+  EClass getSubsequent();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Subsequent#getInitial <em>Initial</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Initial</em>'.
+   * @see org.xtext.t2.lisp.lisp.Subsequent#getInitial()
+   * @see #getSubsequent()
+   * @generated
+   */
+  EReference getSubsequent_Initial();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Subsequent#getDigit <em>Digit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Digit</em>'.
+   * @see org.xtext.t2.lisp.lisp.Subsequent#getDigit()
+   * @see #getSubsequent()
+   * @generated
+   */
+  EReference getSubsequent_Digit();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Letter <em>Letter</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Letter</em>'.
+   * @see org.xtext.t2.lisp.lisp.Letter
+   * @generated
+   */
+  EClass getLetter();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Letter#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.t2.lisp.lisp.Numeros#getValue()
-   * @see #getNumeros()
+   * @see org.xtext.t2.lisp.lisp.Letter#getValue()
+   * @see #getLetter()
    * @generated
    */
-  EAttribute getNumeros_Value();
+  EAttribute getLetter_Value();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Operacoes <em>Operacoes</em>}'.
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Digit <em>Digit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operacoes</em>'.
-   * @see org.xtext.t2.lisp.lisp.Operacoes
+   * @return the meta object for class '<em>Digit</em>'.
+   * @see org.xtext.t2.lisp.lisp.Digit
    * @generated
    */
-  EClass getOperacoes();
+  EClass getDigit();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Operacoes#getValue <em>Value</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Digit#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.xtext.t2.lisp.lisp.Operacoes#getValue()
-   * @see #getOperacoes()
+   * @see org.xtext.t2.lisp.lisp.Digit#getValue()
+   * @see #getDigit()
    * @generated
    */
-  EAttribute getOperacoes_Value();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Inteiros <em>Inteiros</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Inteiros</em>'.
-   * @see org.xtext.t2.lisp.lisp.Inteiros
-   * @generated
-   */
-  EClass getInteiros();
+  EAttribute getDigit_Value();
 
   /**
    * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Decimal <em>Decimal</em>}'.
@@ -527,6 +1561,60 @@ public interface LispPackage extends EPackage
    * @generated
    */
   EClass getDecimal();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Decimal#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.xtext.t2.lisp.lisp.Decimal#getValue()
+   * @see #getDecimal()
+   * @generated
+   */
+  EAttribute getDecimal_Value();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Decimal#getValue1 <em>Value1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value1</em>'.
+   * @see org.xtext.t2.lisp.lisp.Decimal#getValue1()
+   * @see #getDecimal()
+   * @generated
+   */
+  EAttribute getDecimal_Value1();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Number <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number</em>'.
+   * @see org.xtext.t2.lisp.lisp.Number
+   * @generated
+   */
+  EClass getNumber();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Number#getDigit <em>Digit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Digit</em>'.
+   * @see org.xtext.t2.lisp.lisp.Number#getDigit()
+   * @see #getNumber()
+   * @generated
+   */
+  EReference getNumber_Digit();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Number#getDecimal <em>Decimal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Decimal</em>'.
+   * @see org.xtext.t2.lisp.lisp.Number#getDecimal()
+   * @see #getNumber()
+   * @generated
+   */
+  EReference getNumber_Decimal();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -562,64 +1650,48 @@ public interface LispPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Numeros</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Form</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__NUMEROS = eINSTANCE.getModel_Numeros();
+    EReference MODEL__FORM = eINSTANCE.getModel_Form();
 
     /**
-     * The meta object literal for the '<em><b>Begin</b></em>' containment reference feature.
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.FormImpl <em>Form</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.FormImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getForm()
      * @generated
      */
-    EReference MODEL__BEGIN = eINSTANCE.getModel_Begin();
+    EClass FORM = eINSTANCE.getForm();
 
     /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Definition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__EXPRESSION = eINSTANCE.getModel_Expression();
+    EReference FORM__DEFINITION = eINSTANCE.getForm_Definition();
 
     /**
-     * The meta object literal for the '<em><b>Define</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Expression2</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__DEFINE = eINSTANCE.getModel_Define();
+    EReference FORM__EXPRESSION2 = eINSTANCE.getForm_Expression2();
 
     /**
-     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.BeginImpl <em>Begin</em>}' class.
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.DefinitionImpl <em>Definition</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.t2.lisp.lisp.impl.BeginImpl
-     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getBegin()
+     * @see org.xtext.t2.lisp.lisp.impl.DefinitionImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDefinition()
      * @generated
      */
-    EClass BEGIN = eINSTANCE.getBegin();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BEGIN__NAME = eINSTANCE.getBegin_Name();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.DefineImpl <em>Define</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.t2.lisp.lisp.impl.DefineImpl
-     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDefine()
-     * @generated
-     */
-    EClass DEFINE = eINSTANCE.getDefine();
+    EClass DEFINITION = eINSTANCE.getDefinition();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -627,15 +1699,15 @@ public interface LispPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DEFINE__NAME = eINSTANCE.getDefine_Name();
+    EAttribute DEFINITION__NAME = eINSTANCE.getDefinition_Name();
 
     /**
-     * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Definition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DEFINE__COMMAND = eINSTANCE.getDefine_Command();
+    EReference DEFINITION__DEFINITION = eINSTANCE.getDefinition_Definition();
 
     /**
      * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -648,30 +1720,434 @@ public interface LispPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-     * The meta object literal for the '<em><b>Operacoes</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Constant</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__OPERACOES = eINSTANCE.getExpression_Operacoes();
+    EReference EXPRESSION__CONSTANT = eINSTANCE.getExpression_Constant();
 
     /**
-     * The meta object literal for the '<em><b>Primeiro</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Variable4</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPRESSION__PRIMEIRO = eINSTANCE.getExpression_Primeiro();
+    EReference EXPRESSION__VARIABLE4 = eINSTANCE.getExpression_Variable4();
 
     /**
-     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.NumerosImpl <em>Numeros</em>}' class.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.t2.lisp.lisp.impl.NumerosImpl
-     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getNumeros()
      * @generated
      */
-    EClass NUMEROS = eINSTANCE.getNumeros();
+    EAttribute EXPRESSION__NAME = eINSTANCE.getExpression_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Formals</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__FORMALS = eINSTANCE.getExpression_Formals();
+
+    /**
+     * The meta object literal for the '<em><b>Body1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION__BODY1 = eINSTANCE.getExpression_Body1();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.SetImpl <em>Set</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.SetImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSet()
+     * @generated
+     */
+    EClass SET = eINSTANCE.getSet();
+
+    /**
+     * The meta object literal for the '<em><b>Variable3</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SET__VARIABLE3 = eINSTANCE.getSet_Variable3();
+
+    /**
+     * The meta object literal for the '<em><b>Expression10</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SET__EXPRESSION10 = eINSTANCE.getSet_Expression10();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.IfImpl <em>If</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.IfImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getIf()
+     * @generated
+     */
+    EClass IF = eINSTANCE.getIf();
+
+    /**
+     * The meta object literal for the '<em><b>Expression5</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__EXPRESSION5 = eINSTANCE.getIf_Expression5();
+
+    /**
+     * The meta object literal for the '<em><b>Expression6</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__EXPRESSION6 = eINSTANCE.getIf_Expression6();
+
+    /**
+     * The meta object literal for the '<em><b>Expression7</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__EXPRESSION7 = eINSTANCE.getIf_Expression7();
+
+    /**
+     * The meta object literal for the '<em><b>Expression3</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__EXPRESSION3 = eINSTANCE.getIf_Expression3();
+
+    /**
+     * The meta object literal for the '<em><b>Expression4</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IF__EXPRESSION4 = eINSTANCE.getIf_Expression4();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.ConstantImpl <em>Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.ConstantImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getConstant()
+     * @generated
+     */
+    EClass CONSTANT = eINSTANCE.getConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Number</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTANT__NUMBER = eINSTANCE.getConstant_Number();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.FormalsImpl <em>Formals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.FormalsImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getFormals()
+     * @generated
+     */
+    EClass FORMALS = eINSTANCE.getFormals();
+
+    /**
+     * The meta object literal for the '<em><b>Variable5</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORMALS__VARIABLE5 = eINSTANCE.getFormals_Variable5();
+
+    /**
+     * The meta object literal for the '<em><b>Variable6</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FORMALS__VARIABLE6 = eINSTANCE.getFormals_Variable6();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.VariableDefinitionImpl <em>Variable Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.VariableDefinitionImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getVariableDefinition()
+     * @generated
+     */
+    EClass VARIABLE_DEFINITION = eINSTANCE.getVariableDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE_DEFINITION__NAME = eINSTANCE.getVariableDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Define</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE_DEFINITION__DEFINE = eINSTANCE.getVariableDefinition_Define();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.DefineImpl <em>Define</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.DefineImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDefine()
+     * @generated
+     */
+    EClass DEFINE = eINSTANCE.getDefine();
+
+    /**
+     * The meta object literal for the '<em><b>Variable</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINE__VARIABLE = eINSTANCE.getDefine_Variable();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINE__EXPRESSION = eINSTANCE.getDefine_Expression();
+
+    /**
+     * The meta object literal for the '<em><b>Variable1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINE__VARIABLE1 = eINSTANCE.getDefine_Variable1();
+
+    /**
+     * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DEFINE__BODY = eINSTANCE.getDefine_Body();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.VariableImpl <em>Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.VariableImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getVariable()
+     * @generated
+     */
+    EClass VARIABLE = eINSTANCE.getVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE__IDENTIFIER = eINSTANCE.getVariable_Identifier();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.BodyImpl <em>Body</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.BodyImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getBody()
+     * @generated
+     */
+    EClass BODY = eINSTANCE.getBody();
+
+    /**
+     * The meta object literal for the '<em><b>Definition1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BODY__DEFINITION1 = eINSTANCE.getBody_Definition1();
+
+    /**
+     * The meta object literal for the '<em><b>Expression1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BODY__EXPRESSION1 = eINSTANCE.getBody_Expression1();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.SyntaxDefinitionImpl <em>Syntax Definition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.SyntaxDefinitionImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSyntaxDefinition()
+     * @generated
+     */
+    EClass SYNTAX_DEFINITION = eINSTANCE.getSyntaxDefinition();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SYNTAX_DEFINITION__NAME = eINSTANCE.getSyntaxDefinition_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SYNTAX_DEFINITION__KEYWORD = eINSTANCE.getSyntaxDefinition_Keyword();
+
+    /**
+     * The meta object literal for the '<em><b>Transformer Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SYNTAX_DEFINITION__TRANSFORMER_EXPRESSION = eINSTANCE.getSyntaxDefinition_TransformerExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.KeywordImpl <em>Keyword</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.KeywordImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getKeyword()
+     * @generated
+     */
+    EClass KEYWORD = eINSTANCE.getKeyword();
+
+    /**
+     * The meta object literal for the '<em><b>Identifier1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference KEYWORD__IDENTIFIER1 = eINSTANCE.getKeyword_Identifier1();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.SyntaxBindingImpl <em>Syntax Binding</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.SyntaxBindingImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSyntaxBinding()
+     * @generated
+     */
+    EClass SYNTAX_BINDING = eINSTANCE.getSyntaxBinding();
+
+    /**
+     * The meta object literal for the '<em><b>Keyword1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SYNTAX_BINDING__KEYWORD1 = eINSTANCE.getSyntaxBinding_Keyword1();
+
+    /**
+     * The meta object literal for the '<em><b>Transformer Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SYNTAX_BINDING__TRANSFORMER_EXPRESSION = eINSTANCE.getSyntaxBinding_TransformerExpression();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.IdentifierImpl <em>Identifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.IdentifierImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getIdentifier()
+     * @generated
+     */
+    EClass IDENTIFIER = eINSTANCE.getIdentifier();
+
+    /**
+     * The meta object literal for the '<em><b>Initial</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IDENTIFIER__INITIAL = eINSTANCE.getIdentifier_Initial();
+
+    /**
+     * The meta object literal for the '<em><b>Subsequent</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IDENTIFIER__SUBSEQUENT = eINSTANCE.getIdentifier_Subsequent();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.InitialImpl <em>Initial</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.InitialImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getInitial()
+     * @generated
+     */
+    EClass INITIAL = eINSTANCE.getInitial();
+
+    /**
+     * The meta object literal for the '<em><b>Letter</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INITIAL__LETTER = eINSTANCE.getInitial_Letter();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.SubsequentImpl <em>Subsequent</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.SubsequentImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getSubsequent()
+     * @generated
+     */
+    EClass SUBSEQUENT = eINSTANCE.getSubsequent();
+
+    /**
+     * The meta object literal for the '<em><b>Initial</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBSEQUENT__INITIAL = eINSTANCE.getSubsequent_Initial();
+
+    /**
+     * The meta object literal for the '<em><b>Digit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SUBSEQUENT__DIGIT = eINSTANCE.getSubsequent_Digit();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.LetterImpl <em>Letter</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.LetterImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getLetter()
+     * @generated
+     */
+    EClass LETTER = eINSTANCE.getLetter();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -679,17 +2155,17 @@ public interface LispPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute NUMEROS__VALUE = eINSTANCE.getNumeros_Value();
+    EAttribute LETTER__VALUE = eINSTANCE.getLetter_Value();
 
     /**
-     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.OperacoesImpl <em>Operacoes</em>}' class.
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.DigitImpl <em>Digit</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.t2.lisp.lisp.impl.OperacoesImpl
-     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getOperacoes()
+     * @see org.xtext.t2.lisp.lisp.impl.DigitImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDigit()
      * @generated
      */
-    EClass OPERACOES = eINSTANCE.getOperacoes();
+    EClass DIGIT = eINSTANCE.getDigit();
 
     /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -697,17 +2173,7 @@ public interface LispPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERACOES__VALUE = eINSTANCE.getOperacoes_Value();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.InteirosImpl <em>Inteiros</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.t2.lisp.lisp.impl.InteirosImpl
-     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getInteiros()
-     * @generated
-     */
-    EClass INTEIROS = eINSTANCE.getInteiros();
+    EAttribute DIGIT__VALUE = eINSTANCE.getDigit_Value();
 
     /**
      * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.DecimalImpl <em>Decimal</em>}' class.
@@ -718,6 +2184,48 @@ public interface LispPackage extends EPackage
      * @generated
      */
     EClass DECIMAL = eINSTANCE.getDecimal();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECIMAL__VALUE = eINSTANCE.getDecimal_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Value1</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DECIMAL__VALUE1 = eINSTANCE.getDecimal_Value1();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.NumberImpl <em>Number</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.NumberImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getNumber()
+     * @generated
+     */
+    EClass NUMBER = eINSTANCE.getNumber();
+
+    /**
+     * The meta object literal for the '<em><b>Digit</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER__DIGIT = eINSTANCE.getNumber_Digit();
+
+    /**
+     * The meta object literal for the '<em><b>Decimal</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBER__DECIMAL = eINSTANCE.getNumber_Decimal();
 
   }
 

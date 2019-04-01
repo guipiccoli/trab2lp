@@ -10,7 +10,28 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.xtext.t2.lisp.lisp.*;
+import org.xtext.t2.lisp.lisp.Body;
+import org.xtext.t2.lisp.lisp.Constant;
+import org.xtext.t2.lisp.lisp.Decimal;
+import org.xtext.t2.lisp.lisp.Define;
+import org.xtext.t2.lisp.lisp.Definition;
+import org.xtext.t2.lisp.lisp.Digit;
+import org.xtext.t2.lisp.lisp.Expression;
+import org.xtext.t2.lisp.lisp.Form;
+import org.xtext.t2.lisp.lisp.Formals;
+import org.xtext.t2.lisp.lisp.Identifier;
+import org.xtext.t2.lisp.lisp.If;
+import org.xtext.t2.lisp.lisp.Initial;
+import org.xtext.t2.lisp.lisp.Keyword;
+import org.xtext.t2.lisp.lisp.Letter;
+import org.xtext.t2.lisp.lisp.LispPackage;
+import org.xtext.t2.lisp.lisp.Model;
+import org.xtext.t2.lisp.lisp.Set;
+import org.xtext.t2.lisp.lisp.Subsequent;
+import org.xtext.t2.lisp.lisp.SyntaxBinding;
+import org.xtext.t2.lisp.lisp.SyntaxDefinition;
+import org.xtext.t2.lisp.lisp.Variable;
+import org.xtext.t2.lisp.lisp.VariableDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,14 +102,14 @@ public class LispAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseBegin(Begin object)
+      public Adapter caseForm(Form object)
       {
-        return createBeginAdapter();
+        return createFormAdapter();
       }
       @Override
-      public Adapter caseDefine(Define object)
+      public Adapter caseDefinition(Definition object)
       {
-        return createDefineAdapter();
+        return createDefinitionAdapter();
       }
       @Override
       public Adapter caseExpression(Expression object)
@@ -96,24 +117,94 @@ public class LispAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
-      public Adapter caseNumeros(Numeros object)
+      public Adapter caseSet(Set object)
       {
-        return createNumerosAdapter();
+        return createSetAdapter();
       }
       @Override
-      public Adapter caseOperacoes(Operacoes object)
+      public Adapter caseIf(If object)
       {
-        return createOperacoesAdapter();
+        return createIfAdapter();
       }
       @Override
-      public Adapter caseInteiros(Inteiros object)
+      public Adapter caseConstant(Constant object)
       {
-        return createInteirosAdapter();
+        return createConstantAdapter();
+      }
+      @Override
+      public Adapter caseFormals(Formals object)
+      {
+        return createFormalsAdapter();
+      }
+      @Override
+      public Adapter caseVariableDefinition(VariableDefinition object)
+      {
+        return createVariableDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseDefine(Define object)
+      {
+        return createDefineAdapter();
+      }
+      @Override
+      public Adapter caseVariable(Variable object)
+      {
+        return createVariableAdapter();
+      }
+      @Override
+      public Adapter caseBody(Body object)
+      {
+        return createBodyAdapter();
+      }
+      @Override
+      public Adapter caseSyntaxDefinition(SyntaxDefinition object)
+      {
+        return createSyntaxDefinitionAdapter();
+      }
+      @Override
+      public Adapter caseKeyword(Keyword object)
+      {
+        return createKeywordAdapter();
+      }
+      @Override
+      public Adapter caseSyntaxBinding(SyntaxBinding object)
+      {
+        return createSyntaxBindingAdapter();
+      }
+      @Override
+      public Adapter caseIdentifier(Identifier object)
+      {
+        return createIdentifierAdapter();
+      }
+      @Override
+      public Adapter caseInitial(Initial object)
+      {
+        return createInitialAdapter();
+      }
+      @Override
+      public Adapter caseSubsequent(Subsequent object)
+      {
+        return createSubsequentAdapter();
+      }
+      @Override
+      public Adapter caseLetter(Letter object)
+      {
+        return createLetterAdapter();
+      }
+      @Override
+      public Adapter caseDigit(Digit object)
+      {
+        return createDigitAdapter();
       }
       @Override
       public Adapter caseDecimal(Decimal object)
       {
         return createDecimalAdapter();
+      }
+      @Override
+      public Adapter caseNumber(org.xtext.t2.lisp.lisp.Number object)
+      {
+        return createNumberAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -153,31 +244,31 @@ public class LispAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Begin <em>Begin</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Form <em>Form</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.t2.lisp.lisp.Begin
+   * @see org.xtext.t2.lisp.lisp.Form
    * @generated
    */
-  public Adapter createBeginAdapter()
+  public Adapter createFormAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Define <em>Define</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Definition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.t2.lisp.lisp.Define
+   * @see org.xtext.t2.lisp.lisp.Definition
    * @generated
    */
-  public Adapter createDefineAdapter()
+  public Adapter createDefinitionAdapter()
   {
     return null;
   }
@@ -198,46 +289,241 @@ public class LispAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Numeros <em>Numeros</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Set <em>Set</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.t2.lisp.lisp.Numeros
+   * @see org.xtext.t2.lisp.lisp.Set
    * @generated
    */
-  public Adapter createNumerosAdapter()
+  public Adapter createSetAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Operacoes <em>Operacoes</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.If <em>If</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.t2.lisp.lisp.Operacoes
+   * @see org.xtext.t2.lisp.lisp.If
    * @generated
    */
-  public Adapter createOperacoesAdapter()
+  public Adapter createIfAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Inteiros <em>Inteiros</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Constant <em>Constant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.t2.lisp.lisp.Inteiros
+   * @see org.xtext.t2.lisp.lisp.Constant
    * @generated
    */
-  public Adapter createInteirosAdapter()
+  public Adapter createConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Formals <em>Formals</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Formals
+   * @generated
+   */
+  public Adapter createFormalsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.VariableDefinition <em>Variable Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.VariableDefinition
+   * @generated
+   */
+  public Adapter createVariableDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Define <em>Define</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Define
+   * @generated
+   */
+  public Adapter createDefineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Variable <em>Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Variable
+   * @generated
+   */
+  public Adapter createVariableAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Body <em>Body</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Body
+   * @generated
+   */
+  public Adapter createBodyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.SyntaxDefinition <em>Syntax Definition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.SyntaxDefinition
+   * @generated
+   */
+  public Adapter createSyntaxDefinitionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Keyword <em>Keyword</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Keyword
+   * @generated
+   */
+  public Adapter createKeywordAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.SyntaxBinding <em>Syntax Binding</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.SyntaxBinding
+   * @generated
+   */
+  public Adapter createSyntaxBindingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Identifier <em>Identifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Identifier
+   * @generated
+   */
+  public Adapter createIdentifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Initial <em>Initial</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Initial
+   * @generated
+   */
+  public Adapter createInitialAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Subsequent <em>Subsequent</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Subsequent
+   * @generated
+   */
+  public Adapter createSubsequentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Letter <em>Letter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Letter
+   * @generated
+   */
+  public Adapter createLetterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Digit <em>Digit</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Digit
+   * @generated
+   */
+  public Adapter createDigitAdapter()
   {
     return null;
   }
@@ -253,6 +539,21 @@ public class LispAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDecimalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Number <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Number
+   * @generated
+   */
+  public Adapter createNumberAdapter()
   {
     return null;
   }

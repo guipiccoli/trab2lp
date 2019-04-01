@@ -10,16 +10,29 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.t2.lisp.lisp.Begin;
+import org.xtext.t2.lisp.lisp.Body;
+import org.xtext.t2.lisp.lisp.Constant;
 import org.xtext.t2.lisp.lisp.Decimal;
 import org.xtext.t2.lisp.lisp.Define;
+import org.xtext.t2.lisp.lisp.Definition;
+import org.xtext.t2.lisp.lisp.Digit;
 import org.xtext.t2.lisp.lisp.Expression;
-import org.xtext.t2.lisp.lisp.Inteiros;
+import org.xtext.t2.lisp.lisp.Form;
+import org.xtext.t2.lisp.lisp.Formals;
+import org.xtext.t2.lisp.lisp.Identifier;
+import org.xtext.t2.lisp.lisp.If;
+import org.xtext.t2.lisp.lisp.Initial;
+import org.xtext.t2.lisp.lisp.Keyword;
+import org.xtext.t2.lisp.lisp.Letter;
 import org.xtext.t2.lisp.lisp.LispFactory;
 import org.xtext.t2.lisp.lisp.LispPackage;
 import org.xtext.t2.lisp.lisp.Model;
-import org.xtext.t2.lisp.lisp.Numeros;
-import org.xtext.t2.lisp.lisp.Operacoes;
+import org.xtext.t2.lisp.lisp.Set;
+import org.xtext.t2.lisp.lisp.Subsequent;
+import org.xtext.t2.lisp.lisp.SyntaxBinding;
+import org.xtext.t2.lisp.lisp.SyntaxDefinition;
+import org.xtext.t2.lisp.lisp.Variable;
+import org.xtext.t2.lisp.lisp.VariableDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +54,14 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass beginEClass = null;
+  private EClass formEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass defineEClass = null;
+  private EClass definitionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -62,21 +75,112 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass numerosEClass = null;
+  private EClass setEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass operacoesEClass = null;
+  private EClass ifEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass inteirosEClass = null;
+  private EClass constantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass formalsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defineEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass variableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass bodyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass syntaxDefinitionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass keywordEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass syntaxBindingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass identifierEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass initialEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass subsequentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass letterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass digitEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,6 +188,13 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   private EClass decimalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -165,7 +276,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EReference getModel_Numeros()
+  public EReference getModel_Form()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -176,9 +287,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EReference getModel_Begin()
+  public EClass getForm()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+    return formEClass;
   }
 
   /**
@@ -187,9 +298,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EReference getModel_Expression()
+  public EReference getForm_Definition()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+    return (EReference)formEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -198,9 +309,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EReference getModel_Define()
+  public EReference getForm_Expression2()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(3);
+    return (EReference)formEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -209,9 +320,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EClass getBegin()
+  public EClass getDefinition()
   {
-    return beginEClass;
+    return definitionEClass;
   }
 
   /**
@@ -220,9 +331,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EAttribute getBegin_Name()
+  public EAttribute getDefinition_Name()
   {
-    return (EAttribute)beginEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)definitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -231,31 +342,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EClass getDefine()
+  public EReference getDefinition_Definition()
   {
-    return defineEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDefine_Name()
-  {
-    return (EAttribute)defineEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getDefine_Command()
-  {
-    return (EAttribute)defineEClass.getEStructuralFeatures().get(1);
+    return (EReference)definitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -275,7 +364,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EReference getExpression_Operacoes()
+  public EReference getExpression_Constant()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(0);
   }
@@ -286,7 +375,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EReference getExpression_Primeiro()
+  public EReference getExpression_Variable4()
   {
     return (EReference)expressionEClass.getEStructuralFeatures().get(1);
   }
@@ -297,9 +386,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EClass getNumeros()
+  public EAttribute getExpression_Name()
   {
-    return numerosEClass;
+    return (EAttribute)expressionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -308,9 +397,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EAttribute getNumeros_Value()
+  public EReference getExpression_Formals()
   {
-    return (EAttribute)numerosEClass.getEStructuralFeatures().get(0);
+    return (EReference)expressionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -319,9 +408,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EClass getOperacoes()
+  public EReference getExpression_Body1()
   {
-    return operacoesEClass;
+    return (EReference)expressionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -330,9 +419,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EAttribute getOperacoes_Value()
+  public EClass getSet()
   {
-    return (EAttribute)operacoesEClass.getEStructuralFeatures().get(0);
+    return setEClass;
   }
 
   /**
@@ -341,9 +430,515 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   @Override
-  public EClass getInteiros()
+  public EReference getSet_Variable3()
   {
-    return inteirosEClass;
+    return (EReference)setEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSet_Expression10()
+  {
+    return (EReference)setEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIf()
+  {
+    return ifEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIf_Expression5()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIf_Expression6()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIf_Expression7()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIf_Expression3()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIf_Expression4()
+  {
+    return (EReference)ifEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConstant()
+  {
+    return constantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConstant_Number()
+  {
+    return (EReference)constantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getFormals()
+  {
+    return formalsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFormals_Variable5()
+  {
+    return (EReference)formalsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFormals_Variable6()
+  {
+    return (EReference)formalsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVariableDefinition()
+  {
+    return variableDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getVariableDefinition_Name()
+  {
+    return (EAttribute)variableDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getVariableDefinition_Define()
+  {
+    return (EReference)variableDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefine()
+  {
+    return defineEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDefine_Variable()
+  {
+    return (EReference)defineEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDefine_Expression()
+  {
+    return (EReference)defineEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDefine_Variable1()
+  {
+    return (EReference)defineEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getDefine_Body()
+  {
+    return (EReference)defineEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getVariable()
+  {
+    return variableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getVariable_Identifier()
+  {
+    return (EReference)variableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getBody()
+  {
+    return bodyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBody_Definition1()
+  {
+    return (EReference)bodyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getBody_Expression1()
+  {
+    return (EReference)bodyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSyntaxDefinition()
+  {
+    return syntaxDefinitionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSyntaxDefinition_Name()
+  {
+    return (EAttribute)syntaxDefinitionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSyntaxDefinition_Keyword()
+  {
+    return (EReference)syntaxDefinitionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSyntaxDefinition_TransformerExpression()
+  {
+    return (EReference)syntaxDefinitionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getKeyword()
+  {
+    return keywordEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getKeyword_Identifier1()
+  {
+    return (EReference)keywordEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSyntaxBinding()
+  {
+    return syntaxBindingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSyntaxBinding_Keyword1()
+  {
+    return (EReference)syntaxBindingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSyntaxBinding_TransformerExpression()
+  {
+    return (EReference)syntaxBindingEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIdentifier()
+  {
+    return identifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIdentifier_Initial()
+  {
+    return (EReference)identifierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getIdentifier_Subsequent()
+  {
+    return (EReference)identifierEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInitial()
+  {
+    return initialEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInitial_Letter()
+  {
+    return (EReference)initialEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSubsequent()
+  {
+    return subsequentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubsequent_Initial()
+  {
+    return (EReference)subsequentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSubsequent_Digit()
+  {
+    return (EReference)subsequentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLetter()
+  {
+    return letterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLetter_Value()
+  {
+    return (EAttribute)letterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDigit()
+  {
+    return digitEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDigit_Value()
+  {
+    return (EAttribute)digitEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -355,6 +950,61 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
   public EClass getDecimal()
   {
     return decimalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDecimal_Value()
+  {
+    return (EAttribute)decimalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDecimal_Value1()
+  {
+    return (EAttribute)decimalEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNumber()
+  {
+    return numberEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNumber_Digit()
+  {
+    return (EReference)numberEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getNumber_Decimal()
+  {
+    return (EReference)numberEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -389,31 +1039,94 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__NUMEROS);
-    createEReference(modelEClass, MODEL__BEGIN);
-    createEReference(modelEClass, MODEL__EXPRESSION);
-    createEReference(modelEClass, MODEL__DEFINE);
+    createEReference(modelEClass, MODEL__FORM);
 
-    beginEClass = createEClass(BEGIN);
-    createEAttribute(beginEClass, BEGIN__NAME);
+    formEClass = createEClass(FORM);
+    createEReference(formEClass, FORM__DEFINITION);
+    createEReference(formEClass, FORM__EXPRESSION2);
 
-    defineEClass = createEClass(DEFINE);
-    createEAttribute(defineEClass, DEFINE__NAME);
-    createEAttribute(defineEClass, DEFINE__COMMAND);
+    definitionEClass = createEClass(DEFINITION);
+    createEAttribute(definitionEClass, DEFINITION__NAME);
+    createEReference(definitionEClass, DEFINITION__DEFINITION);
 
     expressionEClass = createEClass(EXPRESSION);
-    createEReference(expressionEClass, EXPRESSION__OPERACOES);
-    createEReference(expressionEClass, EXPRESSION__PRIMEIRO);
+    createEReference(expressionEClass, EXPRESSION__CONSTANT);
+    createEReference(expressionEClass, EXPRESSION__VARIABLE4);
+    createEAttribute(expressionEClass, EXPRESSION__NAME);
+    createEReference(expressionEClass, EXPRESSION__FORMALS);
+    createEReference(expressionEClass, EXPRESSION__BODY1);
 
-    numerosEClass = createEClass(NUMEROS);
-    createEAttribute(numerosEClass, NUMEROS__VALUE);
+    setEClass = createEClass(SET);
+    createEReference(setEClass, SET__VARIABLE3);
+    createEReference(setEClass, SET__EXPRESSION10);
 
-    operacoesEClass = createEClass(OPERACOES);
-    createEAttribute(operacoesEClass, OPERACOES__VALUE);
+    ifEClass = createEClass(IF);
+    createEReference(ifEClass, IF__EXPRESSION5);
+    createEReference(ifEClass, IF__EXPRESSION6);
+    createEReference(ifEClass, IF__EXPRESSION7);
+    createEReference(ifEClass, IF__EXPRESSION3);
+    createEReference(ifEClass, IF__EXPRESSION4);
 
-    inteirosEClass = createEClass(INTEIROS);
+    constantEClass = createEClass(CONSTANT);
+    createEReference(constantEClass, CONSTANT__NUMBER);
+
+    formalsEClass = createEClass(FORMALS);
+    createEReference(formalsEClass, FORMALS__VARIABLE5);
+    createEReference(formalsEClass, FORMALS__VARIABLE6);
+
+    variableDefinitionEClass = createEClass(VARIABLE_DEFINITION);
+    createEAttribute(variableDefinitionEClass, VARIABLE_DEFINITION__NAME);
+    createEReference(variableDefinitionEClass, VARIABLE_DEFINITION__DEFINE);
+
+    defineEClass = createEClass(DEFINE);
+    createEReference(defineEClass, DEFINE__VARIABLE);
+    createEReference(defineEClass, DEFINE__EXPRESSION);
+    createEReference(defineEClass, DEFINE__VARIABLE1);
+    createEReference(defineEClass, DEFINE__BODY);
+
+    variableEClass = createEClass(VARIABLE);
+    createEReference(variableEClass, VARIABLE__IDENTIFIER);
+
+    bodyEClass = createEClass(BODY);
+    createEReference(bodyEClass, BODY__DEFINITION1);
+    createEReference(bodyEClass, BODY__EXPRESSION1);
+
+    syntaxDefinitionEClass = createEClass(SYNTAX_DEFINITION);
+    createEAttribute(syntaxDefinitionEClass, SYNTAX_DEFINITION__NAME);
+    createEReference(syntaxDefinitionEClass, SYNTAX_DEFINITION__KEYWORD);
+    createEReference(syntaxDefinitionEClass, SYNTAX_DEFINITION__TRANSFORMER_EXPRESSION);
+
+    keywordEClass = createEClass(KEYWORD);
+    createEReference(keywordEClass, KEYWORD__IDENTIFIER1);
+
+    syntaxBindingEClass = createEClass(SYNTAX_BINDING);
+    createEReference(syntaxBindingEClass, SYNTAX_BINDING__KEYWORD1);
+    createEReference(syntaxBindingEClass, SYNTAX_BINDING__TRANSFORMER_EXPRESSION);
+
+    identifierEClass = createEClass(IDENTIFIER);
+    createEReference(identifierEClass, IDENTIFIER__INITIAL);
+    createEReference(identifierEClass, IDENTIFIER__SUBSEQUENT);
+
+    initialEClass = createEClass(INITIAL);
+    createEReference(initialEClass, INITIAL__LETTER);
+
+    subsequentEClass = createEClass(SUBSEQUENT);
+    createEReference(subsequentEClass, SUBSEQUENT__INITIAL);
+    createEReference(subsequentEClass, SUBSEQUENT__DIGIT);
+
+    letterEClass = createEClass(LETTER);
+    createEAttribute(letterEClass, LETTER__VALUE);
+
+    digitEClass = createEClass(DIGIT);
+    createEAttribute(digitEClass, DIGIT__VALUE);
 
     decimalEClass = createEClass(DECIMAL);
+    createEAttribute(decimalEClass, DECIMAL__VALUE);
+    createEAttribute(decimalEClass, DECIMAL__VALUE1);
+
+    numberEClass = createEClass(NUMBER);
+    createEReference(numberEClass, NUMBER__DIGIT);
+    createEReference(numberEClass, NUMBER__DECIMAL);
   }
 
   /**
@@ -445,36 +1158,97 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    inteirosEClass.getESuperTypes().add(this.getNumeros());
-    decimalEClass.getESuperTypes().add(this.getNumeros());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Numeros(), this.getNumeros(), null, "numeros", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Begin(), this.getBegin(), null, "begin", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Expression(), this.getExpression(), null, "expression", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Define(), this.getDefine(), null, "define", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Form(), this.getForm(), null, "form", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(beginEClass, Begin.class, "Begin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBegin_Name(), ecorePackage.getEString(), "name", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getForm_Definition(), this.getDefinition(), null, "definition", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getForm_Expression2(), this.getExpression(), null, "expression2", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefine_Name(), ecorePackage.getEString(), "name", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDefine_Command(), ecorePackage.getEString(), "command", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefinition_Definition(), this.getDefinition(), null, "definition", null, 0, 1, Definition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpression_Operacoes(), this.getOperacoes(), null, "operacoes", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpression_Primeiro(), this.getNumeros(), null, "primeiro", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Constant(), this.getConstant(), null, "constant", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Variable4(), this.getVariable(), null, "variable4", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpression_Name(), ecorePackage.getEString(), "name", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Formals(), this.getFormals(), null, "formals", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Body1(), this.getBody(), null, "body1", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(numerosEClass, Numeros.class, "Numeros", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNumeros_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Numeros.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(setEClass, Set.class, "Set", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSet_Variable3(), this.getVariable(), null, "variable3", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSet_Expression10(), this.getExpression(), null, "expression10", null, 0, 1, Set.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(operacoesEClass, Operacoes.class, "Operacoes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOperacoes_Value(), ecorePackage.getEString(), "value", null, 0, 1, Operacoes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIf_Expression5(), this.getExpression(), null, "expression5", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Expression6(), this.getExpression(), null, "expression6", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Expression7(), this.getExpression(), null, "expression7", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Expression3(), this.getExpression(), null, "expression3", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIf_Expression4(), this.getExpression(), null, "expression4", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(inteirosEClass, Inteiros.class, "Inteiros", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConstant_Number(), this.getNumber(), null, "number", null, 0, -1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(formalsEClass, Formals.class, "Formals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFormals_Variable5(), this.getVariable(), null, "variable5", null, 0, 1, Formals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFormals_Variable6(), this.getVariable(), null, "variable6", null, 0, 1, Formals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableDefinitionEClass, VariableDefinition.class, "VariableDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getVariableDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, VariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariableDefinition_Define(), this.getDefine(), null, "define", null, 0, 1, VariableDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getDefine_Variable(), this.getVariable(), null, "variable", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefine_Expression(), this.getExpression(), null, "expression", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefine_Variable1(), this.getVariable(), null, "variable1", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDefine_Body(), this.getBody(), null, "body", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getVariable_Identifier(), this.getIdentifier(), null, "identifier", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(bodyEClass, Body.class, "Body", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBody_Definition1(), this.getDefinition(), null, "definition1", null, 0, 1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBody_Expression1(), this.getExpression(), null, "expression1", null, 0, 1, Body.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(syntaxDefinitionEClass, SyntaxDefinition.class, "SyntaxDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSyntaxDefinition_Name(), ecorePackage.getEString(), "name", null, 0, 1, SyntaxDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSyntaxDefinition_Keyword(), this.getKeyword(), null, "keyword", null, 0, 1, SyntaxDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSyntaxDefinition_TransformerExpression(), this.getExpression(), null, "transformerExpression", null, 0, 1, SyntaxDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(keywordEClass, Keyword.class, "Keyword", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getKeyword_Identifier1(), this.getIdentifier(), null, "identifier1", null, 0, 1, Keyword.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(syntaxBindingEClass, SyntaxBinding.class, "SyntaxBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSyntaxBinding_Keyword1(), this.getKeyword(), null, "keyword1", null, 0, 1, SyntaxBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSyntaxBinding_TransformerExpression(), this.getExpression(), null, "transformerExpression", null, 0, 1, SyntaxBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(identifierEClass, Identifier.class, "Identifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getIdentifier_Initial(), this.getInitial(), null, "initial", null, 0, 1, Identifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIdentifier_Subsequent(), this.getSubsequent(), null, "subsequent", null, 0, 1, Identifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(initialEClass, Initial.class, "Initial", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInitial_Letter(), this.getLetter(), null, "letter", null, 0, 1, Initial.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(subsequentEClass, Subsequent.class, "Subsequent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSubsequent_Initial(), this.getInitial(), null, "initial", null, 0, 1, Subsequent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSubsequent_Digit(), this.getDigit(), null, "digit", null, 0, 1, Subsequent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(letterEClass, Letter.class, "Letter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLetter_Value(), ecorePackage.getEString(), "value", null, 0, 1, Letter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(digitEClass, Digit.class, "Digit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDigit_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Digit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(decimalEClass, Decimal.class, "Decimal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDecimal_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Decimal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDecimal_Value1(), ecorePackage.getEInt(), "value1", null, 0, 1, Decimal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(numberEClass, org.xtext.t2.lisp.lisp.Number.class, "Number", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getNumber_Digit(), this.getDigit(), null, "digit", null, 0, 1, org.xtext.t2.lisp.lisp.Number.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getNumber_Decimal(), this.getDecimal(), null, "decimal", null, 0, 1, org.xtext.t2.lisp.lisp.Number.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

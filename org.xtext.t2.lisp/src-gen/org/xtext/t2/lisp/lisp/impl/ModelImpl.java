@@ -3,12 +3,8 @@
  */
 package org.xtext.t2.lisp.lisp.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -16,15 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.xtext.t2.lisp.lisp.Begin;
-import org.xtext.t2.lisp.lisp.Define;
-import org.xtext.t2.lisp.lisp.Expression;
+import org.xtext.t2.lisp.lisp.Form;
 import org.xtext.t2.lisp.lisp.LispPackage;
 import org.xtext.t2.lisp.lisp.Model;
-import org.xtext.t2.lisp.lisp.Numeros;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,10 +24,7 @@ import org.xtext.t2.lisp.lisp.Numeros;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.ModelImpl#getNumeros <em>Numeros</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.ModelImpl#getBegin <em>Begin</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.ModelImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.ModelImpl#getDefine <em>Define</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.ModelImpl#getForm <em>Form</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,44 +32,14 @@ import org.xtext.t2.lisp.lisp.Numeros;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getNumeros() <em>Numeros</em>}' containment reference list.
+   * The cached value of the '{@link #getForm() <em>Form</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNumeros()
+   * @see #getForm()
    * @generated
    * @ordered
    */
-  protected EList<Numeros> numeros;
-
-  /**
-   * The cached value of the '{@link #getBegin() <em>Begin</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBegin()
-   * @generated
-   * @ordered
-   */
-  protected Begin begin;
-
-  /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExpression()
-   * @generated
-   * @ordered
-   */
-  protected Expression expression;
-
-  /**
-   * The cached value of the '{@link #getDefine() <em>Define</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefine()
-   * @generated
-   * @ordered
-   */
-  protected Define define;
+  protected Form form;
 
   /**
    * <!-- begin-user-doc -->
@@ -111,13 +68,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<Numeros> getNumeros()
+  public Form getForm()
   {
-    if (numeros == null)
-    {
-      numeros = new EObjectContainmentEList<Numeros>(Numeros.class, this, LispPackage.MODEL__NUMEROS);
-    }
-    return numeros;
+    return form;
   }
 
   /**
@@ -125,24 +78,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public Begin getBegin()
+  public NotificationChain basicSetForm(Form newForm, NotificationChain msgs)
   {
-    return begin;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetBegin(Begin newBegin, NotificationChain msgs)
-  {
-    Begin oldBegin = begin;
-    begin = newBegin;
+    Form oldForm = form;
+    form = newForm;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__BEGIN, oldBegin, newBegin);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__FORM, oldForm, newForm);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -154,120 +96,20 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public void setBegin(Begin newBegin)
+  public void setForm(Form newForm)
   {
-    if (newBegin != begin)
+    if (newForm != form)
     {
       NotificationChain msgs = null;
-      if (begin != null)
-        msgs = ((InternalEObject)begin).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__BEGIN, null, msgs);
-      if (newBegin != null)
-        msgs = ((InternalEObject)newBegin).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__BEGIN, null, msgs);
-      msgs = basicSetBegin(newBegin, msgs);
+      if (form != null)
+        msgs = ((InternalEObject)form).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__FORM, null, msgs);
+      if (newForm != null)
+        msgs = ((InternalEObject)newForm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__FORM, null, msgs);
+      msgs = basicSetForm(newForm, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__BEGIN, newBegin, newBegin));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Expression getExpression()
-  {
-    return expression;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
-  {
-    Expression oldExpression = expression;
-    expression = newExpression;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__EXPRESSION, oldExpression, newExpression);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setExpression(Expression newExpression)
-  {
-    if (newExpression != expression)
-    {
-      NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__EXPRESSION, newExpression, newExpression));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Define getDefine()
-  {
-    return define;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetDefine(Define newDefine, NotificationChain msgs)
-  {
-    Define oldDefine = define;
-    define = newDefine;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__DEFINE, oldDefine, newDefine);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setDefine(Define newDefine)
-  {
-    if (newDefine != define)
-    {
-      NotificationChain msgs = null;
-      if (define != null)
-        msgs = ((InternalEObject)define).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__DEFINE, null, msgs);
-      if (newDefine != null)
-        msgs = ((InternalEObject)newDefine).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.MODEL__DEFINE, null, msgs);
-      msgs = basicSetDefine(newDefine, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__DEFINE, newDefine, newDefine));
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.MODEL__FORM, newForm, newForm));
   }
 
   /**
@@ -280,14 +122,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LispPackage.MODEL__NUMEROS:
-        return ((InternalEList<?>)getNumeros()).basicRemove(otherEnd, msgs);
-      case LispPackage.MODEL__BEGIN:
-        return basicSetBegin(null, msgs);
-      case LispPackage.MODEL__EXPRESSION:
-        return basicSetExpression(null, msgs);
-      case LispPackage.MODEL__DEFINE:
-        return basicSetDefine(null, msgs);
+      case LispPackage.MODEL__FORM:
+        return basicSetForm(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -302,14 +138,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LispPackage.MODEL__NUMEROS:
-        return getNumeros();
-      case LispPackage.MODEL__BEGIN:
-        return getBegin();
-      case LispPackage.MODEL__EXPRESSION:
-        return getExpression();
-      case LispPackage.MODEL__DEFINE:
-        return getDefine();
+      case LispPackage.MODEL__FORM:
+        return getForm();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -319,24 +149,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case LispPackage.MODEL__NUMEROS:
-        getNumeros().clear();
-        getNumeros().addAll((Collection<? extends Numeros>)newValue);
-        return;
-      case LispPackage.MODEL__BEGIN:
-        setBegin((Begin)newValue);
-        return;
-      case LispPackage.MODEL__EXPRESSION:
-        setExpression((Expression)newValue);
-        return;
-      case LispPackage.MODEL__DEFINE:
-        setDefine((Define)newValue);
+      case LispPackage.MODEL__FORM:
+        setForm((Form)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -352,17 +171,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LispPackage.MODEL__NUMEROS:
-        getNumeros().clear();
-        return;
-      case LispPackage.MODEL__BEGIN:
-        setBegin((Begin)null);
-        return;
-      case LispPackage.MODEL__EXPRESSION:
-        setExpression((Expression)null);
-        return;
-      case LispPackage.MODEL__DEFINE:
-        setDefine((Define)null);
+      case LispPackage.MODEL__FORM:
+        setForm((Form)null);
         return;
     }
     super.eUnset(featureID);
@@ -378,14 +188,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case LispPackage.MODEL__NUMEROS:
-        return numeros != null && !numeros.isEmpty();
-      case LispPackage.MODEL__BEGIN:
-        return begin != null;
-      case LispPackage.MODEL__EXPRESSION:
-        return expression != null;
-      case LispPackage.MODEL__DEFINE:
-        return define != null;
+      case LispPackage.MODEL__FORM:
+        return form != null;
     }
     return super.eIsSet(featureID);
   }

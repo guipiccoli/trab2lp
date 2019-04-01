@@ -11,7 +11,29 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.xtext.t2.lisp.lisp.*;
+import org.xtext.t2.lisp.lisp.Body;
+import org.xtext.t2.lisp.lisp.Constant;
+import org.xtext.t2.lisp.lisp.Decimal;
+import org.xtext.t2.lisp.lisp.Define;
+import org.xtext.t2.lisp.lisp.Definition;
+import org.xtext.t2.lisp.lisp.Digit;
+import org.xtext.t2.lisp.lisp.Expression;
+import org.xtext.t2.lisp.lisp.Form;
+import org.xtext.t2.lisp.lisp.Formals;
+import org.xtext.t2.lisp.lisp.Identifier;
+import org.xtext.t2.lisp.lisp.If;
+import org.xtext.t2.lisp.lisp.Initial;
+import org.xtext.t2.lisp.lisp.Keyword;
+import org.xtext.t2.lisp.lisp.Letter;
+import org.xtext.t2.lisp.lisp.LispFactory;
+import org.xtext.t2.lisp.lisp.LispPackage;
+import org.xtext.t2.lisp.lisp.Model;
+import org.xtext.t2.lisp.lisp.Set;
+import org.xtext.t2.lisp.lisp.Subsequent;
+import org.xtext.t2.lisp.lisp.SyntaxBinding;
+import org.xtext.t2.lisp.lisp.SyntaxDefinition;
+import org.xtext.t2.lisp.lisp.Variable;
+import org.xtext.t2.lisp.lisp.VariableDefinition;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,13 +88,27 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
     switch (eClass.getClassifierID())
     {
       case LispPackage.MODEL: return createModel();
-      case LispPackage.BEGIN: return createBegin();
-      case LispPackage.DEFINE: return createDefine();
+      case LispPackage.FORM: return createForm();
+      case LispPackage.DEFINITION: return createDefinition();
       case LispPackage.EXPRESSION: return createExpression();
-      case LispPackage.NUMEROS: return createNumeros();
-      case LispPackage.OPERACOES: return createOperacoes();
-      case LispPackage.INTEIROS: return createInteiros();
+      case LispPackage.SET: return createSet();
+      case LispPackage.IF: return createIf();
+      case LispPackage.CONSTANT: return createConstant();
+      case LispPackage.FORMALS: return createFormals();
+      case LispPackage.VARIABLE_DEFINITION: return createVariableDefinition();
+      case LispPackage.DEFINE: return createDefine();
+      case LispPackage.VARIABLE: return createVariable();
+      case LispPackage.BODY: return createBody();
+      case LispPackage.SYNTAX_DEFINITION: return createSyntaxDefinition();
+      case LispPackage.KEYWORD: return createKeyword();
+      case LispPackage.SYNTAX_BINDING: return createSyntaxBinding();
+      case LispPackage.IDENTIFIER: return createIdentifier();
+      case LispPackage.INITIAL: return createInitial();
+      case LispPackage.SUBSEQUENT: return createSubsequent();
+      case LispPackage.LETTER: return createLetter();
+      case LispPackage.DIGIT: return createDigit();
       case LispPackage.DECIMAL: return createDecimal();
+      case LispPackage.NUMBER: return createNumber();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -96,10 +132,10 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
    * @generated
    */
   @Override
-  public Begin createBegin()
+  public Form createForm()
   {
-    BeginImpl begin = new BeginImpl();
-    return begin;
+    FormImpl form = new FormImpl();
+    return form;
   }
 
   /**
@@ -108,10 +144,10 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
    * @generated
    */
   @Override
-  public Define createDefine()
+  public Definition createDefinition()
   {
-    DefineImpl define = new DefineImpl();
-    return define;
+    DefinitionImpl definition = new DefinitionImpl();
+    return definition;
   }
 
   /**
@@ -132,10 +168,10 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
    * @generated
    */
   @Override
-  public Numeros createNumeros()
+  public Set createSet()
   {
-    NumerosImpl numeros = new NumerosImpl();
-    return numeros;
+    SetImpl set = new SetImpl();
+    return set;
   }
 
   /**
@@ -144,10 +180,10 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
    * @generated
    */
   @Override
-  public Operacoes createOperacoes()
+  public If createIf()
   {
-    OperacoesImpl operacoes = new OperacoesImpl();
-    return operacoes;
+    IfImpl if_ = new IfImpl();
+    return if_;
   }
 
   /**
@@ -156,10 +192,166 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
    * @generated
    */
   @Override
-  public Inteiros createInteiros()
+  public Constant createConstant()
   {
-    InteirosImpl inteiros = new InteirosImpl();
-    return inteiros;
+    ConstantImpl constant = new ConstantImpl();
+    return constant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Formals createFormals()
+  {
+    FormalsImpl formals = new FormalsImpl();
+    return formals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public VariableDefinition createVariableDefinition()
+  {
+    VariableDefinitionImpl variableDefinition = new VariableDefinitionImpl();
+    return variableDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Define createDefine()
+  {
+    DefineImpl define = new DefineImpl();
+    return define;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Variable createVariable()
+  {
+    VariableImpl variable = new VariableImpl();
+    return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Body createBody()
+  {
+    BodyImpl body = new BodyImpl();
+    return body;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SyntaxDefinition createSyntaxDefinition()
+  {
+    SyntaxDefinitionImpl syntaxDefinition = new SyntaxDefinitionImpl();
+    return syntaxDefinition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Keyword createKeyword()
+  {
+    KeywordImpl keyword = new KeywordImpl();
+    return keyword;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SyntaxBinding createSyntaxBinding()
+  {
+    SyntaxBindingImpl syntaxBinding = new SyntaxBindingImpl();
+    return syntaxBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Identifier createIdentifier()
+  {
+    IdentifierImpl identifier = new IdentifierImpl();
+    return identifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Initial createInitial()
+  {
+    InitialImpl initial = new InitialImpl();
+    return initial;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Subsequent createSubsequent()
+  {
+    SubsequentImpl subsequent = new SubsequentImpl();
+    return subsequent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Letter createLetter()
+  {
+    LetterImpl letter = new LetterImpl();
+    return letter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Digit createDigit()
+  {
+    DigitImpl digit = new DigitImpl();
+    return digit;
   }
 
   /**
@@ -172,6 +364,18 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
   {
     DecimalImpl decimal = new DecimalImpl();
     return decimal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public org.xtext.t2.lisp.lisp.Number createNumber()
+  {
+    NumberImpl number = new NumberImpl();
+    return number;
   }
 
   /**

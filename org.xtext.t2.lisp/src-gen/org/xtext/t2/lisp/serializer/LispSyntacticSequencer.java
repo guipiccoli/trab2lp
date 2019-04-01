@@ -21,12 +21,14 @@ import org.xtext.t2.lisp.services.LispGrammarAccess;
 public class LispSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected LispGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4;
+	protected AbstractElementAlias match_Identifier_FullStopFullStopFullStopKeyword_3_or_HyphenMinusKeyword_2_or_PlusSignKeyword_1;
+	protected AbstractElementAlias match_Subsequent_FullStopKeyword_2_or_HyphenMinusKeyword_4_or_PlusSignKeyword_3;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (LispGrammarAccess) access;
-		match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getAsteriskKeyword_2()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getHyphenMinusKeyword_1()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getSolidusKeyword_3()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getSquareKeyword_4()));
+		match_Identifier_FullStopFullStopFullStopKeyword_3_or_HyphenMinusKeyword_2_or_PlusSignKeyword_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getIdentifierAccess().getFullStopFullStopFullStopKeyword_3()), new TokenAlias(false, false, grammarAccess.getIdentifierAccess().getHyphenMinusKeyword_2()), new TokenAlias(false, false, grammarAccess.getIdentifierAccess().getPlusSignKeyword_1()));
+		match_Subsequent_FullStopKeyword_2_or_HyphenMinusKeyword_4_or_PlusSignKeyword_3 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getSubsequentAccess().getFullStopKeyword_2()), new TokenAlias(false, false, grammarAccess.getSubsequentAccess().getHyphenMinusKeyword_4()), new TokenAlias(false, false, grammarAccess.getSubsequentAccess().getPlusSignKeyword_3()));
 	}
 	
 	@Override
@@ -41,20 +43,33 @@ public class LispSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4.equals(syntax))
-				emit_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Identifier_FullStopFullStopFullStopKeyword_3_or_HyphenMinusKeyword_2_or_PlusSignKeyword_1.equals(syntax))
+				emit_Identifier_FullStopFullStopFullStopKeyword_3_or_HyphenMinusKeyword_2_or_PlusSignKeyword_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Subsequent_FullStopKeyword_2_or_HyphenMinusKeyword_4_or_PlusSignKeyword_3.equals(syntax))
+				emit_Subsequent_FullStopKeyword_2_or_HyphenMinusKeyword_4_or_PlusSignKeyword_3(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     '-' | '*' | '/' | 'square'
+	 *     '+' | '-' | '...'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Identifier_FullStopFullStopFullStopKeyword_3_or_HyphenMinusKeyword_2_or_PlusSignKeyword_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '.' | '+' | '-'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) (rule start)
+	 */
+	protected void emit_Subsequent_FullStopKeyword_2_or_HyphenMinusKeyword_4_or_PlusSignKeyword_3(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

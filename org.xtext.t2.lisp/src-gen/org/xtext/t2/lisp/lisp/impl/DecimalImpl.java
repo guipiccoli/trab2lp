@@ -3,7 +3,12 @@
  */
 package org.xtext.t2.lisp.lisp.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.t2.lisp.lisp.Decimal;
 import org.xtext.t2.lisp.lisp.LispPackage;
@@ -12,11 +17,58 @@ import org.xtext.t2.lisp.lisp.LispPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Decimal</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.DecimalImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.DecimalImpl#getValue1 <em>Value1</em>}</li>
+ * </ul>
  *
  * @generated
  */
-public class DecimalImpl extends NumerosImpl implements Decimal
+public class DecimalImpl extends MinimalEObjectImpl.Container implements Decimal
 {
+  /**
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected static final int VALUE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected int value = VALUE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getValue1() <em>Value1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue1()
+   * @generated
+   * @ordered
+   */
+  protected static final int VALUE1_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getValue1() <em>Value1</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue1()
+   * @generated
+   * @ordered
+   */
+  protected int value1 = VALUE1_EDEFAULT;
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -36,6 +88,151 @@ public class DecimalImpl extends NumerosImpl implements Decimal
   protected EClass eStaticClass()
   {
     return LispPackage.Literals.DECIMAL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue(int newValue)
+  {
+    int oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DECIMAL__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getValue1()
+  {
+    return value1;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue1(int newValue1)
+  {
+    int oldValue1 = value1;
+    value1 = newValue1;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DECIMAL__VALUE1, oldValue1, value1));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object eGet(int featureID, boolean resolve, boolean coreType)
+  {
+    switch (featureID)
+    {
+      case LispPackage.DECIMAL__VALUE:
+        return getValue();
+      case LispPackage.DECIMAL__VALUE1:
+        return getValue1();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eSet(int featureID, Object newValue)
+  {
+    switch (featureID)
+    {
+      case LispPackage.DECIMAL__VALUE:
+        setValue((Integer)newValue);
+        return;
+      case LispPackage.DECIMAL__VALUE1:
+        setValue1((Integer)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void eUnset(int featureID)
+  {
+    switch (featureID)
+    {
+      case LispPackage.DECIMAL__VALUE:
+        setValue(VALUE_EDEFAULT);
+        return;
+      case LispPackage.DECIMAL__VALUE1:
+        setValue1(VALUE1_EDEFAULT);
+        return;
+    }
+    super.eUnset(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean eIsSet(int featureID)
+  {
+    switch (featureID)
+    {
+      case LispPackage.DECIMAL__VALUE:
+        return value != VALUE_EDEFAULT;
+      case LispPackage.DECIMAL__VALUE1:
+        return value1 != VALUE1_EDEFAULT;
+    }
+    return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (value: ");
+    result.append(value);
+    result.append(", value1: ");
+    result.append(value1);
+    result.append(')');
+    return result.toString();
   }
 
 } //DecimalImpl

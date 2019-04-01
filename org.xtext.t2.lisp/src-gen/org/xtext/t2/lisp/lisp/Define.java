@@ -14,8 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.Define#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.Define#getCommand <em>Command</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.Define#getVariable <em>Variable</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.Define#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.Define#getVariable1 <em>Variable1</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.Define#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @see org.xtext.t2.lisp.lisp.LispPackage#getDefine()
@@ -25,47 +27,91 @@ import org.eclipse.emf.ecore.EObject;
 public interface Define extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Variable</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getDefine_Name()
-   * @model
+   * @return the value of the '<em>Variable</em>' containment reference.
+   * @see #setVariable(Variable)
+   * @see org.xtext.t2.lisp.lisp.LispPackage#getDefine_Variable()
+   * @model containment="true"
    * @generated
    */
-  String getName();
+  Variable getVariable();
 
   /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Define#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Define#getVariable <em>Variable</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
+   * @param value the new value of the '<em>Variable</em>' containment reference.
+   * @see #getVariable()
    * @generated
    */
-  void setName(String value);
+  void setVariable(Variable value);
 
   /**
-   * Returns the value of the '<em><b>Command</b></em>' attribute.
+   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Command</em>' attribute.
-   * @see #setCommand(String)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getDefine_Command()
-   * @model
+   * @return the value of the '<em>Expression</em>' containment reference.
+   * @see #setExpression(Expression)
+   * @see org.xtext.t2.lisp.lisp.LispPackage#getDefine_Expression()
+   * @model containment="true"
    * @generated
    */
-  String getCommand();
+  Expression getExpression();
 
   /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Define#getCommand <em>Command</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Define#getExpression <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Command</em>' attribute.
-   * @see #getCommand()
+   * @param value the new value of the '<em>Expression</em>' containment reference.
+   * @see #getExpression()
    * @generated
    */
-  void setCommand(String value);
+  void setExpression(Expression value);
+
+  /**
+   * Returns the value of the '<em><b>Variable1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Variable1</em>' containment reference.
+   * @see #setVariable1(Variable)
+   * @see org.xtext.t2.lisp.lisp.LispPackage#getDefine_Variable1()
+   * @model containment="true"
+   * @generated
+   */
+  Variable getVariable1();
+
+  /**
+   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Define#getVariable1 <em>Variable1</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Variable1</em>' containment reference.
+   * @see #getVariable1()
+   * @generated
+   */
+  void setVariable1(Variable value);
+
+  /**
+   * Returns the value of the '<em><b>Body</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Body</em>' containment reference.
+   * @see #setBody(Body)
+   * @see org.xtext.t2.lisp.lisp.LispPackage#getDefine_Body()
+   * @model containment="true"
+   * @generated
+   */
+  Body getBody();
+
+  /**
+   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Define#getBody <em>Body</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Body</em>' containment reference.
+   * @see #getBody()
+   * @generated
+   */
+  void setBody(Body value);
 
 } // Define
