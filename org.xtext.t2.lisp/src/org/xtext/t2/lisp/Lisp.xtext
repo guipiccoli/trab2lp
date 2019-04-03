@@ -3,25 +3,27 @@ grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
 generate lisp "http://www.xtext.org/t2/lisp/Lisp"
 
 Model:
-	numeros+=Numeros*|
-	begin=Begin |
-	expression=Expression|
-	define=Define;
-	
+	begin=Begin|
+	definition=Definition* ;
 
+	
+Definition:
+	Numeros | Expression | Define
+;
 
 Begin: 
-	'begin' name=ID;
+	'begin' name=ID definition=Definition*;
 
 Define:
-	'define' name=ID command=Command;
-
-Command:
-	'0'
+	'define' name=ID expression=Expression | list=List
+	;
+List:
+	'(''list' name=ID numeros=Numeros')'
 ;
 
 Expression:
-	'(' operacoes=Operacoes (primeiro=Numeros)* ')'
+	'(' operacoes=Operacoes (primeiro=Numeros)* ')' |
+	'(' ')'
 ;
 
 Numeros:

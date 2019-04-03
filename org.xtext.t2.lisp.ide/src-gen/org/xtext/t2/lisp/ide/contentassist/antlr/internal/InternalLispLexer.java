@@ -50,10 +50,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__11;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:11:7: ( '0' )
-            // InternalLisp.g:11:9: '0'
+            // InternalLisp.g:11:7: ( '-' )
+            // InternalLisp.g:11:9: '-'
             {
-            match('0'); 
+            match('-'); 
 
             }
 
@@ -70,10 +70,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__12;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:12:7: ( '-' )
-            // InternalLisp.g:12:9: '-'
+            // InternalLisp.g:12:7: ( '*' )
+            // InternalLisp.g:12:9: '*'
             {
-            match('-'); 
+            match('*'); 
 
             }
 
@@ -90,10 +90,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:13:7: ( '*' )
-            // InternalLisp.g:13:9: '*'
+            // InternalLisp.g:13:7: ( '/' )
+            // InternalLisp.g:13:9: '/'
             {
-            match('*'); 
+            match('/'); 
 
             }
 
@@ -110,10 +110,11 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:14:7: ( '/' )
-            // InternalLisp.g:14:9: '/'
+            // InternalLisp.g:14:7: ( 'square' )
+            // InternalLisp.g:14:9: 'square'
             {
-            match('/'); 
+            match("square"); 
+
 
             }
 
@@ -130,10 +131,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:15:7: ( 'square' )
-            // InternalLisp.g:15:9: 'square'
+            // InternalLisp.g:15:7: ( 'begin' )
+            // InternalLisp.g:15:9: 'begin'
             {
-            match("square"); 
+            match("begin"); 
 
 
             }
@@ -151,10 +152,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:16:7: ( 'begin' )
-            // InternalLisp.g:16:9: 'begin'
+            // InternalLisp.g:16:7: ( 'define' )
+            // InternalLisp.g:16:9: 'define'
             {
-            match("begin"); 
+            match("define"); 
 
 
             }
@@ -172,11 +173,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:17:7: ( 'define' )
-            // InternalLisp.g:17:9: 'define'
+            // InternalLisp.g:17:7: ( '(' )
+            // InternalLisp.g:17:9: '('
             {
-            match("define"); 
-
+            match('('); 
 
             }
 
@@ -193,10 +193,11 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:18:7: ( '(' )
-            // InternalLisp.g:18:9: '('
+            // InternalLisp.g:18:7: ( 'list' )
+            // InternalLisp.g:18:9: 'list'
             {
-            match('('); 
+            match("list"); 
+
 
             }
 
@@ -273,10 +274,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:893:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalLisp.g:893:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLisp.g:1221:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalLisp.g:1221:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalLisp.g:893:11: ( '^' )?
+            // InternalLisp.g:1221:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -285,7 +286,7 @@ public class InternalLispLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalLisp.g:893:11: '^'
+                    // InternalLisp.g:1221:11: '^'
                     {
                     match('^'); 
 
@@ -303,7 +304,7 @@ public class InternalLispLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalLisp.g:893:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalLisp.g:1221:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -352,10 +353,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:895:10: ( ( '0' .. '9' )+ )
-            // InternalLisp.g:895:12: ( '0' .. '9' )+
+            // InternalLisp.g:1223:10: ( ( '0' .. '9' )+ )
+            // InternalLisp.g:1223:12: ( '0' .. '9' )+
             {
-            // InternalLisp.g:895:12: ( '0' .. '9' )+
+            // InternalLisp.g:1223:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -369,7 +370,7 @@ public class InternalLispLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalLisp.g:895:13: '0' .. '9'
+            	    // InternalLisp.g:1223:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -401,10 +402,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:897:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalLisp.g:897:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLisp.g:1225:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalLisp.g:1225:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalLisp.g:897:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalLisp.g:1225:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -422,10 +423,10 @@ public class InternalLispLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalLisp.g:897:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalLisp.g:1225:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalLisp.g:897:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalLisp.g:1225:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -441,7 +442,7 @@ public class InternalLispLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalLisp.g:897:21: '\\\\' .
+                    	    // InternalLisp.g:1225:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -449,7 +450,7 @@ public class InternalLispLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLisp.g:897:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalLisp.g:1225:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -474,10 +475,10 @@ public class InternalLispLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:897:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalLisp.g:1225:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalLisp.g:897:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalLisp.g:1225:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -493,7 +494,7 @@ public class InternalLispLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalLisp.g:897:54: '\\\\' .
+                    	    // InternalLisp.g:1225:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -501,7 +502,7 @@ public class InternalLispLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalLisp.g:897:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalLisp.g:1225:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -544,12 +545,12 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:899:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalLisp.g:899:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalLisp.g:1227:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalLisp.g:1227:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalLisp.g:899:24: ( options {greedy=false; } : . )*
+            // InternalLisp.g:1227:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -574,7 +575,7 @@ public class InternalLispLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalLisp.g:899:52: .
+            	    // InternalLisp.g:1227:52: .
             	    {
             	    matchAny(); 
 
@@ -604,12 +605,12 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:901:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalLisp.g:901:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalLisp.g:1229:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalLisp.g:1229:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalLisp.g:901:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalLisp.g:1229:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -622,7 +623,7 @@ public class InternalLispLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalLisp.g:901:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalLisp.g:1229:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -642,7 +643,7 @@ public class InternalLispLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalLisp.g:901:40: ( ( '\\r' )? '\\n' )?
+            // InternalLisp.g:1229:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -651,9 +652,9 @@ public class InternalLispLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalLisp.g:901:41: ( '\\r' )? '\\n'
+                    // InternalLisp.g:1229:41: ( '\\r' )? '\\n'
                     {
-                    // InternalLisp.g:901:41: ( '\\r' )?
+                    // InternalLisp.g:1229:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -662,7 +663,7 @@ public class InternalLispLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalLisp.g:901:41: '\\r'
+                            // InternalLisp.g:1229:41: '\\r'
                             {
                             match('\r'); 
 
@@ -694,10 +695,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:903:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalLisp.g:903:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLisp.g:1231:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalLisp.g:1231:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalLisp.g:903:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalLisp.g:1231:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -751,8 +752,8 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:905:16: ( . )
-            // InternalLisp.g:905:18: .
+            // InternalLisp.g:1233:16: ( . )
+            // InternalLisp.g:1233:18: .
             {
             matchAny(); 
 
@@ -905,37 +906,35 @@ public class InternalLispLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\23\2\uffff\1\31\3\33\4\uffff\1\22\2\uffff\2\22\11\uffff\1\33\1\uffff\2\33\6\uffff\7\33\1\56\1\33\1\60\1\uffff\1\61\2\uffff";
+        "\3\uffff\1\27\3\31\1\uffff\1\31\3\uffff\1\22\2\uffff\2\22\7\uffff\1\31\1\uffff\2\31\1\uffff\1\31\6\uffff\7\31\1\57\1\31\1\61\1\31\1\uffff\1\63\1\uffff\1\64\2\uffff";
     static final String DFA12_eofS =
-        "\62\uffff";
+        "\65\uffff";
     static final String DFA12_minS =
-        "\1\0\1\60\2\uffff\1\52\1\161\2\145\4\uffff\1\101\2\uffff\2\0\11\uffff\1\165\1\uffff\1\147\1\146\6\uffff\1\141\2\151\1\162\2\156\1\145\1\60\1\145\1\60\1\uffff\1\60\2\uffff";
+        "\1\0\2\uffff\1\52\1\161\2\145\1\uffff\1\151\3\uffff\1\101\2\uffff\2\0\7\uffff\1\165\1\uffff\1\147\1\146\1\uffff\1\163\6\uffff\1\141\2\151\1\164\1\162\2\156\1\60\1\145\1\60\1\145\1\uffff\1\60\1\uffff\1\60\2\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\71\2\uffff\1\57\1\161\2\145\4\uffff\1\172\2\uffff\2\uffff\11\uffff\1\165\1\uffff\1\147\1\146\6\uffff\1\141\2\151\1\162\2\156\1\145\1\172\1\145\1\172\1\uffff\1\172\2\uffff";
+        "\1\uffff\2\uffff\1\57\1\161\2\145\1\uffff\1\151\3\uffff\1\172\2\uffff\2\uffff\7\uffff\1\165\1\uffff\1\147\1\146\1\uffff\1\163\6\uffff\1\141\2\151\1\164\1\162\2\156\1\172\1\145\1\172\1\145\1\uffff\1\172\1\uffff\1\172\2\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\4\uffff\1\10\1\11\1\12\1\13\1\uffff\1\14\1\15\2\uffff\1\21\1\22\1\1\1\15\1\2\1\3\1\17\1\20\1\4\1\uffff\1\14\2\uffff\1\10\1\11\1\12\1\13\1\16\1\21\12\uffff\1\6\1\uffff\1\5\1\7";
+        "\1\uffff\1\1\1\2\4\uffff\1\7\1\uffff\1\11\1\12\1\13\1\uffff\1\14\1\15\2\uffff\1\21\1\22\1\1\1\2\1\17\1\20\1\3\1\uffff\1\14\2\uffff\1\7\1\uffff\1\11\1\12\1\13\1\15\1\16\1\21\13\uffff\1\10\1\uffff\1\5\1\uffff\1\4\1\6";
     static final String DFA12_specialS =
-        "\1\0\16\uffff\1\1\1\2\41\uffff}>";
+        "\1\1\16\uffff\1\2\1\0\44\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\22\2\21\2\22\1\21\22\22\1\21\1\22\1\17\4\22\1\20\1\10\1\11\1\3\1\13\1\22\1\2\1\12\1\4\1\1\11\16\7\22\32\15\3\22\1\14\1\15\1\22\1\15\1\6\1\15\1\7\16\15\1\5\7\15\uff85\22",
-            "\12\24",
+            "\11\22\2\21\2\22\1\21\22\22\1\21\1\22\1\17\4\22\1\20\1\7\1\11\1\2\1\13\1\22\1\1\1\12\1\3\12\16\7\22\32\15\3\22\1\14\1\15\1\22\1\15\1\5\1\15\1\6\7\15\1\10\6\15\1\4\7\15\uff85\22",
             "",
             "",
-            "\1\27\4\uffff\1\30",
+            "\1\25\4\uffff\1\26",
+            "\1\30",
             "\1\32",
-            "\1\34",
+            "\1\33",
+            "",
             "\1\35",
             "",
             "",
             "",
-            "",
-            "\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "",
             "\0\42",
             "\0\42",
-            "",
-            "",
             "",
             "",
             "",
@@ -948,23 +947,28 @@ public class InternalLispLexer extends Lexer {
             "\1\45",
             "\1\46",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\47",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\50",
             "\1\51",
             "\1\52",
             "\1\53",
             "\1\54",
             "\1\55",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
-            "\1\57",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\1\56",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\60",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "\1\62",
             "",
-            "\12\33\7\uffff\32\33\4\uffff\1\33\1\uffff\32\33",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
+            "",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             ""
     };
@@ -1006,24 +1010,34 @@ public class InternalLispLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_16 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 34;}
+
+                        else s = 18;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
-                        if ( (LA12_0=='0') ) {s = 1;}
+                        if ( (LA12_0=='-') ) {s = 1;}
 
-                        else if ( (LA12_0=='-') ) {s = 2;}
+                        else if ( (LA12_0=='*') ) {s = 2;}
 
-                        else if ( (LA12_0=='*') ) {s = 3;}
+                        else if ( (LA12_0=='/') ) {s = 3;}
 
-                        else if ( (LA12_0=='/') ) {s = 4;}
+                        else if ( (LA12_0=='s') ) {s = 4;}
 
-                        else if ( (LA12_0=='s') ) {s = 5;}
+                        else if ( (LA12_0=='b') ) {s = 5;}
 
-                        else if ( (LA12_0=='b') ) {s = 6;}
+                        else if ( (LA12_0=='d') ) {s = 6;}
 
-                        else if ( (LA12_0=='d') ) {s = 7;}
+                        else if ( (LA12_0=='(') ) {s = 7;}
 
-                        else if ( (LA12_0=='(') ) {s = 8;}
+                        else if ( (LA12_0=='l') ) {s = 8;}
 
                         else if ( (LA12_0==')') ) {s = 9;}
 
@@ -1033,9 +1047,9 @@ public class InternalLispLexer extends Lexer {
 
                         else if ( (LA12_0=='^') ) {s = 12;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='a'||LA12_0=='c'||(LA12_0>='e' && LA12_0<='r')||(LA12_0>='t' && LA12_0<='z')) ) {s = 13;}
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='a'||LA12_0=='c'||(LA12_0>='e' && LA12_0<='k')||(LA12_0>='m' && LA12_0<='r')||(LA12_0>='t' && LA12_0<='z')) ) {s = 13;}
 
-                        else if ( ((LA12_0>='1' && LA12_0<='9')) ) {s = 14;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 14;}
 
                         else if ( (LA12_0=='\"') ) {s = 15;}
 
@@ -1047,21 +1061,11 @@ public class InternalLispLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 1 : 
+                    case 2 : 
                         int LA12_15 = input.LA(1);
 
                         s = -1;
                         if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 34;}
-
-                        else s = 18;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA12_16 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 34;}
 
                         else s = 18;
 
