@@ -114,6 +114,15 @@ public interface LispFactory extends EFactory
   Decimal createDecimal();
 
   /**
+   * Returns a new object of class '<em>Recursion</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Recursion</em>'.
+   * @generated
+   */
+  Recursion createRecursion();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

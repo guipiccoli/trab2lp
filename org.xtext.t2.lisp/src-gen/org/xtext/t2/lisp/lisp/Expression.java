@@ -3,6 +3,7 @@
  */
 package org.xtext.t2.lisp.lisp;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,29 +51,19 @@ public interface Expression extends Definition
   void setOperacoes(Operacoes value);
 
   /**
-   * Returns the value of the '<em><b>Primeiro</b></em>' containment reference.
+   * Returns the value of the '<em><b>Primeiro</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.t2.lisp.lisp.Recursion}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Primeiro</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Primeiro</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Primeiro</em>' containment reference.
-   * @see #setPrimeiro(Numeros)
+   * @return the value of the '<em>Primeiro</em>' containment reference list.
    * @see org.xtext.t2.lisp.lisp.LispPackage#getExpression_Primeiro()
    * @model containment="true"
    * @generated
    */
-  Numeros getPrimeiro();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Expression#getPrimeiro <em>Primeiro</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Primeiro</em>' containment reference.
-   * @see #getPrimeiro()
-   * @generated
-   */
-  void setPrimeiro(Numeros value);
+  EList<Recursion> getPrimeiro();
 
 } // Expression

@@ -33,31 +33,33 @@ public class LispParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, LispGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getModelAccess().getAlternatives(), "rule__Model__Alternatives");
 			builder.put(grammarAccess.getDefinitionAccess().getAlternatives(), "rule__Definition__Alternatives");
-			builder.put(grammarAccess.getDefineAccess().getAlternatives(), "rule__Define__Alternatives");
+			builder.put(grammarAccess.getDefineAccess().getAlternatives_1(), "rule__Define__Alternatives_1");
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 			builder.put(grammarAccess.getNumerosAccess().getAlternatives(), "rule__Numeros__Alternatives");
 			builder.put(grammarAccess.getOperacoesAccess().getAlternatives(), "rule__Operacoes__Alternatives");
+			builder.put(grammarAccess.getRecursionAccess().getAlternatives(), "rule__Recursion__Alternatives");
 			builder.put(grammarAccess.getBeginAccess().getGroup(), "rule__Begin__Group__0");
-			builder.put(grammarAccess.getDefineAccess().getGroup_0(), "rule__Define__Group_0__0");
+			builder.put(grammarAccess.getDefineAccess().getGroup(), "rule__Define__Group__0");
 			builder.put(grammarAccess.getListAccess().getGroup(), "rule__List__Group__0");
 			builder.put(grammarAccess.getExpressionAccess().getGroup_0(), "rule__Expression__Group_0__0");
 			builder.put(grammarAccess.getExpressionAccess().getGroup_1(), "rule__Expression__Group_1__0");
 			builder.put(grammarAccess.getDecimalAccess().getGroup(), "rule__Decimal__Group__0");
 			builder.put(grammarAccess.getModelAccess().getBeginAssignment_0(), "rule__Model__BeginAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getDefinitionAssignment_1(), "rule__Model__DefinitionAssignment_1");
-			builder.put(grammarAccess.getBeginAccess().getNameAssignment_1(), "rule__Begin__NameAssignment_1");
-			builder.put(grammarAccess.getBeginAccess().getDefinitionAssignment_2(), "rule__Begin__DefinitionAssignment_2");
-			builder.put(grammarAccess.getDefineAccess().getNameAssignment_0_1(), "rule__Define__NameAssignment_0_1");
-			builder.put(grammarAccess.getDefineAccess().getExpressionAssignment_0_2(), "rule__Define__ExpressionAssignment_0_2");
-			builder.put(grammarAccess.getDefineAccess().getListAssignment_1(), "rule__Define__ListAssignment_1");
-			builder.put(grammarAccess.getListAccess().getNameAssignment_2(), "rule__List__NameAssignment_2");
-			builder.put(grammarAccess.getListAccess().getNumerosAssignment_3(), "rule__List__NumerosAssignment_3");
+			builder.put(grammarAccess.getBeginAccess().getDefinitionAssignment_1(), "rule__Begin__DefinitionAssignment_1");
+			builder.put(grammarAccess.getDefineAccess().getExpressionAssignment_1_0(), "rule__Define__ExpressionAssignment_1_0");
+			builder.put(grammarAccess.getDefineAccess().getListAssignment_1_1(), "rule__Define__ListAssignment_1_1");
+			builder.put(grammarAccess.getListAccess().getNumerosAssignment_2(), "rule__List__NumerosAssignment_2");
 			builder.put(grammarAccess.getExpressionAccess().getOperacoesAssignment_0_1(), "rule__Expression__OperacoesAssignment_0_1");
 			builder.put(grammarAccess.getExpressionAccess().getPrimeiroAssignment_0_2(), "rule__Expression__PrimeiroAssignment_0_2");
 			builder.put(grammarAccess.getOperacoesAccess().getValueAssignment_0(), "rule__Operacoes__ValueAssignment_0");
 			builder.put(grammarAccess.getInteirosAccess().getValueAssignment(), "rule__Inteiros__ValueAssignment");
 			builder.put(grammarAccess.getDecimalAccess().getValueAssignment_0(), "rule__Decimal__ValueAssignment_0");
 			builder.put(grammarAccess.getDecimalAccess().getValueAssignment_2(), "rule__Decimal__ValueAssignment_2");
+			builder.put(grammarAccess.getRecursionAccess().getRecursionIDAssignment_0(), "rule__Recursion__RecursionIDAssignment_0");
+			builder.put(grammarAccess.getRecursionAccess().getRecursionIntAssignment_1(), "rule__Recursion__RecursionIntAssignment_1");
+			builder.put(grammarAccess.getRecursionAccess().getRecursionStringAssignment_2(), "rule__Recursion__RecursionStringAssignment_2");
+			builder.put(grammarAccess.getRecursionAccess().getRecursionExpressionAssignment_3(), "rule__Recursion__RecursionExpressionAssignment_3");
 		}
 	}
 	

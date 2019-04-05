@@ -22,6 +22,7 @@ import org.xtext.t2.lisp.lisp.List;
 import org.xtext.t2.lisp.lisp.Model;
 import org.xtext.t2.lisp.lisp.Numeros;
 import org.xtext.t2.lisp.lisp.Operacoes;
+import org.xtext.t2.lisp.lisp.Recursion;
 
 /**
  * <!-- begin-user-doc -->
@@ -100,6 +101,13 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   private EClass decimalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass recursionEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -219,19 +227,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBegin_Name()
-  {
-    return (EAttribute)beginEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getBegin_Definition()
   {
-    return (EReference)beginEClass.getEStructuralFeatures().get(1);
+    return (EReference)beginEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -249,19 +247,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getDefine_Name()
-  {
-    return (EAttribute)defineEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getDefine_Expression()
   {
-    return (EReference)defineEClass.getEStructuralFeatures().get(1);
+    return (EReference)defineEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -271,7 +259,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    */
   public EReference getDefine_List()
   {
-    return (EReference)defineEClass.getEStructuralFeatures().get(2);
+    return (EReference)defineEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -289,19 +277,9 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getList_Name()
-  {
-    return (EAttribute)listEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getList_Numeros()
   {
-    return (EReference)listEClass.getEStructuralFeatures().get(1);
+    return (EReference)listEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -399,6 +377,56 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRecursion()
+  {
+    return recursionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRecursion_RecursionID()
+  {
+    return (EAttribute)recursionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecursion_RecursionInt()
+  {
+    return (EReference)recursionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRecursion_RecursionString()
+  {
+    return (EAttribute)recursionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRecursion_RecursionExpression()
+  {
+    return (EReference)recursionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public LispFactory getLispFactory()
   {
     return (LispFactory)getEFactoryInstance();
@@ -431,16 +459,13 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     definitionEClass = createEClass(DEFINITION);
 
     beginEClass = createEClass(BEGIN);
-    createEAttribute(beginEClass, BEGIN__NAME);
     createEReference(beginEClass, BEGIN__DEFINITION);
 
     defineEClass = createEClass(DEFINE);
-    createEAttribute(defineEClass, DEFINE__NAME);
     createEReference(defineEClass, DEFINE__EXPRESSION);
     createEReference(defineEClass, DEFINE__LIST);
 
     listEClass = createEClass(LIST);
-    createEAttribute(listEClass, LIST__NAME);
     createEReference(listEClass, LIST__NUMEROS);
 
     expressionEClass = createEClass(EXPRESSION);
@@ -456,6 +481,12 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     inteirosEClass = createEClass(INTEIROS);
 
     decimalEClass = createEClass(DECIMAL);
+
+    recursionEClass = createEClass(RECURSION);
+    createEAttribute(recursionEClass, RECURSION__RECURSION_ID);
+    createEReference(recursionEClass, RECURSION__RECURSION_INT);
+    createEAttribute(recursionEClass, RECURSION__RECURSION_STRING);
+    createEReference(recursionEClass, RECURSION__RECURSION_EXPRESSION);
   }
 
   /**
@@ -488,6 +519,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
 
     // Add supertypes to classes
     defineEClass.getESuperTypes().add(this.getDefinition());
+    listEClass.getESuperTypes().add(this.getDefinition());
     expressionEClass.getESuperTypes().add(this.getDefinition());
     numerosEClass.getESuperTypes().add(this.getDefinition());
     inteirosEClass.getESuperTypes().add(this.getNumeros());
@@ -501,21 +533,18 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     initEClass(definitionEClass, Definition.class, "Definition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(beginEClass, Begin.class, "Begin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBegin_Name(), ecorePackage.getEString(), "name", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getBegin_Definition(), this.getDefinition(), null, "definition", null, 0, 1, Begin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defineEClass, Define.class, "Define", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDefine_Name(), ecorePackage.getEString(), "name", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDefine_Expression(), this.getExpression(), null, "expression", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDefine_List(), this.getList(), null, "list", null, 0, 1, Define.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getList_Name(), ecorePackage.getEString(), "name", null, 0, 1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getList_Numeros(), this.getNumeros(), null, "numeros", null, 0, 1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getList_Numeros(), this.getNumeros(), null, "numeros", null, 0, -1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpression_Operacoes(), this.getOperacoes(), null, "operacoes", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpression_Primeiro(), this.getNumeros(), null, "primeiro", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Primeiro(), this.getRecursion(), null, "primeiro", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numerosEClass, Numeros.class, "Numeros", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNumeros_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Numeros.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -526,6 +555,12 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     initEClass(inteirosEClass, Inteiros.class, "Inteiros", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(decimalEClass, Decimal.class, "Decimal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(recursionEClass, Recursion.class, "Recursion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRecursion_RecursionID(), ecorePackage.getEString(), "recursionID", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecursion_RecursionInt(), this.getNumeros(), null, "recursionInt", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRecursion_RecursionString(), ecorePackage.getEString(), "recursionString", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecursion_RecursionExpression(), this.getDefinition(), null, "recursionExpression", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

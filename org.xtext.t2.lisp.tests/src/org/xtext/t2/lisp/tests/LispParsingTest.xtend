@@ -75,11 +75,39 @@ class LispParsingTest {
 	@Test
 	def void loadModel6() {
 		val result = parseHelper.parse('''
-			232
+			(list 1 2 23 3)
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
 	}
+		@Test
+	def void loadModel7() {
+		val result = parseHelper.parse('''
+			begin 00
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	@Test
+	def void loadModel8() {
+		val result = parseHelper.parse('''
+			define (list 1 2 23 3)
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	@Test
+	def void loadModel9() {
+		val result = parseHelper.parse('''
+			(+2 (+ 2 (* 4 4)))
+		''')
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
 }
 

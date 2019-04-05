@@ -106,6 +106,7 @@ public class LispSwitch<T> extends Switch<T>
       {
         List list = (List)theEObject;
         T result = caseList(list);
+        if (result == null) result = caseDefinition(list);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -147,6 +148,13 @@ public class LispSwitch<T> extends Switch<T>
         T result = caseDecimal(decimal);
         if (result == null) result = caseNumeros(decimal);
         if (result == null) result = caseDefinition(decimal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case LispPackage.RECURSION:
+      {
+        Recursion recursion = (Recursion)theEObject;
+        T result = caseRecursion(recursion);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -310,6 +318,22 @@ public class LispSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDecimal(Decimal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Recursion</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Recursion</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRecursion(Recursion object)
   {
     return null;
   }

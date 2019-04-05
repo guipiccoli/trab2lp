@@ -1,0 +1,42 @@
+grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
+
+generate lisp "http://www.xtext.org/t2/lisp/Lisp"
+
+Model:
+	begin=Begin|
+	definition=Definition* ;
+
+	
+Definition:
+	Numeros | Expression | Define
+;
+
+Begin: 
+	'begin' name=ID definition=Definition*;
+
+Define:
+	'define' name=ID expression=Expression | list=List
+	;
+List:
+	'(''list' STRING  numeros+=Numeros*')'
+;
+
+Expression:
+	'(' operacoes=Operacoes (primeiro=Numeros)* ')' |
+	'(' ')'
+;
+
+Numeros:
+	Inteiros | Decimal;
+
+Operacoes:
+	value = '+'| '-' | '*'| '/'|'square';
+
+
+Inteiros:
+	value = INT;
+
+Decimal:
+	value=INT '.' value=INT;
+
+

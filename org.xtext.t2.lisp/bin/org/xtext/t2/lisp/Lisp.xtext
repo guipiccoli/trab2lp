@@ -8,21 +8,21 @@ Model:
 
 	
 Definition:
-	Numeros | Expression | Define
+	Numeros | Expression | Define | List 
 ;
 
 Begin: 
-	'begin' name=ID definition=Definition*;
+	'begin'definition=Definition*;
 
 Define:
-	'define' name=ID expression=Expression | list=List
+	'define' (expression=Expression | list=List)
 	;
 List:
-	'(''list' name=ID numeros=Numeros')'
+	'(''list' (numeros+=Numeros)*')'
 ;
 
 Expression:
-	'(' operacoes=Operacoes (primeiro=Numeros)* ')' |
+	'(' operacoes=Operacoes (primeiro+=Recursion)* ')' |
 	'(' ')'
 ;
 
@@ -32,6 +32,9 @@ Numeros:
 Operacoes:
 	value = '+'| '-' | '*'| '/'|'square';
 
+Condicao:
+	'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')'
+;
 
 Inteiros:
 	value = INT;
@@ -40,3 +43,6 @@ Decimal:
 	value=INT '.' value=INT;
 
 
+Recursion:
+	(recursionID=ID|recursionInt=Numeros|recursionString=STRING|recursionDefinition=Definition)
+;

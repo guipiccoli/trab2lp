@@ -12,16 +12,13 @@
     </genClasses>
     <genClasses ecoreClass="Lisp.ecore#//Definition"/>
     <genClasses ecoreClass="Lisp.ecore#//Begin">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Begin/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Begin/definition"/>
     </genClasses>
     <genClasses ecoreClass="Lisp.ecore#//Define">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Define/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Define/expression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Define/list"/>
     </genClasses>
     <genClasses ecoreClass="Lisp.ecore#//List">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//List/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//List/numeros"/>
     </genClasses>
     <genClasses ecoreClass="Lisp.ecore#//Expression">
@@ -36,5 +33,11 @@
     </genClasses>
     <genClasses ecoreClass="Lisp.ecore#//Inteiros"/>
     <genClasses ecoreClass="Lisp.ecore#//Decimal"/>
+    <genClasses ecoreClass="Lisp.ecore#//Recursion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Recursion/recursionID"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Recursion/recursionInt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Recursion/recursionString"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Recursion/recursionExpression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

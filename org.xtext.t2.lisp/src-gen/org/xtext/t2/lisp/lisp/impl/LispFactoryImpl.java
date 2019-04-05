@@ -75,6 +75,7 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
       case LispPackage.OPERACOES: return createOperacoes();
       case LispPackage.INTEIROS: return createInteiros();
       case LispPackage.DECIMAL: return createDecimal();
+      case LispPackage.RECURSION: return createRecursion();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -188,6 +189,17 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
   {
     DecimalImpl decimal = new DecimalImpl();
     return decimal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Recursion createRecursion()
+  {
+    RecursionImpl recursion = new RecursionImpl();
+    return recursion;
   }
 
   /**

@@ -24,7 +24,6 @@ import org.xtext.t2.lisp.lisp.LispPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.BeginImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.BeginImpl#getDefinition <em>Definition</em>}</li>
  * </ul>
  *
@@ -32,26 +31,6 @@ import org.xtext.t2.lisp.lisp.LispPackage;
  */
 public class BeginImpl extends MinimalEObjectImpl.Container implements Begin
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getDefinition() <em>Definition</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -81,29 +60,6 @@ public class BeginImpl extends MinimalEObjectImpl.Container implements Begin
   protected EClass eStaticClass()
   {
     return LispPackage.Literals.BEGIN;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.BEGIN__NAME, oldName, name));
   }
 
   /**
@@ -180,8 +136,6 @@ public class BeginImpl extends MinimalEObjectImpl.Container implements Begin
   {
     switch (featureID)
     {
-      case LispPackage.BEGIN__NAME:
-        return getName();
       case LispPackage.BEGIN__DEFINITION:
         return getDefinition();
     }
@@ -198,9 +152,6 @@ public class BeginImpl extends MinimalEObjectImpl.Container implements Begin
   {
     switch (featureID)
     {
-      case LispPackage.BEGIN__NAME:
-        setName((String)newValue);
-        return;
       case LispPackage.BEGIN__DEFINITION:
         setDefinition((Definition)newValue);
         return;
@@ -218,9 +169,6 @@ public class BeginImpl extends MinimalEObjectImpl.Container implements Begin
   {
     switch (featureID)
     {
-      case LispPackage.BEGIN__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case LispPackage.BEGIN__DEFINITION:
         setDefinition((Definition)null);
         return;
@@ -238,29 +186,10 @@ public class BeginImpl extends MinimalEObjectImpl.Container implements Begin
   {
     switch (featureID)
     {
-      case LispPackage.BEGIN__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LispPackage.BEGIN__DEFINITION:
         return definition != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //BeginImpl

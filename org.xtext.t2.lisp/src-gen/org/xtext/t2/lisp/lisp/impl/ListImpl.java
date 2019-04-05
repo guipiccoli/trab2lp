@@ -3,14 +3,17 @@
  */
 package org.xtext.t2.lisp.lisp.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.t2.lisp.lisp.LispPackage;
 import org.xtext.t2.lisp.lisp.List;
@@ -24,43 +27,22 @@ import org.xtext.t2.lisp.lisp.Numeros;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.ListImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.ListImpl#getNumeros <em>Numeros</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ListImpl extends MinimalEObjectImpl.Container implements List
+public class ListImpl extends DefinitionImpl implements List
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getNumeros() <em>Numeros</em>}' containment reference.
+   * The cached value of the '{@link #getNumeros() <em>Numeros</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getNumeros()
    * @generated
    * @ordered
    */
-  protected Numeros numeros;
+  protected EList<Numeros> numeros;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,70 +70,13 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public EList<Numeros> getNumeros()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.LIST__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Numeros getNumeros()
-  {
+    if (numeros == null)
+    {
+      numeros = new EObjectContainmentEList<Numeros>(Numeros.class, this, LispPackage.LIST__NUMEROS);
+    }
     return numeros;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetNumeros(Numeros newNumeros, NotificationChain msgs)
-  {
-    Numeros oldNumeros = numeros;
-    numeros = newNumeros;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.LIST__NUMEROS, oldNumeros, newNumeros);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNumeros(Numeros newNumeros)
-  {
-    if (newNumeros != numeros)
-    {
-      NotificationChain msgs = null;
-      if (numeros != null)
-        msgs = ((InternalEObject)numeros).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.LIST__NUMEROS, null, msgs);
-      if (newNumeros != null)
-        msgs = ((InternalEObject)newNumeros).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.LIST__NUMEROS, null, msgs);
-      msgs = basicSetNumeros(newNumeros, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.LIST__NUMEROS, newNumeros, newNumeros));
   }
 
   /**
@@ -165,7 +90,7 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
     switch (featureID)
     {
       case LispPackage.LIST__NUMEROS:
-        return basicSetNumeros(null, msgs);
+        return ((InternalEList<?>)getNumeros()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -180,8 +105,6 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   {
     switch (featureID)
     {
-      case LispPackage.LIST__NAME:
-        return getName();
       case LispPackage.LIST__NUMEROS:
         return getNumeros();
     }
@@ -193,16 +116,15 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case LispPackage.LIST__NAME:
-        setName((String)newValue);
-        return;
       case LispPackage.LIST__NUMEROS:
-        setNumeros((Numeros)newValue);
+        getNumeros().clear();
+        getNumeros().addAll((Collection<? extends Numeros>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -218,11 +140,8 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   {
     switch (featureID)
     {
-      case LispPackage.LIST__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case LispPackage.LIST__NUMEROS:
-        setNumeros((Numeros)null);
+        getNumeros().clear();
         return;
     }
     super.eUnset(featureID);
@@ -238,29 +157,10 @@ public class ListImpl extends MinimalEObjectImpl.Container implements List
   {
     switch (featureID)
     {
-      case LispPackage.LIST__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LispPackage.LIST__NUMEROS:
-        return numeros != null;
+        return numeros != null && !numeros.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ListImpl

@@ -3,18 +3,25 @@
  */
 package org.xtext.t2.lisp.lisp.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.xtext.t2.lisp.lisp.Expression;
 import org.xtext.t2.lisp.lisp.LispPackage;
-import org.xtext.t2.lisp.lisp.Numeros;
 import org.xtext.t2.lisp.lisp.Operacoes;
+import org.xtext.t2.lisp.lisp.Recursion;
 
 /**
  * <!-- begin-user-doc -->
@@ -43,14 +50,14 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
   protected Operacoes operacoes;
 
   /**
-   * The cached value of the '{@link #getPrimeiro() <em>Primeiro</em>}' containment reference.
+   * The cached value of the '{@link #getPrimeiro() <em>Primeiro</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPrimeiro()
    * @generated
    * @ordered
    */
-  protected Numeros primeiro;
+  protected EList<Recursion> primeiro;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,47 +133,13 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public Numeros getPrimeiro()
+  public EList<Recursion> getPrimeiro()
   {
+    if (primeiro == null)
+    {
+      primeiro = new EObjectContainmentEList<Recursion>(Recursion.class, this, LispPackage.EXPRESSION__PRIMEIRO);
+    }
     return primeiro;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPrimeiro(Numeros newPrimeiro, NotificationChain msgs)
-  {
-    Numeros oldPrimeiro = primeiro;
-    primeiro = newPrimeiro;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.EXPRESSION__PRIMEIRO, oldPrimeiro, newPrimeiro);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPrimeiro(Numeros newPrimeiro)
-  {
-    if (newPrimeiro != primeiro)
-    {
-      NotificationChain msgs = null;
-      if (primeiro != null)
-        msgs = ((InternalEObject)primeiro).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.EXPRESSION__PRIMEIRO, null, msgs);
-      if (newPrimeiro != null)
-        msgs = ((InternalEObject)newPrimeiro).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.EXPRESSION__PRIMEIRO, null, msgs);
-      msgs = basicSetPrimeiro(newPrimeiro, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.EXPRESSION__PRIMEIRO, newPrimeiro, newPrimeiro));
   }
 
   /**
@@ -182,7 +155,7 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
       case LispPackage.EXPRESSION__OPERACOES:
         return basicSetOperacoes(null, msgs);
       case LispPackage.EXPRESSION__PRIMEIRO:
-        return basicSetPrimeiro(null, msgs);
+        return ((InternalEList<?>)getPrimeiro()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -210,6 +183,7 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -219,7 +193,8 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
         setOperacoes((Operacoes)newValue);
         return;
       case LispPackage.EXPRESSION__PRIMEIRO:
-        setPrimeiro((Numeros)newValue);
+        getPrimeiro().clear();
+        getPrimeiro().addAll((Collection<? extends Recursion>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,7 +214,7 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
         setOperacoes((Operacoes)null);
         return;
       case LispPackage.EXPRESSION__PRIMEIRO:
-        setPrimeiro((Numeros)null);
+        getPrimeiro().clear();
         return;
     }
     super.eUnset(featureID);
@@ -258,7 +233,7 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
       case LispPackage.EXPRESSION__OPERACOES:
         return operacoes != null;
       case LispPackage.EXPRESSION__PRIMEIRO:
-        return primeiro != null;
+        return primeiro != null && !primeiro.isEmpty();
     }
     return super.eIsSet(featureID);
   }

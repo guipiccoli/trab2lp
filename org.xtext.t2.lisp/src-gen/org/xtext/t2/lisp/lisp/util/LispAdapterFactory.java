@@ -126,6 +126,11 @@ public class LispAdapterFactory extends AdapterFactoryImpl
         return createDecimalAdapter();
       }
       @Override
+      public Adapter caseRecursion(Recursion object)
+      {
+        return createRecursionAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -293,6 +298,21 @@ public class LispAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createDecimalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.t2.lisp.lisp.Recursion <em>Recursion</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.t2.lisp.lisp.Recursion
+   * @generated
+   */
+  public Adapter createRecursionAdapter()
   {
     return null;
   }

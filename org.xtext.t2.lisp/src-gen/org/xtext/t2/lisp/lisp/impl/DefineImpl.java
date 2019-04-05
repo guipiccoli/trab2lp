@@ -24,7 +24,6 @@ import org.xtext.t2.lisp.lisp.List;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.DefineImpl#getList <em>List</em>}</li>
  * </ul>
@@ -33,26 +32,6 @@ import org.xtext.t2.lisp.lisp.List;
  */
 public class DefineImpl extends DefinitionImpl implements Define
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -92,29 +71,6 @@ public class DefineImpl extends DefinitionImpl implements Define
   protected EClass eStaticClass()
   {
     return LispPackage.Literals.DEFINE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.DEFINE__NAME, oldName, name));
   }
 
   /**
@@ -241,8 +197,6 @@ public class DefineImpl extends DefinitionImpl implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        return getName();
       case LispPackage.DEFINE__EXPRESSION:
         return getExpression();
       case LispPackage.DEFINE__LIST:
@@ -261,9 +215,6 @@ public class DefineImpl extends DefinitionImpl implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        setName((String)newValue);
-        return;
       case LispPackage.DEFINE__EXPRESSION:
         setExpression((Expression)newValue);
         return;
@@ -284,9 +235,6 @@ public class DefineImpl extends DefinitionImpl implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case LispPackage.DEFINE__EXPRESSION:
         setExpression((Expression)null);
         return;
@@ -307,31 +255,12 @@ public class DefineImpl extends DefinitionImpl implements Define
   {
     switch (featureID)
     {
-      case LispPackage.DEFINE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case LispPackage.DEFINE__EXPRESSION:
         return expression != null;
       case LispPackage.DEFINE__LIST:
         return list != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //DefineImpl

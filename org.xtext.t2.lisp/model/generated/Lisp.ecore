@@ -9,26 +9,23 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Definition"/>
   <eClassifiers xsi:type="ecore:EClass" name="Begin">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//Definition"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Define" eSuperTypes="#//Definition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//List" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="List">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="numeros" eType="#//Numeros"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Definition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="numeros" upperBound="-1"
+        eType="#//Numeros" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Definition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operacoes" eType="#//Operacoes"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="primeiro" eType="#//Numeros"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primeiro" upperBound="-1"
+        eType="#//Recursion" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Numeros" eSuperTypes="#//Definition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -38,4 +35,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Inteiros" eSuperTypes="#//Numeros"/>
   <eClassifiers xsi:type="ecore:EClass" name="Decimal" eSuperTypes="#//Numeros"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Recursion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recursionID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recursionInt" eType="#//Numeros"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recursionString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recursionExpression" eType="#//Definition"
+        containment="true"/>
+  </eClassifiers>
 </ecore:EPackage>

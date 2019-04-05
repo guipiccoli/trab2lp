@@ -3,7 +3,7 @@
  */
 package org.xtext.t2.lisp.lisp;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.t2.lisp.lisp.List#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.List#getNumeros <em>Numeros</em>}</li>
  * </ul>
  *
@@ -22,58 +21,22 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface List extends EObject
+public interface List extends Definition
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Numeros</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.t2.lisp.lisp.Numeros}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Numeros</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getList_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.List#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Numeros</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Numeros</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Numeros</em>' containment reference.
-   * @see #setNumeros(Numeros)
+   * @return the value of the '<em>Numeros</em>' containment reference list.
    * @see org.xtext.t2.lisp.lisp.LispPackage#getList_Numeros()
    * @model containment="true"
    * @generated
    */
-  Numeros getNumeros();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.List#getNumeros <em>Numeros</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Numeros</em>' containment reference.
-   * @see #getNumeros()
-   * @generated
-   */
-  void setNumeros(Numeros value);
+  EList<Numeros> getNumeros();
 
 } // List

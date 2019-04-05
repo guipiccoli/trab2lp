@@ -55,12 +55,13 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNumerosParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cDefineParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cListParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//Definition:
-		//	Numeros | Expression | Define;
+		//	Numeros | Expression | Define | List;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Numeros | Expression | Define
+		//Numeros | Expression | Define | List
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Numeros
@@ -71,97 +72,82 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Define
 		public RuleCall getDefineParserRuleCall_2() { return cDefineParserRuleCall_2; }
+		
+		//List
+		public RuleCall getListParserRuleCall_3() { return cListParserRuleCall_3; }
 	}
 	public class BeginElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Begin");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cBeginKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cDefinitionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDefinitionDefinitionParserRuleCall_2_0 = (RuleCall)cDefinitionAssignment_2.eContents().get(0);
+		private final Assignment cDefinitionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cDefinitionDefinitionParserRuleCall_1_0 = (RuleCall)cDefinitionAssignment_1.eContents().get(0);
 		
 		//Begin:
-		//	'begin' name=ID definition=Definition*;
+		//	'begin' definition=Definition*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'begin' name=ID definition=Definition*
+		//'begin' definition=Definition*
 		public Group getGroup() { return cGroup; }
 		
 		//'begin'
 		public Keyword getBeginKeyword_0() { return cBeginKeyword_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
 		//definition=Definition*
-		public Assignment getDefinitionAssignment_2() { return cDefinitionAssignment_2; }
+		public Assignment getDefinitionAssignment_1() { return cDefinitionAssignment_1; }
 		
 		//Definition
-		public RuleCall getDefinitionDefinitionParserRuleCall_2_0() { return cDefinitionDefinitionParserRuleCall_2_0; }
+		public RuleCall getDefinitionDefinitionParserRuleCall_1_0() { return cDefinitionDefinitionParserRuleCall_1_0; }
 	}
 	public class DefineElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Define");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cDefineKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Assignment cExpressionAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cExpressionExpressionParserRuleCall_0_2_0 = (RuleCall)cExpressionAssignment_0_2.eContents().get(0);
-		private final Assignment cListAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cListListParserRuleCall_1_0 = (RuleCall)cListAssignment_1.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDefineKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cExpressionExpressionParserRuleCall_1_0_0 = (RuleCall)cExpressionAssignment_1_0.eContents().get(0);
+		private final Assignment cListAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final RuleCall cListListParserRuleCall_1_1_0 = (RuleCall)cListAssignment_1_1.eContents().get(0);
 		
 		//Define:
-		//	'define' name=ID expression=Expression | list=List;
+		//	'define' (expression=Expression | list=List);
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'define' name=ID expression=Expression | list=List
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'define' name=ID expression=Expression
-		public Group getGroup_0() { return cGroup_0; }
+		//'define' (expression=Expression | list=List)
+		public Group getGroup() { return cGroup; }
 		
 		//'define'
-		public Keyword getDefineKeyword_0_0() { return cDefineKeyword_0_0; }
+		public Keyword getDefineKeyword_0() { return cDefineKeyword_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		//expression=Expression | list=List
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//expression=Expression
-		public Assignment getExpressionAssignment_0_2() { return cExpressionAssignment_0_2; }
+		public Assignment getExpressionAssignment_1_0() { return cExpressionAssignment_1_0; }
 		
 		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_0_2_0() { return cExpressionExpressionParserRuleCall_0_2_0; }
+		public RuleCall getExpressionExpressionParserRuleCall_1_0_0() { return cExpressionExpressionParserRuleCall_1_0_0; }
 		
 		//list=List
-		public Assignment getListAssignment_1() { return cListAssignment_1; }
+		public Assignment getListAssignment_1_1() { return cListAssignment_1_1; }
 		
 		//List
-		public RuleCall getListListParserRuleCall_1_0() { return cListListParserRuleCall_1_0; }
+		public RuleCall getListListParserRuleCall_1_1_0() { return cListListParserRuleCall_1_1_0; }
 	}
 	public class ListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.List");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cListKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Assignment cNumerosAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNumerosNumerosParserRuleCall_3_0 = (RuleCall)cNumerosAssignment_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNumerosAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNumerosNumerosParserRuleCall_2_0 = (RuleCall)cNumerosAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//List:
-		//	'(' 'list' name=ID numeros=Numeros ')';
+		//	'(' 'list' numeros+=Numeros* ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' 'list' name=ID numeros=Numeros ')'
+		//'(' 'list' numeros+=Numeros* ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'('
@@ -170,20 +156,14 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		//'list'
 		public Keyword getListKeyword_1() { return cListKeyword_1; }
 		
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-		
-		//numeros=Numeros
-		public Assignment getNumerosAssignment_3() { return cNumerosAssignment_3; }
+		//numeros+=Numeros*
+		public Assignment getNumerosAssignment_2() { return cNumerosAssignment_2; }
 		
 		//Numeros
-		public RuleCall getNumerosNumerosParserRuleCall_3_0() { return cNumerosNumerosParserRuleCall_3_0; }
+		public RuleCall getNumerosNumerosParserRuleCall_2_0() { return cNumerosNumerosParserRuleCall_2_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Expression");
@@ -193,21 +173,21 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOperacoesAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cOperacoesOperacoesParserRuleCall_0_1_0 = (RuleCall)cOperacoesAssignment_0_1.eContents().get(0);
 		private final Assignment cPrimeiroAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cPrimeiroNumerosParserRuleCall_0_2_0 = (RuleCall)cPrimeiroAssignment_0_2.eContents().get(0);
+		private final RuleCall cPrimeiroRecursionParserRuleCall_0_2_0 = (RuleCall)cPrimeiroAssignment_0_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//Expression:
-		//	'(' operacoes=Operacoes primeiro=Numeros* ')' |
+		//	'(' operacoes=Operacoes primeiro+=Recursion* ')' |
 		//	'(' ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' operacoes=Operacoes primeiro=Numeros* ')' | '(' ')'
+		//'(' operacoes=Operacoes primeiro+=Recursion* ')' | '(' ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'(' operacoes=Operacoes primeiro=Numeros* ')'
+		//'(' operacoes=Operacoes primeiro+=Recursion* ')'
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//'('
@@ -219,11 +199,11 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		//Operacoes
 		public RuleCall getOperacoesOperacoesParserRuleCall_0_1_0() { return cOperacoesOperacoesParserRuleCall_0_1_0; }
 		
-		//primeiro=Numeros*
+		//primeiro+=Recursion*
 		public Assignment getPrimeiroAssignment_0_2() { return cPrimeiroAssignment_0_2; }
 		
-		//Numeros
-		public RuleCall getPrimeiroNumerosParserRuleCall_0_2_0() { return cPrimeiroNumerosParserRuleCall_0_2_0; }
+		//Recursion
+		public RuleCall getPrimeiroRecursionParserRuleCall_0_2_0() { return cPrimeiroRecursionParserRuleCall_0_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
@@ -337,6 +317,49 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValueINTTerminalRuleCall_2_0() { return cValueINTTerminalRuleCall_2_0; }
 	}
+	public class RecursionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Recursion");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cRecursionIDAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cRecursionIDIDTerminalRuleCall_0_0 = (RuleCall)cRecursionIDAssignment_0.eContents().get(0);
+		private final Assignment cRecursionIntAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cRecursionIntNumerosParserRuleCall_1_0 = (RuleCall)cRecursionIntAssignment_1.eContents().get(0);
+		private final Assignment cRecursionStringAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
+		private final RuleCall cRecursionStringSTRINGTerminalRuleCall_2_0 = (RuleCall)cRecursionStringAssignment_2.eContents().get(0);
+		private final Assignment cRecursionExpressionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cRecursionExpressionDefinitionParserRuleCall_3_0 = (RuleCall)cRecursionExpressionAssignment_3.eContents().get(0);
+		
+		//Recursion:
+		//	recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//recursionID=ID
+		public Assignment getRecursionIDAssignment_0() { return cRecursionIDAssignment_0; }
+		
+		//ID
+		public RuleCall getRecursionIDIDTerminalRuleCall_0_0() { return cRecursionIDIDTerminalRuleCall_0_0; }
+		
+		//recursionInt=Numeros
+		public Assignment getRecursionIntAssignment_1() { return cRecursionIntAssignment_1; }
+		
+		//Numeros
+		public RuleCall getRecursionIntNumerosParserRuleCall_1_0() { return cRecursionIntNumerosParserRuleCall_1_0; }
+		
+		//recursionString=STRING
+		public Assignment getRecursionStringAssignment_2() { return cRecursionStringAssignment_2; }
+		
+		//STRING
+		public RuleCall getRecursionStringSTRINGTerminalRuleCall_2_0() { return cRecursionStringSTRINGTerminalRuleCall_2_0; }
+		
+		//recursionExpression=Definition
+		public Assignment getRecursionExpressionAssignment_3() { return cRecursionExpressionAssignment_3; }
+		
+		//Definition
+		public RuleCall getRecursionExpressionDefinitionParserRuleCall_3_0() { return cRecursionExpressionDefinitionParserRuleCall_3_0; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -349,6 +372,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	private final OperacoesElements pOperacoes;
 	private final InteirosElements pInteiros;
 	private final DecimalElements pDecimal;
+	private final RecursionElements pRecursion;
 	
 	private final Grammar grammar;
 	
@@ -369,6 +393,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOperacoes = new OperacoesElements();
 		this.pInteiros = new InteirosElements();
 		this.pDecimal = new DecimalElements();
+		this.pRecursion = new RecursionElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -409,7 +434,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Definition:
-	//	Numeros | Expression | Define;
+	//	Numeros | Expression | Define | List;
 	public DefinitionElements getDefinitionAccess() {
 		return pDefinition;
 	}
@@ -419,7 +444,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Begin:
-	//	'begin' name=ID definition=Definition*;
+	//	'begin' definition=Definition*;
 	public BeginElements getBeginAccess() {
 		return pBegin;
 	}
@@ -429,7 +454,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Define:
-	//	'define' name=ID expression=Expression | list=List;
+	//	'define' (expression=Expression | list=List);
 	public DefineElements getDefineAccess() {
 		return pDefine;
 	}
@@ -439,7 +464,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//List:
-	//	'(' 'list' name=ID numeros=Numeros ')';
+	//	'(' 'list' numeros+=Numeros* ')';
 	public ListElements getListAccess() {
 		return pList;
 	}
@@ -449,7 +474,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	'(' operacoes=Operacoes primeiro=Numeros* ')' |
+	//	'(' operacoes=Operacoes primeiro+=Recursion* ')' |
 	//	'(' ')';
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
@@ -497,6 +522,16 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDecimalRule() {
 		return getDecimalAccess().getRule();
+	}
+	
+	//Recursion:
+	//	recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition;
+	public RecursionElements getRecursionAccess() {
+		return pRecursion;
+	}
+	
+	public ParserRule getRecursionRule() {
+		return getRecursionAccess().getRule();
 	}
 	
 	//terminal ID:

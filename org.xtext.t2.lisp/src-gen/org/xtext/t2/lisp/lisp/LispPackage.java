@@ -124,22 +124,13 @@ public interface LispPackage extends EPackage
   int BEGIN = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BEGIN__NAME = 0;
-
-  /**
    * The feature id for the '<em><b>Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BEGIN__DEFINITION = 1;
+  int BEGIN__DEFINITION = 0;
 
   /**
    * The number of structural features of the '<em>Begin</em>' class.
@@ -148,7 +139,7 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BEGIN_FEATURE_COUNT = 2;
+  int BEGIN_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.DefineImpl <em>Define</em>}' class.
@@ -161,22 +152,13 @@ public interface LispPackage extends EPackage
   int DEFINE = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DEFINE__NAME = DEFINITION_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFINE__EXPRESSION = DEFINITION_FEATURE_COUNT + 1;
+  int DEFINE__EXPRESSION = DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>List</b></em>' containment reference.
@@ -185,7 +167,7 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINE__LIST = DEFINITION_FEATURE_COUNT + 2;
+  int DEFINE__LIST = DEFINITION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Define</em>' class.
@@ -194,7 +176,7 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DEFINE_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 3;
+  int DEFINE_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.ListImpl <em>List</em>}' class.
@@ -207,22 +189,13 @@ public interface LispPackage extends EPackage
   int LIST = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Numeros</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Numeros</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST__NUMEROS = 1;
+  int LIST__NUMEROS = DEFINITION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>List</em>' class.
@@ -231,7 +204,7 @@ public interface LispPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_FEATURE_COUNT = 2;
+  int LIST_FEATURE_COUNT = DEFINITION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -253,7 +226,7 @@ public interface LispPackage extends EPackage
   int EXPRESSION__OPERACOES = DEFINITION_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Primeiro</b></em>' containment reference.
+   * The feature id for the '<em><b>Primeiro</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -382,6 +355,61 @@ public interface LispPackage extends EPackage
    */
   int DECIMAL_FEATURE_COUNT = NUMEROS_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.RecursionImpl <em>Recursion</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.RecursionImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getRecursion()
+   * @generated
+   */
+  int RECURSION = 10;
+
+  /**
+   * The feature id for the '<em><b>Recursion ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECURSION__RECURSION_ID = 0;
+
+  /**
+   * The feature id for the '<em><b>Recursion Int</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECURSION__RECURSION_INT = 1;
+
+  /**
+   * The feature id for the '<em><b>Recursion String</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECURSION__RECURSION_STRING = 2;
+
+  /**
+   * The feature id for the '<em><b>Recursion Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECURSION__RECURSION_EXPRESSION = 3;
+
+  /**
+   * The number of structural features of the '<em>Recursion</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECURSION_FEATURE_COUNT = 4;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Model <em>Model</em>}'.
@@ -436,17 +464,6 @@ public interface LispPackage extends EPackage
   EClass getBegin();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Begin#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.t2.lisp.lisp.Begin#getName()
-   * @see #getBegin()
-   * @generated
-   */
-  EAttribute getBegin_Name();
-
-  /**
    * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Begin#getDefinition <em>Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -466,17 +483,6 @@ public interface LispPackage extends EPackage
    * @generated
    */
   EClass getDefine();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Define#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.t2.lisp.lisp.Define#getName()
-   * @see #getDefine()
-   * @generated
-   */
-  EAttribute getDefine_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Define#getExpression <em>Expression</em>}'.
@@ -511,21 +517,10 @@ public interface LispPackage extends EPackage
   EClass getList();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.List#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.t2.lisp.lisp.List#getNumeros <em>Numeros</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.t2.lisp.lisp.List#getName()
-   * @see #getList()
-   * @generated
-   */
-  EAttribute getList_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.List#getNumeros <em>Numeros</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Numeros</em>'.
+   * @return the meta object for the containment reference list '<em>Numeros</em>'.
    * @see org.xtext.t2.lisp.lisp.List#getNumeros()
    * @see #getList()
    * @generated
@@ -554,10 +549,10 @@ public interface LispPackage extends EPackage
   EReference getExpression_Operacoes();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getPrimeiro <em>Primeiro</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.t2.lisp.lisp.Expression#getPrimeiro <em>Primeiro</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Primeiro</em>'.
+   * @return the meta object for the containment reference list '<em>Primeiro</em>'.
    * @see org.xtext.t2.lisp.lisp.Expression#getPrimeiro()
    * @see #getExpression()
    * @generated
@@ -625,6 +620,60 @@ public interface LispPackage extends EPackage
    * @generated
    */
   EClass getDecimal();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Recursion <em>Recursion</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Recursion</em>'.
+   * @see org.xtext.t2.lisp.lisp.Recursion
+   * @generated
+   */
+  EClass getRecursion();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionID <em>Recursion ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Recursion ID</em>'.
+   * @see org.xtext.t2.lisp.lisp.Recursion#getRecursionID()
+   * @see #getRecursion()
+   * @generated
+   */
+  EAttribute getRecursion_RecursionID();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionInt <em>Recursion Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Recursion Int</em>'.
+   * @see org.xtext.t2.lisp.lisp.Recursion#getRecursionInt()
+   * @see #getRecursion()
+   * @generated
+   */
+  EReference getRecursion_RecursionInt();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionString <em>Recursion String</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Recursion String</em>'.
+   * @see org.xtext.t2.lisp.lisp.Recursion#getRecursionString()
+   * @see #getRecursion()
+   * @generated
+   */
+  EAttribute getRecursion_RecursionString();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionExpression <em>Recursion Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Recursion Expression</em>'.
+   * @see org.xtext.t2.lisp.lisp.Recursion#getRecursionExpression()
+   * @see #getRecursion()
+   * @generated
+   */
+  EReference getRecursion_RecursionExpression();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -696,14 +745,6 @@ public interface LispPackage extends EPackage
     EClass BEGIN = eINSTANCE.getBegin();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BEGIN__NAME = eINSTANCE.getBegin_Name();
-
-    /**
      * The meta object literal for the '<em><b>Definition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -720,14 +761,6 @@ public interface LispPackage extends EPackage
      * @generated
      */
     EClass DEFINE = eINSTANCE.getDefine();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DEFINE__NAME = eINSTANCE.getDefine_Name();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -756,15 +789,7 @@ public interface LispPackage extends EPackage
     EClass LIST = eINSTANCE.getList();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LIST__NAME = eINSTANCE.getList_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Numeros</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Numeros</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -790,7 +815,7 @@ public interface LispPackage extends EPackage
     EReference EXPRESSION__OPERACOES = eINSTANCE.getExpression_Operacoes();
 
     /**
-     * The meta object literal for the '<em><b>Primeiro</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Primeiro</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -852,6 +877,48 @@ public interface LispPackage extends EPackage
      * @generated
      */
     EClass DECIMAL = eINSTANCE.getDecimal();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.RecursionImpl <em>Recursion</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.RecursionImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getRecursion()
+     * @generated
+     */
+    EClass RECURSION = eINSTANCE.getRecursion();
+
+    /**
+     * The meta object literal for the '<em><b>Recursion ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECURSION__RECURSION_ID = eINSTANCE.getRecursion_RecursionID();
+
+    /**
+     * The meta object literal for the '<em><b>Recursion Int</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECURSION__RECURSION_INT = eINSTANCE.getRecursion_RecursionInt();
+
+    /**
+     * The meta object literal for the '<em><b>Recursion String</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECURSION__RECURSION_STRING = eINSTANCE.getRecursion_RecursionString();
+
+    /**
+     * The meta object literal for the '<em><b>Recursion Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RECURSION__RECURSION_EXPRESSION = eINSTANCE.getRecursion_RecursionExpression();
 
   }
 

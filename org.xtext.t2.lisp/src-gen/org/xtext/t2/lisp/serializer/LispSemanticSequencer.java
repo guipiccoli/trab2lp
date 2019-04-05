@@ -23,6 +23,7 @@ import org.xtext.t2.lisp.lisp.LispPackage;
 import org.xtext.t2.lisp.lisp.List;
 import org.xtext.t2.lisp.lisp.Model;
 import org.xtext.t2.lisp.lisp.Operacoes;
+import org.xtext.t2.lisp.lisp.Recursion;
 import org.xtext.t2.lisp.services.LispGrammarAccess;
 
 @SuppressWarnings("all")
@@ -63,6 +64,9 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case LispPackage.OPERACOES:
 				sequence_Operacoes(context, (Operacoes) semanticObject); 
 				return; 
+			case LispPackage.RECURSION:
+				sequence_Recursion(context, (Recursion) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -73,7 +77,7 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Begin returns Begin
 	 *
 	 * Constraint:
-	 *     (name=ID definition=Definition*)
+	 *     definition=Definition+
 	 */
 	protected void sequence_Begin(ISerializationContext context, Begin semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -100,7 +104,7 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Define returns Define
 	 *
 	 * Constraint:
-	 *     ((name=ID expression=Expression) | list=List)
+	 *     (expression=Expression | list=List)
 	 */
 	protected void sequence_Define(ISerializationContext context, Define semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -113,7 +117,7 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     (operacoes=Operacoes primeiro=Numeros*)
+	 *     (operacoes=Operacoes primeiro+=Recursion*)
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -142,22 +146,14 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Definition returns List
 	 *     List returns List
 	 *
 	 * Constraint:
-	 *     (name=ID numeros=Numeros)
+	 *     numeros+=Numeros+
 	 */
 	protected void sequence_List(ISerializationContext context, List semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.LIST__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.LIST__NAME));
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.LIST__NUMEROS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.LIST__NUMEROS));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getListAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getListAccess().getNumerosNumerosParserRuleCall_3_0(), semanticObject.getNumeros());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -188,6 +184,18 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0(), semanticObject.getValue());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Recursion returns Recursion
+	 *
+	 * Constraint:
+	 *     (recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition)
+	 */
+	protected void sequence_Recursion(ISerializationContext context, Recursion semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
