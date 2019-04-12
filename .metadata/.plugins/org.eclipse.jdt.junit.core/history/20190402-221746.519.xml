@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="LispParsingTest" project="org.xtext.t2.lisp.tests" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="org.xtext.t2.lisp.tests.LispParsingTest" time="1.21" displayname="LispParsingTest" uniqueid="[engine:junit-jupiter]/[class:org.xtext.t2.lisp.tests.LispParsingTest]">
-    <testcase name="loadModel1" classname="org.xtext.t2.lisp.tests.LispParsingTest" time="1.194" displayname="loadModel1()" uniqueid="[engine:junit-jupiter]/[class:org.xtext.t2.lisp.tests.LispParsingTest]/[method:loadModel1()]"/>
-    <testcase name="loadModel2" classname="org.xtext.t2.lisp.tests.LispParsingTest" time="0.004" displayname="loadModel2()" uniqueid="[engine:junit-jupiter]/[class:org.xtext.t2.lisp.tests.LispParsingTest]/[method:loadModel2()]"/>
-    <testcase name="loadModel3" classname="org.xtext.t2.lisp.tests.LispParsingTest" time="0.004" displayname="loadModel3()" uniqueid="[engine:junit-jupiter]/[class:org.xtext.t2.lisp.tests.LispParsingTest]/[method:loadModel3()]"/>
-    <testcase name="loadModel4" classname="org.xtext.t2.lisp.tests.LispParsingTest" time="0.003" displayname="loadModel4()" uniqueid="[engine:junit-jupiter]/[class:org.xtext.t2.lisp.tests.LispParsingTest]/[method:loadModel4()]"/>
-    <testcase name="loadModel" classname="org.xtext.t2.lisp.tests.LispParsingTest" time="0.005" displayname="loadModel()" uniqueid="[engine:junit-jupiter]/[class:org.xtext.t2.lisp.tests.LispParsingTest]/[method:loadModel()]"/>
-  </testsuite>
-</testrun>

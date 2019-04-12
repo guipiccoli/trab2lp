@@ -1,9 +1,0 @@
-grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
-
-generate lisp "http://www.xtext.org/t2/lisp/Lisp"
-
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
