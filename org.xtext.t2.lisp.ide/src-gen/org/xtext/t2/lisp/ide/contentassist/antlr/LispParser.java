@@ -55,8 +55,6 @@ public class LispParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getExpressionAccess().getPrimeiroAssignment_0_2(), "rule__Expression__PrimeiroAssignment_0_2");
 			builder.put(grammarAccess.getOperacoesAccess().getValueAssignment_0(), "rule__Operacoes__ValueAssignment_0");
 			builder.put(grammarAccess.getCondicaoAccess().getCondicaoAssignment_2(), "rule__Condicao__CondicaoAssignment_2");
-			builder.put(grammarAccess.getCondicaoAccess().getTrueAssignment_3(), "rule__Condicao__TrueAssignment_3");
-			builder.put(grammarAccess.getCondicaoAccess().getFalsoAssignment_4(), "rule__Condicao__FalsoAssignment_4");
 			builder.put(grammarAccess.getInteirosAccess().getValueAssignment(), "rule__Inteiros__ValueAssignment");
 			builder.put(grammarAccess.getDecimalAccess().getValueAssignment_0(), "rule__Decimal__ValueAssignment_0");
 			builder.put(grammarAccess.getDecimalAccess().getValueAssignment_2(), "rule__Decimal__ValueAssignment_2");

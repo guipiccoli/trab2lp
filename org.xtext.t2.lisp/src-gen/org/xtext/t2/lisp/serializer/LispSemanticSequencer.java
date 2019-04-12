@@ -93,22 +93,10 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Condicao returns Condicao
 	 *
 	 * Constraint:
-	 *     (condicao=Recursion true=Recursion falso=Recursion)
+	 *     condicao+=Recursion
 	 */
 	protected void sequence_Condicao(ISerializationContext context, Condicao semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.CONDICAO__CONDICAO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.CONDICAO__CONDICAO));
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.CONDICAO__TRUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.CONDICAO__TRUE));
-			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.CONDICAO__FALSO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.CONDICAO__FALSO));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCondicaoAccess().getCondicaoRecursionParserRuleCall_2_0(), semanticObject.getCondicao());
-		feeder.accept(grammarAccess.getCondicaoAccess().getTrueRecursionParserRuleCall_3_0(), semanticObject.getTrue());
-		feeder.accept(grammarAccess.getCondicaoAccess().getFalsoRecursionParserRuleCall_4_0(), semanticObject.getFalso());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -145,7 +133,7 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Expression returns Expression
 	 *
 	 * Constraint:
-	 *     (operacoes=Operacoes primeiro+=Recursion*)
+	 *     (operacoes+=Operacoes primeiro+=Recursion*)
 	 */
 	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

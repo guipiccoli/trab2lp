@@ -22,8 +22,8 @@
         eType="#//Numeros" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="#//Definition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operacoes" eType="#//Operacoes"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operacoes" upperBound="-1"
+        eType="#//Operacoes" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="primeiro" upperBound="-1"
         eType="#//Recursion" containment="true"/>
   </eClassifiers>
@@ -34,12 +34,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condicao">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condicao" eType="#//Recursion"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="true" eType="#//Recursion"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="falso" eType="#//Recursion"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condicao" upperBound="-1"
+        eType="#//Recursion" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Inteiros" eSuperTypes="#//Numeros"/>
   <eClassifiers xsi:type="ecore:EClass" name="Decimal" eSuperTypes="#//Numeros"/>

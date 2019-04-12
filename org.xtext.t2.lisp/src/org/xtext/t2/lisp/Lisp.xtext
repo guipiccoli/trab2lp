@@ -22,15 +22,16 @@ List:
 ;
 
 Expression:
-	'(' operacoes=Operacoes (primeiro+=Recursion)* ')' |
-	'(' ')'
+	'(' operacoes+=Operacoes  (primeiro+=Recursion)*  ')' |
+	'(' ')' 
+	
 ;
 
 Numeros:
 	Inteiros | Decimal;
 
 Operacoes:
-	value = '+'| '-' | '*'| '/'|'square';
+	value = '+'| '-' | '*'| '/'|'sq';
 
 Condicao:
 	'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')'

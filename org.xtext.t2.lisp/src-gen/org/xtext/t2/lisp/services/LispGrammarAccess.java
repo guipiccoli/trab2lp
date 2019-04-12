@@ -180,20 +180,20 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
 		//Expression:
-		//	'(' operacoes=Operacoes primeiro+=Recursion* ')' |
+		//	'(' operacoes+=Operacoes primeiro+=Recursion* ')' |
 		//	'(' ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' operacoes=Operacoes primeiro+=Recursion* ')' | '(' ')'
+		//'(' operacoes+=Operacoes primeiro+=Recursion* ')' | '(' ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'(' operacoes=Operacoes primeiro+=Recursion* ')'
+		//'(' operacoes+=Operacoes primeiro+=Recursion* ')'
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_0_0() { return cLeftParenthesisKeyword_0_0; }
 		
-		//operacoes=Operacoes
+		//operacoes+=Operacoes
 		public Assignment getOperacoesAssignment_0_1() { return cOperacoesAssignment_0_1; }
 		
 		//Operacoes
@@ -244,13 +244,13 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		private final Keyword cAsteriskKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final Keyword cSolidusKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
-		private final Keyword cSquareKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cSqKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
 		
 		//Operacoes:
-		//	value='+' | '-' | '*' | '/' | 'square';
+		//	value='+' | '-' | '*' | '/' | 'sq';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value='+' | '-' | '*' | '/' | 'square'
+		//value='+' | '-' | '*' | '/' | 'sq'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//value='+'
@@ -268,8 +268,8 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		//'/'
 		public Keyword getSolidusKeyword_3() { return cSolidusKeyword_3; }
 		
-		//'square'
-		public Keyword getSquareKeyword_4() { return cSquareKeyword_4; }
+		//'sq'
+		public Keyword getSqKeyword_4() { return cSqKeyword_4; }
 	}
 	public class CondicaoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Condicao");
@@ -278,17 +278,13 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIfKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cCondicaoAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cCondicaoRecursionParserRuleCall_2_0 = (RuleCall)cCondicaoAssignment_2.eContents().get(0);
-		private final Assignment cTrueAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTrueRecursionParserRuleCall_3_0 = (RuleCall)cTrueAssignment_3.eContents().get(0);
-		private final Assignment cFalsoAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cFalsoRecursionParserRuleCall_4_0 = (RuleCall)cFalsoAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Condicao:
-		//	'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')';
+		//	'(' 'if' condicao+=Recursion ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')'
+		//'(' 'if' condicao+=Recursion ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'('
@@ -297,26 +293,14 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		//'if'
 		public Keyword getIfKeyword_1() { return cIfKeyword_1; }
 		
-		//condicao=Recursion
+		//condicao+=Recursion
 		public Assignment getCondicaoAssignment_2() { return cCondicaoAssignment_2; }
 		
 		//Recursion
 		public RuleCall getCondicaoRecursionParserRuleCall_2_0() { return cCondicaoRecursionParserRuleCall_2_0; }
 		
-		//true=Recursion
-		public Assignment getTrueAssignment_3() { return cTrueAssignment_3; }
-		
-		//Recursion
-		public RuleCall getTrueRecursionParserRuleCall_3_0() { return cTrueRecursionParserRuleCall_3_0; }
-		
-		//falso=Recursion
-		public Assignment getFalsoAssignment_4() { return cFalsoAssignment_4; }
-		
-		//Recursion
-		public RuleCall getFalsoRecursionParserRuleCall_4_0() { return cFalsoRecursionParserRuleCall_4_0; }
-		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class InteirosElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Inteiros");
@@ -523,7 +507,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	'(' operacoes=Operacoes primeiro+=Recursion* ')' |
+	//	'(' operacoes+=Operacoes primeiro+=Recursion* ')' |
 	//	'(' ')';
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
@@ -544,7 +528,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Operacoes:
-	//	value='+' | '-' | '*' | '/' | 'square';
+	//	value='+' | '-' | '*' | '/' | 'sq';
 	public OperacoesElements getOperacoesAccess() {
 		return pOperacoes;
 	}
@@ -554,7 +538,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Condicao:
-	//	'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')';
+	//	'(' 'if' condicao+=Recursion ')';
 	public CondicaoElements getCondicaoAccess() {
 		return pCondicao;
 	}

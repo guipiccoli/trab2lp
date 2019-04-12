@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLispParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'-'", "'*'", "'/'", "'square'", "'begin'", "'define'", "'('", "'list'", "')'", "'.'", "'+'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'-'", "'*'", "'/'", "'sq'", "'begin'", "'define'", "'('", "'list'", "')'", "'.'", "'+'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -1466,13 +1466,13 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operacoes__Alternatives"
-    // InternalLisp.g:444:1: rule__Operacoes__Alternatives : ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'square' ) );
+    // InternalLisp.g:444:1: rule__Operacoes__Alternatives : ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'sq' ) );
     public final void rule__Operacoes__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:448:1: ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'square' ) )
+            // InternalLisp.g:448:1: ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'sq' ) )
             int alt7=5;
             switch ( input.LA(1) ) {
             case 21:
@@ -1579,14 +1579,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalLisp.g:473:2: ( 'square' )
+                    // InternalLisp.g:473:2: ( 'sq' )
                     {
-                    // InternalLisp.g:473:2: ( 'square' )
-                    // InternalLisp.g:474:3: 'square'
+                    // InternalLisp.g:473:2: ( 'sq' )
+                    // InternalLisp.g:474:3: 'sq'
                     {
-                     before(grammarAccess.getOperacoesAccess().getSquareKeyword_4()); 
+                     before(grammarAccess.getOperacoesAccess().getSqKeyword_4()); 
                     match(input,14,FOLLOW_2); 
-                     after(grammarAccess.getOperacoesAccess().getSquareKeyword_4()); 
+                     after(grammarAccess.getOperacoesAccess().getSqKeyword_4()); 
 
                     }
 

@@ -471,9 +471,9 @@ rule__Operacoes__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getOperacoesAccess().getSquareKeyword_4()); }
-		'square'
-		{ after(grammarAccess.getOperacoesAccess().getSquareKeyword_4()); }
+		{ before(grammarAccess.getOperacoesAccess().getSqKeyword_4()); }
+		'sq'
+		{ after(grammarAccess.getOperacoesAccess().getSqKeyword_4()); }
 	)
 ;
 finally {

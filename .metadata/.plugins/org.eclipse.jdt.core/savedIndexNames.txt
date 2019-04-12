@@ -61,7 +61,6 @@ INDEX VERSION 1.131+C:\Users\17103457\Desktop\trab2lp\.metadata\.plugins\org.ecl
 2511335402.index
 4095645920.index
 3884525641.index
-2757623307.index
 1246351108.index
 3454487226.index
 910362386.index
@@ -96,7 +95,6 @@ INDEX VERSION 1.131+C:\Users\17103457\Desktop\trab2lp\.metadata\.plugins\org.ecl
 51310454.index
 4232009171.index
 3292593480.index
-3527223056.index
 1110334383.index
 866495595.index
 903559475.index

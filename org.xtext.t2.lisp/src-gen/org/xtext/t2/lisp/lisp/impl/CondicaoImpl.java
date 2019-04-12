@@ -3,14 +3,19 @@
  */
 package org.xtext.t2.lisp.lisp.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.t2.lisp.lisp.Condicao;
 import org.xtext.t2.lisp.lisp.LispPackage;
@@ -25,8 +30,6 @@ import org.xtext.t2.lisp.lisp.Recursion;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.CondicaoImpl#getCondicao <em>Condicao</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.CondicaoImpl#getTrue <em>True</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.CondicaoImpl#getFalso <em>Falso</em>}</li>
  * </ul>
  *
  * @generated
@@ -34,34 +37,14 @@ import org.xtext.t2.lisp.lisp.Recursion;
 public class CondicaoImpl extends MinimalEObjectImpl.Container implements Condicao
 {
   /**
-   * The cached value of the '{@link #getCondicao() <em>Condicao</em>}' containment reference.
+   * The cached value of the '{@link #getCondicao() <em>Condicao</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCondicao()
    * @generated
    * @ordered
    */
-  protected Recursion condicao;
-
-  /**
-   * The cached value of the '{@link #getTrue() <em>True</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTrue()
-   * @generated
-   * @ordered
-   */
-  protected Recursion true_;
-
-  /**
-   * The cached value of the '{@link #getFalso() <em>Falso</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFalso()
-   * @generated
-   * @ordered
-   */
-  protected Recursion falso;
+  protected EList<Recursion> condicao;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,143 +72,13 @@ public class CondicaoImpl extends MinimalEObjectImpl.Container implements Condic
    * <!-- end-user-doc -->
    * @generated
    */
-  public Recursion getCondicao()
+  public EList<Recursion> getCondicao()
   {
+    if (condicao == null)
+    {
+      condicao = new EObjectContainmentEList<Recursion>(Recursion.class, this, LispPackage.CONDICAO__CONDICAO);
+    }
     return condicao;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetCondicao(Recursion newCondicao, NotificationChain msgs)
-  {
-    Recursion oldCondicao = condicao;
-    condicao = newCondicao;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.CONDICAO__CONDICAO, oldCondicao, newCondicao);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCondicao(Recursion newCondicao)
-  {
-    if (newCondicao != condicao)
-    {
-      NotificationChain msgs = null;
-      if (condicao != null)
-        msgs = ((InternalEObject)condicao).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.CONDICAO__CONDICAO, null, msgs);
-      if (newCondicao != null)
-        msgs = ((InternalEObject)newCondicao).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.CONDICAO__CONDICAO, null, msgs);
-      msgs = basicSetCondicao(newCondicao, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.CONDICAO__CONDICAO, newCondicao, newCondicao));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Recursion getTrue()
-  {
-    return true_;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetTrue(Recursion newTrue, NotificationChain msgs)
-  {
-    Recursion oldTrue = true_;
-    true_ = newTrue;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.CONDICAO__TRUE, oldTrue, newTrue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTrue(Recursion newTrue)
-  {
-    if (newTrue != true_)
-    {
-      NotificationChain msgs = null;
-      if (true_ != null)
-        msgs = ((InternalEObject)true_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.CONDICAO__TRUE, null, msgs);
-      if (newTrue != null)
-        msgs = ((InternalEObject)newTrue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.CONDICAO__TRUE, null, msgs);
-      msgs = basicSetTrue(newTrue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.CONDICAO__TRUE, newTrue, newTrue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Recursion getFalso()
-  {
-    return falso;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFalso(Recursion newFalso, NotificationChain msgs)
-  {
-    Recursion oldFalso = falso;
-    falso = newFalso;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.CONDICAO__FALSO, oldFalso, newFalso);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFalso(Recursion newFalso)
-  {
-    if (newFalso != falso)
-    {
-      NotificationChain msgs = null;
-      if (falso != null)
-        msgs = ((InternalEObject)falso).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.CONDICAO__FALSO, null, msgs);
-      if (newFalso != null)
-        msgs = ((InternalEObject)newFalso).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.CONDICAO__FALSO, null, msgs);
-      msgs = basicSetFalso(newFalso, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.CONDICAO__FALSO, newFalso, newFalso));
   }
 
   /**
@@ -239,11 +92,7 @@ public class CondicaoImpl extends MinimalEObjectImpl.Container implements Condic
     switch (featureID)
     {
       case LispPackage.CONDICAO__CONDICAO:
-        return basicSetCondicao(null, msgs);
-      case LispPackage.CONDICAO__TRUE:
-        return basicSetTrue(null, msgs);
-      case LispPackage.CONDICAO__FALSO:
-        return basicSetFalso(null, msgs);
+        return ((InternalEList<?>)getCondicao()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -260,10 +109,6 @@ public class CondicaoImpl extends MinimalEObjectImpl.Container implements Condic
     {
       case LispPackage.CONDICAO__CONDICAO:
         return getCondicao();
-      case LispPackage.CONDICAO__TRUE:
-        return getTrue();
-      case LispPackage.CONDICAO__FALSO:
-        return getFalso();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -273,19 +118,15 @@ public class CondicaoImpl extends MinimalEObjectImpl.Container implements Condic
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case LispPackage.CONDICAO__CONDICAO:
-        setCondicao((Recursion)newValue);
-        return;
-      case LispPackage.CONDICAO__TRUE:
-        setTrue((Recursion)newValue);
-        return;
-      case LispPackage.CONDICAO__FALSO:
-        setFalso((Recursion)newValue);
+        getCondicao().clear();
+        getCondicao().addAll((Collection<? extends Recursion>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -302,13 +143,7 @@ public class CondicaoImpl extends MinimalEObjectImpl.Container implements Condic
     switch (featureID)
     {
       case LispPackage.CONDICAO__CONDICAO:
-        setCondicao((Recursion)null);
-        return;
-      case LispPackage.CONDICAO__TRUE:
-        setTrue((Recursion)null);
-        return;
-      case LispPackage.CONDICAO__FALSO:
-        setFalso((Recursion)null);
+        getCondicao().clear();
         return;
     }
     super.eUnset(featureID);
@@ -325,11 +160,7 @@ public class CondicaoImpl extends MinimalEObjectImpl.Container implements Condic
     switch (featureID)
     {
       case LispPackage.CONDICAO__CONDICAO:
-        return condicao != null;
-      case LispPackage.CONDICAO__TRUE:
-        return true_ != null;
-      case LispPackage.CONDICAO__FALSO:
-        return falso != null;
+        return condicao != null && !condicao.isEmpty();
     }
     return super.eIsSet(featureID);
   }

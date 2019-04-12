@@ -5,15 +5,12 @@ package org.xtext.t2.lisp.lisp.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -40,14 +37,14 @@ import org.xtext.t2.lisp.lisp.Recursion;
 public class ExpressionImpl extends DefinitionImpl implements Expression
 {
   /**
-   * The cached value of the '{@link #getOperacoes() <em>Operacoes</em>}' containment reference.
+   * The cached value of the '{@link #getOperacoes() <em>Operacoes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getOperacoes()
    * @generated
    * @ordered
    */
-  protected Operacoes operacoes;
+  protected EList<Operacoes> operacoes;
 
   /**
    * The cached value of the '{@link #getPrimeiro() <em>Primeiro</em>}' containment reference list.
@@ -85,47 +82,13 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
    * <!-- end-user-doc -->
    * @generated
    */
-  public Operacoes getOperacoes()
+  public EList<Operacoes> getOperacoes()
   {
+    if (operacoes == null)
+    {
+      operacoes = new EObjectContainmentEList<Operacoes>(Operacoes.class, this, LispPackage.EXPRESSION__OPERACOES);
+    }
     return operacoes;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetOperacoes(Operacoes newOperacoes, NotificationChain msgs)
-  {
-    Operacoes oldOperacoes = operacoes;
-    operacoes = newOperacoes;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.EXPRESSION__OPERACOES, oldOperacoes, newOperacoes);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOperacoes(Operacoes newOperacoes)
-  {
-    if (newOperacoes != operacoes)
-    {
-      NotificationChain msgs = null;
-      if (operacoes != null)
-        msgs = ((InternalEObject)operacoes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.EXPRESSION__OPERACOES, null, msgs);
-      if (newOperacoes != null)
-        msgs = ((InternalEObject)newOperacoes).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.EXPRESSION__OPERACOES, null, msgs);
-      msgs = basicSetOperacoes(newOperacoes, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.EXPRESSION__OPERACOES, newOperacoes, newOperacoes));
   }
 
   /**
@@ -153,7 +116,7 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
     switch (featureID)
     {
       case LispPackage.EXPRESSION__OPERACOES:
-        return basicSetOperacoes(null, msgs);
+        return ((InternalEList<?>)getOperacoes()).basicRemove(otherEnd, msgs);
       case LispPackage.EXPRESSION__PRIMEIRO:
         return ((InternalEList<?>)getPrimeiro()).basicRemove(otherEnd, msgs);
     }
@@ -190,7 +153,8 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
     switch (featureID)
     {
       case LispPackage.EXPRESSION__OPERACOES:
-        setOperacoes((Operacoes)newValue);
+        getOperacoes().clear();
+        getOperacoes().addAll((Collection<? extends Operacoes>)newValue);
         return;
       case LispPackage.EXPRESSION__PRIMEIRO:
         getPrimeiro().clear();
@@ -211,7 +175,7 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
     switch (featureID)
     {
       case LispPackage.EXPRESSION__OPERACOES:
-        setOperacoes((Operacoes)null);
+        getOperacoes().clear();
         return;
       case LispPackage.EXPRESSION__PRIMEIRO:
         getPrimeiro().clear();
@@ -231,7 +195,7 @@ public class ExpressionImpl extends DefinitionImpl implements Expression
     switch (featureID)
     {
       case LispPackage.EXPRESSION__OPERACOES:
-        return operacoes != null;
+        return operacoes != null && !operacoes.isEmpty();
       case LispPackage.EXPRESSION__PRIMEIRO:
         return primeiro != null && !primeiro.isEmpty();
     }

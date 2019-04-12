@@ -110,10 +110,10 @@ public class InternalLispLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalLisp.g:14:7: ( 'square' )
-            // InternalLisp.g:14:9: 'square'
+            // InternalLisp.g:14:7: ( 'sq' )
+            // InternalLisp.g:14:9: 'sq'
             {
-            match("square"); 
+            match("sq"); 
 
 
             }
@@ -906,17 +906,17 @@ public class InternalLispLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\3\uffff\1\27\3\31\1\uffff\1\31\3\uffff\1\22\2\uffff\2\22\7\uffff\1\31\1\uffff\2\31\1\uffff\1\31\6\uffff\7\31\1\57\1\31\1\61\1\31\1\uffff\1\63\1\uffff\1\64\2\uffff";
+        "\3\uffff\1\27\3\31\1\uffff\1\31\3\uffff\1\22\2\uffff\2\22\7\uffff\1\44\1\uffff\2\31\1\uffff\1\31\7\uffff\5\31\1\55\1\56\1\31\2\uffff\1\60\1\uffff";
     static final String DFA12_eofS =
-        "\65\uffff";
+        "\61\uffff";
     static final String DFA12_minS =
-        "\1\0\2\uffff\1\52\1\161\2\145\1\uffff\1\151\3\uffff\1\101\2\uffff\2\0\7\uffff\1\165\1\uffff\1\147\1\146\1\uffff\1\163\6\uffff\1\141\2\151\1\164\1\162\2\156\1\60\1\145\1\60\1\145\1\uffff\1\60\1\uffff\1\60\2\uffff";
+        "\1\0\2\uffff\1\52\1\161\2\145\1\uffff\1\151\3\uffff\1\101\2\uffff\2\0\7\uffff\1\60\1\uffff\1\147\1\146\1\uffff\1\163\7\uffff\2\151\1\164\2\156\2\60\1\145\2\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\2\uffff\1\57\1\161\2\145\1\uffff\1\151\3\uffff\1\172\2\uffff\2\uffff\7\uffff\1\165\1\uffff\1\147\1\146\1\uffff\1\163\6\uffff\1\141\2\151\1\164\1\162\2\156\1\172\1\145\1\172\1\145\1\uffff\1\172\1\uffff\1\172\2\uffff";
+        "\1\uffff\2\uffff\1\57\1\161\2\145\1\uffff\1\151\3\uffff\1\172\2\uffff\2\uffff\7\uffff\1\172\1\uffff\1\147\1\146\1\uffff\1\163\7\uffff\2\151\1\164\2\156\2\172\1\145\2\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\1\uffff\1\1\1\2\4\uffff\1\7\1\uffff\1\11\1\12\1\13\1\uffff\1\14\1\15\2\uffff\1\21\1\22\1\1\1\2\1\17\1\20\1\3\1\uffff\1\14\2\uffff\1\7\1\uffff\1\11\1\12\1\13\1\15\1\16\1\21\13\uffff\1\10\1\uffff\1\5\1\uffff\1\4\1\6";
+        "\1\uffff\1\1\1\2\4\uffff\1\7\1\uffff\1\11\1\12\1\13\1\uffff\1\14\1\15\2\uffff\1\21\1\22\1\1\1\2\1\17\1\20\1\3\1\uffff\1\14\2\uffff\1\7\1\uffff\1\11\1\12\1\13\1\15\1\16\1\21\1\4\10\uffff\1\10\1\5\1\uffff\1\6";
     static final String DFA12_specialS =
-        "\1\1\16\uffff\1\2\1\0\44\uffff}>";
+        "\1\1\16\uffff\1\0\1\2\40\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\22\2\21\2\22\1\21\22\22\1\21\1\22\1\17\4\22\1\20\1\7\1\11\1\2\1\13\1\22\1\1\1\12\1\3\12\16\7\22\32\15\3\22\1\14\1\15\1\22\1\15\1\5\1\15\1\6\7\15\1\10\6\15\1\4\7\15\uff85\22",
             "",
@@ -942,7 +942,7 @@ public class InternalLispLexer extends Lexer {
             "",
             "",
             "",
-            "\1\44",
+            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
             "",
             "\1\45",
             "\1\46",
@@ -954,22 +954,18 @@ public class InternalLispLexer extends Lexer {
             "",
             "",
             "",
+            "",
             "\1\50",
             "\1\51",
             "\1\52",
             "\1\53",
             "\1\54",
-            "\1\55",
-            "\1\56",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\60",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "\1\62",
+            "\1\57",
+            "",
             "",
             "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "",
-            "\12\31\7\uffff\32\31\4\uffff\1\31\1\uffff\32\31",
-            "",
             ""
     };
 
@@ -1010,10 +1006,10 @@ public class InternalLispLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_16 = input.LA(1);
+                        int LA12_15 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 34;}
+                        if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 34;}
 
                         else s = 18;
 
@@ -1062,10 +1058,10 @@ public class InternalLispLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_15 = input.LA(1);
+                        int LA12_16 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_15>='\u0000' && LA12_15<='\uFFFF')) ) {s = 34;}
+                        if ( ((LA12_16>='\u0000' && LA12_16<='\uFFFF')) ) {s = 34;}
 
                         else s = 18;
 

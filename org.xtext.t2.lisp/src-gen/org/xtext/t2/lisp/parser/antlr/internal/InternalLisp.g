@@ -359,7 +359,7 @@ ruleExpression returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getExpressionRule());
 						}
-						set(
+						add(
 							$current,
 							"operacoes",
 							lv_operacoes_1_0,
@@ -488,9 +488,9 @@ ruleOperacoes returns [EObject current=null]
 			newLeafNode(otherlv_3, grammarAccess.getOperacoesAccess().getSolidusKeyword_3());
 		}
 		    |
-		otherlv_4='square'
+		otherlv_4='sq'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getOperacoesAccess().getSquareKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getOperacoesAccess().getSqKeyword_4());
 		}
 	)
 ;

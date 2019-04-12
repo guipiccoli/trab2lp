@@ -217,7 +217,7 @@ public interface LispPackage extends EPackage
   int EXPRESSION = 5;
 
   /**
-   * The feature id for the '<em><b>Operacoes</b></em>' containment reference.
+   * The feature id for the '<em><b>Operacoes</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -310,7 +310,7 @@ public interface LispPackage extends EPackage
   int CONDICAO = 8;
 
   /**
-   * The feature id for the '<em><b>Condicao</b></em>' containment reference.
+   * The feature id for the '<em><b>Condicao</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -319,31 +319,13 @@ public interface LispPackage extends EPackage
   int CONDICAO__CONDICAO = 0;
 
   /**
-   * The feature id for the '<em><b>True</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDICAO__TRUE = 1;
-
-  /**
-   * The feature id for the '<em><b>Falso</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONDICAO__FALSO = 2;
-
-  /**
    * The number of structural features of the '<em>Condicao</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDICAO_FEATURE_COUNT = 3;
+  int CONDICAO_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.InteirosImpl <em>Inteiros</em>}' class.
@@ -584,10 +566,10 @@ public interface LispPackage extends EPackage
   EClass getExpression();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Expression#getOperacoes <em>Operacoes</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.t2.lisp.lisp.Expression#getOperacoes <em>Operacoes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Operacoes</em>'.
+   * @return the meta object for the containment reference list '<em>Operacoes</em>'.
    * @see org.xtext.t2.lisp.lisp.Expression#getOperacoes()
    * @see #getExpression()
    * @generated
@@ -658,37 +640,15 @@ public interface LispPackage extends EPackage
   EClass getCondicao();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Condicao#getCondicao <em>Condicao</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.t2.lisp.lisp.Condicao#getCondicao <em>Condicao</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condicao</em>'.
+   * @return the meta object for the containment reference list '<em>Condicao</em>'.
    * @see org.xtext.t2.lisp.lisp.Condicao#getCondicao()
    * @see #getCondicao()
    * @generated
    */
   EReference getCondicao_Condicao();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Condicao#getTrue <em>True</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>True</em>'.
-   * @see org.xtext.t2.lisp.lisp.Condicao#getTrue()
-   * @see #getCondicao()
-   * @generated
-   */
-  EReference getCondicao_True();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Condicao#getFalso <em>Falso</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Falso</em>'.
-   * @see org.xtext.t2.lisp.lisp.Condicao#getFalso()
-   * @see #getCondicao()
-   * @generated
-   */
-  EReference getCondicao_Falso();
 
   /**
    * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Inteiros <em>Inteiros</em>}'.
@@ -896,7 +856,7 @@ public interface LispPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
-     * The meta object literal for the '<em><b>Operacoes</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Operacoes</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -958,28 +918,12 @@ public interface LispPackage extends EPackage
     EClass CONDICAO = eINSTANCE.getCondicao();
 
     /**
-     * The meta object literal for the '<em><b>Condicao</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Condicao</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference CONDICAO__CONDICAO = eINSTANCE.getCondicao_Condicao();
-
-    /**
-     * The meta object literal for the '<em><b>True</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONDICAO__TRUE = eINSTANCE.getCondicao_True();
-
-    /**
-     * The meta object literal for the '<em><b>Falso</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONDICAO__FALSO = eINSTANCE.getCondicao_Falso();
 
     /**
      * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.InteirosImpl <em>Inteiros</em>}' class.

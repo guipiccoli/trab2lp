@@ -8,7 +8,7 @@
 'begin'=15
 'define'=16
 'list'=18
-'square'=14
+'sq'=14
 RULE_ANY_OTHER=10
 RULE_ID=5
 RULE_INT=4

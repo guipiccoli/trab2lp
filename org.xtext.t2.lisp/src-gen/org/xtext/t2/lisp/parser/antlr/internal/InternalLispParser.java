@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLispParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin'", "'define'", "'('", "'list'", "')'", "'+'", "'-'", "'*'", "'/'", "'square'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'begin'", "'define'", "'('", "'list'", "')'", "'+'", "'-'", "'*'", "'/'", "'sq'", "'.'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -1025,7 +1025,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
                     						if (current==null) {
                     							current = createModelElementForParent(grammarAccess.getExpressionRule());
                     						}
-                    						set(
+                    						add(
                     							current,
                     							"operacoes",
                     							lv_operacoes_1_0,
@@ -1314,7 +1314,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperacoes"
-    // InternalLisp.g:453:1: ruleOperacoes returns [EObject current=null] : ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' ) ;
+    // InternalLisp.g:453:1: ruleOperacoes returns [EObject current=null] : ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'sq' ) ;
     public final EObject ruleOperacoes() throws RecognitionException {
         EObject current = null;
 
@@ -1328,10 +1328,10 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalLisp.g:459:2: ( ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' ) )
-            // InternalLisp.g:460:2: ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' )
+            // InternalLisp.g:459:2: ( ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'sq' ) )
+            // InternalLisp.g:460:2: ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'sq' )
             {
-            // InternalLisp.g:460:2: ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'square' )
+            // InternalLisp.g:460:2: ( ( (lv_value_0_0= '+' ) ) | otherlv_1= '-' | otherlv_2= '*' | otherlv_3= '/' | otherlv_4= 'sq' )
             int alt10=5;
             switch ( input.LA(1) ) {
             case 16:
@@ -1426,11 +1426,11 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalLisp.g:491:3: otherlv_4= 'square'
+                    // InternalLisp.g:491:3: otherlv_4= 'sq'
                     {
                     otherlv_4=(Token)match(input,20,FOLLOW_2); 
 
-                    			newLeafNode(otherlv_4, grammarAccess.getOperacoesAccess().getSquareKeyword_4());
+                    			newLeafNode(otherlv_4, grammarAccess.getOperacoesAccess().getSqKeyword_4());
                     		
 
                     }

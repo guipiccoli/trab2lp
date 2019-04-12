@@ -385,26 +385,6 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCondicao_True()
-  {
-    return (EReference)condicaoEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getCondicao_Falso()
-  {
-    return (EReference)condicaoEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getInteiros()
   {
     return inteirosEClass;
@@ -528,8 +508,6 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
 
     condicaoEClass = createEClass(CONDICAO);
     createEReference(condicaoEClass, CONDICAO__CONDICAO);
-    createEReference(condicaoEClass, CONDICAO__TRUE);
-    createEReference(condicaoEClass, CONDICAO__FALSO);
 
     inteirosEClass = createEClass(INTEIROS);
 
@@ -596,7 +574,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     initEReference(getList_Numeros(), this.getNumeros(), null, "numeros", null, 0, -1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpression_Operacoes(), this.getOperacoes(), null, "operacoes", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpression_Operacoes(), this.getOperacoes(), null, "operacoes", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpression_Primeiro(), this.getRecursion(), null, "primeiro", null, 0, -1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(numerosEClass, Numeros.class, "Numeros", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -606,9 +584,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     initEAttribute(getOperacoes_Value(), ecorePackage.getEString(), "value", null, 0, 1, Operacoes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(condicaoEClass, Condicao.class, "Condicao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCondicao_Condicao(), this.getRecursion(), null, "condicao", null, 0, 1, Condicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCondicao_True(), this.getRecursion(), null, "true", null, 0, 1, Condicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCondicao_Falso(), this.getRecursion(), null, "falso", null, 0, 1, Condicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondicao_Condicao(), this.getRecursion(), null, "condicao", null, 0, -1, Condicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inteirosEClass, Inteiros.class, "Inteiros", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

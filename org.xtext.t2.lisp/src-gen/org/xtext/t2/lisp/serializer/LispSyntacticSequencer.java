@@ -23,13 +23,13 @@ public class LispSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected LispGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Expression_List___LeftParenthesisKeyword_0_ListKeyword_1_RightParenthesisKeyword_3___or___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_1__;
-	protected AbstractElementAlias match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4;
+	protected AbstractElementAlias match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SqKeyword_4;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (LispGrammarAccess) access;
 		match_Expression_List___LeftParenthesisKeyword_0_ListKeyword_1_RightParenthesisKeyword_3___or___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_1__ = new AlternativeAlias(false, false, new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getExpressionAccess().getRightParenthesisKeyword_1_1())), new GroupAlias(false, false, new TokenAlias(false, false, grammarAccess.getListAccess().getLeftParenthesisKeyword_0()), new TokenAlias(false, false, grammarAccess.getListAccess().getListKeyword_1()), new TokenAlias(false, false, grammarAccess.getListAccess().getRightParenthesisKeyword_3())));
-		match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getAsteriskKeyword_2()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getHyphenMinusKeyword_1()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getSolidusKeyword_3()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getSquareKeyword_4()));
+		match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SqKeyword_4 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getAsteriskKeyword_2()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getHyphenMinusKeyword_1()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getSolidusKeyword_3()), new TokenAlias(false, false, grammarAccess.getOperacoesAccess().getSqKeyword_4()));
 	}
 	
 	@Override
@@ -46,8 +46,8 @@ public class LispSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Expression_List___LeftParenthesisKeyword_0_ListKeyword_1_RightParenthesisKeyword_3___or___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_1__.equals(syntax))
 				emit_Expression_List___LeftParenthesisKeyword_0_ListKeyword_1_RightParenthesisKeyword_3___or___LeftParenthesisKeyword_1_0_RightParenthesisKeyword_1_1__(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4.equals(syntax))
-				emit_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SqKeyword_4.equals(syntax))
+				emit_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SqKeyword_4(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -65,12 +65,12 @@ public class LispSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Ambiguous syntax:
-	 *     '-' | '*' | '/' | 'square'
+	 *     '-' | '*' | '/' | 'sq'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) (rule start)
 	 */
-	protected void emit_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SquareKeyword_4(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Operacoes_AsteriskKeyword_2_or_HyphenMinusKeyword_1_or_SolidusKeyword_3_or_SqKeyword_4(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

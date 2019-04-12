@@ -3,6 +3,8 @@
  */
 package org.xtext.t2.lisp.lisp;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.t2.lisp.lisp.Condicao#getCondicao <em>Condicao</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.Condicao#getTrue <em>True</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.Condicao#getFalso <em>Falso</em>}</li>
  * </ul>
  *
  * @see org.xtext.t2.lisp.lisp.LispPackage#getCondicao()
@@ -26,81 +26,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Condicao extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Condicao</b></em>' containment reference.
+   * Returns the value of the '<em><b>Condicao</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.t2.lisp.lisp.Recursion}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Condicao</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Condicao</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Condicao</em>' containment reference.
-   * @see #setCondicao(Recursion)
+   * @return the value of the '<em>Condicao</em>' containment reference list.
    * @see org.xtext.t2.lisp.lisp.LispPackage#getCondicao_Condicao()
    * @model containment="true"
    * @generated
    */
-  Recursion getCondicao();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Condicao#getCondicao <em>Condicao</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Condicao</em>' containment reference.
-   * @see #getCondicao()
-   * @generated
-   */
-  void setCondicao(Recursion value);
-
-  /**
-   * Returns the value of the '<em><b>True</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>True</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>True</em>' containment reference.
-   * @see #setTrue(Recursion)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getCondicao_True()
-   * @model containment="true"
-   * @generated
-   */
-  Recursion getTrue();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Condicao#getTrue <em>True</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>True</em>' containment reference.
-   * @see #getTrue()
-   * @generated
-   */
-  void setTrue(Recursion value);
-
-  /**
-   * Returns the value of the '<em><b>Falso</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Falso</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Falso</em>' containment reference.
-   * @see #setFalso(Recursion)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getCondicao_Falso()
-   * @model containment="true"
-   * @generated
-   */
-  Recursion getFalso();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Condicao#getFalso <em>Falso</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Falso</em>' containment reference.
-   * @see #getFalso()
-   * @generated
-   */
-  void setFalso(Recursion value);
+  EList<Recursion> getCondicao();
 
 } // Condicao

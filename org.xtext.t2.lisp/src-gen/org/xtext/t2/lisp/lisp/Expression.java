@@ -25,30 +25,20 @@ import org.eclipse.emf.common.util.EList;
 public interface Expression extends Definition
 {
   /**
-   * Returns the value of the '<em><b>Operacoes</b></em>' containment reference.
+   * Returns the value of the '<em><b>Operacoes</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.t2.lisp.lisp.Operacoes}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Operacoes</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Operacoes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Operacoes</em>' containment reference.
-   * @see #setOperacoes(Operacoes)
+   * @return the value of the '<em>Operacoes</em>' containment reference list.
    * @see org.xtext.t2.lisp.lisp.LispPackage#getExpression_Operacoes()
    * @model containment="true"
    * @generated
    */
-  Operacoes getOperacoes();
-
-  /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Expression#getOperacoes <em>Operacoes</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Operacoes</em>' containment reference.
-   * @see #getOperacoes()
-   * @generated
-   */
-  void setOperacoes(Operacoes value);
+  EList<Operacoes> getOperacoes();
 
   /**
    * Returns the value of the '<em><b>Primeiro</b></em>' containment reference list.
