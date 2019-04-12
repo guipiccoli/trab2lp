@@ -31,13 +31,18 @@
     <genClasses ecoreClass="Lisp.ecore#//Operacoes">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Operacoes/value"/>
     </genClasses>
+    <genClasses ecoreClass="Lisp.ecore#//Condicao">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Condicao/condicao"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Condicao/true"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Condicao/falso"/>
+    </genClasses>
     <genClasses ecoreClass="Lisp.ecore#//Inteiros"/>
     <genClasses ecoreClass="Lisp.ecore#//Decimal"/>
     <genClasses ecoreClass="Lisp.ecore#//Recursion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Recursion/recursionID"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Recursion/recursionInt"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Lisp.ecore#//Recursion/recursionString"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Recursion/recursionExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Lisp.ecore#//Recursion/recursionDefinition"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

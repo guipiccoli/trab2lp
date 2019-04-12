@@ -33,6 +33,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Operacoes">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condicao">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condicao" eType="#//Recursion"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="true" eType="#//Recursion"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="falso" eType="#//Recursion"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Inteiros" eSuperTypes="#//Numeros"/>
   <eClassifiers xsi:type="ecore:EClass" name="Decimal" eSuperTypes="#//Numeros"/>
   <eClassifiers xsi:type="ecore:EClass" name="Recursion">
@@ -40,7 +48,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="recursionInt" eType="#//Numeros"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="recursionString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="recursionExpression" eType="#//Definition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="recursionDefinition" eType="#//Definition"
         containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

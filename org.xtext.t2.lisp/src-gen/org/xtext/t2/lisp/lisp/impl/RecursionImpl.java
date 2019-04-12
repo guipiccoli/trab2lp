@@ -28,7 +28,7 @@ import org.xtext.t2.lisp.lisp.Recursion;
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.RecursionImpl#getRecursionID <em>Recursion ID</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.RecursionImpl#getRecursionInt <em>Recursion Int</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.impl.RecursionImpl#getRecursionString <em>Recursion String</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.impl.RecursionImpl#getRecursionExpression <em>Recursion Expression</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.impl.RecursionImpl#getRecursionDefinition <em>Recursion Definition</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,14 +86,14 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
   protected String recursionString = RECURSION_STRING_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getRecursionExpression() <em>Recursion Expression</em>}' containment reference.
+   * The cached value of the '{@link #getRecursionDefinition() <em>Recursion Definition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getRecursionExpression()
+   * @see #getRecursionDefinition()
    * @generated
    * @ordered
    */
-  protected Definition recursionExpression;
+  protected Definition recursionDefinition;
 
   /**
    * <!-- begin-user-doc -->
@@ -215,9 +215,9 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
    * <!-- end-user-doc -->
    * @generated
    */
-  public Definition getRecursionExpression()
+  public Definition getRecursionDefinition()
   {
-    return recursionExpression;
+    return recursionDefinition;
   }
 
   /**
@@ -225,13 +225,13 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetRecursionExpression(Definition newRecursionExpression, NotificationChain msgs)
+  public NotificationChain basicSetRecursionDefinition(Definition newRecursionDefinition, NotificationChain msgs)
   {
-    Definition oldRecursionExpression = recursionExpression;
-    recursionExpression = newRecursionExpression;
+    Definition oldRecursionDefinition = recursionDefinition;
+    recursionDefinition = newRecursionDefinition;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.RECURSION__RECURSION_EXPRESSION, oldRecursionExpression, newRecursionExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, LispPackage.RECURSION__RECURSION_DEFINITION, oldRecursionDefinition, newRecursionDefinition);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -242,20 +242,20 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setRecursionExpression(Definition newRecursionExpression)
+  public void setRecursionDefinition(Definition newRecursionDefinition)
   {
-    if (newRecursionExpression != recursionExpression)
+    if (newRecursionDefinition != recursionDefinition)
     {
       NotificationChain msgs = null;
-      if (recursionExpression != null)
-        msgs = ((InternalEObject)recursionExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.RECURSION__RECURSION_EXPRESSION, null, msgs);
-      if (newRecursionExpression != null)
-        msgs = ((InternalEObject)newRecursionExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.RECURSION__RECURSION_EXPRESSION, null, msgs);
-      msgs = basicSetRecursionExpression(newRecursionExpression, msgs);
+      if (recursionDefinition != null)
+        msgs = ((InternalEObject)recursionDefinition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - LispPackage.RECURSION__RECURSION_DEFINITION, null, msgs);
+      if (newRecursionDefinition != null)
+        msgs = ((InternalEObject)newRecursionDefinition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - LispPackage.RECURSION__RECURSION_DEFINITION, null, msgs);
+      msgs = basicSetRecursionDefinition(newRecursionDefinition, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.RECURSION__RECURSION_EXPRESSION, newRecursionExpression, newRecursionExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, LispPackage.RECURSION__RECURSION_DEFINITION, newRecursionDefinition, newRecursionDefinition));
   }
 
   /**
@@ -270,8 +270,8 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
     {
       case LispPackage.RECURSION__RECURSION_INT:
         return basicSetRecursionInt(null, msgs);
-      case LispPackage.RECURSION__RECURSION_EXPRESSION:
-        return basicSetRecursionExpression(null, msgs);
+      case LispPackage.RECURSION__RECURSION_DEFINITION:
+        return basicSetRecursionDefinition(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -292,8 +292,8 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
         return getRecursionInt();
       case LispPackage.RECURSION__RECURSION_STRING:
         return getRecursionString();
-      case LispPackage.RECURSION__RECURSION_EXPRESSION:
-        return getRecursionExpression();
+      case LispPackage.RECURSION__RECURSION_DEFINITION:
+        return getRecursionDefinition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -317,8 +317,8 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
       case LispPackage.RECURSION__RECURSION_STRING:
         setRecursionString((String)newValue);
         return;
-      case LispPackage.RECURSION__RECURSION_EXPRESSION:
-        setRecursionExpression((Definition)newValue);
+      case LispPackage.RECURSION__RECURSION_DEFINITION:
+        setRecursionDefinition((Definition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -343,8 +343,8 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
       case LispPackage.RECURSION__RECURSION_STRING:
         setRecursionString(RECURSION_STRING_EDEFAULT);
         return;
-      case LispPackage.RECURSION__RECURSION_EXPRESSION:
-        setRecursionExpression((Definition)null);
+      case LispPackage.RECURSION__RECURSION_DEFINITION:
+        setRecursionDefinition((Definition)null);
         return;
     }
     super.eUnset(featureID);
@@ -366,8 +366,8 @@ public class RecursionImpl extends MinimalEObjectImpl.Container implements Recur
         return recursionInt != null;
       case LispPackage.RECURSION__RECURSION_STRING:
         return RECURSION_STRING_EDEFAULT == null ? recursionString != null : !RECURSION_STRING_EDEFAULT.equals(recursionString);
-      case LispPackage.RECURSION__RECURSION_EXPRESSION:
-        return recursionExpression != null;
+      case LispPackage.RECURSION__RECURSION_DEFINITION:
+        return recursionDefinition != null;
     }
     return super.eIsSet(featureID);
   }

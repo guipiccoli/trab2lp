@@ -96,6 +96,15 @@ public interface LispFactory extends EFactory
   Operacoes createOperacoes();
 
   /**
+   * Returns a new object of class '<em>Condicao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Condicao</em>'.
+   * @generated
+   */
+  Condicao createCondicao();
+
+  /**
    * Returns a new object of class '<em>Inteiros</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

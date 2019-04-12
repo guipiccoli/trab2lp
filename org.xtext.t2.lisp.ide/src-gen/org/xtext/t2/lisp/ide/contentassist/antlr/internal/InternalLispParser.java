@@ -1611,13 +1611,13 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recursion__Alternatives"
-    // InternalLisp.g:483:1: rule__Recursion__Alternatives : ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionExpressionAssignment_3 ) ) );
+    // InternalLisp.g:483:1: rule__Recursion__Alternatives : ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) ) );
     public final void rule__Recursion__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:487:1: ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionExpressionAssignment_3 ) ) )
+            // InternalLisp.g:487:1: ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) ) )
             int alt8=4;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -1725,24 +1725,24 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalLisp.g:506:2: ( ( rule__Recursion__RecursionExpressionAssignment_3 ) )
+                    // InternalLisp.g:506:2: ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) )
                     {
-                    // InternalLisp.g:506:2: ( ( rule__Recursion__RecursionExpressionAssignment_3 ) )
-                    // InternalLisp.g:507:3: ( rule__Recursion__RecursionExpressionAssignment_3 )
+                    // InternalLisp.g:506:2: ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) )
+                    // InternalLisp.g:507:3: ( rule__Recursion__RecursionDefinitionAssignment_3 )
                     {
-                     before(grammarAccess.getRecursionAccess().getRecursionExpressionAssignment_3()); 
-                    // InternalLisp.g:508:3: ( rule__Recursion__RecursionExpressionAssignment_3 )
-                    // InternalLisp.g:508:4: rule__Recursion__RecursionExpressionAssignment_3
+                     before(grammarAccess.getRecursionAccess().getRecursionDefinitionAssignment_3()); 
+                    // InternalLisp.g:508:3: ( rule__Recursion__RecursionDefinitionAssignment_3 )
+                    // InternalLisp.g:508:4: rule__Recursion__RecursionDefinitionAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Recursion__RecursionExpressionAssignment_3();
+                    rule__Recursion__RecursionDefinitionAssignment_3();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getRecursionAccess().getRecursionExpressionAssignment_3()); 
+                     after(grammarAccess.getRecursionAccess().getRecursionDefinitionAssignment_3()); 
 
                     }
 
@@ -3734,9 +3734,9 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Recursion__RecursionStringAssignment_2"
 
 
-    // $ANTLR start "rule__Recursion__RecursionExpressionAssignment_3"
-    // InternalLisp.g:1204:1: rule__Recursion__RecursionExpressionAssignment_3 : ( ruleDefinition ) ;
-    public final void rule__Recursion__RecursionExpressionAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Recursion__RecursionDefinitionAssignment_3"
+    // InternalLisp.g:1204:1: rule__Recursion__RecursionDefinitionAssignment_3 : ( ruleDefinition ) ;
+    public final void rule__Recursion__RecursionDefinitionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -3747,13 +3747,13 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
             // InternalLisp.g:1209:2: ( ruleDefinition )
             // InternalLisp.g:1210:3: ruleDefinition
             {
-             before(grammarAccess.getRecursionAccess().getRecursionExpressionDefinitionParserRuleCall_3_0()); 
+             before(grammarAccess.getRecursionAccess().getRecursionDefinitionDefinitionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleDefinition();
 
             state._fsp--;
 
-             after(grammarAccess.getRecursionAccess().getRecursionExpressionDefinitionParserRuleCall_3_0()); 
+             after(grammarAccess.getRecursionAccess().getRecursionDefinitionDefinitionParserRuleCall_3_0()); 
 
             }
 
@@ -3772,7 +3772,7 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Recursion__RecursionExpressionAssignment_3"
+    // $ANTLR end "rule__Recursion__RecursionDefinitionAssignment_3"
 
     // Delegated rules
 

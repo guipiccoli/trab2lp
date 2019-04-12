@@ -133,6 +133,13 @@ public class LispSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case LispPackage.CONDICAO:
+      {
+        Condicao condicao = (Condicao)theEObject;
+        T result = caseCondicao(condicao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case LispPackage.INTEIROS:
       {
         Inteiros inteiros = (Inteiros)theEObject;
@@ -286,6 +293,22 @@ public class LispSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOperacoes(Operacoes object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Condicao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Condicao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCondicao(Condicao object)
   {
     return null;
   }

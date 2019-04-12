@@ -271,6 +271,53 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		//'square'
 		public Keyword getSquareKeyword_4() { return cSquareKeyword_4; }
 	}
+	public class CondicaoElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Condicao");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIfKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cCondicaoAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCondicaoRecursionParserRuleCall_2_0 = (RuleCall)cCondicaoAssignment_2.eContents().get(0);
+		private final Assignment cTrueAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTrueRecursionParserRuleCall_3_0 = (RuleCall)cTrueAssignment_3.eContents().get(0);
+		private final Assignment cFalsoAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFalsoRecursionParserRuleCall_4_0 = (RuleCall)cFalsoAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Condicao:
+		//	'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+		
+		//'if'
+		public Keyword getIfKeyword_1() { return cIfKeyword_1; }
+		
+		//condicao=Recursion
+		public Assignment getCondicaoAssignment_2() { return cCondicaoAssignment_2; }
+		
+		//Recursion
+		public RuleCall getCondicaoRecursionParserRuleCall_2_0() { return cCondicaoRecursionParserRuleCall_2_0; }
+		
+		//true=Recursion
+		public Assignment getTrueAssignment_3() { return cTrueAssignment_3; }
+		
+		//Recursion
+		public RuleCall getTrueRecursionParserRuleCall_3_0() { return cTrueRecursionParserRuleCall_3_0; }
+		
+		//falso=Recursion
+		public Assignment getFalsoAssignment_4() { return cFalsoAssignment_4; }
+		
+		//Recursion
+		public RuleCall getFalsoRecursionParserRuleCall_4_0() { return cFalsoRecursionParserRuleCall_4_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
 	public class InteirosElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.t2.lisp.Lisp.Inteiros");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
@@ -326,14 +373,14 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRecursionIntNumerosParserRuleCall_1_0 = (RuleCall)cRecursionIntAssignment_1.eContents().get(0);
 		private final Assignment cRecursionStringAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
 		private final RuleCall cRecursionStringSTRINGTerminalRuleCall_2_0 = (RuleCall)cRecursionStringAssignment_2.eContents().get(0);
-		private final Assignment cRecursionExpressionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
-		private final RuleCall cRecursionExpressionDefinitionParserRuleCall_3_0 = (RuleCall)cRecursionExpressionAssignment_3.eContents().get(0);
+		private final Assignment cRecursionDefinitionAssignment_3 = (Assignment)cAlternatives.eContents().get(3);
+		private final RuleCall cRecursionDefinitionDefinitionParserRuleCall_3_0 = (RuleCall)cRecursionDefinitionAssignment_3.eContents().get(0);
 		
 		//Recursion:
-		//	recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition;
+		//	recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionDefinition=Definition;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition
+		//recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionDefinition=Definition
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//recursionID=ID
@@ -354,11 +401,11 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getRecursionStringSTRINGTerminalRuleCall_2_0() { return cRecursionStringSTRINGTerminalRuleCall_2_0; }
 		
-		//recursionExpression=Definition
-		public Assignment getRecursionExpressionAssignment_3() { return cRecursionExpressionAssignment_3; }
+		//recursionDefinition=Definition
+		public Assignment getRecursionDefinitionAssignment_3() { return cRecursionDefinitionAssignment_3; }
 		
 		//Definition
-		public RuleCall getRecursionExpressionDefinitionParserRuleCall_3_0() { return cRecursionExpressionDefinitionParserRuleCall_3_0; }
+		public RuleCall getRecursionDefinitionDefinitionParserRuleCall_3_0() { return cRecursionDefinitionDefinitionParserRuleCall_3_0; }
 	}
 	
 	
@@ -370,6 +417,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	private final ExpressionElements pExpression;
 	private final NumerosElements pNumeros;
 	private final OperacoesElements pOperacoes;
+	private final CondicaoElements pCondicao;
 	private final InteirosElements pInteiros;
 	private final DecimalElements pDecimal;
 	private final RecursionElements pRecursion;
@@ -391,6 +439,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		this.pExpression = new ExpressionElements();
 		this.pNumeros = new NumerosElements();
 		this.pOperacoes = new OperacoesElements();
+		this.pCondicao = new CondicaoElements();
 		this.pInteiros = new InteirosElements();
 		this.pDecimal = new DecimalElements();
 		this.pRecursion = new RecursionElements();
@@ -504,6 +553,16 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 		return getOperacoesAccess().getRule();
 	}
 	
+	//Condicao:
+	//	'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')';
+	public CondicaoElements getCondicaoAccess() {
+		return pCondicao;
+	}
+	
+	public ParserRule getCondicaoRule() {
+		return getCondicaoAccess().getRule();
+	}
+	
 	//Inteiros:
 	//	value=INT;
 	public InteirosElements getInteirosAccess() {
@@ -525,7 +584,7 @@ public class LispGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Recursion:
-	//	recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition;
+	//	recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionDefinition=Definition;
 	public RecursionElements getRecursionAccess() {
 		return pRecursion;
 	}

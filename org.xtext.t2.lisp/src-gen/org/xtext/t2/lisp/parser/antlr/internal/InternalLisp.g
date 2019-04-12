@@ -666,17 +666,17 @@ ruleRecursion returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRecursionAccess().getRecursionExpressionDefinitionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getRecursionAccess().getRecursionDefinitionDefinitionParserRuleCall_3_0());
 				}
-				lv_recursionExpression_3_0=ruleDefinition
+				lv_recursionDefinition_3_0=ruleDefinition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRecursionRule());
 					}
 					set(
 						$current,
-						"recursionExpression",
-						lv_recursionExpression_3_0,
+						"recursionDefinition",
+						lv_recursionDefinition_3_0,
 						"org.xtext.t2.lisp.Lisp.Definition");
 					afterParserOrEnumRuleCall();
 				}

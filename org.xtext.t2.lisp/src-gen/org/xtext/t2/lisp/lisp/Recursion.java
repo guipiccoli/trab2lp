@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionID <em>Recursion ID</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionInt <em>Recursion Int</em>}</li>
  *   <li>{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionString <em>Recursion String</em>}</li>
- *   <li>{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionExpression <em>Recursion Expression</em>}</li>
+ *   <li>{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionDefinition <em>Recursion Definition</em>}</li>
  * </ul>
  *
  * @see org.xtext.t2.lisp.lisp.LispPackage#getRecursion()
@@ -105,29 +105,29 @@ public interface Recursion extends EObject
   void setRecursionString(String value);
 
   /**
-   * Returns the value of the '<em><b>Recursion Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Recursion Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Recursion Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Recursion Definition</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Recursion Expression</em>' containment reference.
-   * @see #setRecursionExpression(Definition)
-   * @see org.xtext.t2.lisp.lisp.LispPackage#getRecursion_RecursionExpression()
+   * @return the value of the '<em>Recursion Definition</em>' containment reference.
+   * @see #setRecursionDefinition(Definition)
+   * @see org.xtext.t2.lisp.lisp.LispPackage#getRecursion_RecursionDefinition()
    * @model containment="true"
    * @generated
    */
-  Definition getRecursionExpression();
+  Definition getRecursionDefinition();
 
   /**
-   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionExpression <em>Recursion Expression</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionDefinition <em>Recursion Definition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Recursion Expression</em>' containment reference.
-   * @see #getRecursionExpression()
+   * @param value the new value of the '<em>Recursion Definition</em>' containment reference.
+   * @see #getRecursionDefinition()
    * @generated
    */
-  void setRecursionExpression(Definition value);
+  void setRecursionDefinition(Definition value);
 
 } // Recursion

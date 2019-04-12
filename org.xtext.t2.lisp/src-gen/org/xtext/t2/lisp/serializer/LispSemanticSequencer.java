@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.t2.lisp.lisp.Begin;
+import org.xtext.t2.lisp.lisp.Condicao;
 import org.xtext.t2.lisp.lisp.Decimal;
 import org.xtext.t2.lisp.lisp.Define;
 import org.xtext.t2.lisp.lisp.Expression;
@@ -42,6 +43,9 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			switch (semanticObject.eClass().getClassifierID()) {
 			case LispPackage.BEGIN:
 				sequence_Begin(context, (Begin) semanticObject); 
+				return; 
+			case LispPackage.CONDICAO:
+				sequence_Condicao(context, (Condicao) semanticObject); 
 				return; 
 			case LispPackage.DECIMAL:
 				sequence_Decimal(context, (Decimal) semanticObject); 
@@ -81,6 +85,30 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Begin(ISerializationContext context, Begin semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condicao returns Condicao
+	 *
+	 * Constraint:
+	 *     (condicao=Recursion true=Recursion falso=Recursion)
+	 */
+	protected void sequence_Condicao(ISerializationContext context, Condicao semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.CONDICAO__CONDICAO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.CONDICAO__CONDICAO));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.CONDICAO__TRUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.CONDICAO__TRUE));
+			if (transientValues.isValueTransient(semanticObject, LispPackage.Literals.CONDICAO__FALSO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, LispPackage.Literals.CONDICAO__FALSO));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCondicaoAccess().getCondicaoRecursionParserRuleCall_2_0(), semanticObject.getCondicao());
+		feeder.accept(grammarAccess.getCondicaoAccess().getTrueRecursionParserRuleCall_3_0(), semanticObject.getTrue());
+		feeder.accept(grammarAccess.getCondicaoAccess().getFalsoRecursionParserRuleCall_4_0(), semanticObject.getFalso());
+		feeder.finish();
 	}
 	
 	
@@ -192,7 +220,7 @@ public class LispSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Recursion returns Recursion
 	 *
 	 * Constraint:
-	 *     (recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionExpression=Definition)
+	 *     (recursionID=ID | recursionInt=Numeros | recursionString=STRING | recursionDefinition=Definition)
 	 */
 	protected void sequence_Recursion(ISerializationContext context, Recursion semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -300,6 +300,52 @@ public interface LispPackage extends EPackage
   int OPERACOES_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.CondicaoImpl <em>Condicao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.t2.lisp.lisp.impl.CondicaoImpl
+   * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getCondicao()
+   * @generated
+   */
+  int CONDICAO = 8;
+
+  /**
+   * The feature id for the '<em><b>Condicao</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDICAO__CONDICAO = 0;
+
+  /**
+   * The feature id for the '<em><b>True</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDICAO__TRUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Falso</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDICAO__FALSO = 2;
+
+  /**
+   * The number of structural features of the '<em>Condicao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDICAO_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link org.xtext.t2.lisp.lisp.impl.InteirosImpl <em>Inteiros</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -307,7 +353,7 @@ public interface LispPackage extends EPackage
    * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getInteiros()
    * @generated
    */
-  int INTEIROS = 8;
+  int INTEIROS = 9;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -335,7 +381,7 @@ public interface LispPackage extends EPackage
    * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getDecimal()
    * @generated
    */
-  int DECIMAL = 9;
+  int DECIMAL = 10;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -363,7 +409,7 @@ public interface LispPackage extends EPackage
    * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getRecursion()
    * @generated
    */
-  int RECURSION = 10;
+  int RECURSION = 11;
 
   /**
    * The feature id for the '<em><b>Recursion ID</b></em>' attribute.
@@ -393,13 +439,13 @@ public interface LispPackage extends EPackage
   int RECURSION__RECURSION_STRING = 2;
 
   /**
-   * The feature id for the '<em><b>Recursion Expression</b></em>' containment reference.
+   * The feature id for the '<em><b>Recursion Definition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RECURSION__RECURSION_EXPRESSION = 3;
+  int RECURSION__RECURSION_DEFINITION = 3;
 
   /**
    * The number of structural features of the '<em>Recursion</em>' class.
@@ -602,6 +648,49 @@ public interface LispPackage extends EPackage
   EAttribute getOperacoes_Value();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Condicao <em>Condicao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Condicao</em>'.
+   * @see org.xtext.t2.lisp.lisp.Condicao
+   * @generated
+   */
+  EClass getCondicao();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Condicao#getCondicao <em>Condicao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condicao</em>'.
+   * @see org.xtext.t2.lisp.lisp.Condicao#getCondicao()
+   * @see #getCondicao()
+   * @generated
+   */
+  EReference getCondicao_Condicao();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Condicao#getTrue <em>True</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>True</em>'.
+   * @see org.xtext.t2.lisp.lisp.Condicao#getTrue()
+   * @see #getCondicao()
+   * @generated
+   */
+  EReference getCondicao_True();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Condicao#getFalso <em>Falso</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Falso</em>'.
+   * @see org.xtext.t2.lisp.lisp.Condicao#getFalso()
+   * @see #getCondicao()
+   * @generated
+   */
+  EReference getCondicao_Falso();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.t2.lisp.lisp.Inteiros <em>Inteiros</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -665,15 +754,15 @@ public interface LispPackage extends EPackage
   EAttribute getRecursion_RecursionString();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionExpression <em>Recursion Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.t2.lisp.lisp.Recursion#getRecursionDefinition <em>Recursion Definition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Recursion Expression</em>'.
-   * @see org.xtext.t2.lisp.lisp.Recursion#getRecursionExpression()
+   * @return the meta object for the containment reference '<em>Recursion Definition</em>'.
+   * @see org.xtext.t2.lisp.lisp.Recursion#getRecursionDefinition()
    * @see #getRecursion()
    * @generated
    */
-  EReference getRecursion_RecursionExpression();
+  EReference getRecursion_RecursionDefinition();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -859,6 +948,40 @@ public interface LispPackage extends EPackage
     EAttribute OPERACOES__VALUE = eINSTANCE.getOperacoes_Value();
 
     /**
+     * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.CondicaoImpl <em>Condicao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.t2.lisp.lisp.impl.CondicaoImpl
+     * @see org.xtext.t2.lisp.lisp.impl.LispPackageImpl#getCondicao()
+     * @generated
+     */
+    EClass CONDICAO = eINSTANCE.getCondicao();
+
+    /**
+     * The meta object literal for the '<em><b>Condicao</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONDICAO__CONDICAO = eINSTANCE.getCondicao_Condicao();
+
+    /**
+     * The meta object literal for the '<em><b>True</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONDICAO__TRUE = eINSTANCE.getCondicao_True();
+
+    /**
+     * The meta object literal for the '<em><b>Falso</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONDICAO__FALSO = eINSTANCE.getCondicao_Falso();
+
+    /**
      * The meta object literal for the '{@link org.xtext.t2.lisp.lisp.impl.InteirosImpl <em>Inteiros</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -913,12 +1036,12 @@ public interface LispPackage extends EPackage
     EAttribute RECURSION__RECURSION_STRING = eINSTANCE.getRecursion_RecursionString();
 
     /**
-     * The meta object literal for the '<em><b>Recursion Expression</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Recursion Definition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RECURSION__RECURSION_EXPRESSION = eINSTANCE.getRecursion_RecursionExpression();
+    EReference RECURSION__RECURSION_DEFINITION = eINSTANCE.getRecursion_RecursionDefinition();
 
   }
 

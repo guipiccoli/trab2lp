@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.t2.lisp.lisp.Begin;
+import org.xtext.t2.lisp.lisp.Condicao;
 import org.xtext.t2.lisp.lisp.Decimal;
 import org.xtext.t2.lisp.lisp.Define;
 import org.xtext.t2.lisp.lisp.Definition;
@@ -87,6 +88,13 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * @generated
    */
   private EClass operacoesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass condicaoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -357,6 +365,46 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCondicao()
+  {
+    return condicaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCondicao_Condicao()
+  {
+    return (EReference)condicaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCondicao_True()
+  {
+    return (EReference)condicaoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCondicao_Falso()
+  {
+    return (EReference)condicaoEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getInteiros()
   {
     return inteirosEClass;
@@ -417,7 +465,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRecursion_RecursionExpression()
+  public EReference getRecursion_RecursionDefinition()
   {
     return (EReference)recursionEClass.getEStructuralFeatures().get(3);
   }
@@ -478,6 +526,11 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     operacoesEClass = createEClass(OPERACOES);
     createEAttribute(operacoesEClass, OPERACOES__VALUE);
 
+    condicaoEClass = createEClass(CONDICAO);
+    createEReference(condicaoEClass, CONDICAO__CONDICAO);
+    createEReference(condicaoEClass, CONDICAO__TRUE);
+    createEReference(condicaoEClass, CONDICAO__FALSO);
+
     inteirosEClass = createEClass(INTEIROS);
 
     decimalEClass = createEClass(DECIMAL);
@@ -486,7 +539,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     createEAttribute(recursionEClass, RECURSION__RECURSION_ID);
     createEReference(recursionEClass, RECURSION__RECURSION_INT);
     createEAttribute(recursionEClass, RECURSION__RECURSION_STRING);
-    createEReference(recursionEClass, RECURSION__RECURSION_EXPRESSION);
+    createEReference(recursionEClass, RECURSION__RECURSION_DEFINITION);
   }
 
   /**
@@ -552,6 +605,11 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     initEClass(operacoesEClass, Operacoes.class, "Operacoes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getOperacoes_Value(), ecorePackage.getEString(), "value", null, 0, 1, Operacoes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(condicaoEClass, Condicao.class, "Condicao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCondicao_Condicao(), this.getRecursion(), null, "condicao", null, 0, 1, Condicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondicao_True(), this.getRecursion(), null, "true", null, 0, 1, Condicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCondicao_Falso(), this.getRecursion(), null, "falso", null, 0, 1, Condicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(inteirosEClass, Inteiros.class, "Inteiros", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(decimalEClass, Decimal.class, "Decimal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -560,7 +618,7 @@ public class LispPackageImpl extends EPackageImpl implements LispPackage
     initEAttribute(getRecursion_RecursionID(), ecorePackage.getEString(), "recursionID", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRecursion_RecursionInt(), this.getNumeros(), null, "recursionInt", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRecursion_RecursionString(), ecorePackage.getEString(), "recursionString", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRecursion_RecursionExpression(), this.getDefinition(), null, "recursionExpression", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRecursion_RecursionDefinition(), this.getDefinition(), null, "recursionDefinition", null, 0, 1, Recursion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -73,6 +73,7 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
       case LispPackage.EXPRESSION: return createExpression();
       case LispPackage.NUMEROS: return createNumeros();
       case LispPackage.OPERACOES: return createOperacoes();
+      case LispPackage.CONDICAO: return createCondicao();
       case LispPackage.INTEIROS: return createInteiros();
       case LispPackage.DECIMAL: return createDecimal();
       case LispPackage.RECURSION: return createRecursion();
@@ -167,6 +168,17 @@ public class LispFactoryImpl extends EFactoryImpl implements LispFactory
   {
     OperacoesImpl operacoes = new OperacoesImpl();
     return operacoes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Condicao createCondicao()
+  {
+    CondicaoImpl condicao = new CondicaoImpl();
+    return condicao;
   }
 
   /**

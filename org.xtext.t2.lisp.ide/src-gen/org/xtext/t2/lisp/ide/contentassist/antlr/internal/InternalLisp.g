@@ -504,9 +504,9 @@ rule__Recursion__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getRecursionAccess().getRecursionExpressionAssignment_3()); }
-		(rule__Recursion__RecursionExpressionAssignment_3)
-		{ after(grammarAccess.getRecursionAccess().getRecursionExpressionAssignment_3()); }
+		{ before(grammarAccess.getRecursionAccess().getRecursionDefinitionAssignment_3()); }
+		(rule__Recursion__RecursionDefinitionAssignment_3)
+		{ after(grammarAccess.getRecursionAccess().getRecursionDefinitionAssignment_3()); }
 	)
 ;
 finally {
@@ -1201,15 +1201,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Recursion__RecursionExpressionAssignment_3
+rule__Recursion__RecursionDefinitionAssignment_3
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getRecursionAccess().getRecursionExpressionDefinitionParserRuleCall_3_0()); }
+		{ before(grammarAccess.getRecursionAccess().getRecursionDefinitionDefinitionParserRuleCall_3_0()); }
 		ruleDefinition
-		{ after(grammarAccess.getRecursionAccess().getRecursionExpressionDefinitionParserRuleCall_3_0()); }
+		{ after(grammarAccess.getRecursionAccess().getRecursionDefinitionDefinitionParserRuleCall_3_0()); }
 	)
 ;
 finally {

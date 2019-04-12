@@ -1722,7 +1722,7 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRecursion"
-    // InternalLisp.g:600:1: ruleRecursion returns [EObject current=null] : ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionExpression_3_0= ruleDefinition ) ) ) ;
+    // InternalLisp.g:600:1: ruleRecursion returns [EObject current=null] : ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionDefinition_3_0= ruleDefinition ) ) ) ;
     public final EObject ruleRecursion() throws RecognitionException {
         EObject current = null;
 
@@ -1730,17 +1730,17 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
         Token lv_recursionString_2_0=null;
         EObject lv_recursionInt_1_0 = null;
 
-        EObject lv_recursionExpression_3_0 = null;
+        EObject lv_recursionDefinition_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalLisp.g:606:2: ( ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionExpression_3_0= ruleDefinition ) ) ) )
-            // InternalLisp.g:607:2: ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionExpression_3_0= ruleDefinition ) ) )
+            // InternalLisp.g:606:2: ( ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionDefinition_3_0= ruleDefinition ) ) ) )
+            // InternalLisp.g:607:2: ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionDefinition_3_0= ruleDefinition ) ) )
             {
-            // InternalLisp.g:607:2: ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionExpression_3_0= ruleDefinition ) ) )
+            // InternalLisp.g:607:2: ( ( (lv_recursionID_0_0= RULE_ID ) ) | ( (lv_recursionInt_1_0= ruleNumeros ) ) | ( (lv_recursionString_2_0= RULE_STRING ) ) | ( (lv_recursionDefinition_3_0= ruleDefinition ) ) )
             int alt11=4;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -1874,19 +1874,19 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalLisp.g:666:3: ( (lv_recursionExpression_3_0= ruleDefinition ) )
+                    // InternalLisp.g:666:3: ( (lv_recursionDefinition_3_0= ruleDefinition ) )
                     {
-                    // InternalLisp.g:666:3: ( (lv_recursionExpression_3_0= ruleDefinition ) )
-                    // InternalLisp.g:667:4: (lv_recursionExpression_3_0= ruleDefinition )
+                    // InternalLisp.g:666:3: ( (lv_recursionDefinition_3_0= ruleDefinition ) )
+                    // InternalLisp.g:667:4: (lv_recursionDefinition_3_0= ruleDefinition )
                     {
-                    // InternalLisp.g:667:4: (lv_recursionExpression_3_0= ruleDefinition )
-                    // InternalLisp.g:668:5: lv_recursionExpression_3_0= ruleDefinition
+                    // InternalLisp.g:667:4: (lv_recursionDefinition_3_0= ruleDefinition )
+                    // InternalLisp.g:668:5: lv_recursionDefinition_3_0= ruleDefinition
                     {
 
-                    					newCompositeNode(grammarAccess.getRecursionAccess().getRecursionExpressionDefinitionParserRuleCall_3_0());
+                    					newCompositeNode(grammarAccess.getRecursionAccess().getRecursionDefinitionDefinitionParserRuleCall_3_0());
                     				
                     pushFollow(FOLLOW_2);
-                    lv_recursionExpression_3_0=ruleDefinition();
+                    lv_recursionDefinition_3_0=ruleDefinition();
 
                     state._fsp--;
 
@@ -1896,8 +1896,8 @@ public class InternalLispParser extends AbstractInternalAntlrParser {
                     					}
                     					set(
                     						current,
-                    						"recursionExpression",
-                    						lv_recursionExpression_3_0,
+                    						"recursionDefinition",
+                    						lv_recursionDefinition_3_0,
                     						"org.xtext.t2.lisp.Lisp.Definition");
                     					afterParserOrEnumRuleCall();
                     				
