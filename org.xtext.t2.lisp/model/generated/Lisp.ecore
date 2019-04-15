@@ -6,6 +6,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="definition" eType="#//Definition"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condicao" eType="#//Condicao"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Definition"/>
   <eClassifiers xsi:type="ecore:EClass" name="Begin">
@@ -16,6 +18,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="list" eType="#//List" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condicao" eType="#//Condicao"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Definition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="numeros" upperBound="-1"

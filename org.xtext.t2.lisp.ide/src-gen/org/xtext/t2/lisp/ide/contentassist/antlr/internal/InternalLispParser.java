@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalLispParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'-'", "'*'", "'/'", "'sq'", "'begin'", "'define'", "'('", "'list'", "')'", "'.'", "'+'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'-'", "'*'", "'/'", "'sq'", "'begin'", "'define'", "'('", "'list'", "')'", "'if'", "'.'", "'+'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -40,6 +40,7 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_INT=4;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__20=20;
     public static final int T__21=21;
@@ -695,12 +696,89 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleOperacoes"
 
 
+    // $ANTLR start "entryRuleCondicao"
+    // InternalLisp.g:253:1: entryRuleCondicao : ruleCondicao EOF ;
+    public final void entryRuleCondicao() throws RecognitionException {
+        try {
+            // InternalLisp.g:254:1: ( ruleCondicao EOF )
+            // InternalLisp.g:255:1: ruleCondicao EOF
+            {
+             before(grammarAccess.getCondicaoRule()); 
+            pushFollow(FOLLOW_1);
+            ruleCondicao();
+
+            state._fsp--;
+
+             after(grammarAccess.getCondicaoRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleCondicao"
+
+
+    // $ANTLR start "ruleCondicao"
+    // InternalLisp.g:262:1: ruleCondicao : ( ( rule__Condicao__Group__0 ) ) ;
+    public final void ruleCondicao() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:266:2: ( ( ( rule__Condicao__Group__0 ) ) )
+            // InternalLisp.g:267:2: ( ( rule__Condicao__Group__0 ) )
+            {
+            // InternalLisp.g:267:2: ( ( rule__Condicao__Group__0 ) )
+            // InternalLisp.g:268:3: ( rule__Condicao__Group__0 )
+            {
+             before(grammarAccess.getCondicaoAccess().getGroup()); 
+            // InternalLisp.g:269:3: ( rule__Condicao__Group__0 )
+            // InternalLisp.g:269:4: rule__Condicao__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Condicao__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getCondicaoAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleCondicao"
+
+
     // $ANTLR start "entryRuleInteiros"
-    // InternalLisp.g:253:1: entryRuleInteiros : ruleInteiros EOF ;
+    // InternalLisp.g:278:1: entryRuleInteiros : ruleInteiros EOF ;
     public final void entryRuleInteiros() throws RecognitionException {
         try {
-            // InternalLisp.g:254:1: ( ruleInteiros EOF )
-            // InternalLisp.g:255:1: ruleInteiros EOF
+            // InternalLisp.g:279:1: ( ruleInteiros EOF )
+            // InternalLisp.g:280:1: ruleInteiros EOF
             {
              before(grammarAccess.getInteirosRule()); 
             pushFollow(FOLLOW_1);
@@ -726,21 +804,21 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleInteiros"
-    // InternalLisp.g:262:1: ruleInteiros : ( ( rule__Inteiros__ValueAssignment ) ) ;
+    // InternalLisp.g:287:1: ruleInteiros : ( ( rule__Inteiros__ValueAssignment ) ) ;
     public final void ruleInteiros() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:266:2: ( ( ( rule__Inteiros__ValueAssignment ) ) )
-            // InternalLisp.g:267:2: ( ( rule__Inteiros__ValueAssignment ) )
+            // InternalLisp.g:291:2: ( ( ( rule__Inteiros__ValueAssignment ) ) )
+            // InternalLisp.g:292:2: ( ( rule__Inteiros__ValueAssignment ) )
             {
-            // InternalLisp.g:267:2: ( ( rule__Inteiros__ValueAssignment ) )
-            // InternalLisp.g:268:3: ( rule__Inteiros__ValueAssignment )
+            // InternalLisp.g:292:2: ( ( rule__Inteiros__ValueAssignment ) )
+            // InternalLisp.g:293:3: ( rule__Inteiros__ValueAssignment )
             {
              before(grammarAccess.getInteirosAccess().getValueAssignment()); 
-            // InternalLisp.g:269:3: ( rule__Inteiros__ValueAssignment )
-            // InternalLisp.g:269:4: rule__Inteiros__ValueAssignment
+            // InternalLisp.g:294:3: ( rule__Inteiros__ValueAssignment )
+            // InternalLisp.g:294:4: rule__Inteiros__ValueAssignment
             {
             pushFollow(FOLLOW_2);
             rule__Inteiros__ValueAssignment();
@@ -773,11 +851,11 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleDecimal"
-    // InternalLisp.g:278:1: entryRuleDecimal : ruleDecimal EOF ;
+    // InternalLisp.g:303:1: entryRuleDecimal : ruleDecimal EOF ;
     public final void entryRuleDecimal() throws RecognitionException {
         try {
-            // InternalLisp.g:279:1: ( ruleDecimal EOF )
-            // InternalLisp.g:280:1: ruleDecimal EOF
+            // InternalLisp.g:304:1: ( ruleDecimal EOF )
+            // InternalLisp.g:305:1: ruleDecimal EOF
             {
              before(grammarAccess.getDecimalRule()); 
             pushFollow(FOLLOW_1);
@@ -803,21 +881,21 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleDecimal"
-    // InternalLisp.g:287:1: ruleDecimal : ( ( rule__Decimal__Group__0 ) ) ;
+    // InternalLisp.g:312:1: ruleDecimal : ( ( rule__Decimal__Group__0 ) ) ;
     public final void ruleDecimal() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:291:2: ( ( ( rule__Decimal__Group__0 ) ) )
-            // InternalLisp.g:292:2: ( ( rule__Decimal__Group__0 ) )
+            // InternalLisp.g:316:2: ( ( ( rule__Decimal__Group__0 ) ) )
+            // InternalLisp.g:317:2: ( ( rule__Decimal__Group__0 ) )
             {
-            // InternalLisp.g:292:2: ( ( rule__Decimal__Group__0 ) )
-            // InternalLisp.g:293:3: ( rule__Decimal__Group__0 )
+            // InternalLisp.g:317:2: ( ( rule__Decimal__Group__0 ) )
+            // InternalLisp.g:318:3: ( rule__Decimal__Group__0 )
             {
              before(grammarAccess.getDecimalAccess().getGroup()); 
-            // InternalLisp.g:294:3: ( rule__Decimal__Group__0 )
-            // InternalLisp.g:294:4: rule__Decimal__Group__0
+            // InternalLisp.g:319:3: ( rule__Decimal__Group__0 )
+            // InternalLisp.g:319:4: rule__Decimal__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Decimal__Group__0();
@@ -850,11 +928,11 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleRecursion"
-    // InternalLisp.g:303:1: entryRuleRecursion : ruleRecursion EOF ;
+    // InternalLisp.g:328:1: entryRuleRecursion : ruleRecursion EOF ;
     public final void entryRuleRecursion() throws RecognitionException {
         try {
-            // InternalLisp.g:304:1: ( ruleRecursion EOF )
-            // InternalLisp.g:305:1: ruleRecursion EOF
+            // InternalLisp.g:329:1: ( ruleRecursion EOF )
+            // InternalLisp.g:330:1: ruleRecursion EOF
             {
              before(grammarAccess.getRecursionRule()); 
             pushFollow(FOLLOW_1);
@@ -880,21 +958,21 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleRecursion"
-    // InternalLisp.g:312:1: ruleRecursion : ( ( rule__Recursion__Alternatives ) ) ;
+    // InternalLisp.g:337:1: ruleRecursion : ( ( rule__Recursion__Alternatives ) ) ;
     public final void ruleRecursion() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:316:2: ( ( ( rule__Recursion__Alternatives ) ) )
-            // InternalLisp.g:317:2: ( ( rule__Recursion__Alternatives ) )
+            // InternalLisp.g:341:2: ( ( ( rule__Recursion__Alternatives ) ) )
+            // InternalLisp.g:342:2: ( ( rule__Recursion__Alternatives ) )
             {
-            // InternalLisp.g:317:2: ( ( rule__Recursion__Alternatives ) )
-            // InternalLisp.g:318:3: ( rule__Recursion__Alternatives )
+            // InternalLisp.g:342:2: ( ( rule__Recursion__Alternatives ) )
+            // InternalLisp.g:343:3: ( rule__Recursion__Alternatives )
             {
              before(grammarAccess.getRecursionAccess().getAlternatives()); 
-            // InternalLisp.g:319:3: ( rule__Recursion__Alternatives )
-            // InternalLisp.g:319:4: rule__Recursion__Alternatives
+            // InternalLisp.g:344:3: ( rule__Recursion__Alternatives )
+            // InternalLisp.g:344:4: rule__Recursion__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Recursion__Alternatives();
@@ -927,38 +1005,62 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Alternatives"
-    // InternalLisp.g:327:1: rule__Model__Alternatives : ( ( ( rule__Model__BeginAssignment_0 ) ) | ( ( rule__Model__DefinitionAssignment_1 )* ) );
+    // InternalLisp.g:352:1: rule__Model__Alternatives : ( ( ( rule__Model__BeginAssignment_0 ) ) | ( ( rule__Model__DefinitionAssignment_1 )* ) | ( ( rule__Model__CondicaoAssignment_2 ) ) );
     public final void rule__Model__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:331:1: ( ( ( rule__Model__BeginAssignment_0 ) ) | ( ( rule__Model__DefinitionAssignment_1 )* ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0==15) ) {
+            // InternalLisp.g:356:1: ( ( ( rule__Model__BeginAssignment_0 ) ) | ( ( rule__Model__DefinitionAssignment_1 )* ) | ( ( rule__Model__CondicaoAssignment_2 ) ) )
+            int alt2=3;
+            switch ( input.LA(1) ) {
+            case 15:
+                {
                 alt2=1;
-            }
-            else if ( (LA2_0==EOF||LA2_0==RULE_INT||(LA2_0>=16 && LA2_0<=17)) ) {
+                }
+                break;
+            case EOF:
+            case RULE_INT:
+            case 16:
+                {
                 alt2=2;
-            }
-            else {
+                }
+                break;
+            case 17:
+                {
+                int LA2_3 = input.LA(2);
+
+                if ( ((LA2_3>=11 && LA2_3<=14)||(LA2_3>=18 && LA2_3<=19)||LA2_3==22) ) {
+                    alt2=2;
+                }
+                else if ( (LA2_3==20) ) {
+                    alt2=3;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 2, 3, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 2, 0, input);
 
                 throw nvae;
             }
+
             switch (alt2) {
                 case 1 :
-                    // InternalLisp.g:332:2: ( ( rule__Model__BeginAssignment_0 ) )
+                    // InternalLisp.g:357:2: ( ( rule__Model__BeginAssignment_0 ) )
                     {
-                    // InternalLisp.g:332:2: ( ( rule__Model__BeginAssignment_0 ) )
-                    // InternalLisp.g:333:3: ( rule__Model__BeginAssignment_0 )
+                    // InternalLisp.g:357:2: ( ( rule__Model__BeginAssignment_0 ) )
+                    // InternalLisp.g:358:3: ( rule__Model__BeginAssignment_0 )
                     {
                      before(grammarAccess.getModelAccess().getBeginAssignment_0()); 
-                    // InternalLisp.g:334:3: ( rule__Model__BeginAssignment_0 )
-                    // InternalLisp.g:334:4: rule__Model__BeginAssignment_0
+                    // InternalLisp.g:359:3: ( rule__Model__BeginAssignment_0 )
+                    // InternalLisp.g:359:4: rule__Model__BeginAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Model__BeginAssignment_0();
@@ -976,13 +1078,13 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:338:2: ( ( rule__Model__DefinitionAssignment_1 )* )
+                    // InternalLisp.g:363:2: ( ( rule__Model__DefinitionAssignment_1 )* )
                     {
-                    // InternalLisp.g:338:2: ( ( rule__Model__DefinitionAssignment_1 )* )
-                    // InternalLisp.g:339:3: ( rule__Model__DefinitionAssignment_1 )*
+                    // InternalLisp.g:363:2: ( ( rule__Model__DefinitionAssignment_1 )* )
+                    // InternalLisp.g:364:3: ( rule__Model__DefinitionAssignment_1 )*
                     {
                      before(grammarAccess.getModelAccess().getDefinitionAssignment_1()); 
-                    // InternalLisp.g:340:3: ( rule__Model__DefinitionAssignment_1 )*
+                    // InternalLisp.g:365:3: ( rule__Model__DefinitionAssignment_1 )*
                     loop1:
                     do {
                         int alt1=2;
@@ -995,7 +1097,7 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalLisp.g:340:4: rule__Model__DefinitionAssignment_1
+                    	    // InternalLisp.g:365:4: rule__Model__DefinitionAssignment_1
                     	    {
                     	    pushFollow(FOLLOW_3);
                     	    rule__Model__DefinitionAssignment_1();
@@ -1012,6 +1114,31 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     } while (true);
 
                      after(grammarAccess.getModelAccess().getDefinitionAssignment_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalLisp.g:369:2: ( ( rule__Model__CondicaoAssignment_2 ) )
+                    {
+                    // InternalLisp.g:369:2: ( ( rule__Model__CondicaoAssignment_2 ) )
+                    // InternalLisp.g:370:3: ( rule__Model__CondicaoAssignment_2 )
+                    {
+                     before(grammarAccess.getModelAccess().getCondicaoAssignment_2()); 
+                    // InternalLisp.g:371:3: ( rule__Model__CondicaoAssignment_2 )
+                    // InternalLisp.g:371:4: rule__Model__CondicaoAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Model__CondicaoAssignment_2();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getModelAccess().getCondicaoAssignment_2()); 
 
                     }
 
@@ -1036,13 +1163,13 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Definition__Alternatives"
-    // InternalLisp.g:348:1: rule__Definition__Alternatives : ( ( ruleNumeros ) | ( ruleExpression ) | ( ruleDefine ) | ( ruleList ) );
+    // InternalLisp.g:379:1: rule__Definition__Alternatives : ( ( ruleNumeros ) | ( ruleExpression ) | ( ruleDefine ) | ( ruleList ) );
     public final void rule__Definition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:352:1: ( ( ruleNumeros ) | ( ruleExpression ) | ( ruleDefine ) | ( ruleList ) )
+            // InternalLisp.g:383:1: ( ( ruleNumeros ) | ( ruleExpression ) | ( ruleDefine ) | ( ruleList ) )
             int alt3=4;
             switch ( input.LA(1) ) {
             case RULE_INT:
@@ -1054,11 +1181,11 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                 {
                 int LA3_2 = input.LA(2);
 
-                if ( ((LA3_2>=11 && LA3_2<=14)||LA3_2==19||LA3_2==21) ) {
-                    alt3=2;
-                }
-                else if ( (LA3_2==18) ) {
+                if ( (LA3_2==18) ) {
                     alt3=4;
+                }
+                else if ( ((LA3_2>=11 && LA3_2<=14)||LA3_2==19||LA3_2==22) ) {
+                    alt3=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1082,10 +1209,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
             switch (alt3) {
                 case 1 :
-                    // InternalLisp.g:353:2: ( ruleNumeros )
+                    // InternalLisp.g:384:2: ( ruleNumeros )
                     {
-                    // InternalLisp.g:353:2: ( ruleNumeros )
-                    // InternalLisp.g:354:3: ruleNumeros
+                    // InternalLisp.g:384:2: ( ruleNumeros )
+                    // InternalLisp.g:385:3: ruleNumeros
                     {
                      before(grammarAccess.getDefinitionAccess().getNumerosParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1101,10 +1228,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:359:2: ( ruleExpression )
+                    // InternalLisp.g:390:2: ( ruleExpression )
                     {
-                    // InternalLisp.g:359:2: ( ruleExpression )
-                    // InternalLisp.g:360:3: ruleExpression
+                    // InternalLisp.g:390:2: ( ruleExpression )
+                    // InternalLisp.g:391:3: ruleExpression
                     {
                      before(grammarAccess.getDefinitionAccess().getExpressionParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1120,10 +1247,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalLisp.g:365:2: ( ruleDefine )
+                    // InternalLisp.g:396:2: ( ruleDefine )
                     {
-                    // InternalLisp.g:365:2: ( ruleDefine )
-                    // InternalLisp.g:366:3: ruleDefine
+                    // InternalLisp.g:396:2: ( ruleDefine )
+                    // InternalLisp.g:397:3: ruleDefine
                     {
                      before(grammarAccess.getDefinitionAccess().getDefineParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -1139,10 +1266,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalLisp.g:371:2: ( ruleList )
+                    // InternalLisp.g:402:2: ( ruleList )
                     {
-                    // InternalLisp.g:371:2: ( ruleList )
-                    // InternalLisp.g:372:3: ruleList
+                    // InternalLisp.g:402:2: ( ruleList )
+                    // InternalLisp.g:403:3: ruleList
                     {
                      before(grammarAccess.getDefinitionAccess().getListParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -1175,31 +1302,45 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Alternatives_1"
-    // InternalLisp.g:381:1: rule__Define__Alternatives_1 : ( ( ( rule__Define__ExpressionAssignment_1_0 ) ) | ( ( rule__Define__ListAssignment_1_1 ) ) );
+    // InternalLisp.g:412:1: rule__Define__Alternatives_1 : ( ( ( rule__Define__ExpressionAssignment_1_0 ) ) | ( ( rule__Define__ListAssignment_1_1 ) ) | ( ( rule__Define__CondicaoAssignment_1_2 ) ) );
     public final void rule__Define__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:385:1: ( ( ( rule__Define__ExpressionAssignment_1_0 ) ) | ( ( rule__Define__ListAssignment_1_1 ) ) )
-            int alt4=2;
+            // InternalLisp.g:416:1: ( ( ( rule__Define__ExpressionAssignment_1_0 ) ) | ( ( rule__Define__ListAssignment_1_1 ) ) | ( ( rule__Define__CondicaoAssignment_1_2 ) ) )
+            int alt4=3;
             int LA4_0 = input.LA(1);
 
             if ( (LA4_0==17) ) {
-                int LA4_1 = input.LA(2);
-
-                if ( ((LA4_1>=11 && LA4_1<=14)||LA4_1==19||LA4_1==21) ) {
+                switch ( input.LA(2) ) {
+                case 11:
+                case 12:
+                case 13:
+                case 14:
+                case 19:
+                case 22:
+                    {
                     alt4=1;
-                }
-                else if ( (LA4_1==18) ) {
+                    }
+                    break;
+                case 20:
+                    {
+                    alt4=3;
+                    }
+                    break;
+                case 18:
+                    {
                     alt4=2;
-                }
-                else {
+                    }
+                    break;
+                default:
                     NoViableAltException nvae =
                         new NoViableAltException("", 4, 1, input);
 
                     throw nvae;
                 }
+
             }
             else {
                 NoViableAltException nvae =
@@ -1209,14 +1350,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalLisp.g:386:2: ( ( rule__Define__ExpressionAssignment_1_0 ) )
+                    // InternalLisp.g:417:2: ( ( rule__Define__ExpressionAssignment_1_0 ) )
                     {
-                    // InternalLisp.g:386:2: ( ( rule__Define__ExpressionAssignment_1_0 ) )
-                    // InternalLisp.g:387:3: ( rule__Define__ExpressionAssignment_1_0 )
+                    // InternalLisp.g:417:2: ( ( rule__Define__ExpressionAssignment_1_0 ) )
+                    // InternalLisp.g:418:3: ( rule__Define__ExpressionAssignment_1_0 )
                     {
                      before(grammarAccess.getDefineAccess().getExpressionAssignment_1_0()); 
-                    // InternalLisp.g:388:3: ( rule__Define__ExpressionAssignment_1_0 )
-                    // InternalLisp.g:388:4: rule__Define__ExpressionAssignment_1_0
+                    // InternalLisp.g:419:3: ( rule__Define__ExpressionAssignment_1_0 )
+                    // InternalLisp.g:419:4: rule__Define__ExpressionAssignment_1_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Define__ExpressionAssignment_1_0();
@@ -1234,14 +1375,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:392:2: ( ( rule__Define__ListAssignment_1_1 ) )
+                    // InternalLisp.g:423:2: ( ( rule__Define__ListAssignment_1_1 ) )
                     {
-                    // InternalLisp.g:392:2: ( ( rule__Define__ListAssignment_1_1 ) )
-                    // InternalLisp.g:393:3: ( rule__Define__ListAssignment_1_1 )
+                    // InternalLisp.g:423:2: ( ( rule__Define__ListAssignment_1_1 ) )
+                    // InternalLisp.g:424:3: ( rule__Define__ListAssignment_1_1 )
                     {
                      before(grammarAccess.getDefineAccess().getListAssignment_1_1()); 
-                    // InternalLisp.g:394:3: ( rule__Define__ListAssignment_1_1 )
-                    // InternalLisp.g:394:4: rule__Define__ListAssignment_1_1
+                    // InternalLisp.g:425:3: ( rule__Define__ListAssignment_1_1 )
+                    // InternalLisp.g:425:4: rule__Define__ListAssignment_1_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Define__ListAssignment_1_1();
@@ -1252,6 +1393,31 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
 
                      after(grammarAccess.getDefineAccess().getListAssignment_1_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalLisp.g:429:2: ( ( rule__Define__CondicaoAssignment_1_2 ) )
+                    {
+                    // InternalLisp.g:429:2: ( ( rule__Define__CondicaoAssignment_1_2 ) )
+                    // InternalLisp.g:430:3: ( rule__Define__CondicaoAssignment_1_2 )
+                    {
+                     before(grammarAccess.getDefineAccess().getCondicaoAssignment_1_2()); 
+                    // InternalLisp.g:431:3: ( rule__Define__CondicaoAssignment_1_2 )
+                    // InternalLisp.g:431:4: rule__Define__CondicaoAssignment_1_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Define__CondicaoAssignment_1_2();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getDefineAccess().getCondicaoAssignment_1_2()); 
 
                     }
 
@@ -1276,24 +1442,24 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Alternatives"
-    // InternalLisp.g:402:1: rule__Expression__Alternatives : ( ( ( rule__Expression__Group_0__0 ) ) | ( ( rule__Expression__Group_1__0 ) ) );
+    // InternalLisp.g:439:1: rule__Expression__Alternatives : ( ( ( rule__Expression__Group_0__0 ) ) | ( ( rule__Expression__Group_1__0 ) ) );
     public final void rule__Expression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:406:1: ( ( ( rule__Expression__Group_0__0 ) ) | ( ( rule__Expression__Group_1__0 ) ) )
+            // InternalLisp.g:443:1: ( ( ( rule__Expression__Group_0__0 ) ) | ( ( rule__Expression__Group_1__0 ) ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==17) ) {
                 int LA5_1 = input.LA(2);
 
-                if ( ((LA5_1>=11 && LA5_1<=14)||LA5_1==21) ) {
-                    alt5=1;
-                }
-                else if ( (LA5_1==19) ) {
+                if ( (LA5_1==19) ) {
                     alt5=2;
+                }
+                else if ( ((LA5_1>=11 && LA5_1<=14)||LA5_1==22) ) {
+                    alt5=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1310,14 +1476,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
             }
             switch (alt5) {
                 case 1 :
-                    // InternalLisp.g:407:2: ( ( rule__Expression__Group_0__0 ) )
+                    // InternalLisp.g:444:2: ( ( rule__Expression__Group_0__0 ) )
                     {
-                    // InternalLisp.g:407:2: ( ( rule__Expression__Group_0__0 ) )
-                    // InternalLisp.g:408:3: ( rule__Expression__Group_0__0 )
+                    // InternalLisp.g:444:2: ( ( rule__Expression__Group_0__0 ) )
+                    // InternalLisp.g:445:3: ( rule__Expression__Group_0__0 )
                     {
                      before(grammarAccess.getExpressionAccess().getGroup_0()); 
-                    // InternalLisp.g:409:3: ( rule__Expression__Group_0__0 )
-                    // InternalLisp.g:409:4: rule__Expression__Group_0__0
+                    // InternalLisp.g:446:3: ( rule__Expression__Group_0__0 )
+                    // InternalLisp.g:446:4: rule__Expression__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Expression__Group_0__0();
@@ -1335,14 +1501,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:413:2: ( ( rule__Expression__Group_1__0 ) )
+                    // InternalLisp.g:450:2: ( ( rule__Expression__Group_1__0 ) )
                     {
-                    // InternalLisp.g:413:2: ( ( rule__Expression__Group_1__0 ) )
-                    // InternalLisp.g:414:3: ( rule__Expression__Group_1__0 )
+                    // InternalLisp.g:450:2: ( ( rule__Expression__Group_1__0 ) )
+                    // InternalLisp.g:451:3: ( rule__Expression__Group_1__0 )
                     {
                      before(grammarAccess.getExpressionAccess().getGroup_1()); 
-                    // InternalLisp.g:415:3: ( rule__Expression__Group_1__0 )
-                    // InternalLisp.g:415:4: rule__Expression__Group_1__0
+                    // InternalLisp.g:452:3: ( rule__Expression__Group_1__0 )
+                    // InternalLisp.g:452:4: rule__Expression__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Expression__Group_1__0();
@@ -1377,24 +1543,24 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Numeros__Alternatives"
-    // InternalLisp.g:423:1: rule__Numeros__Alternatives : ( ( ruleInteiros ) | ( ruleDecimal ) );
+    // InternalLisp.g:460:1: rule__Numeros__Alternatives : ( ( ruleInteiros ) | ( ruleDecimal ) );
     public final void rule__Numeros__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:427:1: ( ( ruleInteiros ) | ( ruleDecimal ) )
+            // InternalLisp.g:464:1: ( ( ruleInteiros ) | ( ruleDecimal ) )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
             if ( (LA6_0==RULE_INT) ) {
                 int LA6_1 = input.LA(2);
 
-                if ( (LA6_1==20) ) {
-                    alt6=2;
-                }
-                else if ( (LA6_1==EOF||(LA6_1>=RULE_INT && LA6_1<=RULE_STRING)||(LA6_1>=16 && LA6_1<=17)||LA6_1==19) ) {
+                if ( (LA6_1==EOF||(LA6_1>=RULE_INT && LA6_1<=RULE_STRING)||(LA6_1>=16 && LA6_1<=17)||LA6_1==19) ) {
                     alt6=1;
+                }
+                else if ( (LA6_1==21) ) {
+                    alt6=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -1411,10 +1577,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalLisp.g:428:2: ( ruleInteiros )
+                    // InternalLisp.g:465:2: ( ruleInteiros )
                     {
-                    // InternalLisp.g:428:2: ( ruleInteiros )
-                    // InternalLisp.g:429:3: ruleInteiros
+                    // InternalLisp.g:465:2: ( ruleInteiros )
+                    // InternalLisp.g:466:3: ruleInteiros
                     {
                      before(grammarAccess.getNumerosAccess().getInteirosParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -1430,10 +1596,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:434:2: ( ruleDecimal )
+                    // InternalLisp.g:471:2: ( ruleDecimal )
                     {
-                    // InternalLisp.g:434:2: ( ruleDecimal )
-                    // InternalLisp.g:435:3: ruleDecimal
+                    // InternalLisp.g:471:2: ( ruleDecimal )
+                    // InternalLisp.g:472:3: ruleDecimal
                     {
                      before(grammarAccess.getNumerosAccess().getDecimalParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -1466,16 +1632,16 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operacoes__Alternatives"
-    // InternalLisp.g:444:1: rule__Operacoes__Alternatives : ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'sq' ) );
+    // InternalLisp.g:481:1: rule__Operacoes__Alternatives : ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'sq' ) );
     public final void rule__Operacoes__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:448:1: ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'sq' ) )
+            // InternalLisp.g:485:1: ( ( ( rule__Operacoes__ValueAssignment_0 ) ) | ( '-' ) | ( '*' ) | ( '/' ) | ( 'sq' ) )
             int alt7=5;
             switch ( input.LA(1) ) {
-            case 21:
+            case 22:
                 {
                 alt7=1;
                 }
@@ -1509,14 +1675,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalLisp.g:449:2: ( ( rule__Operacoes__ValueAssignment_0 ) )
+                    // InternalLisp.g:486:2: ( ( rule__Operacoes__ValueAssignment_0 ) )
                     {
-                    // InternalLisp.g:449:2: ( ( rule__Operacoes__ValueAssignment_0 ) )
-                    // InternalLisp.g:450:3: ( rule__Operacoes__ValueAssignment_0 )
+                    // InternalLisp.g:486:2: ( ( rule__Operacoes__ValueAssignment_0 ) )
+                    // InternalLisp.g:487:3: ( rule__Operacoes__ValueAssignment_0 )
                     {
                      before(grammarAccess.getOperacoesAccess().getValueAssignment_0()); 
-                    // InternalLisp.g:451:3: ( rule__Operacoes__ValueAssignment_0 )
-                    // InternalLisp.g:451:4: rule__Operacoes__ValueAssignment_0
+                    // InternalLisp.g:488:3: ( rule__Operacoes__ValueAssignment_0 )
+                    // InternalLisp.g:488:4: rule__Operacoes__ValueAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Operacoes__ValueAssignment_0();
@@ -1534,10 +1700,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:455:2: ( '-' )
+                    // InternalLisp.g:492:2: ( '-' )
                     {
-                    // InternalLisp.g:455:2: ( '-' )
-                    // InternalLisp.g:456:3: '-'
+                    // InternalLisp.g:492:2: ( '-' )
+                    // InternalLisp.g:493:3: '-'
                     {
                      before(grammarAccess.getOperacoesAccess().getHyphenMinusKeyword_1()); 
                     match(input,11,FOLLOW_2); 
@@ -1549,10 +1715,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalLisp.g:461:2: ( '*' )
+                    // InternalLisp.g:498:2: ( '*' )
                     {
-                    // InternalLisp.g:461:2: ( '*' )
-                    // InternalLisp.g:462:3: '*'
+                    // InternalLisp.g:498:2: ( '*' )
+                    // InternalLisp.g:499:3: '*'
                     {
                      before(grammarAccess.getOperacoesAccess().getAsteriskKeyword_2()); 
                     match(input,12,FOLLOW_2); 
@@ -1564,10 +1730,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalLisp.g:467:2: ( '/' )
+                    // InternalLisp.g:504:2: ( '/' )
                     {
-                    // InternalLisp.g:467:2: ( '/' )
-                    // InternalLisp.g:468:3: '/'
+                    // InternalLisp.g:504:2: ( '/' )
+                    // InternalLisp.g:505:3: '/'
                     {
                      before(grammarAccess.getOperacoesAccess().getSolidusKeyword_3()); 
                     match(input,13,FOLLOW_2); 
@@ -1579,10 +1745,10 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalLisp.g:473:2: ( 'sq' )
+                    // InternalLisp.g:510:2: ( 'sq' )
                     {
-                    // InternalLisp.g:473:2: ( 'sq' )
-                    // InternalLisp.g:474:3: 'sq'
+                    // InternalLisp.g:510:2: ( 'sq' )
+                    // InternalLisp.g:511:3: 'sq'
                     {
                      before(grammarAccess.getOperacoesAccess().getSqKeyword_4()); 
                     match(input,14,FOLLOW_2); 
@@ -1611,13 +1777,13 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recursion__Alternatives"
-    // InternalLisp.g:483:1: rule__Recursion__Alternatives : ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) ) );
+    // InternalLisp.g:520:1: rule__Recursion__Alternatives : ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) ) );
     public final void rule__Recursion__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:487:1: ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) ) )
+            // InternalLisp.g:524:1: ( ( ( rule__Recursion__RecursionIDAssignment_0 ) ) | ( ( rule__Recursion__RecursionIntAssignment_1 ) ) | ( ( rule__Recursion__RecursionStringAssignment_2 ) ) | ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) ) )
             int alt8=4;
             switch ( input.LA(1) ) {
             case RULE_ID:
@@ -1650,14 +1816,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
             switch (alt8) {
                 case 1 :
-                    // InternalLisp.g:488:2: ( ( rule__Recursion__RecursionIDAssignment_0 ) )
+                    // InternalLisp.g:525:2: ( ( rule__Recursion__RecursionIDAssignment_0 ) )
                     {
-                    // InternalLisp.g:488:2: ( ( rule__Recursion__RecursionIDAssignment_0 ) )
-                    // InternalLisp.g:489:3: ( rule__Recursion__RecursionIDAssignment_0 )
+                    // InternalLisp.g:525:2: ( ( rule__Recursion__RecursionIDAssignment_0 ) )
+                    // InternalLisp.g:526:3: ( rule__Recursion__RecursionIDAssignment_0 )
                     {
                      before(grammarAccess.getRecursionAccess().getRecursionIDAssignment_0()); 
-                    // InternalLisp.g:490:3: ( rule__Recursion__RecursionIDAssignment_0 )
-                    // InternalLisp.g:490:4: rule__Recursion__RecursionIDAssignment_0
+                    // InternalLisp.g:527:3: ( rule__Recursion__RecursionIDAssignment_0 )
+                    // InternalLisp.g:527:4: rule__Recursion__RecursionIDAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Recursion__RecursionIDAssignment_0();
@@ -1675,14 +1841,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalLisp.g:494:2: ( ( rule__Recursion__RecursionIntAssignment_1 ) )
+                    // InternalLisp.g:531:2: ( ( rule__Recursion__RecursionIntAssignment_1 ) )
                     {
-                    // InternalLisp.g:494:2: ( ( rule__Recursion__RecursionIntAssignment_1 ) )
-                    // InternalLisp.g:495:3: ( rule__Recursion__RecursionIntAssignment_1 )
+                    // InternalLisp.g:531:2: ( ( rule__Recursion__RecursionIntAssignment_1 ) )
+                    // InternalLisp.g:532:3: ( rule__Recursion__RecursionIntAssignment_1 )
                     {
                      before(grammarAccess.getRecursionAccess().getRecursionIntAssignment_1()); 
-                    // InternalLisp.g:496:3: ( rule__Recursion__RecursionIntAssignment_1 )
-                    // InternalLisp.g:496:4: rule__Recursion__RecursionIntAssignment_1
+                    // InternalLisp.g:533:3: ( rule__Recursion__RecursionIntAssignment_1 )
+                    // InternalLisp.g:533:4: rule__Recursion__RecursionIntAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Recursion__RecursionIntAssignment_1();
@@ -1700,14 +1866,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalLisp.g:500:2: ( ( rule__Recursion__RecursionStringAssignment_2 ) )
+                    // InternalLisp.g:537:2: ( ( rule__Recursion__RecursionStringAssignment_2 ) )
                     {
-                    // InternalLisp.g:500:2: ( ( rule__Recursion__RecursionStringAssignment_2 ) )
-                    // InternalLisp.g:501:3: ( rule__Recursion__RecursionStringAssignment_2 )
+                    // InternalLisp.g:537:2: ( ( rule__Recursion__RecursionStringAssignment_2 ) )
+                    // InternalLisp.g:538:3: ( rule__Recursion__RecursionStringAssignment_2 )
                     {
                      before(grammarAccess.getRecursionAccess().getRecursionStringAssignment_2()); 
-                    // InternalLisp.g:502:3: ( rule__Recursion__RecursionStringAssignment_2 )
-                    // InternalLisp.g:502:4: rule__Recursion__RecursionStringAssignment_2
+                    // InternalLisp.g:539:3: ( rule__Recursion__RecursionStringAssignment_2 )
+                    // InternalLisp.g:539:4: rule__Recursion__RecursionStringAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Recursion__RecursionStringAssignment_2();
@@ -1725,14 +1891,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalLisp.g:506:2: ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) )
+                    // InternalLisp.g:543:2: ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) )
                     {
-                    // InternalLisp.g:506:2: ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) )
-                    // InternalLisp.g:507:3: ( rule__Recursion__RecursionDefinitionAssignment_3 )
+                    // InternalLisp.g:543:2: ( ( rule__Recursion__RecursionDefinitionAssignment_3 ) )
+                    // InternalLisp.g:544:3: ( rule__Recursion__RecursionDefinitionAssignment_3 )
                     {
                      before(grammarAccess.getRecursionAccess().getRecursionDefinitionAssignment_3()); 
-                    // InternalLisp.g:508:3: ( rule__Recursion__RecursionDefinitionAssignment_3 )
-                    // InternalLisp.g:508:4: rule__Recursion__RecursionDefinitionAssignment_3
+                    // InternalLisp.g:545:3: ( rule__Recursion__RecursionDefinitionAssignment_3 )
+                    // InternalLisp.g:545:4: rule__Recursion__RecursionDefinitionAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Recursion__RecursionDefinitionAssignment_3();
@@ -1767,14 +1933,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Begin__Group__0"
-    // InternalLisp.g:516:1: rule__Begin__Group__0 : rule__Begin__Group__0__Impl rule__Begin__Group__1 ;
+    // InternalLisp.g:553:1: rule__Begin__Group__0 : rule__Begin__Group__0__Impl rule__Begin__Group__1 ;
     public final void rule__Begin__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:520:1: ( rule__Begin__Group__0__Impl rule__Begin__Group__1 )
-            // InternalLisp.g:521:2: rule__Begin__Group__0__Impl rule__Begin__Group__1
+            // InternalLisp.g:557:1: ( rule__Begin__Group__0__Impl rule__Begin__Group__1 )
+            // InternalLisp.g:558:2: rule__Begin__Group__0__Impl rule__Begin__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Begin__Group__0__Impl();
@@ -1805,17 +1971,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Begin__Group__0__Impl"
-    // InternalLisp.g:528:1: rule__Begin__Group__0__Impl : ( 'begin' ) ;
+    // InternalLisp.g:565:1: rule__Begin__Group__0__Impl : ( 'begin' ) ;
     public final void rule__Begin__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:532:1: ( ( 'begin' ) )
-            // InternalLisp.g:533:1: ( 'begin' )
+            // InternalLisp.g:569:1: ( ( 'begin' ) )
+            // InternalLisp.g:570:1: ( 'begin' )
             {
-            // InternalLisp.g:533:1: ( 'begin' )
-            // InternalLisp.g:534:2: 'begin'
+            // InternalLisp.g:570:1: ( 'begin' )
+            // InternalLisp.g:571:2: 'begin'
             {
              before(grammarAccess.getBeginAccess().getBeginKeyword_0()); 
             match(input,15,FOLLOW_2); 
@@ -1842,14 +2008,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Begin__Group__1"
-    // InternalLisp.g:543:1: rule__Begin__Group__1 : rule__Begin__Group__1__Impl ;
+    // InternalLisp.g:580:1: rule__Begin__Group__1 : rule__Begin__Group__1__Impl ;
     public final void rule__Begin__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:547:1: ( rule__Begin__Group__1__Impl )
-            // InternalLisp.g:548:2: rule__Begin__Group__1__Impl
+            // InternalLisp.g:584:1: ( rule__Begin__Group__1__Impl )
+            // InternalLisp.g:585:2: rule__Begin__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Begin__Group__1__Impl();
@@ -1875,20 +2041,20 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Begin__Group__1__Impl"
-    // InternalLisp.g:554:1: rule__Begin__Group__1__Impl : ( ( rule__Begin__DefinitionAssignment_1 )* ) ;
+    // InternalLisp.g:591:1: rule__Begin__Group__1__Impl : ( ( rule__Begin__DefinitionAssignment_1 )* ) ;
     public final void rule__Begin__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:558:1: ( ( ( rule__Begin__DefinitionAssignment_1 )* ) )
-            // InternalLisp.g:559:1: ( ( rule__Begin__DefinitionAssignment_1 )* )
+            // InternalLisp.g:595:1: ( ( ( rule__Begin__DefinitionAssignment_1 )* ) )
+            // InternalLisp.g:596:1: ( ( rule__Begin__DefinitionAssignment_1 )* )
             {
-            // InternalLisp.g:559:1: ( ( rule__Begin__DefinitionAssignment_1 )* )
-            // InternalLisp.g:560:2: ( rule__Begin__DefinitionAssignment_1 )*
+            // InternalLisp.g:596:1: ( ( rule__Begin__DefinitionAssignment_1 )* )
+            // InternalLisp.g:597:2: ( rule__Begin__DefinitionAssignment_1 )*
             {
              before(grammarAccess.getBeginAccess().getDefinitionAssignment_1()); 
-            // InternalLisp.g:561:2: ( rule__Begin__DefinitionAssignment_1 )*
+            // InternalLisp.g:598:2: ( rule__Begin__DefinitionAssignment_1 )*
             loop9:
             do {
                 int alt9=2;
@@ -1901,7 +2067,7 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalLisp.g:561:3: rule__Begin__DefinitionAssignment_1
+            	    // InternalLisp.g:598:3: rule__Begin__DefinitionAssignment_1
             	    {
             	    pushFollow(FOLLOW_3);
             	    rule__Begin__DefinitionAssignment_1();
@@ -1940,14 +2106,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__0"
-    // InternalLisp.g:570:1: rule__Define__Group__0 : rule__Define__Group__0__Impl rule__Define__Group__1 ;
+    // InternalLisp.g:607:1: rule__Define__Group__0 : rule__Define__Group__0__Impl rule__Define__Group__1 ;
     public final void rule__Define__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:574:1: ( rule__Define__Group__0__Impl rule__Define__Group__1 )
-            // InternalLisp.g:575:2: rule__Define__Group__0__Impl rule__Define__Group__1
+            // InternalLisp.g:611:1: ( rule__Define__Group__0__Impl rule__Define__Group__1 )
+            // InternalLisp.g:612:2: rule__Define__Group__0__Impl rule__Define__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Define__Group__0__Impl();
@@ -1978,17 +2144,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__0__Impl"
-    // InternalLisp.g:582:1: rule__Define__Group__0__Impl : ( 'define' ) ;
+    // InternalLisp.g:619:1: rule__Define__Group__0__Impl : ( 'define' ) ;
     public final void rule__Define__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:586:1: ( ( 'define' ) )
-            // InternalLisp.g:587:1: ( 'define' )
+            // InternalLisp.g:623:1: ( ( 'define' ) )
+            // InternalLisp.g:624:1: ( 'define' )
             {
-            // InternalLisp.g:587:1: ( 'define' )
-            // InternalLisp.g:588:2: 'define'
+            // InternalLisp.g:624:1: ( 'define' )
+            // InternalLisp.g:625:2: 'define'
             {
              before(grammarAccess.getDefineAccess().getDefineKeyword_0()); 
             match(input,16,FOLLOW_2); 
@@ -2015,14 +2181,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__1"
-    // InternalLisp.g:597:1: rule__Define__Group__1 : rule__Define__Group__1__Impl ;
+    // InternalLisp.g:634:1: rule__Define__Group__1 : rule__Define__Group__1__Impl ;
     public final void rule__Define__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:601:1: ( rule__Define__Group__1__Impl )
-            // InternalLisp.g:602:2: rule__Define__Group__1__Impl
+            // InternalLisp.g:638:1: ( rule__Define__Group__1__Impl )
+            // InternalLisp.g:639:2: rule__Define__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Define__Group__1__Impl();
@@ -2048,21 +2214,21 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__Group__1__Impl"
-    // InternalLisp.g:608:1: rule__Define__Group__1__Impl : ( ( rule__Define__Alternatives_1 ) ) ;
+    // InternalLisp.g:645:1: rule__Define__Group__1__Impl : ( ( rule__Define__Alternatives_1 ) ) ;
     public final void rule__Define__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:612:1: ( ( ( rule__Define__Alternatives_1 ) ) )
-            // InternalLisp.g:613:1: ( ( rule__Define__Alternatives_1 ) )
+            // InternalLisp.g:649:1: ( ( ( rule__Define__Alternatives_1 ) ) )
+            // InternalLisp.g:650:1: ( ( rule__Define__Alternatives_1 ) )
             {
-            // InternalLisp.g:613:1: ( ( rule__Define__Alternatives_1 ) )
-            // InternalLisp.g:614:2: ( rule__Define__Alternatives_1 )
+            // InternalLisp.g:650:1: ( ( rule__Define__Alternatives_1 ) )
+            // InternalLisp.g:651:2: ( rule__Define__Alternatives_1 )
             {
              before(grammarAccess.getDefineAccess().getAlternatives_1()); 
-            // InternalLisp.g:615:2: ( rule__Define__Alternatives_1 )
-            // InternalLisp.g:615:3: rule__Define__Alternatives_1
+            // InternalLisp.g:652:2: ( rule__Define__Alternatives_1 )
+            // InternalLisp.g:652:3: rule__Define__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__Define__Alternatives_1();
@@ -2095,14 +2261,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__0"
-    // InternalLisp.g:624:1: rule__List__Group__0 : rule__List__Group__0__Impl rule__List__Group__1 ;
+    // InternalLisp.g:661:1: rule__List__Group__0 : rule__List__Group__0__Impl rule__List__Group__1 ;
     public final void rule__List__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:628:1: ( rule__List__Group__0__Impl rule__List__Group__1 )
-            // InternalLisp.g:629:2: rule__List__Group__0__Impl rule__List__Group__1
+            // InternalLisp.g:665:1: ( rule__List__Group__0__Impl rule__List__Group__1 )
+            // InternalLisp.g:666:2: rule__List__Group__0__Impl rule__List__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__List__Group__0__Impl();
@@ -2133,17 +2299,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__0__Impl"
-    // InternalLisp.g:636:1: rule__List__Group__0__Impl : ( '(' ) ;
+    // InternalLisp.g:673:1: rule__List__Group__0__Impl : ( '(' ) ;
     public final void rule__List__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:640:1: ( ( '(' ) )
-            // InternalLisp.g:641:1: ( '(' )
+            // InternalLisp.g:677:1: ( ( '(' ) )
+            // InternalLisp.g:678:1: ( '(' )
             {
-            // InternalLisp.g:641:1: ( '(' )
-            // InternalLisp.g:642:2: '('
+            // InternalLisp.g:678:1: ( '(' )
+            // InternalLisp.g:679:2: '('
             {
              before(grammarAccess.getListAccess().getLeftParenthesisKeyword_0()); 
             match(input,17,FOLLOW_2); 
@@ -2170,14 +2336,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__1"
-    // InternalLisp.g:651:1: rule__List__Group__1 : rule__List__Group__1__Impl rule__List__Group__2 ;
+    // InternalLisp.g:688:1: rule__List__Group__1 : rule__List__Group__1__Impl rule__List__Group__2 ;
     public final void rule__List__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:655:1: ( rule__List__Group__1__Impl rule__List__Group__2 )
-            // InternalLisp.g:656:2: rule__List__Group__1__Impl rule__List__Group__2
+            // InternalLisp.g:692:1: ( rule__List__Group__1__Impl rule__List__Group__2 )
+            // InternalLisp.g:693:2: rule__List__Group__1__Impl rule__List__Group__2
             {
             pushFollow(FOLLOW_6);
             rule__List__Group__1__Impl();
@@ -2208,17 +2374,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__1__Impl"
-    // InternalLisp.g:663:1: rule__List__Group__1__Impl : ( 'list' ) ;
+    // InternalLisp.g:700:1: rule__List__Group__1__Impl : ( 'list' ) ;
     public final void rule__List__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:667:1: ( ( 'list' ) )
-            // InternalLisp.g:668:1: ( 'list' )
+            // InternalLisp.g:704:1: ( ( 'list' ) )
+            // InternalLisp.g:705:1: ( 'list' )
             {
-            // InternalLisp.g:668:1: ( 'list' )
-            // InternalLisp.g:669:2: 'list'
+            // InternalLisp.g:705:1: ( 'list' )
+            // InternalLisp.g:706:2: 'list'
             {
              before(grammarAccess.getListAccess().getListKeyword_1()); 
             match(input,18,FOLLOW_2); 
@@ -2245,14 +2411,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__2"
-    // InternalLisp.g:678:1: rule__List__Group__2 : rule__List__Group__2__Impl rule__List__Group__3 ;
+    // InternalLisp.g:715:1: rule__List__Group__2 : rule__List__Group__2__Impl rule__List__Group__3 ;
     public final void rule__List__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:682:1: ( rule__List__Group__2__Impl rule__List__Group__3 )
-            // InternalLisp.g:683:2: rule__List__Group__2__Impl rule__List__Group__3
+            // InternalLisp.g:719:1: ( rule__List__Group__2__Impl rule__List__Group__3 )
+            // InternalLisp.g:720:2: rule__List__Group__2__Impl rule__List__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__List__Group__2__Impl();
@@ -2283,20 +2449,20 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__2__Impl"
-    // InternalLisp.g:690:1: rule__List__Group__2__Impl : ( ( rule__List__NumerosAssignment_2 )* ) ;
+    // InternalLisp.g:727:1: rule__List__Group__2__Impl : ( ( rule__List__NumerosAssignment_2 )* ) ;
     public final void rule__List__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:694:1: ( ( ( rule__List__NumerosAssignment_2 )* ) )
-            // InternalLisp.g:695:1: ( ( rule__List__NumerosAssignment_2 )* )
+            // InternalLisp.g:731:1: ( ( ( rule__List__NumerosAssignment_2 )* ) )
+            // InternalLisp.g:732:1: ( ( rule__List__NumerosAssignment_2 )* )
             {
-            // InternalLisp.g:695:1: ( ( rule__List__NumerosAssignment_2 )* )
-            // InternalLisp.g:696:2: ( rule__List__NumerosAssignment_2 )*
+            // InternalLisp.g:732:1: ( ( rule__List__NumerosAssignment_2 )* )
+            // InternalLisp.g:733:2: ( rule__List__NumerosAssignment_2 )*
             {
              before(grammarAccess.getListAccess().getNumerosAssignment_2()); 
-            // InternalLisp.g:697:2: ( rule__List__NumerosAssignment_2 )*
+            // InternalLisp.g:734:2: ( rule__List__NumerosAssignment_2 )*
             loop10:
             do {
                 int alt10=2;
@@ -2309,7 +2475,7 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalLisp.g:697:3: rule__List__NumerosAssignment_2
+            	    // InternalLisp.g:734:3: rule__List__NumerosAssignment_2
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__List__NumerosAssignment_2();
@@ -2348,14 +2514,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__3"
-    // InternalLisp.g:705:1: rule__List__Group__3 : rule__List__Group__3__Impl ;
+    // InternalLisp.g:742:1: rule__List__Group__3 : rule__List__Group__3__Impl ;
     public final void rule__List__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:709:1: ( rule__List__Group__3__Impl )
-            // InternalLisp.g:710:2: rule__List__Group__3__Impl
+            // InternalLisp.g:746:1: ( rule__List__Group__3__Impl )
+            // InternalLisp.g:747:2: rule__List__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__List__Group__3__Impl();
@@ -2381,17 +2547,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__List__Group__3__Impl"
-    // InternalLisp.g:716:1: rule__List__Group__3__Impl : ( ')' ) ;
+    // InternalLisp.g:753:1: rule__List__Group__3__Impl : ( ')' ) ;
     public final void rule__List__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:720:1: ( ( ')' ) )
-            // InternalLisp.g:721:1: ( ')' )
+            // InternalLisp.g:757:1: ( ( ')' ) )
+            // InternalLisp.g:758:1: ( ')' )
             {
-            // InternalLisp.g:721:1: ( ')' )
-            // InternalLisp.g:722:2: ')'
+            // InternalLisp.g:758:1: ( ')' )
+            // InternalLisp.g:759:2: ')'
             {
              before(grammarAccess.getListAccess().getRightParenthesisKeyword_3()); 
             match(input,19,FOLLOW_2); 
@@ -2418,14 +2584,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__0"
-    // InternalLisp.g:732:1: rule__Expression__Group_0__0 : rule__Expression__Group_0__0__Impl rule__Expression__Group_0__1 ;
+    // InternalLisp.g:769:1: rule__Expression__Group_0__0 : rule__Expression__Group_0__0__Impl rule__Expression__Group_0__1 ;
     public final void rule__Expression__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:736:1: ( rule__Expression__Group_0__0__Impl rule__Expression__Group_0__1 )
-            // InternalLisp.g:737:2: rule__Expression__Group_0__0__Impl rule__Expression__Group_0__1
+            // InternalLisp.g:773:1: ( rule__Expression__Group_0__0__Impl rule__Expression__Group_0__1 )
+            // InternalLisp.g:774:2: rule__Expression__Group_0__0__Impl rule__Expression__Group_0__1
             {
             pushFollow(FOLLOW_8);
             rule__Expression__Group_0__0__Impl();
@@ -2456,17 +2622,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__0__Impl"
-    // InternalLisp.g:744:1: rule__Expression__Group_0__0__Impl : ( '(' ) ;
+    // InternalLisp.g:781:1: rule__Expression__Group_0__0__Impl : ( '(' ) ;
     public final void rule__Expression__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:748:1: ( ( '(' ) )
-            // InternalLisp.g:749:1: ( '(' )
+            // InternalLisp.g:785:1: ( ( '(' ) )
+            // InternalLisp.g:786:1: ( '(' )
             {
-            // InternalLisp.g:749:1: ( '(' )
-            // InternalLisp.g:750:2: '('
+            // InternalLisp.g:786:1: ( '(' )
+            // InternalLisp.g:787:2: '('
             {
              before(grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_0_0()); 
             match(input,17,FOLLOW_2); 
@@ -2493,14 +2659,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__1"
-    // InternalLisp.g:759:1: rule__Expression__Group_0__1 : rule__Expression__Group_0__1__Impl rule__Expression__Group_0__2 ;
+    // InternalLisp.g:796:1: rule__Expression__Group_0__1 : rule__Expression__Group_0__1__Impl rule__Expression__Group_0__2 ;
     public final void rule__Expression__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:763:1: ( rule__Expression__Group_0__1__Impl rule__Expression__Group_0__2 )
-            // InternalLisp.g:764:2: rule__Expression__Group_0__1__Impl rule__Expression__Group_0__2
+            // InternalLisp.g:800:1: ( rule__Expression__Group_0__1__Impl rule__Expression__Group_0__2 )
+            // InternalLisp.g:801:2: rule__Expression__Group_0__1__Impl rule__Expression__Group_0__2
             {
             pushFollow(FOLLOW_9);
             rule__Expression__Group_0__1__Impl();
@@ -2531,21 +2697,21 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__1__Impl"
-    // InternalLisp.g:771:1: rule__Expression__Group_0__1__Impl : ( ( rule__Expression__OperacoesAssignment_0_1 ) ) ;
+    // InternalLisp.g:808:1: rule__Expression__Group_0__1__Impl : ( ( rule__Expression__OperacoesAssignment_0_1 ) ) ;
     public final void rule__Expression__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:775:1: ( ( ( rule__Expression__OperacoesAssignment_0_1 ) ) )
-            // InternalLisp.g:776:1: ( ( rule__Expression__OperacoesAssignment_0_1 ) )
+            // InternalLisp.g:812:1: ( ( ( rule__Expression__OperacoesAssignment_0_1 ) ) )
+            // InternalLisp.g:813:1: ( ( rule__Expression__OperacoesAssignment_0_1 ) )
             {
-            // InternalLisp.g:776:1: ( ( rule__Expression__OperacoesAssignment_0_1 ) )
-            // InternalLisp.g:777:2: ( rule__Expression__OperacoesAssignment_0_1 )
+            // InternalLisp.g:813:1: ( ( rule__Expression__OperacoesAssignment_0_1 ) )
+            // InternalLisp.g:814:2: ( rule__Expression__OperacoesAssignment_0_1 )
             {
              before(grammarAccess.getExpressionAccess().getOperacoesAssignment_0_1()); 
-            // InternalLisp.g:778:2: ( rule__Expression__OperacoesAssignment_0_1 )
-            // InternalLisp.g:778:3: rule__Expression__OperacoesAssignment_0_1
+            // InternalLisp.g:815:2: ( rule__Expression__OperacoesAssignment_0_1 )
+            // InternalLisp.g:815:3: rule__Expression__OperacoesAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Expression__OperacoesAssignment_0_1();
@@ -2578,14 +2744,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__2"
-    // InternalLisp.g:786:1: rule__Expression__Group_0__2 : rule__Expression__Group_0__2__Impl rule__Expression__Group_0__3 ;
+    // InternalLisp.g:823:1: rule__Expression__Group_0__2 : rule__Expression__Group_0__2__Impl rule__Expression__Group_0__3 ;
     public final void rule__Expression__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:790:1: ( rule__Expression__Group_0__2__Impl rule__Expression__Group_0__3 )
-            // InternalLisp.g:791:2: rule__Expression__Group_0__2__Impl rule__Expression__Group_0__3
+            // InternalLisp.g:827:1: ( rule__Expression__Group_0__2__Impl rule__Expression__Group_0__3 )
+            // InternalLisp.g:828:2: rule__Expression__Group_0__2__Impl rule__Expression__Group_0__3
             {
             pushFollow(FOLLOW_9);
             rule__Expression__Group_0__2__Impl();
@@ -2616,20 +2782,20 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__2__Impl"
-    // InternalLisp.g:798:1: rule__Expression__Group_0__2__Impl : ( ( rule__Expression__PrimeiroAssignment_0_2 )* ) ;
+    // InternalLisp.g:835:1: rule__Expression__Group_0__2__Impl : ( ( rule__Expression__PrimeiroAssignment_0_2 )* ) ;
     public final void rule__Expression__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:802:1: ( ( ( rule__Expression__PrimeiroAssignment_0_2 )* ) )
-            // InternalLisp.g:803:1: ( ( rule__Expression__PrimeiroAssignment_0_2 )* )
+            // InternalLisp.g:839:1: ( ( ( rule__Expression__PrimeiroAssignment_0_2 )* ) )
+            // InternalLisp.g:840:1: ( ( rule__Expression__PrimeiroAssignment_0_2 )* )
             {
-            // InternalLisp.g:803:1: ( ( rule__Expression__PrimeiroAssignment_0_2 )* )
-            // InternalLisp.g:804:2: ( rule__Expression__PrimeiroAssignment_0_2 )*
+            // InternalLisp.g:840:1: ( ( rule__Expression__PrimeiroAssignment_0_2 )* )
+            // InternalLisp.g:841:2: ( rule__Expression__PrimeiroAssignment_0_2 )*
             {
              before(grammarAccess.getExpressionAccess().getPrimeiroAssignment_0_2()); 
-            // InternalLisp.g:805:2: ( rule__Expression__PrimeiroAssignment_0_2 )*
+            // InternalLisp.g:842:2: ( rule__Expression__PrimeiroAssignment_0_2 )*
             loop11:
             do {
                 int alt11=2;
@@ -2642,7 +2808,7 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalLisp.g:805:3: rule__Expression__PrimeiroAssignment_0_2
+            	    // InternalLisp.g:842:3: rule__Expression__PrimeiroAssignment_0_2
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Expression__PrimeiroAssignment_0_2();
@@ -2681,14 +2847,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__3"
-    // InternalLisp.g:813:1: rule__Expression__Group_0__3 : rule__Expression__Group_0__3__Impl ;
+    // InternalLisp.g:850:1: rule__Expression__Group_0__3 : rule__Expression__Group_0__3__Impl ;
     public final void rule__Expression__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:817:1: ( rule__Expression__Group_0__3__Impl )
-            // InternalLisp.g:818:2: rule__Expression__Group_0__3__Impl
+            // InternalLisp.g:854:1: ( rule__Expression__Group_0__3__Impl )
+            // InternalLisp.g:855:2: rule__Expression__Group_0__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Expression__Group_0__3__Impl();
@@ -2714,17 +2880,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_0__3__Impl"
-    // InternalLisp.g:824:1: rule__Expression__Group_0__3__Impl : ( ')' ) ;
+    // InternalLisp.g:861:1: rule__Expression__Group_0__3__Impl : ( ')' ) ;
     public final void rule__Expression__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:828:1: ( ( ')' ) )
-            // InternalLisp.g:829:1: ( ')' )
+            // InternalLisp.g:865:1: ( ( ')' ) )
+            // InternalLisp.g:866:1: ( ')' )
             {
-            // InternalLisp.g:829:1: ( ')' )
-            // InternalLisp.g:830:2: ')'
+            // InternalLisp.g:866:1: ( ')' )
+            // InternalLisp.g:867:2: ')'
             {
              before(grammarAccess.getExpressionAccess().getRightParenthesisKeyword_0_3()); 
             match(input,19,FOLLOW_2); 
@@ -2751,14 +2917,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__0"
-    // InternalLisp.g:840:1: rule__Expression__Group_1__0 : rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 ;
+    // InternalLisp.g:877:1: rule__Expression__Group_1__0 : rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 ;
     public final void rule__Expression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:844:1: ( rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 )
-            // InternalLisp.g:845:2: rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1
+            // InternalLisp.g:881:1: ( rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 )
+            // InternalLisp.g:882:2: rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1
             {
             pushFollow(FOLLOW_11);
             rule__Expression__Group_1__0__Impl();
@@ -2789,17 +2955,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__0__Impl"
-    // InternalLisp.g:852:1: rule__Expression__Group_1__0__Impl : ( '(' ) ;
+    // InternalLisp.g:889:1: rule__Expression__Group_1__0__Impl : ( '(' ) ;
     public final void rule__Expression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:856:1: ( ( '(' ) )
-            // InternalLisp.g:857:1: ( '(' )
+            // InternalLisp.g:893:1: ( ( '(' ) )
+            // InternalLisp.g:894:1: ( '(' )
             {
-            // InternalLisp.g:857:1: ( '(' )
-            // InternalLisp.g:858:2: '('
+            // InternalLisp.g:894:1: ( '(' )
+            // InternalLisp.g:895:2: '('
             {
              before(grammarAccess.getExpressionAccess().getLeftParenthesisKeyword_1_0()); 
             match(input,17,FOLLOW_2); 
@@ -2826,14 +2992,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__1"
-    // InternalLisp.g:867:1: rule__Expression__Group_1__1 : rule__Expression__Group_1__1__Impl ;
+    // InternalLisp.g:904:1: rule__Expression__Group_1__1 : rule__Expression__Group_1__1__Impl ;
     public final void rule__Expression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:871:1: ( rule__Expression__Group_1__1__Impl )
-            // InternalLisp.g:872:2: rule__Expression__Group_1__1__Impl
+            // InternalLisp.g:908:1: ( rule__Expression__Group_1__1__Impl )
+            // InternalLisp.g:909:2: rule__Expression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Expression__Group_1__1__Impl();
@@ -2859,17 +3025,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__1__Impl"
-    // InternalLisp.g:878:1: rule__Expression__Group_1__1__Impl : ( ')' ) ;
+    // InternalLisp.g:915:1: rule__Expression__Group_1__1__Impl : ( ')' ) ;
     public final void rule__Expression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:882:1: ( ( ')' ) )
-            // InternalLisp.g:883:1: ( ')' )
+            // InternalLisp.g:919:1: ( ( ')' ) )
+            // InternalLisp.g:920:1: ( ')' )
             {
-            // InternalLisp.g:883:1: ( ')' )
-            // InternalLisp.g:884:2: ')'
+            // InternalLisp.g:920:1: ( ')' )
+            // InternalLisp.g:921:2: ')'
             {
              before(grammarAccess.getExpressionAccess().getRightParenthesisKeyword_1_1()); 
             match(input,19,FOLLOW_2); 
@@ -2895,17 +3061,340 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Expression__Group_1__1__Impl"
 
 
+    // $ANTLR start "rule__Condicao__Group__0"
+    // InternalLisp.g:931:1: rule__Condicao__Group__0 : rule__Condicao__Group__0__Impl rule__Condicao__Group__1 ;
+    public final void rule__Condicao__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:935:1: ( rule__Condicao__Group__0__Impl rule__Condicao__Group__1 )
+            // InternalLisp.g:936:2: rule__Condicao__Group__0__Impl rule__Condicao__Group__1
+            {
+            pushFollow(FOLLOW_12);
+            rule__Condicao__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Condicao__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__0"
+
+
+    // $ANTLR start "rule__Condicao__Group__0__Impl"
+    // InternalLisp.g:943:1: rule__Condicao__Group__0__Impl : ( '(' ) ;
+    public final void rule__Condicao__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:947:1: ( ( '(' ) )
+            // InternalLisp.g:948:1: ( '(' )
+            {
+            // InternalLisp.g:948:1: ( '(' )
+            // InternalLisp.g:949:2: '('
+            {
+             before(grammarAccess.getCondicaoAccess().getLeftParenthesisKeyword_0()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getCondicaoAccess().getLeftParenthesisKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Condicao__Group__1"
+    // InternalLisp.g:958:1: rule__Condicao__Group__1 : rule__Condicao__Group__1__Impl rule__Condicao__Group__2 ;
+    public final void rule__Condicao__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:962:1: ( rule__Condicao__Group__1__Impl rule__Condicao__Group__2 )
+            // InternalLisp.g:963:2: rule__Condicao__Group__1__Impl rule__Condicao__Group__2
+            {
+            pushFollow(FOLLOW_9);
+            rule__Condicao__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Condicao__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__1"
+
+
+    // $ANTLR start "rule__Condicao__Group__1__Impl"
+    // InternalLisp.g:970:1: rule__Condicao__Group__1__Impl : ( 'if' ) ;
+    public final void rule__Condicao__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:974:1: ( ( 'if' ) )
+            // InternalLisp.g:975:1: ( 'if' )
+            {
+            // InternalLisp.g:975:1: ( 'if' )
+            // InternalLisp.g:976:2: 'if'
+            {
+             before(grammarAccess.getCondicaoAccess().getIfKeyword_1()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getCondicaoAccess().getIfKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Condicao__Group__2"
+    // InternalLisp.g:985:1: rule__Condicao__Group__2 : rule__Condicao__Group__2__Impl rule__Condicao__Group__3 ;
+    public final void rule__Condicao__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:989:1: ( rule__Condicao__Group__2__Impl rule__Condicao__Group__3 )
+            // InternalLisp.g:990:2: rule__Condicao__Group__2__Impl rule__Condicao__Group__3
+            {
+            pushFollow(FOLLOW_9);
+            rule__Condicao__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Condicao__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__2"
+
+
+    // $ANTLR start "rule__Condicao__Group__2__Impl"
+    // InternalLisp.g:997:1: rule__Condicao__Group__2__Impl : ( ( rule__Condicao__CondicaoAssignment_2 )* ) ;
+    public final void rule__Condicao__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:1001:1: ( ( ( rule__Condicao__CondicaoAssignment_2 )* ) )
+            // InternalLisp.g:1002:1: ( ( rule__Condicao__CondicaoAssignment_2 )* )
+            {
+            // InternalLisp.g:1002:1: ( ( rule__Condicao__CondicaoAssignment_2 )* )
+            // InternalLisp.g:1003:2: ( rule__Condicao__CondicaoAssignment_2 )*
+            {
+             before(grammarAccess.getCondicaoAccess().getCondicaoAssignment_2()); 
+            // InternalLisp.g:1004:2: ( rule__Condicao__CondicaoAssignment_2 )*
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( ((LA12_0>=RULE_INT && LA12_0<=RULE_STRING)||(LA12_0>=16 && LA12_0<=17)) ) {
+                    alt12=1;
+                }
+
+
+                switch (alt12) {
+            	case 1 :
+            	    // InternalLisp.g:1004:3: rule__Condicao__CondicaoAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_10);
+            	    rule__Condicao__CondicaoAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop12;
+                }
+            } while (true);
+
+             after(grammarAccess.getCondicaoAccess().getCondicaoAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Condicao__Group__3"
+    // InternalLisp.g:1012:1: rule__Condicao__Group__3 : rule__Condicao__Group__3__Impl ;
+    public final void rule__Condicao__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:1016:1: ( rule__Condicao__Group__3__Impl )
+            // InternalLisp.g:1017:2: rule__Condicao__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Condicao__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__3"
+
+
+    // $ANTLR start "rule__Condicao__Group__3__Impl"
+    // InternalLisp.g:1023:1: rule__Condicao__Group__3__Impl : ( ')' ) ;
+    public final void rule__Condicao__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:1027:1: ( ( ')' ) )
+            // InternalLisp.g:1028:1: ( ')' )
+            {
+            // InternalLisp.g:1028:1: ( ')' )
+            // InternalLisp.g:1029:2: ')'
+            {
+             before(grammarAccess.getCondicaoAccess().getRightParenthesisKeyword_3()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getCondicaoAccess().getRightParenthesisKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__Group__3__Impl"
+
+
     // $ANTLR start "rule__Decimal__Group__0"
-    // InternalLisp.g:894:1: rule__Decimal__Group__0 : rule__Decimal__Group__0__Impl rule__Decimal__Group__1 ;
+    // InternalLisp.g:1039:1: rule__Decimal__Group__0 : rule__Decimal__Group__0__Impl rule__Decimal__Group__1 ;
     public final void rule__Decimal__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:898:1: ( rule__Decimal__Group__0__Impl rule__Decimal__Group__1 )
-            // InternalLisp.g:899:2: rule__Decimal__Group__0__Impl rule__Decimal__Group__1
+            // InternalLisp.g:1043:1: ( rule__Decimal__Group__0__Impl rule__Decimal__Group__1 )
+            // InternalLisp.g:1044:2: rule__Decimal__Group__0__Impl rule__Decimal__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_13);
             rule__Decimal__Group__0__Impl();
 
             state._fsp--;
@@ -2934,21 +3423,21 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Decimal__Group__0__Impl"
-    // InternalLisp.g:906:1: rule__Decimal__Group__0__Impl : ( ( rule__Decimal__ValueAssignment_0 ) ) ;
+    // InternalLisp.g:1051:1: rule__Decimal__Group__0__Impl : ( ( rule__Decimal__ValueAssignment_0 ) ) ;
     public final void rule__Decimal__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:910:1: ( ( ( rule__Decimal__ValueAssignment_0 ) ) )
-            // InternalLisp.g:911:1: ( ( rule__Decimal__ValueAssignment_0 ) )
+            // InternalLisp.g:1055:1: ( ( ( rule__Decimal__ValueAssignment_0 ) ) )
+            // InternalLisp.g:1056:1: ( ( rule__Decimal__ValueAssignment_0 ) )
             {
-            // InternalLisp.g:911:1: ( ( rule__Decimal__ValueAssignment_0 ) )
-            // InternalLisp.g:912:2: ( rule__Decimal__ValueAssignment_0 )
+            // InternalLisp.g:1056:1: ( ( rule__Decimal__ValueAssignment_0 ) )
+            // InternalLisp.g:1057:2: ( rule__Decimal__ValueAssignment_0 )
             {
              before(grammarAccess.getDecimalAccess().getValueAssignment_0()); 
-            // InternalLisp.g:913:2: ( rule__Decimal__ValueAssignment_0 )
-            // InternalLisp.g:913:3: rule__Decimal__ValueAssignment_0
+            // InternalLisp.g:1058:2: ( rule__Decimal__ValueAssignment_0 )
+            // InternalLisp.g:1058:3: rule__Decimal__ValueAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Decimal__ValueAssignment_0();
@@ -2981,16 +3470,16 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Decimal__Group__1"
-    // InternalLisp.g:921:1: rule__Decimal__Group__1 : rule__Decimal__Group__1__Impl rule__Decimal__Group__2 ;
+    // InternalLisp.g:1066:1: rule__Decimal__Group__1 : rule__Decimal__Group__1__Impl rule__Decimal__Group__2 ;
     public final void rule__Decimal__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:925:1: ( rule__Decimal__Group__1__Impl rule__Decimal__Group__2 )
-            // InternalLisp.g:926:2: rule__Decimal__Group__1__Impl rule__Decimal__Group__2
+            // InternalLisp.g:1070:1: ( rule__Decimal__Group__1__Impl rule__Decimal__Group__2 )
+            // InternalLisp.g:1071:2: rule__Decimal__Group__1__Impl rule__Decimal__Group__2
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__Decimal__Group__1__Impl();
 
             state._fsp--;
@@ -3019,20 +3508,20 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Decimal__Group__1__Impl"
-    // InternalLisp.g:933:1: rule__Decimal__Group__1__Impl : ( '.' ) ;
+    // InternalLisp.g:1078:1: rule__Decimal__Group__1__Impl : ( '.' ) ;
     public final void rule__Decimal__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:937:1: ( ( '.' ) )
-            // InternalLisp.g:938:1: ( '.' )
+            // InternalLisp.g:1082:1: ( ( '.' ) )
+            // InternalLisp.g:1083:1: ( '.' )
             {
-            // InternalLisp.g:938:1: ( '.' )
-            // InternalLisp.g:939:2: '.'
+            // InternalLisp.g:1083:1: ( '.' )
+            // InternalLisp.g:1084:2: '.'
             {
              before(grammarAccess.getDecimalAccess().getFullStopKeyword_1()); 
-            match(input,20,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getDecimalAccess().getFullStopKeyword_1()); 
 
             }
@@ -3056,14 +3545,14 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Decimal__Group__2"
-    // InternalLisp.g:948:1: rule__Decimal__Group__2 : rule__Decimal__Group__2__Impl ;
+    // InternalLisp.g:1093:1: rule__Decimal__Group__2 : rule__Decimal__Group__2__Impl ;
     public final void rule__Decimal__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:952:1: ( rule__Decimal__Group__2__Impl )
-            // InternalLisp.g:953:2: rule__Decimal__Group__2__Impl
+            // InternalLisp.g:1097:1: ( rule__Decimal__Group__2__Impl )
+            // InternalLisp.g:1098:2: rule__Decimal__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Decimal__Group__2__Impl();
@@ -3089,21 +3578,21 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Decimal__Group__2__Impl"
-    // InternalLisp.g:959:1: rule__Decimal__Group__2__Impl : ( ( rule__Decimal__ValueAssignment_2 ) ) ;
+    // InternalLisp.g:1104:1: rule__Decimal__Group__2__Impl : ( ( rule__Decimal__ValueAssignment_2 ) ) ;
     public final void rule__Decimal__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:963:1: ( ( ( rule__Decimal__ValueAssignment_2 ) ) )
-            // InternalLisp.g:964:1: ( ( rule__Decimal__ValueAssignment_2 ) )
+            // InternalLisp.g:1108:1: ( ( ( rule__Decimal__ValueAssignment_2 ) ) )
+            // InternalLisp.g:1109:1: ( ( rule__Decimal__ValueAssignment_2 ) )
             {
-            // InternalLisp.g:964:1: ( ( rule__Decimal__ValueAssignment_2 ) )
-            // InternalLisp.g:965:2: ( rule__Decimal__ValueAssignment_2 )
+            // InternalLisp.g:1109:1: ( ( rule__Decimal__ValueAssignment_2 ) )
+            // InternalLisp.g:1110:2: ( rule__Decimal__ValueAssignment_2 )
             {
              before(grammarAccess.getDecimalAccess().getValueAssignment_2()); 
-            // InternalLisp.g:966:2: ( rule__Decimal__ValueAssignment_2 )
-            // InternalLisp.g:966:3: rule__Decimal__ValueAssignment_2
+            // InternalLisp.g:1111:2: ( rule__Decimal__ValueAssignment_2 )
+            // InternalLisp.g:1111:3: rule__Decimal__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Decimal__ValueAssignment_2();
@@ -3136,17 +3625,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__BeginAssignment_0"
-    // InternalLisp.g:975:1: rule__Model__BeginAssignment_0 : ( ruleBegin ) ;
+    // InternalLisp.g:1120:1: rule__Model__BeginAssignment_0 : ( ruleBegin ) ;
     public final void rule__Model__BeginAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:979:1: ( ( ruleBegin ) )
-            // InternalLisp.g:980:2: ( ruleBegin )
+            // InternalLisp.g:1124:1: ( ( ruleBegin ) )
+            // InternalLisp.g:1125:2: ( ruleBegin )
             {
-            // InternalLisp.g:980:2: ( ruleBegin )
-            // InternalLisp.g:981:3: ruleBegin
+            // InternalLisp.g:1125:2: ( ruleBegin )
+            // InternalLisp.g:1126:3: ruleBegin
             {
              before(grammarAccess.getModelAccess().getBeginBeginParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3177,17 +3666,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__DefinitionAssignment_1"
-    // InternalLisp.g:990:1: rule__Model__DefinitionAssignment_1 : ( ruleDefinition ) ;
+    // InternalLisp.g:1135:1: rule__Model__DefinitionAssignment_1 : ( ruleDefinition ) ;
     public final void rule__Model__DefinitionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:994:1: ( ( ruleDefinition ) )
-            // InternalLisp.g:995:2: ( ruleDefinition )
+            // InternalLisp.g:1139:1: ( ( ruleDefinition ) )
+            // InternalLisp.g:1140:2: ( ruleDefinition )
             {
-            // InternalLisp.g:995:2: ( ruleDefinition )
-            // InternalLisp.g:996:3: ruleDefinition
+            // InternalLisp.g:1140:2: ( ruleDefinition )
+            // InternalLisp.g:1141:3: ruleDefinition
             {
              before(grammarAccess.getModelAccess().getDefinitionDefinitionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3217,18 +3706,59 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Model__DefinitionAssignment_1"
 
 
+    // $ANTLR start "rule__Model__CondicaoAssignment_2"
+    // InternalLisp.g:1150:1: rule__Model__CondicaoAssignment_2 : ( ruleCondicao ) ;
+    public final void rule__Model__CondicaoAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:1154:1: ( ( ruleCondicao ) )
+            // InternalLisp.g:1155:2: ( ruleCondicao )
+            {
+            // InternalLisp.g:1155:2: ( ruleCondicao )
+            // InternalLisp.g:1156:3: ruleCondicao
+            {
+             before(grammarAccess.getModelAccess().getCondicaoCondicaoParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleCondicao();
+
+            state._fsp--;
+
+             after(grammarAccess.getModelAccess().getCondicaoCondicaoParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Model__CondicaoAssignment_2"
+
+
     // $ANTLR start "rule__Begin__DefinitionAssignment_1"
-    // InternalLisp.g:1005:1: rule__Begin__DefinitionAssignment_1 : ( ruleDefinition ) ;
+    // InternalLisp.g:1165:1: rule__Begin__DefinitionAssignment_1 : ( ruleDefinition ) ;
     public final void rule__Begin__DefinitionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1009:1: ( ( ruleDefinition ) )
-            // InternalLisp.g:1010:2: ( ruleDefinition )
+            // InternalLisp.g:1169:1: ( ( ruleDefinition ) )
+            // InternalLisp.g:1170:2: ( ruleDefinition )
             {
-            // InternalLisp.g:1010:2: ( ruleDefinition )
-            // InternalLisp.g:1011:3: ruleDefinition
+            // InternalLisp.g:1170:2: ( ruleDefinition )
+            // InternalLisp.g:1171:3: ruleDefinition
             {
              before(grammarAccess.getBeginAccess().getDefinitionDefinitionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3259,17 +3789,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__ExpressionAssignment_1_0"
-    // InternalLisp.g:1020:1: rule__Define__ExpressionAssignment_1_0 : ( ruleExpression ) ;
+    // InternalLisp.g:1180:1: rule__Define__ExpressionAssignment_1_0 : ( ruleExpression ) ;
     public final void rule__Define__ExpressionAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1024:1: ( ( ruleExpression ) )
-            // InternalLisp.g:1025:2: ( ruleExpression )
+            // InternalLisp.g:1184:1: ( ( ruleExpression ) )
+            // InternalLisp.g:1185:2: ( ruleExpression )
             {
-            // InternalLisp.g:1025:2: ( ruleExpression )
-            // InternalLisp.g:1026:3: ruleExpression
+            // InternalLisp.g:1185:2: ( ruleExpression )
+            // InternalLisp.g:1186:3: ruleExpression
             {
              before(grammarAccess.getDefineAccess().getExpressionExpressionParserRuleCall_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3300,17 +3830,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Define__ListAssignment_1_1"
-    // InternalLisp.g:1035:1: rule__Define__ListAssignment_1_1 : ( ruleList ) ;
+    // InternalLisp.g:1195:1: rule__Define__ListAssignment_1_1 : ( ruleList ) ;
     public final void rule__Define__ListAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1039:1: ( ( ruleList ) )
-            // InternalLisp.g:1040:2: ( ruleList )
+            // InternalLisp.g:1199:1: ( ( ruleList ) )
+            // InternalLisp.g:1200:2: ( ruleList )
             {
-            // InternalLisp.g:1040:2: ( ruleList )
-            // InternalLisp.g:1041:3: ruleList
+            // InternalLisp.g:1200:2: ( ruleList )
+            // InternalLisp.g:1201:3: ruleList
             {
              before(grammarAccess.getDefineAccess().getListListParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3340,18 +3870,59 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Define__ListAssignment_1_1"
 
 
+    // $ANTLR start "rule__Define__CondicaoAssignment_1_2"
+    // InternalLisp.g:1210:1: rule__Define__CondicaoAssignment_1_2 : ( ruleCondicao ) ;
+    public final void rule__Define__CondicaoAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:1214:1: ( ( ruleCondicao ) )
+            // InternalLisp.g:1215:2: ( ruleCondicao )
+            {
+            // InternalLisp.g:1215:2: ( ruleCondicao )
+            // InternalLisp.g:1216:3: ruleCondicao
+            {
+             before(grammarAccess.getDefineAccess().getCondicaoCondicaoParserRuleCall_1_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleCondicao();
+
+            state._fsp--;
+
+             after(grammarAccess.getDefineAccess().getCondicaoCondicaoParserRuleCall_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Define__CondicaoAssignment_1_2"
+
+
     // $ANTLR start "rule__List__NumerosAssignment_2"
-    // InternalLisp.g:1050:1: rule__List__NumerosAssignment_2 : ( ruleNumeros ) ;
+    // InternalLisp.g:1225:1: rule__List__NumerosAssignment_2 : ( ruleNumeros ) ;
     public final void rule__List__NumerosAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1054:1: ( ( ruleNumeros ) )
-            // InternalLisp.g:1055:2: ( ruleNumeros )
+            // InternalLisp.g:1229:1: ( ( ruleNumeros ) )
+            // InternalLisp.g:1230:2: ( ruleNumeros )
             {
-            // InternalLisp.g:1055:2: ( ruleNumeros )
-            // InternalLisp.g:1056:3: ruleNumeros
+            // InternalLisp.g:1230:2: ( ruleNumeros )
+            // InternalLisp.g:1231:3: ruleNumeros
             {
              before(grammarAccess.getListAccess().getNumerosNumerosParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3382,17 +3953,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__OperacoesAssignment_0_1"
-    // InternalLisp.g:1065:1: rule__Expression__OperacoesAssignment_0_1 : ( ruleOperacoes ) ;
+    // InternalLisp.g:1240:1: rule__Expression__OperacoesAssignment_0_1 : ( ruleOperacoes ) ;
     public final void rule__Expression__OperacoesAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1069:1: ( ( ruleOperacoes ) )
-            // InternalLisp.g:1070:2: ( ruleOperacoes )
+            // InternalLisp.g:1244:1: ( ( ruleOperacoes ) )
+            // InternalLisp.g:1245:2: ( ruleOperacoes )
             {
-            // InternalLisp.g:1070:2: ( ruleOperacoes )
-            // InternalLisp.g:1071:3: ruleOperacoes
+            // InternalLisp.g:1245:2: ( ruleOperacoes )
+            // InternalLisp.g:1246:3: ruleOperacoes
             {
              before(grammarAccess.getExpressionAccess().getOperacoesOperacoesParserRuleCall_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3423,17 +3994,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__PrimeiroAssignment_0_2"
-    // InternalLisp.g:1080:1: rule__Expression__PrimeiroAssignment_0_2 : ( ruleRecursion ) ;
+    // InternalLisp.g:1255:1: rule__Expression__PrimeiroAssignment_0_2 : ( ruleRecursion ) ;
     public final void rule__Expression__PrimeiroAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1084:1: ( ( ruleRecursion ) )
-            // InternalLisp.g:1085:2: ( ruleRecursion )
+            // InternalLisp.g:1259:1: ( ( ruleRecursion ) )
+            // InternalLisp.g:1260:2: ( ruleRecursion )
             {
-            // InternalLisp.g:1085:2: ( ruleRecursion )
-            // InternalLisp.g:1086:3: ruleRecursion
+            // InternalLisp.g:1260:2: ( ruleRecursion )
+            // InternalLisp.g:1261:3: ruleRecursion
             {
              before(grammarAccess.getExpressionAccess().getPrimeiroRecursionParserRuleCall_0_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3464,24 +4035,24 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operacoes__ValueAssignment_0"
-    // InternalLisp.g:1095:1: rule__Operacoes__ValueAssignment_0 : ( ( '+' ) ) ;
+    // InternalLisp.g:1270:1: rule__Operacoes__ValueAssignment_0 : ( ( '+' ) ) ;
     public final void rule__Operacoes__ValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1099:1: ( ( ( '+' ) ) )
-            // InternalLisp.g:1100:2: ( ( '+' ) )
+            // InternalLisp.g:1274:1: ( ( ( '+' ) ) )
+            // InternalLisp.g:1275:2: ( ( '+' ) )
             {
-            // InternalLisp.g:1100:2: ( ( '+' ) )
-            // InternalLisp.g:1101:3: ( '+' )
-            {
-             before(grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0()); 
-            // InternalLisp.g:1102:3: ( '+' )
-            // InternalLisp.g:1103:4: '+'
+            // InternalLisp.g:1275:2: ( ( '+' ) )
+            // InternalLisp.g:1276:3: ( '+' )
             {
              before(grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0()); 
-            match(input,21,FOLLOW_2); 
+            // InternalLisp.g:1277:3: ( '+' )
+            // InternalLisp.g:1278:4: '+'
+            {
+             before(grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0()); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getOperacoesAccess().getValuePlusSignKeyword_0_0()); 
 
             }
@@ -3508,18 +4079,59 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Operacoes__ValueAssignment_0"
 
 
+    // $ANTLR start "rule__Condicao__CondicaoAssignment_2"
+    // InternalLisp.g:1289:1: rule__Condicao__CondicaoAssignment_2 : ( ruleRecursion ) ;
+    public final void rule__Condicao__CondicaoAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalLisp.g:1293:1: ( ( ruleRecursion ) )
+            // InternalLisp.g:1294:2: ( ruleRecursion )
+            {
+            // InternalLisp.g:1294:2: ( ruleRecursion )
+            // InternalLisp.g:1295:3: ruleRecursion
+            {
+             before(grammarAccess.getCondicaoAccess().getCondicaoRecursionParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleRecursion();
+
+            state._fsp--;
+
+             after(grammarAccess.getCondicaoAccess().getCondicaoRecursionParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Condicao__CondicaoAssignment_2"
+
+
     // $ANTLR start "rule__Inteiros__ValueAssignment"
-    // InternalLisp.g:1114:1: rule__Inteiros__ValueAssignment : ( RULE_INT ) ;
+    // InternalLisp.g:1304:1: rule__Inteiros__ValueAssignment : ( RULE_INT ) ;
     public final void rule__Inteiros__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1118:1: ( ( RULE_INT ) )
-            // InternalLisp.g:1119:2: ( RULE_INT )
+            // InternalLisp.g:1308:1: ( ( RULE_INT ) )
+            // InternalLisp.g:1309:2: ( RULE_INT )
             {
-            // InternalLisp.g:1119:2: ( RULE_INT )
-            // InternalLisp.g:1120:3: RULE_INT
+            // InternalLisp.g:1309:2: ( RULE_INT )
+            // InternalLisp.g:1310:3: RULE_INT
             {
              before(grammarAccess.getInteirosAccess().getValueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3546,17 +4158,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Decimal__ValueAssignment_0"
-    // InternalLisp.g:1129:1: rule__Decimal__ValueAssignment_0 : ( RULE_INT ) ;
+    // InternalLisp.g:1319:1: rule__Decimal__ValueAssignment_0 : ( RULE_INT ) ;
     public final void rule__Decimal__ValueAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1133:1: ( ( RULE_INT ) )
-            // InternalLisp.g:1134:2: ( RULE_INT )
+            // InternalLisp.g:1323:1: ( ( RULE_INT ) )
+            // InternalLisp.g:1324:2: ( RULE_INT )
             {
-            // InternalLisp.g:1134:2: ( RULE_INT )
-            // InternalLisp.g:1135:3: RULE_INT
+            // InternalLisp.g:1324:2: ( RULE_INT )
+            // InternalLisp.g:1325:3: RULE_INT
             {
              before(grammarAccess.getDecimalAccess().getValueINTTerminalRuleCall_0_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3583,17 +4195,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Decimal__ValueAssignment_2"
-    // InternalLisp.g:1144:1: rule__Decimal__ValueAssignment_2 : ( RULE_INT ) ;
+    // InternalLisp.g:1334:1: rule__Decimal__ValueAssignment_2 : ( RULE_INT ) ;
     public final void rule__Decimal__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1148:1: ( ( RULE_INT ) )
-            // InternalLisp.g:1149:2: ( RULE_INT )
+            // InternalLisp.g:1338:1: ( ( RULE_INT ) )
+            // InternalLisp.g:1339:2: ( RULE_INT )
             {
-            // InternalLisp.g:1149:2: ( RULE_INT )
-            // InternalLisp.g:1150:3: RULE_INT
+            // InternalLisp.g:1339:2: ( RULE_INT )
+            // InternalLisp.g:1340:3: RULE_INT
             {
              before(grammarAccess.getDecimalAccess().getValueINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -3620,17 +4232,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recursion__RecursionIDAssignment_0"
-    // InternalLisp.g:1159:1: rule__Recursion__RecursionIDAssignment_0 : ( RULE_ID ) ;
+    // InternalLisp.g:1349:1: rule__Recursion__RecursionIDAssignment_0 : ( RULE_ID ) ;
     public final void rule__Recursion__RecursionIDAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1163:1: ( ( RULE_ID ) )
-            // InternalLisp.g:1164:2: ( RULE_ID )
+            // InternalLisp.g:1353:1: ( ( RULE_ID ) )
+            // InternalLisp.g:1354:2: ( RULE_ID )
             {
-            // InternalLisp.g:1164:2: ( RULE_ID )
-            // InternalLisp.g:1165:3: RULE_ID
+            // InternalLisp.g:1354:2: ( RULE_ID )
+            // InternalLisp.g:1355:3: RULE_ID
             {
              before(grammarAccess.getRecursionAccess().getRecursionIDIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -3657,17 +4269,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recursion__RecursionIntAssignment_1"
-    // InternalLisp.g:1174:1: rule__Recursion__RecursionIntAssignment_1 : ( ruleNumeros ) ;
+    // InternalLisp.g:1364:1: rule__Recursion__RecursionIntAssignment_1 : ( ruleNumeros ) ;
     public final void rule__Recursion__RecursionIntAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1178:1: ( ( ruleNumeros ) )
-            // InternalLisp.g:1179:2: ( ruleNumeros )
+            // InternalLisp.g:1368:1: ( ( ruleNumeros ) )
+            // InternalLisp.g:1369:2: ( ruleNumeros )
             {
-            // InternalLisp.g:1179:2: ( ruleNumeros )
-            // InternalLisp.g:1180:3: ruleNumeros
+            // InternalLisp.g:1369:2: ( ruleNumeros )
+            // InternalLisp.g:1370:3: ruleNumeros
             {
              before(grammarAccess.getRecursionAccess().getRecursionIntNumerosParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -3698,17 +4310,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recursion__RecursionStringAssignment_2"
-    // InternalLisp.g:1189:1: rule__Recursion__RecursionStringAssignment_2 : ( RULE_STRING ) ;
+    // InternalLisp.g:1379:1: rule__Recursion__RecursionStringAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Recursion__RecursionStringAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1193:1: ( ( RULE_STRING ) )
-            // InternalLisp.g:1194:2: ( RULE_STRING )
+            // InternalLisp.g:1383:1: ( ( RULE_STRING ) )
+            // InternalLisp.g:1384:2: ( RULE_STRING )
             {
-            // InternalLisp.g:1194:2: ( RULE_STRING )
-            // InternalLisp.g:1195:3: RULE_STRING
+            // InternalLisp.g:1384:2: ( RULE_STRING )
+            // InternalLisp.g:1385:3: RULE_STRING
             {
              before(grammarAccess.getRecursionAccess().getRecursionStringSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -3735,17 +4347,17 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recursion__RecursionDefinitionAssignment_3"
-    // InternalLisp.g:1204:1: rule__Recursion__RecursionDefinitionAssignment_3 : ( ruleDefinition ) ;
+    // InternalLisp.g:1394:1: rule__Recursion__RecursionDefinitionAssignment_3 : ( ruleDefinition ) ;
     public final void rule__Recursion__RecursionDefinitionAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalLisp.g:1208:1: ( ( ruleDefinition ) )
-            // InternalLisp.g:1209:2: ( ruleDefinition )
+            // InternalLisp.g:1398:1: ( ( ruleDefinition ) )
+            // InternalLisp.g:1399:2: ( ruleDefinition )
             {
-            // InternalLisp.g:1209:2: ( ruleDefinition )
-            // InternalLisp.g:1210:3: ruleDefinition
+            // InternalLisp.g:1399:2: ( ruleDefinition )
+            // InternalLisp.g:1400:3: ruleDefinition
             {
              before(grammarAccess.getRecursionAccess().getRecursionDefinitionDefinitionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -3786,11 +4398,12 @@ public class InternalLispParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000080010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000207800L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000407800L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000B0070L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000030072L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000010L});
 
 }

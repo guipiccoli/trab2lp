@@ -1,0 +1,49 @@
+grammar org.xtext.t2.lisp.Lisp with org.eclipse.xtext.common.Terminals
+
+generate lisp "http://www.xtext.org/t2/lisp/Lisp"
+
+Model:
+	begin=Begin|
+	definition=Definition* ;
+
+	
+Definition:
+	Numeros | Expression | Define | List 
+;
+
+Begin: 
+	'begin'definition=Definition*;
+
+Define:
+	'define' (expression=Expression | list=List)
+	;
+List:
+	'(''list' (numeros+=Numeros)*')'
+;
+
+Expression:
+	'(' operacoes+=Operacoes  (primeiro+=Recursion)*  ')' |
+	'(' ')' 
+	
+;
+
+Numeros:
+	Inteiros | Decimal;
+
+Operacoes:
+	value = '+'| '-' | '*'| '/'|'sq';
+
+Condicao:
+	'(' 'if' condicao=Recursion verdadeiro=Recursion falso=Recursion ')'
+;
+
+Inteiros:
+	value = INT;
+
+Decimal:
+	value=INT '.' value=INT;
+
+
+Recursion:
+	(recursionID=ID|recursionInt=Numeros|recursionString=STRING|recursionDefinition=Definition)
+;

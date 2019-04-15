@@ -4,7 +4,8 @@ generate lisp "http://www.xtext.org/t2/lisp/Lisp"
 
 Model:
 	begin=Begin|
-	definition=Definition* ;
+	definition=Definition* |
+	condicao = Condicao;
 
 	
 Definition:
@@ -15,7 +16,7 @@ Begin:
 	'begin'definition=Definition*;
 
 Define:
-	'define' (expression=Expression | list=List)
+	'define' (expression=Expression | list=List| condicao=Condicao)
 	;
 List:
 	'(''list' (numeros+=Numeros)*')'
@@ -34,7 +35,7 @@ Operacoes:
 	value = '+'| '-' | '*'| '/'|'sq';
 
 Condicao:
-	'(' 'if' condicao=Recursion true=Recursion falso=Recursion ')'
+	'(' 'if' condicao+=Recursion* ')'
 ;
 
 Inteiros:
